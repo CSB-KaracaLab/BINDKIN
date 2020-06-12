@@ -1,0 +1,45 @@
+REMARK FILENAME="protein2.pdb"
+REMARK coordinates built for atom:      AEE  1    HAA
+REMARK coordinates built for atom:      AEE  1    HAB
+REMARK coordinates built for atom:      AEE  1    HAD
+REMARK coordinates built for atom:      AEE  1    HAC
+REMARK DATE:28-Dec-2019  20:09:23       created by user: enmr
+REMARK VERSION:1.3U
+ATOM      1  CAQ AEE     1     -50.721  -0.781 -12.297  1.00 15.00      B   
+ATOM      2  CAO AEE     1     -49.581  -1.472 -11.486  1.00 15.00      B   
+ATOM      3  NBF AEE     1     -49.439  -2.918 -11.818  1.00 15.00      B   
+ATOM      4  CAN AEE     1     -50.542  -3.735 -11.233  1.00 15.00      B   
+ATOM      5  CAA AEE     1     -50.045  -4.456  -9.962  1.00 15.00      B   
+ATOM      6  HAA AEE     1     -48.593  -3.228 -11.384  0.00 15.00      B   
+ATOM      7  CAP AEE     1     -49.303  -3.160 -13.278  1.00 15.00      B   
+ATOM      8  CAR AEE     1     -50.503  -2.564 -14.051  1.00 15.00      B   
+ATOM      9  NBG AEE     1     -50.703  -1.107 -13.763  1.00 15.00      B   
+ATOM     10  HAB AEE     1     -51.620  -0.880 -14.091  0.00 15.00      B   
+ATOM     11  CAS AEE     1     -49.786  -0.256 -14.578  1.00 15.00      B   
+ATOM     12  CAX AEE     1     -50.428  -0.068 -15.983  1.00 15.00      B   
+ATOM     13  CAJ AEE     1     -49.962  -0.793 -17.102  1.00 15.00      B   
+ATOM     14  CAL AEE     1     -50.553  -0.636 -18.370  1.00 15.00      B   
+ATOM     15  CAI AEE     1     -51.502   0.820 -16.141  1.00 15.00      B   
+ATOM     16  CAK AEE     1     -52.086   0.979 -17.407  1.00 15.00      B   
+ATOM     17  CAY AEE     1     -51.617   0.277 -18.550  1.00 15.00      B   
+ATOM     18  CBA AEE     1     -52.266   0.458 -19.799  1.00 15.00      B   
+ATOM     19  NAW AEE     1     -53.405   1.172 -19.956  1.00 15.00      B   
+ATOM     20  HAD AEE     1     -53.888   1.652 -19.224  0.00 15.00      B   
+ATOM     21  CAM AEE     1     -51.934  -0.042 -21.006  1.00 15.00      B   
+ATOM     22  C5  AEE     1     -52.852   0.359 -21.917  1.00 15.00      B   
+ATOM     23  C4  AEE     1     -53.783   1.140 -21.224  1.00 15.00      B   
+ATOM     24  N3  AEE     1     -54.834   1.660 -21.851  1.00 15.00      B   
+ATOM     25  C2  AEE     1     -55.014   1.468 -23.165  1.00 15.00      B   
+ATOM     26  N1  AEE     1     -54.162   0.745 -23.895  1.00 15.00      B   
+ATOM     27  C6  AEE     1     -53.056   0.151 -23.316  1.00 15.00      B   
+ATOM     28  NAV AEE     1     -52.184  -0.597 -24.067  1.00 15.00      B   
+ATOM     29  HAC AEE     1     -51.289  -0.860 -23.708  0.00 15.00      B   
+ATOM     30  CBE AEE     1     -52.500  -1.062 -25.443  1.00 15.00      B   
+ATOM     31  CAB AEE     1     -51.583  -2.200 -25.918  1.00 15.00      B   
+ATOM     32  CAZ AEE     1     -52.443   0.108 -26.451  1.00 15.00      B   
+ATOM     33  CAG AEE     1     -51.965   1.376 -26.054  1.00 15.00      B   
+ATOM     34  CAD AEE     1     -51.923   2.462 -26.948  1.00 15.00      B   
+ATOM     35  CAC AEE     1     -52.362   2.261 -28.271  1.00 15.00      B   
+ATOM     36  CAE AEE     1     -52.835   0.993 -28.675  1.00 15.00      B   
+ATOM     37  CAH AEE     1     -52.882  -0.084 -27.773  1.00 15.00      B   
+END

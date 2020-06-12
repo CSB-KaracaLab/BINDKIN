@@ -1,0 +1,2 @@
+Job name	DGprediction (Kcal/mol)	DGscore
+2z60_w	-9.02	94.84

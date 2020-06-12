@@ -1,0 +1,11 @@
+#!/bin/csh
+cd ./
+setenv CURRIT 1
+setenv RUN ./
+setenv NEWIT $RUN/structures/it1
+setenv PREVIT $RUN/structures/it1
+setenv TEMPTRASH $RUN
+python protocols/KeepAlive.py $NEWIT/analysis/energy.out &
+protocols/cns1 < protocols/energy.inp >! $NEWIT/analysis/energy.out
+kill -9 %1 >&/dev/null
+gzip -f $NEWIT/analysis/energy.out

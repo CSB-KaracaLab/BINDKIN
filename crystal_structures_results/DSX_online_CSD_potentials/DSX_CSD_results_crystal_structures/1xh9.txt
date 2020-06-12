@@ -1,0 +1,35 @@
+scoring with 'DSX' version 0.88
+
+protein file                  : DS200121-211029_pro.pdb
+ligands file                  : DS200121-211029_lig.mol2
+cofactor file                 : none
+waters file                   : none
+metals file                   : none
+reference file                : none
+used potentials               : ../../csd_pot_0511/
+used interaction mode         : 1
+used sort mode                : 1
+score atom atom pairs         : yes
+score torsion angles          : no
+score intramolecular clashes  : no
+score solvent access. surf.   : yes
+minimize ligands              : no
+flexible residues             : no
+covalent bond check           : no
+
+important notes:
+   - The field 'score' is the total score including possible torsion, sas and intramolecular contributions.
+   - The 'PCS'(per_contact_score) is the score divided by the number of atom-atom-interactions having any
+      contribution to the total score (number of contacts within 6A). (Do not confuse with a per atom score.)
+   - The 'tors_score' is the sum of scores for each bond. A single bond B--C can have more than one
+      torsions (A1--B--C--D1, A2--B--C--D1, ...). The score for a single bond is the mean of its
+      possible torsions.
+   - The 'sas_score' is the solvent accessable surface score for solvation/desolvation contributions.
+
+@RESULTS
+
+  number  |              name              |  rmsd  |   score   |   rank   |    PCS    | tors_score | sas_score 
+----------|--------------------------------|--------|-----------|----------|-----------|------------|-----------
+ 0        | 1xh9_Lig.pdb                   |  none  | -219.262  | 1        | -0.218    | 0.000      | -33.806  
+
+

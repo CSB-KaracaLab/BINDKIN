@@ -1,0 +1,11 @@
+#!/bin/csh
+cd ./
+setenv CURRIT 2
+setenv RUN ./
+setenv NEWIT $RUN/structures/it1/water
+setenv PREVIT $RUN/structures/it1/water
+setenv TEMPTRASH $RUN
+python protocols/KeepAlive.py $NEWIT/analysis/print_vean.out &
+protocols/cns1 < protocols/print_vean.inp >! $NEWIT/analysis/print_vean.out
+kill -9 %1 >&/dev/null
+gzip -f $NEWIT/analysis/print_vean.out

@@ -1,0 +1,171 @@
+@charset "UTF-8";
+/* Main CSS Document of the HADDOCK webserver */
+
+
+body {
+    background-color:#edf3f8;
+    font: small Verdana, Sans-serif;
+}
+
+.textblock{
+    font: small/1.6em Verdana, Sans-serif;
+}
+
+#banner_top {
+    background: linear-gradient(#082647, #0f4b91);
+    border-top:  6px solid #5576a3;
+    height: 30px;
+}
+
+#banner {
+    color: white;
+    background: #082647 url("/Images/header-CSB.jpg") no-repeat;
+    background-size: cover;
+}
+
+#banner.grid {
+    background-image: url("/Images/header-enmr.png");
+}
+
+#banner.devel{
+    background-image: url("/Images/header-devel.png");
+}
+
+#banner.devel.grid{
+    background-image: url("/Images/header-devel-enmr.png");
+}
+
+.navbar-dark {
+    background: linear-gradient(#0f4b91, #082647);
+    min-height: 30px;
+}
+
+#login-dropdown {
+    font-size: small;
+    min-width: 20rem;
+}
+
+#navbarDropdown {
+    cursor: pointer;
+}
+
+.alert {
+    font-size: 1rem;
+}
+
+#main-content {
+    border: 1px solid #ccd ;
+}
+
+#main-content h1 {
+    border-bottom: 1px dotted #ccd;
+    font-size: 2rem;
+    line-height: 1.5em;
+}
+
+#main-content h2 {
+    margin-top: 2em;
+    border-top: 1px dotted #ccd;
+    padding-top: 4px;
+    font-size: 130%;
+    font-variant: small-caps;
+    letter-spacing: 0.2em;
+    line-height: 1.5em;
+    color: #3973ac;
+}
+
+.subheader {
+    color: #4078a5;
+    font-size: 75%;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+#content-header {
+    background: #dce3ec;
+}
+
+#sidebar-header {
+    background: #abbbcc;
+}
+
+#content {
+    background: white;
+}
+
+#sidebar {
+    color: #4078a5;
+    background: #eceff4;
+}
+
+#sidebar img {
+    margin: .7rem auto;
+    display: block;
+}
+
+#sidebar dt {
+    font-size: 110%;
+    font-variant: small-caps;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    line-height: 1.5em;
+    margin-top: 2.5em;
+    border-top: 1px dotted #ccd;
+}
+
+#footer,
+#sidebar dd {
+    font-size: smaller;
+    font-weight: lighter;
+    margin-top: 0.5em;
+}
+
+a {
+    color: #4078a5;
+}
+
+a:hover {
+    color: #152C58;
+    text-decoration: underline;
+}
+
+.onsitelink::after,
+.offsitelink::after {
+    font-family: "Material Icons", sans-serif;
+    padding-left: .2em;
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.onsitelink::after {
+    content: "\E890 ";
+}
+
+.offsitelink::after  {
+    content: "\E895 ";
+}
+
+#footer {
+    text-align: center;
+    color: #4078a5;
+    background: #dae6f2;
+    border: 1px solid #ccd ;
+}
+
+.form-control {
+    max-width: 400px;
+}
+
+.required label::after{
+    content: "*";
+}
+
+.control-label {
+    font-weight: bold;
+}
+
+#jobs_info td > a {
+    color: #000;
+    text-decoration: none;
+}

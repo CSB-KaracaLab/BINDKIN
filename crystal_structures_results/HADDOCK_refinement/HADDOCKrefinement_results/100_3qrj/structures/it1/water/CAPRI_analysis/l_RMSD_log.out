@@ -1,0 +1,53 @@
+Ligand Mode ON
+Loaded 20 structures
+Using complex_9w.pdb as reference
+Read 2 chains from reference file: AB
+^.{21}A
+0 0
+Checking chain lengths: WARNING!! Chains have different lengths! (B:1 != A:258)
+You main run into problems later on...
+OK!
+Generating ZONE definitions..
+Defined 1 zone(s)
+ZONE CLEAR \n ZONE A* \n FIT \nRZONE B*\n
+ProFit> RMS: 0.000
+1
+ProFit> RMS: 0.352
+1
+ProFit> RMS: 0.384
+1
+ProFit> RMS: 0.291
+1
+ProFit> RMS: 0.349
+1
+ProFit> RMS: 0.304
+1
+ProFit> RMS: 0.475
+1
+ProFit> RMS: 0.378
+1
+ProFit> RMS: 0.537
+1
+ProFit> RMS: 0.229
+1
+ProFit> RMS: 0.405
+1
+ProFit> RMS: 0.319
+1
+ProFit> RMS: 0.459
+1
+ProFit> RMS: 0.387
+1
+ProFit> RMS: 0.370
+1
+ProFit> RMS: 0.487
+1
+ProFit> RMS: 0.390
+1
+ProFit> RMS: 0.396
+1
+ProFit> RMS: 0.480
+1
+ProFit> RMS: 0.476
+1
+

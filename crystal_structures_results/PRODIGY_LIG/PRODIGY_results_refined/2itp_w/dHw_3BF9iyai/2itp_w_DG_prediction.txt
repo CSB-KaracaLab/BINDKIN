@@ -1,0 +1,2 @@
+Job name	DGprediction (Kcal/mol)	DGscore
+2itp_w	-9.95	56.24

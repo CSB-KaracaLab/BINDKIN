@@ -1,0 +1,61 @@
+{
+  "chains": [
+    "A",
+    "B:IRE"
+  ],
+  "pdb_id": "",
+  "interactor1": "A",
+  "tag": "",
+  "email": "",
+  "notify": false,
+  "sample": false,
+  "interactor2": "B:IRE",
+  "electrostatics": null,
+  "predictions": {
+    "structures": [
+      "2ito_w"
+    ],
+    "electrostatics": [
+      -109.935
+    ],
+    "dg_score": [
+      79.86797960999999
+    ],
+    "dg_elec": [
+      -9.526847738
+    ],
+    "dg": [
+      -9.031911099999999
+    ],
+    "CC": [
+      2315
+    ],
+    "NN": [
+      117
+    ],
+    "OO": [
+      67
+    ],
+    "XX": [
+      3
+    ],
+    "CN": [
+      1054
+    ],
+    "CO": [
+      938
+    ],
+    "CX": [
+      185
+    ],
+    "NO": [
+      195
+    ],
+    "NX": [
+      48
+    ],
+    "OX": [
+      43
+    ]
+  }
+}

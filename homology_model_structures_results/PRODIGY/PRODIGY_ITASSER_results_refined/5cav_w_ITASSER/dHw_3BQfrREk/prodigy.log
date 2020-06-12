@@ -1,0 +1,5 @@
+[!] Structure contains gaps:
+	A PHE1 < Fragment 0 > A LEU268
+
+trying to populate electrostatics from pdb file: -36.1691
+Running Prodigy for structure 5cav_w

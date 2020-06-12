@@ -1,0 +1,61 @@
+{
+  "chains": [
+    "A",
+    "A:A5U"
+  ],
+  "pdb_id": "",
+  "interactor1": "A",
+  "tag": "",
+  "email": "",
+  "notify": false,
+  "sample": false,
+  "interactor2": "A:A5U",
+  "electrostatics": null,
+  "predictions": {
+    "structures": [
+      "5ap0"
+    ],
+    "electrostatics": [
+      null
+    ],
+    "dg_score": [
+      null
+    ],
+    "dg_elec": [
+      null
+    ],
+    "dg": [
+      -8.1944208
+    ],
+    "CC": [
+      2167
+    ],
+    "NN": [
+      165
+    ],
+    "OO": [
+      83
+    ],
+    "XX": [
+      0
+    ],
+    "CN": [
+      1227
+    ],
+    "CO": [
+      937
+    ],
+    "CX": [
+      34
+    ],
+    "NO": [
+      270
+    ],
+    "NX": [
+      12
+    ],
+    "OX": [
+      5
+    ]
+  }
+}

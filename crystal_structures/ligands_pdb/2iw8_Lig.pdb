@@ -1,0 +1,57 @@
+HETATM    1  N1  4SP A   1       7.293  44.703  50.750  1.00  3.93           N  
+HETATM    2  C2  4SP A   1       8.222  44.029  50.023  1.00  2.00           C  
+HETATM    3  N2  4SP A   1       7.818  43.032  49.171  1.00  2.30           N  
+HETATM    4  N3  4SP A   1       9.534  44.358  50.144  1.00  2.00           N  
+HETATM    5  C4  4SP A   1       9.913  45.350  50.989  1.00  2.00           C  
+HETATM    6  C5  4SP A   1       9.020  46.068  51.762  1.00  2.00           C  
+HETATM    7  C6  4SP A   1       7.616  45.697  51.613  1.00  2.80           C  
+HETATM    8  O6  4SP A   1       6.650  46.333  52.311  1.00  3.64           O  
+HETATM    9  N7  4SP A   1       9.707  46.964  52.494  1.00  2.00           N  
+HETATM   10  C8  4SP A   1      11.025  46.800  52.187  1.00  2.05           C  
+HETATM   11  N9  4SP A   1      11.166  45.794  51.267  1.00  2.87           N  
+HETATM   12  C10 4SP A   1       5.295  46.030  52.011  1.00  3.40           C  
+HETATM   13  C11 4SP A   1       4.412  46.498  53.138  1.00  3.01           C  
+HETATM   14  C12 4SP A   1       2.966  46.202  52.720  1.00  4.25           C  
+HETATM   15  C13 4SP A   1       1.972  46.430  53.861  1.00  3.06           C  
+HETATM   16  C14 4SP A   1       2.407  45.738  55.152  1.00  2.00           C  
+HETATM   17  C15 4SP A   1       3.842  46.155  55.526  1.00  2.88           C  
+HETATM   18  C16 4SP A   1       4.815  45.757  54.427  1.00  3.07           C  
+HETATM   19  C17 4SP A   1       6.635  42.331  49.150  1.00  2.00           C  
+HETATM   20  C18 4SP A   1       5.722  42.330  50.205  1.00  2.00           C  
+HETATM   21  C19 4SP A   1       4.535  41.591  50.131  1.00  3.12           C  
+HETATM   22  C20 4SP A   1       4.229  40.811  49.005  1.00  4.35           C  
+HETATM   23  C21 4SP A   1       5.158  40.804  47.943  1.00  3.58           C  
+HETATM   24  C22 4SP A   1       6.339  41.551  48.021  1.00  2.94           C  
+HETATM   25  S23 4SP A   1       2.861  39.935  48.911  1.00  6.61           S  
+HETATM   26  O24 4SP A   1       3.065  38.593  49.507  1.00  6.71           O  
+HETATM   27  O25 4SP A   1       2.552  39.769  47.476  1.00  8.48           O  
+HETATM   28  N26 4SP A   1       1.691  40.551  49.659  1.00  5.96           N  
+CONECT    1    7    2
+CONECT    2    1    3    4
+CONECT    3    2   19
+CONECT    4    2    5
+CONECT    5    4    6   11
+CONECT    6    5    9    7
+CONECT    7    1    6    8
+CONECT    8    7   12
+CONECT    9    6   10
+CONECT   10    9   11
+CONECT   11   10    5
+CONECT   12    8   13
+CONECT   13   12   14   18
+CONECT   14   13   15
+CONECT   15   14   16
+CONECT   16   15   17
+CONECT   17   16   18
+CONECT   18   13   17
+CONECT   19    3   20   24
+CONECT   20   19   21
+CONECT   21   20   22
+CONECT   22   21   23   25
+CONECT   23   22   24
+CONECT   24   23   19
+CONECT   25   22   26   27   28
+CONECT   26   25
+CONECT   27   25
+CONECT   28   25
+END

@@ -1,0 +1,204 @@
+#all distance restraints
+#structure rms-noe #viol>0.5A #viol>0.3A #viol>0.1A #Enoe
+"=======> " PREVIT:complex_1.pdb
+"=======> " PREVIT:complex_1.pdb
+"=======> " PREVIT:complex_1.pdb
+PREVIT:complex_1.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_2.pdb
+"=======> " PREVIT:complex_2.pdb
+"=======> " PREVIT:complex_2.pdb
+PREVIT:complex_2.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_3.pdb
+"=======> " PREVIT:complex_3.pdb
+"=======> " PREVIT:complex_3.pdb
+PREVIT:complex_3.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_4.pdb
+"=======> " PREVIT:complex_4.pdb
+"=======> " PREVIT:complex_4.pdb
+PREVIT:complex_4.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_11.pdb
+"=======> " PREVIT:complex_11.pdb
+"=======> " PREVIT:complex_11.pdb
+PREVIT:complex_11.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_12.pdb
+"=======> " PREVIT:complex_12.pdb
+"=======> " PREVIT:complex_12.pdb
+PREVIT:complex_12.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_17.pdb
+"=======> " PREVIT:complex_17.pdb
+"=======> " PREVIT:complex_17.pdb
+PREVIT:complex_17.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_18.pdb
+"=======> " PREVIT:complex_18.pdb
+"=======> " PREVIT:complex_18.pdb
+PREVIT:complex_18.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_15.pdb
+"=======> " PREVIT:complex_15.pdb
+"=======> " PREVIT:complex_15.pdb
+PREVIT:complex_15.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_16.pdb
+"=======> " PREVIT:complex_16.pdb
+"=======> " PREVIT:complex_16.pdb
+PREVIT:complex_16.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_5.pdb
+"=======> " PREVIT:complex_5.pdb
+"=======> " PREVIT:complex_5.pdb
+PREVIT:complex_5.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_6.pdb
+"=======> " PREVIT:complex_6.pdb
+"=======> " PREVIT:complex_6.pdb
+PREVIT:complex_6.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_7.pdb
+"=======> " PREVIT:complex_7.pdb
+"=======> " PREVIT:complex_7.pdb
+PREVIT:complex_7.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_8.pdb
+"=======> " PREVIT:complex_8.pdb
+"=======> " PREVIT:complex_8.pdb
+PREVIT:complex_8.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_19.pdb
+"=======> " PREVIT:complex_19.pdb
+"=======> " PREVIT:complex_19.pdb
+PREVIT:complex_19.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_20.pdb
+"=======> " PREVIT:complex_20.pdb
+"=======> " PREVIT:complex_20.pdb
+PREVIT:complex_20.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_9.pdb
+"=======> " PREVIT:complex_9.pdb
+"=======> " PREVIT:complex_9.pdb
+PREVIT:complex_9.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_10.pdb
+"=======> " PREVIT:complex_10.pdb
+"=======> " PREVIT:complex_10.pdb
+PREVIT:complex_10.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_13.pdb
+"=======> " PREVIT:complex_13.pdb
+"=======> " PREVIT:complex_13.pdb
+PREVIT:complex_13.pdb 0 0 0 0 0
+"=======> " PREVIT:complex_14.pdb
+"=======> " PREVIT:complex_14.pdb
+"=======> " PREVIT:complex_14.pdb
+PREVIT:complex_14.pdb 0 0 0 0 0
+mean values
+Enoe 0 (+/- 0 )
+noe rms 0 (+/- 0 )
+violations > 0.5A 0 (+/- 0 )
+violations > 0.3A 0 (+/- 0 )
+violations > 0.1A 0 (+/- 0 )
+
+#only unambiguous
+#structure rms-noe #viol>0.5A #viol>0.3A #viol>0.1A #Enoe
+PREVIT:complex_1.pdb 0 0 0 0 0
+PREVIT:complex_2.pdb 0 0 0 0 0
+PREVIT:complex_3.pdb 0 0 0 0 0
+PREVIT:complex_4.pdb 0 0 0 0 0
+PREVIT:complex_11.pdb 0 0 0 0 0
+PREVIT:complex_12.pdb 0 0 0 0 0
+PREVIT:complex_17.pdb 0 0 0 0 0
+PREVIT:complex_18.pdb 0 0 0 0 0
+PREVIT:complex_15.pdb 0 0 0 0 0
+PREVIT:complex_16.pdb 0 0 0 0 0
+PREVIT:complex_5.pdb 0 0 0 0 0
+PREVIT:complex_6.pdb 0 0 0 0 0
+PREVIT:complex_7.pdb 0 0 0 0 0
+PREVIT:complex_8.pdb 0 0 0 0 0
+PREVIT:complex_19.pdb 0 0 0 0 0
+PREVIT:complex_20.pdb 0 0 0 0 0
+PREVIT:complex_9.pdb 0 0 0 0 0
+PREVIT:complex_10.pdb 0 0 0 0 0
+PREVIT:complex_13.pdb 0 0 0 0 0
+PREVIT:complex_14.pdb 0 0 0 0 0
+mean values
+Enoe 0 (+/- 0 )
+noe rms 0 (+/- 0 )
+violations > 0.5A 0 (+/- 0 )
+violations > 0.3A 0 (+/- 0 )
+violations > 0.1A 0 (+/- 0 )
+
+#only ambiguous
+#structure rms-noe #viol>0.5A #viol>0.3A #viol>0.1A #Enoe
+PREVIT:complex_1.pdb 0 0 0 0 0
+PREVIT:complex_2.pdb 0 0 0 0 0
+PREVIT:complex_3.pdb 0 0 0 0 0
+PREVIT:complex_4.pdb 0 0 0 0 0
+PREVIT:complex_11.pdb 0 0 0 0 0
+PREVIT:complex_12.pdb 0 0 0 0 0
+PREVIT:complex_17.pdb 0 0 0 0 0
+PREVIT:complex_18.pdb 0 0 0 0 0
+PREVIT:complex_15.pdb 0 0 0 0 0
+PREVIT:complex_16.pdb 0 0 0 0 0
+PREVIT:complex_5.pdb 0 0 0 0 0
+PREVIT:complex_6.pdb 0 0 0 0 0
+PREVIT:complex_7.pdb 0 0 0 0 0
+PREVIT:complex_8.pdb 0 0 0 0 0
+PREVIT:complex_19.pdb 0 0 0 0 0
+PREVIT:complex_20.pdb 0 0 0 0 0
+PREVIT:complex_9.pdb 0 0 0 0 0
+PREVIT:complex_10.pdb 0 0 0 0 0
+PREVIT:complex_13.pdb 0 0 0 0 0
+PREVIT:complex_14.pdb 0 0 0 0 0
+mean values
+Enoe 0 (+/- 0 )
+noe rms 0 (+/- 0 )
+violations > 0.5A 0 (+/- 0 )
+violations > 0.3A 0 (+/- 0 )
+violations > 0.1A 0 (+/- 0 )
+
+#all noe distance restraints
+#structure rms-noe #viol>0.5A #viol>0.3A #viol>0.1A #Enoe
+PREVIT:complex_1.pdb 0 0 0 0 0
+PREVIT:complex_2.pdb 0 0 0 0 0
+PREVIT:complex_3.pdb 0 0 0 0 0
+PREVIT:complex_4.pdb 0 0 0 0 0
+PREVIT:complex_11.pdb 0 0 0 0 0
+PREVIT:complex_12.pdb 0 0 0 0 0
+PREVIT:complex_17.pdb 0 0 0 0 0
+PREVIT:complex_18.pdb 0 0 0 0 0
+PREVIT:complex_15.pdb 0 0 0 0 0
+PREVIT:complex_16.pdb 0 0 0 0 0
+PREVIT:complex_5.pdb 0 0 0 0 0
+PREVIT:complex_6.pdb 0 0 0 0 0
+PREVIT:complex_7.pdb 0 0 0 0 0
+PREVIT:complex_8.pdb 0 0 0 0 0
+PREVIT:complex_19.pdb 0 0 0 0 0
+PREVIT:complex_20.pdb 0 0 0 0 0
+PREVIT:complex_9.pdb 0 0 0 0 0
+PREVIT:complex_10.pdb 0 0 0 0 0
+PREVIT:complex_13.pdb 0 0 0 0 0
+PREVIT:complex_14.pdb 0 0 0 0 0
+mean values
+Enoe 0 (+/- 0 )
+noe rms 0 (+/- 0 )
+violations > 0.5A 0 (+/- 0 )
+violations > 0.3A 0 (+/- 0 )
+violations > 0.1A 0 (+/- 0 )
+
+#only hydrogen bond
+#structure rms-noe #viol>0.5A #viol>0.3A #viol>0.1A #Enoe
+PREVIT:complex_1.pdb 0 0 0 0 0
+PREVIT:complex_2.pdb 0 0 0 0 0
+PREVIT:complex_3.pdb 0 0 0 0 0
+PREVIT:complex_4.pdb 0 0 0 0 0
+PREVIT:complex_11.pdb 0 0 0 0 0
+PREVIT:complex_12.pdb 0 0 0 0 0
+PREVIT:complex_17.pdb 0 0 0 0 0
+PREVIT:complex_18.pdb 0 0 0 0 0
+PREVIT:complex_15.pdb 0 0 0 0 0
+PREVIT:complex_16.pdb 0 0 0 0 0
+PREVIT:complex_5.pdb 0 0 0 0 0
+PREVIT:complex_6.pdb 0 0 0 0 0
+PREVIT:complex_7.pdb 0 0 0 0 0
+PREVIT:complex_8.pdb 0 0 0 0 0
+PREVIT:complex_19.pdb 0 0 0 0 0
+PREVIT:complex_20.pdb 0 0 0 0 0
+PREVIT:complex_9.pdb 0 0 0 0 0
+PREVIT:complex_10.pdb 0 0 0 0 0
+PREVIT:complex_13.pdb 0 0 0 0 0
+PREVIT:complex_14.pdb 0 0 0 0 0
+mean values
+Enoe 0 (+/- 0 )
+noe rms 0 (+/- 0 )
+violations > 0.5A 0 (+/- 0 )
+violations > 0.3A 0 (+/- 0 )
+violations > 0.1A 0 (+/- 0 )

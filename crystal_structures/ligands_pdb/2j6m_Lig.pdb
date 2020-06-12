@@ -1,0 +1,67 @@
+HETATM    1  CAA AEE A   1     -50.325  -3.034  -9.685  1.00 61.05           C  
+HETATM    2  CAB AEE A   1     -51.287  -2.308 -25.573  1.00 54.00           C  
+HETATM    3  CAC AEE A   1     -52.355   2.079 -27.671  1.00 51.82           C  
+HETATM    4  CAD AEE A   1     -52.230   2.245 -26.305  1.00 51.45           C  
+HETATM    5  CAE AEE A   1     -52.472   0.811 -28.203  1.00 50.90           C  
+HETATM    6  CAG AEE A   1     -52.224   1.144 -25.467  1.00 51.44           C  
+HETATM    7  CAH AEE A   1     -52.467  -0.292 -27.368  1.00 51.08           C  
+HETATM    8  CAI AEE A   1     -51.545   0.807 -16.147  1.00 52.56           C  
+HETATM    9  CAJ AEE A   1     -50.077  -0.831 -17.069  1.00 51.77           C  
+HETATM   10  CAK AEE A   1     -52.151   0.955 -17.383  1.00 50.94           C  
+HETATM   11  CAL AEE A   1     -50.679  -0.680 -18.307  1.00 50.18           C  
+HETATM   12  CAM AEE A   1     -51.957  -0.218 -20.822  1.00 46.71           C  
+HETATM   13  CAN AEE A   1     -50.295  -3.212 -11.202  1.00 64.26           C  
+HETATM   14  CAO AEE A   1     -49.483  -1.004 -11.676  1.00 66.93           C  
+HETATM   15  CAP AEE A   1     -48.997  -2.772 -13.170  1.00 65.57           C  
+HETATM   16  CAQ AEE A   1     -50.782  -0.692 -12.413  1.00 65.86           C  
+HETATM   17  CAR AEE A   1     -50.300  -2.534 -13.918  1.00 65.21           C  
+HETATM   18  CAS AEE A   1     -49.846  -0.252 -14.626  1.00 59.34           C  
+HETATM   19  CAX AEE A   1     -50.505  -0.085 -15.990  1.00 54.24           C  
+HETATM   20  CAY AEE A   1     -51.722   0.209 -18.463  1.00 49.55           C  
+HETATM   21  CAZ AEE A   1     -52.344  -0.122 -26.001  1.00 51.45           C  
+HETATM   22  NAV AEE A   1     -52.034  -0.909 -23.725  1.00 49.40           N  
+HETATM   23  NAW AEE A   1     -53.366   1.159 -19.940  1.00 46.46           N  
+HETATM   24  CBA AEE A   1     -52.328   0.373 -19.696  1.00 48.38           C  
+HETATM   25  CBE AEE A   1     -52.341  -1.327 -25.089  1.00 51.58           C  
+HETATM   26  NBF AEE A   1     -49.186  -2.434 -11.762  1.00 66.06           N  
+HETATM   27  NBG AEE A   1     -50.695  -1.126 -13.811  1.00 64.50           N  
+HETATM   28  N1  AEE A   1     -53.817   0.509 -23.843  1.00 45.28           N  
+HETATM   29  C2  AEE A   1     -54.659   1.343 -23.276  1.00 45.54           C  
+HETATM   30  N3  AEE A   1     -54.587   1.623 -21.992  1.00 47.13           N  
+HETATM   31  C4  AEE A   1     -53.653   1.065 -21.225  1.00 46.80           C  
+HETATM   32  C5  AEE A   1     -52.763   0.189 -21.783  1.00 46.87           C  
+HETATM   33  C6  AEE A   1     -52.863  -0.078 -23.129  1.00 46.82           C  
+CONECT    1   13
+CONECT    2   25
+CONECT    3    5    4
+CONECT    4    3    6
+CONECT    5    3    7
+CONECT    6    4   21
+CONECT    7    5   21
+CONECT    8   10   19
+CONECT    9   11   19
+CONECT   10    8   20
+CONECT   11    9   20
+CONECT   12   32   24
+CONECT   13    1   26
+CONECT   14   26   16
+CONECT   15   17   26
+CONECT   16   14   27
+CONECT   17   15   27
+CONECT   18   19   27
+CONECT   19   18    8    9
+CONECT   20   10   11   24
+CONECT   21    6    7   25
+CONECT   22   25   33
+CONECT   23   31   24
+CONECT   24   20   12   23
+CONECT   25   22    2   21
+CONECT   26   14   13   15
+CONECT   27   16   17   18
+CONECT   28   33   29
+CONECT   29   28   30
+CONECT   30   29   31
+CONECT   31   23   30   32
+CONECT   32   12   31   33
+CONECT   33   28   32   22
+END

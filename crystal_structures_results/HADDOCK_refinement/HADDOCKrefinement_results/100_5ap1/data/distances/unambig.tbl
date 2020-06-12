@@ -1,0 +1,6 @@
+assign (resid 4 and name CA and segid A) (resid 174 and name CA and segid A) 36.934 0.00 0.00
+assign (resid 4 and name CA and segid A) (resid 202 and name CA and segid A) 35.931 0.00 0.00
+assign (resid 172 and name CA and segid A) (resid 6 and name CA and segid A) 33.057 0.00 0.00
+assign (resid 172 and name CA and segid A) (resid 202 and name CA and segid A) 15.294 0.00 0.00
+assign (resid 201 and name CA and segid A) (resid 6 and name CA and segid A) 36.353 0.00 0.00
+assign (resid 201 and name CA and segid A) (resid 174 and name CA and segid A) 13.192 0.00 0.00

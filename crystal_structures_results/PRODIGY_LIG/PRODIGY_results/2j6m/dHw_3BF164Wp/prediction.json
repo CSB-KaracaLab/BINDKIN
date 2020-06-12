@@ -1,0 +1,61 @@
+{
+  "chains": [
+    "A",
+    "A:AEE"
+  ],
+  "pdb_id": "",
+  "interactor1": "A",
+  "tag": "",
+  "email": "",
+  "notify": false,
+  "sample": false,
+  "interactor2": "A:AEE",
+  "electrostatics": null,
+  "predictions": {
+    "structures": [
+      "2j6m"
+    ],
+    "electrostatics": [
+      null
+    ],
+    "dg_score": [
+      null
+    ],
+    "dg_elec": [
+      null
+    ],
+    "dg": [
+      -8.762826299999999
+    ],
+    "CC": [
+      2817
+    ],
+    "NN": [
+      174
+    ],
+    "OO": [
+      0
+    ],
+    "XX": [
+      0
+    ],
+    "CN": [
+      1350
+    ],
+    "CO": [
+      797
+    ],
+    "CX": [
+      68
+    ],
+    "NO": [
+      186
+    ],
+    "NX": [
+      17
+    ],
+    "OX": [
+      0
+    ]
+  }
+}

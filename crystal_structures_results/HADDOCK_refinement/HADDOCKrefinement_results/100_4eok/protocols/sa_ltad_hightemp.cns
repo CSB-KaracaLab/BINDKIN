@@ -1,0 +1,126 @@
+! sa_ltad_hightemp.cns
+!    Perform the high-temperature rigid-body MD of it1
+!
+! ***********************************************************************
+! * Copyright 2003-2015 Alexandre Bonvin, Utrecht University.           *
+! * Originally adapted from Aria 1.2 from Nilges and Linge, EMBL.       *
+! * All rights reserved.                                                *
+! * This code is part of the HADDOCK software and governed by its       *
+! * license. Please see the LICENSE file that should have been included *
+! * as part of this package.                                            *
+! ***********************************************************************
+!
+! module sa_ltad_hightemp.cns
+! torsion dynamics high temperature phase
+
+module(SaProtocol;Data;Toppar)
+
+evaluate ($calcsteps= $SaProtocol.initiosteps)
+evaluate ($printsteps= max(int($calcsteps/10),1))
+
+noe 
+    rswitch ambi &Data.Rswi_hot 
+    rswitch dist &Data.Rswi_hot
+    rswitch hbon &Data.Rswi_hot
+
+    mrswitch ambi &Data.mRswi_hot 
+    mrswitch dist &Data.mRswi_hot
+    mrswitch hbon &Data.mRswi_hot
+
+    asym ambi &Data.asy_hot 
+    asym dist &Data.asy_hot
+    asym hbon &Data.asy_hot
+
+    masym ambi &Data.masy_hot 
+    masym dist &Data.masy_hot
+    masym hbon &Data.masy_hot
+end
+
+evaluate ($bath = &SaPRotocol.tadhigh_t)
+evaluate ($timestep = &SaProtocol.timestep*&SaProtocol.tadfactor)
+
+do (vx = maxwell($bath)) (all)
+do (vy = maxwell($bath)) (all)
+do (vz = maxwell($bath)) (all)
+
+!for the vean statement:
+evaluate( $k_cen_1 = &data.ini_cen_hot_1)
+evaluate( $k_bor_1 = &data.ini_bor_hot_1)
+evaluate( $k_cen_2 = &data.ini_cen_hot_2)
+evaluate( $k_bor_2 = &data.ini_bor_hot_2)
+evaluate( $k_cen_3 = &data.ini_cen_hot_3)
+evaluate( $k_bor_3 = &data.ini_bor_hot_3)
+evaluate( $k_cen_4 = &data.ini_cen_hot_4)
+evaluate( $k_bor_4 = &data.ini_bor_hot_4)
+evaluate( $k_cen_5 = &data.ini_cen_hot_5)
+evaluate( $k_bor_5 = &data.ini_bor_hot_5)
+
+restraints dihedral scale &Data.dihedrals_hot end 
+
+couplings class c1 force $Data.c1_hot end
+couplings class c2 force $Data.c2_hot end
+couplings class c3 force $Data.c3_hot end
+couplings class c4 force $Data.c4_hot end
+couplings class c5 force $Data.c5_hot end
+
+if ($Data.flags.sani eq true) then
+  sani class rdc1 force $Data.rdc1_hot end
+  sani class rdc2 force $Data.rdc2_hot end
+  sani class rdc3 force $Data.rdc3_hot end
+  sani class rdc4 force $Data.rdc4_hot end
+  sani class rdc5 force $Data.rdc5_hot end
+end if
+if ($Data.flags.dani eq true) then
+  dani class dan1 force $Data.dan1_hot end
+  dani class dan2 force $Data.dan2_hot end
+  dani class dan3 force $Data.dan3_hot end
+  dani class dan4 force $Data.dan4_hot end
+  dani class dan5 force $Data.dan5_hot end
+end if
+
+if ($Data.flags.vean eq true) then
+  vean class vea1 force $k_bor_1 $k_cen_1 end
+  vean class vea2 force $k_bor_2 $k_cen_2 end
+  vean class vea3 force $k_bor_3 $k_cen_3 end
+  vean class vea4 force $k_bor_4 $k_cen_4 end
+  vean class vea5 force $k_bor_5 $k_cen_5 end
+end if
+
+if ($Data.flags.xpcs eq true) then
+  xpcs class pcs1 force $Data.pcs1_hot end
+  xpcs class pcs2 force $Data.pcs2_hot end
+  xpcs class pcs3 force $Data.pcs3_hot end
+  xpcs class pcs4 force $Data.pcs4_hot end
+  xpcs class pcs5 force $Data.pcs5_hot end
+  xpcs class pcs6 force $Data.pcs6_hot end
+  xpcs class pcs7 force $Data.pcs7_hot end
+  xpcs class pcs8 force $Data.pcs8_hot end
+  xpcs class pcs9 force $Data.pcs9_hot end
+  xpcs class pcsA force $Data.pcsA_hot end
+end if
+
+evaluate ($reassign = TRUE)
+
+if ($Data.scaling eq TRUE) then 
+  inline @RUN:protocols/set_noe_scale.cns
+end if
+
+noe 
+  scale dist  &Data.unamb_hot 
+  scale ambi  &Data.amb_hot
+  scale hbon  &Data.hbond_hot
+end
+      
+evaluate ($kinter = &SaProtocol.inter_init_rigid)
+inline @RUN:protocols/scale_inter.cns
+
+dyna tors
+  reassign $reassign
+  timestep=$timestep
+  nstep=$calcsteps
+  nprint=$printsteps
+  ntrfrq=0
+  tcoupling = true  temperature = $bath
+end
+
+evaluate ($reassign = FALSE)

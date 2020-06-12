@@ -1,0 +1,33 @@
+#HADDOCK average structure from fit on interface
+#  Average rms difference backbone interface all   0.2455 +- 8.516876E-02
+#  Average rms difference backbone all             0.276084 +- 0.126697
+#  Average rms difference backbone interface A     0.245577 +- 8.577374E-02
+#  Average rms difference backbone interface B     0.242457 +- 5.614157E-02
+#  Average rms difference backbone interface C     0 +- 0
+#  Average rms difference backbone interface D     0 +- 0
+#  Average rms difference backbone interface E     0 +- 0
+#  Average rms difference backbone interface F     0 +- 0
+#
+#
+#RMSD from average structure
+#filename rms_back_inter rms_back_all rms_back_A rms_back_B rms_back_C rms_back_D rms_back_E rms_back_F
+NEWIT:analysis/complexfit_1.pdb 0.286723 0.286723 0.286879 0.280474 0 0 0 0
+NEWIT:analysis/complexfit_2.pdb 0.268902 0.268902 0.270662 0.186371 0 0 0 0
+NEWIT:analysis/complexfit_3.pdb 0.265324 0.265324 0.265999 0.237107 0 0 0 0
+NEWIT:analysis/complexfit_4.pdb 0.260629 0.260629 0.261733 0.212417 0 0 0 0
+NEWIT:analysis/complexfit_5.pdb 0.276909 0.276909 0.276394 0.296591 0 0 0 0
+NEWIT:analysis/complexfit_6.pdb 0.251263 0.251263 0.251774 0.230162 0 0 0 0
+NEWIT:analysis/complexfit_7.pdb 0.241313 0.241313 0.243097 0.155035 0 0 0 0
+NEWIT:analysis/complexfit_8.pdb 0.248904 0.248904 0.24775 0.290921 0 0 0 0
+NEWIT:analysis/complexfit_9.pdb 0.251112 0.251112 0.251361 0.241069 0 0 0 0
+NEWIT:analysis/complexfit_10.pdb 0.252101 0.252101 0.249949 0.326053 0 0 0 0
+NEWIT:analysis/complexfit_11.pdb 0.257699 0.257699 0.260227 0.120878 0 0 0 0
+NEWIT:analysis/complexfit_12.pdb 0.248708 0.248708 0.248332 0.263166 0 0 0 0
+NEWIT:analysis/complexfit_13.pdb 0.251434 0.251434 0.252668 0.19644 0 0 0 0
+NEWIT:analysis/complexfit_14.pdb 0.262603 0.262603 0.261034 0.318567 0 0 0 0
+NEWIT:analysis/complexfit_15.pdb 0.277224 0.277224 0.279339 0.17394 0 0 0 0
+NEWIT:analysis/complexfit_16.pdb 0.239228 0.239228 0.239024 0.24716 0 0 0 0
+NEWIT:analysis/complexfit_17.pdb 0.254691 0.254691 0.254841 0.248697 0 0 0 0
+NEWIT:analysis/complexfit_18.pdb 0.2437 0.2437 0.24502 0.184024 0 0 0 0
+NEWIT:analysis/complexfit_19.pdb 0.285976 0.285976 0.284965 0.323462 0 0 0 0
+NEWIT:analysis/complexfit_20.pdb 0.265445 0.265445 0.264302 0.307303 0 0 0 0

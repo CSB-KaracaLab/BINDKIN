@@ -1,0 +1,26 @@
+# dihedral restraints
+# DIH PREVIT:complex_4w.pdb rmsd: 0    vio: 0
+# DIH PREVIT:complex_17w.pdb rmsd: 0    vio: 0
+# DIH PREVIT:complex_19w.pdb rmsd: 0    vio: 0
+# DIH PREVIT:complex_16w.pdb rmsd: 0    vio: 0
+# DIH PREVIT:complex_20w.pdb rmsd: 0    vio: 0
+# DIH PREVIT:complex_15w.pdb rmsd: 0    vio: 0
+# DIH PREVIT:complex_9w.pdb rmsd: 0    vio: 0
+# DIH PREVIT:complex_13w.pdb rmsd: 0    vio: 0
+# DIH PREVIT:complex_1w.pdb rmsd: 0    vio: 0
+# DIH PREVIT:complex_2w.pdb rmsd: 0    vio: 0
+# DIH PREVIT:complex_10w.pdb rmsd: 0    vio: 0
+# DIH PREVIT:complex_5w.pdb rmsd: 0    vio: 0
+# DIH PREVIT:complex_11w.pdb rmsd: 0    vio: 0
+# DIH PREVIT:complex_3w.pdb rmsd: 0    vio: 0
+# DIH PREVIT:complex_18w.pdb rmsd: 0    vio: 0
+# DIH PREVIT:complex_8w.pdb rmsd: 0    vio: 0
+# DIH PREVIT:complex_12w.pdb rmsd: 0    vio: 0
+# DIH PREVIT:complex_6w.pdb rmsd: 0    vio: 0
+# DIH PREVIT:complex_14w.pdb rmsd: 0    vio: 0
+# mean values RUN:data/dihedrals/dihedrals.tbl
+# DIH rmsd (deg) 0 (0)
+# DIH vio > 5 deg: 0 (0)
+m_rms_dih	sd_rms_dih	cutdih	m_vio_dih	sd_vio_dih
+0	0	5	0	0
+#

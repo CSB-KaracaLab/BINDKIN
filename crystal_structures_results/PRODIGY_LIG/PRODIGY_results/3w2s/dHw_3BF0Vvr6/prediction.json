@@ -1,0 +1,61 @@
+{
+  "chains": [
+    "A",
+    "A:W2R"
+  ],
+  "pdb_id": "",
+  "interactor1": "A",
+  "tag": "",
+  "email": "",
+  "notify": false,
+  "sample": false,
+  "interactor2": "A:W2R",
+  "electrostatics": null,
+  "predictions": {
+    "structures": [
+      "3w2s"
+    ],
+    "electrostatics": [
+      null
+    ],
+    "dg_score": [
+      null
+    ],
+    "dg_elec": [
+      null
+    ],
+    "dg": [
+      -10.3362436
+    ],
+    "CC": [
+      3605
+    ],
+    "NN": [
+      193
+    ],
+    "OO": [
+      136
+    ],
+    "XX": [
+      2
+    ],
+    "CN": [
+      1626
+    ],
+    "CO": [
+      1448
+    ],
+    "CX": [
+      213
+    ],
+    "NO": [
+      334
+    ],
+    "NX": [
+      44
+    ],
+    "OX": [
+      41
+    ]
+  }
+}

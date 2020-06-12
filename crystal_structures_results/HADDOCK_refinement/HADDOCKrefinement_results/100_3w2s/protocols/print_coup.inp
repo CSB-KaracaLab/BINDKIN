@@ -1,0 +1,204 @@
+! print_coup.inp
+!    Analyse and print J-Coupling restraints statistics
+!
+! ***********************************************************************
+! * Copyright 2003-2015 Alexandre Bonvin, Utrecht University.           *
+! * Originally adapted from Aria 1.2 from Nilges and Linge, EMBL.       *
+! * All rights reserved.                                                *
+! * This code is part of the HADDOCK software and governed by its       *
+! * license. Please see the LICENSE file that should have been included *
+! * as part of this package.                                            *
+! ***********************************************************************
+!
+
+@RUN:protocols/initialize.cns(iteration=$iteration;)
+
+@NEWIT:iteration.cns(iteration=$iteration;)
+
+@RUN:run.cns(
+iteration =$iteration;
+filenames =$filenames;
+data      =$data;
+iterations=$iterations;
+saprotocol=$saprotocol;
+refine    =$refine;
+toppar    =$toppar;
+analysis  =$analysis;
+)
+
+!reads in structure, coordinates and parameter files
+@RUN:protocols/read_struc.cns
+
+!set the energy flags:
+@@RUN:protocols/flags_new.cns(Iteration=$Iteration; Data=$Data; )
+
+set display NEWIT:analysis/couplings.disp end
+
+flags exclude * include coup end
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+couplings
+  nres 300   !number of restraints for allocating memory
+  potential harmonic
+    if ($Data.c1_on eq true) then
+      class c1
+      potential harmonic
+      {degen 1}
+      force 1.0    !1 energy constant
+      coefficients $Data.c1_karplusa $Data.c1_karplusb $Data.c1_karplusc $Data.c1_karplusd
+      evaluate ($loadnow = "RUN:" + "data/jcouplings/c1.tbl")
+      @@$loadnow
+    end if
+    if ($Data.c2_on eq true) then
+      class c2
+      potential harmonic
+      {degen 1}
+      force 1.0    !1 energy constant
+      coefficients $Data.c2_karplusa $Data.c2_karplusb $Data.c2_karplusc $Data.c2_karplusd
+      evaluate ($loadnow = "RUN:" + "data/jcouplings/c2.tbl")
+      @@$loadnow
+    end if    
+    if ($Data.c3_on eq true) then
+      class c3
+      potential harmonic
+      {degen 1}
+      force 1.0    !1 energy constant
+      coefficients $Data.c3_karplusa $Data.c3_karplusb $Data.c3_karplusc $Data.c3_karplusd
+      evaluate ($loadnow = "RUN:" + "data/jcouplings/c3.tbl")
+      @@$loadnow
+    end if    
+    if ($Data.c4_on eq true) then
+      class c4
+      potential harmonic
+      {degen 1}
+      force 1.0    !1 energy constant
+      coefficients $Data.c4_karplusa $Data.c4_karplusb $Data.c4_karplusc $Data.c4_karplusd
+      evaluate ($loadnow = "RUN:" + "data/jcouplings/c4.tbl")
+      @@$loadnow
+    end if    
+    if ($Data.c5_on eq true) then
+      class c5
+      potential harmonic
+      {degen 1}
+      force 1.0    !1 energy constant
+      coefficients $Data.c5_karplusa $Data.c5_karplusb $Data.c5_karplusc $Data.c5_karplusd
+      evaluate ($loadnow = "RUN:" + "data/jcouplings/c5.tbl")
+      @@$loadnow
+    end if
+end   
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+evaluate ($sum_rms_coup_c1 = 0)
+evaluate ($sumsq_rms_coup_c1 = 0)
+evaluate ($sum_rms_coup_c2 = 0)
+evaluate ($sumsq_rms_coup_c2 = 0)
+evaluate ($sum_rms_coup_c3 = 0)
+evaluate ($sumsq_rms_coup_c3 = 0)
+evaluate ($sum_rms_coup_c4 = 0)
+evaluate ($sumsq_rms_coup_c4 = 0)
+evaluate ($sum_rms_coup_c5 = 0)
+evaluate ($sumsq_rms_coup_c5 = 0)
+
+!evaluate ($Data.cdih = 0)
+@PREVIT:file.cns(filenames=$filenames)
+
+evaluate ($count = 0)
+evaluate ($TotalNstruct = 0)
+while ($count lt $Iterations.Structures) loop main
+   evaluate ($count=$count+1)
+   evaluate ($file = $filenames.bestfile_$count)
+   if ($file ne "") then
+      evaluate ($TotalNstruct = $TotalNstruct + 1)
+   end if
+end loop main
+
+if ($Iterations.anastruc > $TotalNstruct) then
+  evaluate ($Iterations.anastruc = $ToTalNstruct)
+end if
+
+
+evaluate ($count = 1)
+evaluate ($nstruc1 = 0)
+while ($count le $Iterations.anastruc) loop main
+   evaluate ($count = $count + 1)
+   evaluate ($file = $filenames.bestfile_$count)
+   display $file
+   coor init end
+   if ($file ne "") then
+     coor @@$file
+     evaluate ($nstruc1 = $nstruc1 + 1)
+
+     if ($Data.c1_on eq true) then
+       coup print thresh=0.5 class c1 end
+       evaluate ($rms_coup_c1 = $result)
+       evaluate ($sum_rms_coup_c1 = $sum_rms_coup_c1 + $rms_coup_c1)
+       evaluate ($sumsq_rms_coup_c1 = $sumsq_rms_coup_c1 + $rms_coup_c1**2)
+       display # c1: $file $rms_coup_c1
+     end if
+     if ($Data.c2_on eq true) then
+       coup print thresh=0.5 class c2 end
+       evaluate ($rms_coup_c2 = $result)
+       evaluate ($sum_rms_coup_c2 = $sum_rms_coup_c2 + $rms_coup_c2)
+       evaluate ($sumsq_rms_coup_c2 = $sumsq_rms_coup_c2 + $rms_coup_c2**2)
+       display # c2: $file $rms_coup_c2
+     end if    
+     if ($Data.c3_on eq true) then
+       coup print thresh=0.5 class c3 end
+       evaluate ($rms_coup_c3 = $result)
+       evaluate ($sum_rms_coup_c3 = $sum_rms_coup_c3 + $rms_coup_c3)
+       evaluate ($sumsq_rms_coup_c3 = $sumsq_rms_coup_c3 + $rms_coup_c3**2)
+       display # c3: $file $rms_coup_c3
+     end if    
+     if ($Data.c4_on eq true) then
+       coup print thresh=0.5 class c4 end
+       evaluate ($rms_coup_c4 = $result)
+       evaluate ($sum_rms_coup_c4 = $sum_rms_coup_c4 + $rms_coup_c4)
+       evaluate ($sumsq_rms_coup_c4 = $sumsq_rms_coup_c4 + $rms_coup_c4**2)
+       display # c4: $file $rms_coup_c4
+     end if    
+     if ($Data.c5_on eq true) then
+       coup print thresh=0.5 class c5 end
+       evaluate ($rms_coup_c5 = $result)
+       evaluate ($sum_rms_coup_c5 = $sum_rms_coup_c5 + $rms_coup_c5)
+       evaluate ($sumsq_rms_coup_c5 = $sumsq_rms_coup_c5 + $rms_coup_c5**2)
+       display # c5: $file $rms_coup_c5
+     end if
+
+   end if
+
+end loop main
+
+
+if ($Data.c1_on eq true) then
+  evaluate ($mean_rms_coup_c1 = $sum_rms_coup_c1 / $nstruc1)
+  evaluate ($stdev_rms_coup_c1 = sqrt(($sumsq_rms_coup_c1 - $nstruc1*$mean_rms_coup_c1**2)/ $nstruc1))
+  display # mean values couplings class c1
+  display # coup $mean_rms_coup_c1 (+/- $stdev_rms_coup_c1 )
+end if
+if ($Data.c2_on eq true) then
+  evaluate ($mean_rms_coup_c2 = $sum_rms_coup_c2 / $nstruc1)
+  evaluate ($stdev_rms_coup_c2 = sqrt(($sumsq_rms_coup_c2 - $nstruc1*$mean_rms_coup_c2**2)/ $nstruc1))
+  display # mean values couplings class c2
+  display # coup $mean_rms_coup_c2 (+/- $stdev_rms_coup_c2 )
+end if    
+if ($Data.c3_on eq true) then
+  evaluate ($mean_rms_coup_c3 = $sum_rms_coup_c3 / $nstruc1)
+  evaluate ($stdev_rms_coup_c3 = sqrt(($sumsq_rms_coup_c3 - $nstruc1*$mean_rms_coup_c3**2)/ $nstruc1))
+  display # mean values couplings class c3
+  display # coup $mean_rms_coup_c3 (+/- $stdev_rms_coup_c3 )
+end if    
+if ($Data.c4_on eq true) then
+  evaluate ($mean_rms_coup_c4 = $sum_rms_coup_c4 / $nstruc1)
+  evaluate ($stdev_rms_coup_c4 = sqrt(($sumsq_rms_coup_c4 - $nstruc1*$mean_rms_coup_c4**2)/ $nstruc1))
+  display # mean values couplings class c4
+  display # coup $mean_rms_coup_c4 (+/- $stdev_rms_coup_c4 )
+end if    
+if ($Data.c5_on eq true) then
+  evaluate ($mean_rms_coup_c5 = $sum_rms_coup_c5 / $nstruc1)
+  evaluate ($stdev_rms_coup_c5 = sqrt(($sumsq_rms_coup_c5 - $nstruc1*$mean_rms_coup_c5**2)/ $nstruc1))
+  display # mean values couplings class c5
+  display # coup $mean_rms_coup_c5 (+/- $stdev_rms_coup_c5 )
+end if
+
+stop

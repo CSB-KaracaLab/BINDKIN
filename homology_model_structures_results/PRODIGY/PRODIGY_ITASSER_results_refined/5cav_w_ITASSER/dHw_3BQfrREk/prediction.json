@@ -1,0 +1,61 @@
+{
+  "chains": [
+    "A",
+    "B:4ZQ"
+  ],
+  "pdb_id": "",
+  "interactor1": "A",
+  "tag": "",
+  "email": "",
+  "notify": false,
+  "sample": false,
+  "interactor2": "B:4ZQ",
+  "electrostatics": null,
+  "predictions": {
+    "structures": [
+      "5cav_w"
+    ],
+    "electrostatics": [
+      -36.1691
+    ],
+    "dg_score": [
+      91.5309664346
+    ],
+    "dg_elec": [
+      -9.19287645268
+    ],
+    "dg": [
+      -9.074691799999998
+    ],
+    "CC": [
+      2426
+    ],
+    "NN": [
+      238
+    ],
+    "OO": [
+      57
+    ],
+    "XX": [
+      11
+    ],
+    "CN": [
+      1513
+    ],
+    "CO": [
+      894
+    ],
+    "CX": [
+      494
+    ],
+    "NO": [
+      290
+    ],
+    "NX": [
+      143
+    ],
+    "OX": [
+      139
+    ]
+  }
+}

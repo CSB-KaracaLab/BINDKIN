@@ -1,0 +1,360 @@
+! print_xpcs.inp
+!    Analyze and print Pseudo Contact Shift restraints statistics
+!
+! ***********************************************************************
+! * Copyright 2003-2015 Alexandre Bonvin, Utrecht University.           *
+! * All rights reserved.                                                *
+! * This code is part of the HADDOCK software and governed by its       *
+! * license. Please see the LICENSE file that should have been included *
+! * as part of this package.                                            *
+! ***********************************************************************
+!
+
+@RUN:protocols/initialize.cns(iteration=$iteration;)
+
+@NEWIT:iteration.cns(iteration=$iteration;)
+
+@RUN:run.cns(
+iteration =$iteration;
+filenames =$filenames;
+data      =$data;
+iterations=$iterations;
+saprotocol=$saprotocol;
+refine    =$refine;
+toppar    =$toppar;
+analysis  =$analysis;
+)
+
+!reads in structure, coordinates and parameter files
+@RUN:protocols/read_struc.cns
+
+!set the energy flags:
+@@RUN:protocols/flags_new.cns(Iteration=$Iteration; Data=$Data; )
+
+set display=NEWIT:analysis/xpcs.disp end
+
+flags exclude * include xpcs end
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!residual dipolar couplings:
+xpcs nres=5000 end
+set echo off message on end
+if ($data.pcs1_choice eq "XPCS") then
+  xpcs
+    class pcs1
+    force 1.0
+    coeff $Data.pcs1_d $Data.pcs1_r
+    @@RUN:data/pcs/pcs1.tbl
+ end
+end if
+if ($data.pcs2_choice eq "XPCS") then
+  xpcs
+    class pcs2
+    force 1.0
+    coeff $Data.pcs2_d $Data.pcs2_r
+    @@RUN:data/pcs/pcs2.tbl
+  end
+end if
+if ($data.pcs3_choice eq "XPCS") then
+  xpcs
+    class pcs3
+    force 1.0
+    coeff $Data.pcs3_d $Data.pcs3_r
+    @@RUN:data/pcs/pcs3.tbl
+  end
+end if
+if ($data.pcs4_choice eq "XPCS") then
+  xpcs
+    class pcs4
+    force 1.0
+    coeff $Data.pcs4_d $Data.pcs4_r
+    @@RUN:data/pcs/pcs4.tbl
+  end
+end if
+if ($data.pcs5_choice eq "XPCS") then
+  xpcs
+    class pcs5
+    force 1.0
+    coeff $Data.pcs5_d $Data.pcs5_r
+    @@RUN:data/pcs/pcs5.tbl
+  end
+end if
+if ($data.pcs6_choice eq "XPCS") then
+  xpcs
+    class pcs6
+    force 1.0
+    coeff $Data.pcs6_d $Data.pcs6_r
+    @@RUN:data/pcs/pcs6.tbl
+  end
+end if
+if ($data.pcs7_choice eq "XPCS") then
+  xpcs
+    class pcs7
+    force 1.0
+    coeff $Data.pcs7_d $Data.pcs7_r
+    @@RUN:data/pcs/pcs7.tbl
+  end
+end if
+if ($data.pcs8_choice eq "XPCS") then
+  xpcs
+    class pcs8
+    force 1.0
+    coeff $Data.pcs8_d $Data.pcs8_r
+    @@RUN:data/pcs/pcs8.tbl
+  end
+end if
+if ($data.pcs9_choice eq "XPCS") then
+  xpcs
+    class pcs9
+    force 1.0
+    coeff $Data.pcs9_d $Data.pcs9_r
+    @@RUN:data/pcs/pcs9.tbl
+  end
+end if
+if ($data.pcsA_choice eq "XPCS") then
+  xpcs
+    class pcsA
+    force 1.0
+    coeff $Data.pcsA_d $Data.pcsA_r
+    @@RUN:data/pcs/pcs10.tbl
+  end
+end if
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+evaluate ($sum_rms_pcs1 = 0)
+evaluate ($sumsq_rms_pcs1 = 0)
+evaluate ($sum_rms_pcs2 = 0)
+evaluate ($sumsq_rms_pcs2 = 0)
+evaluate ($sum_rms_pcs3 = 0)
+evaluate ($sumsq_rms_pcs3 = 0)
+evaluate ($sum_rms_pcs4 = 0)
+evaluate ($sumsq_rms_pcs4 = 0)
+evaluate ($sum_rms_pcs5 = 0)
+evaluate ($sumsq_rms_pcs5 = 0)
+evaluate ($sum_rms_pcs6 = 0)
+evaluate ($sumsq_rms_pcs6 = 0)
+evaluate ($sum_rms_pcs7 = 0)
+evaluate ($sumsq_rms_pcs7 = 0)
+evaluate ($sum_rms_pcs8 = 0)
+evaluate ($sumsq_rms_pcs8 = 0)
+evaluate ($sum_rms_pcs9 = 0)
+evaluate ($sumsq_rms_pcs9 = 0)
+evaluate ($sum_rms_pcs10 = 0)
+evaluate ($sumsq_rms_pcs10 = 0)
+
+@PREVIT:file.cns(filenames=$filenames)
+
+evaluate ($count = 0)
+evaluate ($TotalNstruct = 0)
+while ($count lt $Iterations.Structures) loop main
+   evaluate ($count=$count+1)
+   evaluate ($file = $filenames.bestfile_$count)
+   if ($file ne "") then
+      evaluate ($TotalNstruct = $TotalNstruct + 1)
+   end if
+end loop main
+
+if ($Iterations.anastruc > $TotalNstruct) then
+  evaluate ($Iterations.anastruc = $ToTalNstruct)
+end if
+
+display #filename rms_xpcs #viol>1ppm #viol>0.5ppm #viol>0.2ppm
+
+evaluate ($count = 0)
+evaluate ($nstruc1 = 0)
+while ($count le $Iterations.anastruc) loop main
+   evaluate ($count = $count + 1)
+   evaluate ($file = $filenames.bestfile_$count)
+   coor init end
+   if ($file ne "") then
+     coor @@$file
+     evaluate ($nstruc1 = $nstruc1 + 1)
+
+     if ($Data.pcs1_choice eq "XPCS") then
+       xpcs print thresh=1.0 class pcs1 end
+       evaluate ($violations1 = $violations)
+       xpcs print thresh=0.5 class pcs1 end
+       evaluate ($violations2 = $violations)
+       xpcs print thresh=0.2 class pcs1 end
+       evaluate ($violations3 = $violations)
+       evaluate ($rms_pcs1 = $result)
+       evaluate ($sum_rms_pcs1 = $sum_rms_pcs1 + $rms_pcs1)
+       evaluate ($sumsq_rms_pcs1 = $sumsq_rms_pcs1 + $rms_pcs1**2)
+       display # pcs1: $file $rms_pcs1 $violations1 $violations2 $violations3
+     end if
+     if ($Data.pcs2_choice eq "XPCS") then
+       xpcs print thresh=1.0 class pcs2 end
+       evaluate ($violations1 = $violations)
+       xpcs print thresh=0.5 class pcs2 end
+       evaluate ($violations2 = $violations)
+       xpcs print thresh=0.2 class pcs2 end
+       evaluate ($violations3 = $violations)
+       evaluate ($rms_pcs2 = $result)
+       evaluate ($sum_rms_pcs2 = $sum_rms_pcs2 + $rms_pcs2)
+       evaluate ($sumsq_rms_pcs2 = $sumsq_rms_pcs2 + $rms_pcs2**2)
+       display # pcs2: $file $rms_pcs2 $violations1 $violations2 $violations3
+     end if    
+     if ($Data.pcs3_choice eq "XPCS") then
+       xpcs print thresh=1.0 class pcs3 end
+       evaluate ($violations1 = $violations)
+       xpcs print thresh=0.5 class pcs3 end
+       evaluate ($violations2 = $violations)
+       xpcs print thresh=0.2 class pcs3 end
+       evaluate ($violations3 = $violations)
+       evaluate ($rms_pcs3 = $result)
+       evaluate ($sum_rms_pcs3 = $sum_rms_pcs3 + $rms_pcs3)
+       evaluate ($sumsq_rms_pcs3 = $sumsq_rms_pcs3 + $rms_pcs3**2)
+       display # pcs3: $file $rms_pcs3 $violations1 $violations2 $violations3
+     end if    
+     if ($Data.pcs4_choice eq "XPCS") then
+       xpcs print thresh=1.0 class pcs4 end
+       evaluate ($violations1 = $violations)
+       xpcs print thresh=0.5 class pcs4 end
+       evaluate ($violations2 = $violations)
+       xpcs print thresh=0.2 class pcs4 end
+       evaluate ($violations3 = $violations)
+       evaluate ($rms_pcs4 = $result)
+       evaluate ($sum_rms_pcs4 = $sum_rms_pcs4 + $rms_pcs4)
+       evaluate ($sumsq_rms_pcs4 = $sumsq_rms_pcs4 + $rms_pcs4**2)
+       display # pcs4: $file $rms_pcs4 $violations1 $violations2 $violations3
+     end if    
+     if ($Data.pcs5_choice eq "XPCS") then
+       xpcs print thresh=1.0 class pcs5 end
+       evaluate ($violations1 = $violations)
+       xpcs print thresh=0.5 class pcs5 end
+       evaluate ($violations2 = $violations)
+       xpcs print thresh=0.2 class pcs5 end
+       evaluate ($violations3 = $violations)
+       evaluate ($rms_pcs5 = $result)
+       evaluate ($sum_rms_pcs5 = $sum_rms_pcs5 + $rms_pcs5)
+       evaluate ($sumsq_rms_pcs5 = $sumsq_rms_pcs5 + $rms_pcs5**2)
+       display # pcs5: $file $rms_pcs5 $violations1 $violations2 $violations3
+     end if
+     if ($Data.pcs6_choice eq "XPCS") then
+       xpcs print thresh=1.0 class pcs6 end
+       evaluate ($violations1 = $violations)
+       xpcs print thresh=0.5 class pcs6 end
+       evaluate ($violations2 = $violations)
+       xpcs print thresh=0.2 class pcs6 end
+       evaluate ($violations3 = $violations)
+       evaluate ($rms_pcs6 = $result)
+       evaluate ($sum_rms_pcs6 = $sum_rms_pcs6 + $rms_pcs6)
+       evaluate ($sumsq_rms_pcs6 = $sumsq_rms_pcs6 + $rms_pcs6**2)
+       display # pcs6: $file $rms_pcs6 $violations1 $violations2 $violations3
+     end if
+     if ($Data.pcs7_choice eq "XPCS") then
+       xpcs print thresh=1.0 class pcs7 end
+       evaluate ($violations1 = $violations)
+       xpcs print thresh=0.5 class pcs7 end
+       evaluate ($violations2 = $violations)
+       xpcs print thresh=0.2 class pcs7 end
+       evaluate ($violations3 = $violations)
+       evaluate ($rms_pcs7 = $result)
+       evaluate ($sum_rms_pcs7 = $sum_rms_pcs7 + $rms_pcs7)
+       evaluate ($sumsq_rms_pcs7 = $sumsq_rms_pcs7 + $rms_pcs7**2)
+       display # pcs7: $file $rms_pcs7 $violations1 $violations2 $violations3
+     end if
+     if ($Data.pcs8_choice eq "XPCS") then
+       xpcs print thresh=1.0 class pcs8 end
+       evaluate ($violations1 = $violations)
+       xpcs print thresh=0.5 class pcs8 end
+       evaluate ($violations2 = $violations)
+       xpcs print thresh=0.2 class pcs8 end
+       evaluate ($violations3 = $violations)
+       evaluate ($rms_pcs8 = $result)
+       evaluate ($sum_rms_pcs8 = $sum_rms_pcs8 + $rms_pcs8)
+       evaluate ($sumsq_rms_pcs8 = $sumsq_rms_pcs8 + $rms_pcs8**2)
+       display # pcs8: $file $rms_pcs8 $violations1 $violations2 $violations3
+     end if
+     if ($Data.pcs9_choice eq "XPCS") then
+       xpcs print thresh=1.0 class pcs9 end
+       evaluate ($violations1 = $violations)
+       xpcs print thresh=0.5 class pcs9 end
+       evaluate ($violations2 = $violations)
+       xpcs print thresh=0.2 class pcs9 end
+       evaluate ($violations3 = $violations)
+       evaluate ($rms_pcs9 = $result)
+       evaluate ($sum_rms_pcs9 = $sum_rms_pcs9 + $rms_pcs9)
+       evaluate ($sumsq_rms_pcs9 = $sumsq_rms_pcs9 + $rms_pcs9**2)
+       display # pcs9: $file $rms_pcs9 $violations1 $violations2 $violations3
+     end if
+     if ($Data.pcsA_choice eq "XPCS") then
+       xpcs print thresh=1.0 class pcsA end
+       evaluate ($violations1 = $violations)
+       xpcs print thresh=0.5 class pcsA end
+       evaluate ($violations2 = $violations)
+       xpcs print thresh=0.2 class pcsA end
+       evaluate ($violations3 = $violations)
+       evaluate ($rms_pcs10 = $result)
+       evaluate ($sum_rms_pcs10 = $sum_rms_pcs10 + $rms_pcs10)
+       evaluate ($sumsq_rms_pcs10 = $sumsq_rms_pcs10 + $rms_pcs10**2)
+       display # pcs10: $file $rms_pcs10 $violations1 $violations2 $violations3
+     end if
+
+   end if
+end loop main
+
+
+if ($Data.pcs1_choice eq "XPCS") then
+  evaluate ($mean_rms_pcs1 = $sum_rms_pcs1 / $nstruc1)
+  evaluate ($stdev_rms_pcs1 = sqrt(($sumsq_rms_pcs1 - $nstruc1*$mean_rms_pcs1**2)/ $nstruc1))
+  display # mean values pcs(xpcs) class pcs1
+  display # xpcs $mean_rms_pcs1 (+/- $stdev_rms_pcs1 )
+end if
+if ($Data.pcs2_choice eq "XPCS") then
+  evaluate ($mean_rms_pcs2 = $sum_rms_pcs2 / $nstruc1)
+  evaluate ($stdev_rms_pcs2 = sqrt(($sumsq_rms_pcs2 - $nstruc1*$mean_rms_pcs2**2)/ $nstruc1))
+  display # mean values pcs(xpcs) class pcs2
+  display # xpcs $mean_rms_pcs2 (+/- $stdev_rms_pcs2 )
+end if    
+if ($Data.pcs3_choice eq "XPCS") then
+  evaluate ($mean_rms_pcs3 = $sum_rms_pcs3 / $nstruc1)
+  evaluate ($stdev_rms_pcs3 = sqrt(($sumsq_rms_pcs3 - $nstruc1*$mean_rms_pcs3**2)/ $nstruc1))
+  display # mean values pcs(xpcs) class pcs3
+  display # xpcs $mean_rms_pcs3 (+/- $stdev_rms_pcs3 )
+end if    
+if ($Data.pcs4_choice eq "XPCS") then
+  evaluate ($mean_rms_pcs4 = $sum_rms_pcs4 / $nstruc1)
+  evaluate ($stdev_rms_pcs4 = sqrt(($sumsq_rms_pcs4 - $nstruc1*$mean_rms_pcs4**2)/ $nstruc1))
+  display # mean values pcs(xpcs) class pcs4
+  display # xpcs $mean_rms_pcs4 (+/- $stdev_rms_pcs4 )
+end if    
+if ($Data.pcs5_choice eq "XPCS") then
+  evaluate ($mean_rms_pcs5 = $sum_rms_pcs5 / $nstruc1)
+  evaluate ($stdev_rms_pcs5 = sqrt(($sumsq_rms_pcs5 - $nstruc1*$mean_rms_pcs5**2)/ $nstruc1))
+  display # mean values pcs(xpcs) class pcs5
+  display # xpcs $mean_rms_pcs5 (+/- $stdev_rms_pcs5 )
+end if
+if ($Data.pcs6_choice eq "XPCS") then
+  evaluate ($mean_rms_pcs6 = $sum_rms_pcs6 / $nstruc1)
+  evaluate ($stdev_rms_pcs6 = sqrt(($sumsq_rms_pcs6 - $nstruc1*$mean_rms_pcs6**2)/ $nstruc1))
+  display # mean values pcs(xpcs) class pcs6
+  display # xpcs $mean_rms_pcs6 (+/- $stdev_rms_pcs6 )
+end if
+if ($Data.pcs7_choice eq "XPCS") then
+  evaluate ($mean_rms_pcs7 = $sum_rms_pcs7 / $nstruc1)
+  evaluate ($stdev_rms_pcs7 = sqrt(($sumsq_rms_pcs7 - $nstruc1*$mean_rms_pcs7**2)/ $nstruc1))
+  display # mean values pcs(xpcs) class pcs7
+  display # xpcs $mean_rms_pcs7 (+/- $stdev_rms_pcs7 )
+end if
+if ($Data.pcs8_choice eq "XPCS") then
+  evaluate ($mean_rms_pcs8 = $sum_rms_pcs8 / $nstruc1)
+  evaluate ($stdev_rms_pcs8 = sqrt(($sumsq_rms_pcs8 - $nstruc1*$mean_rms_pcs8**2)/ $nstruc1))
+  display # mean values pcs(xpcs) class pcs8
+  display # xpcs $mean_rms_pcs8 (+/- $stdev_rms_pcs8 )
+end if
+if ($Data.pcs9_choice eq "XPCS") then
+  evaluate ($mean_rms_pcs9 = $sum_rms_pcs9 / $nstruc1)
+  evaluate ($stdev_rms_pcs9 = sqrt(($sumsq_rms_pcs9 - $nstruc1*$mean_rms_pcs9**2)/ $nstruc1))
+  display # mean values pcs(xpcs) class pcs9
+  display # xpcs $mean_rms_pcs9 (+/- $stdev_rms_pcs9 )
+end if
+if ($Data.pcsA_choice eq "XPCS") then
+  evaluate ($mean_rms_pcs10 = $sum_rms_pcs10 / $nstruc1)
+  evaluate ($stdev_rms_pcs10 = sqrt(($sumsq_rms_pcs10 - $nstruc1*$mean_rms_pcs10**2)/ $nstruc1))
+  display # mean values pcs(xpcs) class pcsA
+  display # xpcs $mean_rms_pcs10 (+/- $stdev_rms_pcs10 )
+end if
+
+stop

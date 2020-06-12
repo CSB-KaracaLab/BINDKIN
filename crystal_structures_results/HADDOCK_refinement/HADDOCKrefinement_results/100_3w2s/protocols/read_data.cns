@@ -1,0 +1,642 @@
+! read_data.cns
+!    Read the various restraints data
+!
+! ***********************************************************************
+! * Copyright 2003-2015 Alexandre Bonvin, Utrecht University.           *
+! * Originally adapted from Aria 1.2 from Nilges and Linge, EMBL.       *
+! * All rights reserved.                                                *
+! * This code is part of the HADDOCK software and governed by its       *
+! * license. Please see the LICENSE file that should have been included *
+! * as part of this package.                                            *
+! ***********************************************************************
+!
+
+module(Iteration; Data; count;)
+
+!NOEs, hbonds
+noe
+  reset
+  nrestraints = 4000000     ! allocate space for NOEs  
+  ceiling 1000
+end
+
+if (&data.amb_lastit ge &iteration) then
+  if (&data.amb_firstit le &iteration)   then
+     evaluate ($filenam0 = "NEWIT:ambig.tbl_" + encode($count)) 
+     fileexist $filenam0 end
+     if ($result eq false) then
+       evaluate ($filenam0 = "NEWIT:ambig.tbl")
+     end if
+     noe class ambi @@$filenam0 end 
+     if (&data.noecv eq true) then
+       noe part &data.ncvpart end
+     end if
+  end if
+end if
+
+if (&data.unamb_lastit ge &iteration) then 
+  if (&data.unamb_firstit le &iteration) then 
+     noe class dist @@NEWIT:unambig.tbl end 
+  end if
+end if
+
+if (&data.hbond_lastit ge &iteration) then
+  if (&data.hbond_firstit le &iteration) then
+    if (&data.hbonds_on eq true) then 
+      noe @@RUN:data/hbonds/hbonds.tbl end
+    end if
+  end if
+end if
+
+noe
+  averaging  * sum
+  potential  * soft
+  scale      * 1.0                           
+  sqconstant * 1.0
+  sqexponent * 2
+  soexponent * 1
+  rswitch    * 1.0
+  sqoffset   * 0.0
+  asymptote  * 2.0
+  msoexponent * 1
+  masymptote  * -0.1
+  mrswitch    * 1.0
+  avexpo hbond 20
+end
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!dihedral restraints:
+restraints dihedral 
+   reset
+   nassign 10000 
+end
+if (&Data.cdih.on eq true) then
+  restraints dihedral
+    @@RUN:data/dihedrals/dihedrals.tbl
+  end
+end if
+
+restraints dihedral ? end
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!jcouplings:
+evaluate ($jcouplings_on = false)
+if (&data.c1_on eq true) then
+  evaluate($jcouplings_on = true)
+elseif (&data.c2_on eq true) then
+  evaluate($jcouplings_on = true)
+elseif (&data.c3_on eq true) then
+  evaluate($jcouplings_on = true)
+elseif (&data.c4_on eq true) then
+  evaluate($jcouplings_on = true)
+elseif (&data.c5_on eq true) then
+  evaluate($jcouplings_on = true)
+end if
+ 
+if ($jcouplings_on eq true) then
+  couplings reset end
+  couplings
+    nres 500   !number of restraints for allocating memory
+    if (&data.c1_on eq true) then
+      class c1
+      potential harmonic
+      {degen 1}
+      force 1.0    !1 energy constant
+      coefficients &data.c1_karplusa &data.c1_karplusb &data.c1_karplusc &data.c1_karplusd
+      evaluate ($loadnow = "RUN:" + "data/jcouplings/c1.tbl")
+      @@$loadnow
+    end if
+    if (&data.c2_on eq true) then
+      class c2
+      potential harmonic
+      {degen 1}
+      force 1.0    !1 energy constant
+      coefficients &data.c2_karplusa &data.c2_karplusb &data.c2_karplusc &data.c2_karplusd
+      evaluate ($loadnow = "RUN:" + "data/jcouplings/c2.tbl")
+      @@$loadnow
+    end if    
+    if (&data.c3_on eq true) then
+      class c3
+      potential harmonic
+      {degen 1}
+      force 1.0    !1 energy constant
+      coefficients &data.c3_karplusa &data.c3_karplusb &data.c3_karplusc &data.c3_karplusd
+      evaluate ($loadnow = "RUN:" + "data/jcouplings/c3.tbl")
+      @@$loadnow
+    end if    
+    if (&data.c4_on eq true) then
+      class c4
+      potential harmonic
+      {degen 1}
+      force 1.0    !1 energy constant
+      coefficients &data.c4_karplusa &data.c4_karplusb &data.c4_karplusc &data.c4_karplusd
+      evaluate ($loadnow = "RUN:" + "data/jcouplings/c4.tbl")
+      @@$loadnow
+    end if    
+    if (&data.c5_on eq true) then
+      class c5
+      potential harmonic
+      {degen 1}
+      force 1.0    !1 energy constant
+      coefficients &data.c5_karplusa &data.c5_karplusb &data.c5_karplusc &data.c5_karplusd
+      evaluate ($loadnow = "RUN:" + "data/jcouplings/c5.tbl")
+      @@$loadnow
+    end if    
+  end
+end if
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!residual dipolar couplings:
+
+evaluate (&data.flags.sani = false)
+evaluate (&data.flags.xrdc = false)
+evaluate (&data.flags.xpcs = false)
+evaluate (&data.flags.dani = false)
+evaluate (&data.flags.vean = false)
+evaluate ($inisani=0)
+evaluate ($inixrdc=0)
+evaluate ($inixpcs=0)
+evaluate ($inidani=0)
+evaluate ($inivean = 0)
+
+if (&data.rdc1_lastit ge &iteration) then 
+  if (&data.rdc1_firstit le &iteration) then 
+    if (&data.rdc1_choice eq "SANI") then
+      evaluate (&data.flags.sani = true)
+      sani reset nres=500 end
+      evaluate ($inisani=1)
+      sani
+        class rdc1
+        force 0.0
+        potential square
+        @@RUN:data/rdcs/rdc1.tbl
+      end
+    end if
+    if (&data.rdc1_choice eq "XRDC") then
+      evaluate (&data.flags.xrdc = true)
+      xrdc reset nres=500 end
+      evaluate ($inixrdc=1)
+      xrdc
+        class rdc1
+        force 0.0
+        @@RUN:data/rdcs/rdc1.tbl
+      end
+    end if
+    if (&data.rdc1_choice eq "VANGLE") then
+      evaluate (&data.flags.vean = true)
+      vean reset nrestraints=10000 end
+      evaluate ($inivean = 1)
+      if (&data.rdc1_firstIt le &iteration) then
+        vean
+          class vea1
+          force 0.0 0.0
+          @@RUN:data/rdcs/rdc1.tbl
+        end
+      end if
+    end if
+  end if
+end if
+
+if (&data.rdc2_lastit ge &iteration) then 
+  if (&data.rdc2_firstit le &iteration) then 
+    if (&data.rdc2_choice eq "SANI") then
+      evaluate (&data.flags.sani = true)
+      if ($inisani = 0) then
+        sani reset nres=500 end
+        evaluate ($inisani=1)
+      end if
+      sani
+        class rdc2
+        force 0.0
+        potential square
+        @@RUN:data/rdcs/rdc2.tbl
+      end
+    end if
+    if (&data.rdc2_choice eq "XRDC") then
+      evaluate (&data.flags.xrdc = true)
+      if ($inixrdc = 0) then
+        xrdc reset nres=500 end
+        evaluate ($inixrdc=1)
+      end if
+      xrdc
+        class rdc2
+        force 0.0
+        @@RUN:data/rdcs/rdc2.tbl
+      end
+    end if
+    if (&data.rdc2_choice eq "VANGLE") then
+      evaluate (&data.flags.vean = true)
+      if ($inivean = 0) then
+        vean reset nrestraints=10000 end
+        evaluate ($inivean = 1)
+      end if
+      if (&data.rdc2_firstIt le &iteration) then
+        vean
+          class vea2
+          force 0.0 0.0
+          @@RUN:data/rdcs/rdc2.tbl
+        end
+      end if
+    end if
+  end if
+end if
+
+if (&data.rdc3_lastit ge &iteration) then 
+  if (&data.rdc3_firstit le &iteration) then 
+    if (&data.rdc3_choice eq "SANI") then
+      evaluate (&data.flags.sani = true)
+      if ($inisani = 0) then
+        sani reset nres=500 end
+        evaluate ($inisani=1)
+      end if
+      sani
+        class rdc3
+        force 0.0
+        potential square
+        @@RUN:data/rdcs/rdc3.tbl
+      end
+    end if
+    if (&data.rdc3_choice eq "XRDC") then
+      evaluate (&data.flags.xrdc = true)
+      if ($inixrdc = 0) then
+        xrdc reset nres=500 end
+        evaluate ($inixrdc=1)
+      end if
+      xrdc
+        class rdc3
+        force 0.0
+        @@RUN:data/rdcs/rdc3.tbl
+      end
+    end if
+    if (&data.rdc3_choice eq "VANGLE") then
+      evaluate (&data.flags.vean = true)
+      if ($inivean = 0) then
+        vean reset nrestraints=10000 end
+        evaluate ($inivean = 1)
+      end if
+      if (&data.rdc3_firstIt le &iteration) then
+        vean
+          class vea3
+          force 0.0 0.0
+          @@RUN:data/rdcs/rdc3.tbl
+        end
+      end if
+    end if
+  end if
+end if
+
+if (&data.rdc4_lastit ge &iteration) then 
+  if (&data.rdc4_firstit le &iteration) then 
+    if (&data.rdc4_choice eq "SANI") then
+      evaluate (&data.flags.sani = true)
+      if ($inisani = 0) then
+        sani reset nres=500 end
+        evaluate ($inisani=1)
+      end if
+      sani
+        class rdc4
+        force 0.0
+        potential square
+        @@RUN:data/rdcs/rdc4.tbl
+      end
+    end if
+    if (&data.rdc4_choice eq "XRDC") then
+      evaluate (&data.flags.xrdc = true)
+      if ($inixrdc = 0) then
+        xrdc reset nres=500 end
+        evaluate ($inixrdc=1)
+      end if
+      xrdc
+        class rdc4
+        force 0.0
+        @@RUN:data/rdcs/rdc4.tbl
+      end
+    end if
+    if (&data.rdc4_choice eq "VANGLE") then
+      evaluate (&data.flags.vean = true)
+      if ($inivean = 0) then
+        vean reset nrestraints=10000 end
+        evaluate ($inivean = 1)
+      end if
+      if (&data.rdc4_firstIt le &iteration) then
+        vean
+          class vea4
+          force 0.0 0.0
+          @@RUN:data/rdcs/rdc4.tbl
+        end
+      end if
+    end if
+  end if
+end if
+
+if (&data.rdc5_lastit ge &iteration) then 
+  if (&data.rdc5_firstit le &iteration) then 
+    if (&data.rdc5_choice eq "SANI") then
+      evaluate (&data.flags.sani = true)
+      if ($inisani = 0) then
+        sani reset nres=500 end
+        evaluate ($inisani=1)
+      end if
+      sani
+        class rdc5
+        force 0.0
+        potential square
+        @@RUN:data/rdcs/rdc5.tbl
+      end
+    end if
+    if (&data.rdc5_choice eq "XRDC") then
+      evaluate (&data.flags.xrdc = true)
+      if ($inixrdc = 0) then
+        xrdc reset nres=500 end
+        evaluate ($inixrdc=1)
+      end if
+      xrdc
+        class rdc5
+        force 0.0
+        @@RUN:data/rdcs/rdc5.tbl
+      end
+    end if
+    if (&data.rdc5_choice eq "VANGLE") then
+      evaluate (&data.flags.vean = true)
+      if ($inivean = 0) then
+        vean reset nrestraints=10000 end
+        evaluate ($inivean = 1)
+      end if
+      if (&data.rdc5_firstIt le &iteration) then
+        vean
+          class vea5
+          force 0.0 0.0
+          @@RUN:data/rdcs/rdc5.tbl
+        end
+      end if
+    end if
+  end if
+end if
+
+if (&data.pcs1_lastit ge &iteration) then 
+  if (&data.pcs1_firstit le &iteration) then 
+    if (&data.pcs1_choice eq "XPCS") then
+      evaluate (&data.flags.xpcs = true)
+      xpcs reset nres=5000 end
+      evaluate ($inixpcs=1)
+      xpcs
+        class pcs1
+        force 0.0
+        @@RUN:data/pcs/pcs1.tbl
+      end
+    end if
+  end if
+end if
+
+if (&data.pcs2_lastit ge &iteration) then 
+  if (&data.pcs2_firstit le &iteration) then 
+    if (&data.pcs2_choice eq "XPCS") then
+      evaluate (&data.flags.xpcs = true)
+      if ($inixpcs = 0) then
+        xpcs reset nres=5000 end
+        evaluate ($inixpcs=1)
+      end if
+      xpcs
+        class pcs2
+        force 0.0
+        @@RUN:data/pcs/pcs2.tbl
+      end
+    end if
+  end if
+end if
+
+if (&data.pcs3_lastit ge &iteration) then 
+  if (&data.pcs3_firstit le &iteration) then 
+    if (&data.pcs3_choice eq "XPCS") then
+      evaluate (&data.flags.xpcs = true)
+      if ($inixpcs = 0) then
+        xpcs reset nres=5000 end
+        evaluate ($inixpcs=1)
+      end if
+      xpcs
+        class pcs3
+        force 0.0
+        @@RUN:data/pcs/pcs3.tbl
+      end
+    end if
+  end if
+end if
+
+if (&data.pcs4_lastit ge &iteration) then 
+  if (&data.pcs4_firstit le &iteration) then 
+    if (&data.pcs4_choice eq "XPCS") then
+      evaluate (&data.flags.xpcs = true)
+      if ($inixpcs = 0) then
+        xpcs reset nres=5000 end
+        evaluate ($inixpcs=1)
+      end if
+      xpcs
+        class pcs4
+        force 0.0
+        @@RUN:data/pcs/pcs4.tbl
+      end
+    end if
+  end if
+end if
+
+if (&data.pcs5_lastit ge &iteration) then 
+  if (&data.pcs5_firstit le &iteration) then 
+    if (&data.pcs5_choice eq "XPCS") then
+      evaluate (&data.flags.xpcs = true)
+      if ($inixpcs = 0) then
+        xpcs reset nres=5000 end
+        evaluate ($inixpcs=1)
+      end if
+      xpcs
+        class pcs5
+        force 0.0
+        @@RUN:data/pcs/pcs5.tbl
+      end
+    end if
+  end if
+end if
+
+if (&data.pcs6_lastit ge &iteration) then 
+  if (&data.pcs6_firstit le &iteration) then 
+    if (&data.pcs6_choice eq "XPCS") then
+      evaluate (&data.flags.xpcs = true)
+      if ($inixpcs = 0) then
+        xpcs reset nres=5000 end
+        evaluate ($inixpcs=1)
+      end if
+      xpcs
+        class pcs6
+        force 0.0
+        @@RUN:data/pcs/pcs6.tbl
+      end
+    end if
+  end if
+end if
+
+if (&data.pcs7_lastit ge &iteration) then 
+  if (&data.pcs7_firstit le &iteration) then 
+    if (&data.pcs7_choice eq "XPCS") then
+      evaluate (&data.flags.xpcs = true)
+      if ($inixpcs = 0) then
+        xpcs reset nres=5000 end
+        evaluate ($inixpcs=1)
+      end if
+      xpcs
+        class pcs7
+        force 0.0
+        @@RUN:data/pcs/pcs7.tbl
+      end
+    end if
+  end if
+end if
+
+if (&data.pcs8_lastit ge &iteration) then 
+  if (&data.pcs8_firstit le &iteration) then 
+    if (&data.pcs8_choice eq "XPCS") then
+      evaluate (&data.flags.xpcs = true)
+      if ($inixpcs = 0) then
+        xpcs reset nres=5000 end
+        evaluate ($inixpcs=1)
+      end if
+      xpcs
+        class pcs8
+        force 0.0
+        @@RUN:data/pcs/pcs8.tbl
+      end
+    end if
+  end if
+end if
+
+if (&data.pcs9_lastit ge &iteration) then 
+  if (&data.pcs9_firstit le &iteration) then 
+    if (&data.pcs9_choice eq "XPCS") then
+      evaluate (&data.flags.xpcs = true)
+      if ($inixpcs = 0) then
+        xpcs reset nres=5000 end
+        evaluate ($inixpcs=1)
+      end if
+      xpcs
+        class pcs9
+        force 0.0
+        @@RUN:data/pcs/pcs9.tbl
+      end
+    end if
+  end if
+end if
+
+if (&data.pcsA_lastit ge &iteration) then 
+  if (&data.pcsA_firstit le &iteration) then 
+    if (&data.pcsA_choice eq "XPCS") then
+      evaluate (&data.flags.xpcs = true)
+      if ($inixpcs = 0) then
+        xpcs reset nres=5000 end
+        evaluate ($inixpcs=1)
+      end if
+      xpcs
+        class pcsA
+        force 0.0
+        @@RUN:data/pcs/pcsA.tbl
+      end
+    end if
+  end if
+end if
+
+
+evaluate ($tensread = false)
+if (&data.flags.xrdc = true) then
+  noe 
+    class tens
+    @@RUN:data/tensor/tensor.tbl
+    potential tens square
+    scale     tens 500.0
+  end
+  evaluate ($tensread = true)
+end if
+
+if (&data.flags.xpcs = true) then
+  if ($tensread eq FALSE) then
+    noe 
+      class tens
+      @@RUN:data/tensor/tensor.tbl
+      potential tens square
+      scale     tens 500.0
+    end
+  end if
+end if
+
+if (&data.dan1_lastit ge &iteration) then 
+  if (&data.dan1_firstit le &iteration) then 
+    if (&data.dan1_choice eq "DANI") then
+      evaluate (&data.flags.dani = true)
+      dani reset nres=500 end
+      evaluate ($inidani=1)
+      dani
+        class dan1
+        force 0.0
+        potential square
+        @@RUN:data/dani/dani1.tbl
+      end
+    end if
+  end if
+end if
+if (&data.dan2_lastit ge &iteration) then 
+  if (&data.dan2_firstit le &iteration) then 
+    if (&data.dan2_choice eq "DANI") then
+      evaluate (&data.flags.dani = true)
+      dani reset nres=500 end
+      evaluate ($inidani=1)
+      dani
+        class dan2
+        force 0.0
+        potential square
+        @@RUN:data/dani/dani2.tbl
+      end
+    end if
+  end if
+end if
+if (&data.dan3_lastit ge &iteration) then 
+  if (&data.dan3_firstit le &iteration) then 
+    if (&data.dan3_choice eq "DANI") then
+      evaluate (&data.flags.dani = true)
+      dani reset nres=500 end
+      evaluate ($inidani=1)
+      dani
+        class dan3
+        force 0.0
+        potential square
+        @@RUN:data/dani/dani3.tbl
+      end
+    end if
+  end if
+end if
+if (&data.dan4_lastit ge &iteration) then 
+  if (&data.dan4_firstit le &iteration) then 
+    if (&data.dan4_choice eq "DANI") then
+      evaluate (&data.flags.dani = true)
+      dani reset nres=500 end
+      evaluate ($inidani=1)
+      dani
+        class dan4
+        force 0.0
+        potential square
+        @@RUN:data/dani/dani4.tbl
+      end
+    end if
+  end if
+end if
+if (&data.dan5_lastit ge &iteration) then 
+  if (&data.dan5_firstit le &iteration) then 
+    if (&data.dan5_choice eq "DANI") then
+      evaluate (&data.flags.dani = true)
+      dani reset nres=500 end
+      evaluate ($inidani=1)
+      dani
+        class dan5
+        force 0.0
+        potential square
+        @@RUN:data/dani/dani5.tbl
+      end
+    end if
+  end if
+end if
+

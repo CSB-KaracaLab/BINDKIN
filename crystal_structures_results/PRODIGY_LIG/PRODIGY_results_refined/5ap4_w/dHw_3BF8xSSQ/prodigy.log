@@ -1,0 +1,9 @@
+[!] Structure contains gaps:
+	A PHE1 < Fragment 0 > A ASN155
+	A MET157 < Fragment 1 > A ASP160
+	A GLN169 < Fragment 2 > A GLY171
+	A VAL173 < Fragment 3 > A ASP183
+	A ILE197 < Fragment 4 > A GLN280
+
+trying to populate electrostatics from pdb file: -73.9778
+Running Prodigy for structure 5ap4_w

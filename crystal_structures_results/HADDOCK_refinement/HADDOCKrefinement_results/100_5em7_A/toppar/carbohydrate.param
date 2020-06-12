@@ -1,0 +1,225 @@
+remarks file toppar/carbohydrate.param
+REMARKS Parameter file for pyranose sugars for crystallographic
+remarks structure determination. 
+remarks
+
+REMARKS Bill Weis 10-July-1988
+REMARKS Additions for atom type combinations not covered in PARAM19X.PRO.
+REMARKS Needed additions are for ether oxygen and aliphatic carbon in all-atom
+REMARKS representation used for sugars (type CC).  Ditto for type HA.
+REMARKS Values from J. Brady glucose parameters unless noted.
+REMARKS These should be sufficient for refinement.  
+
+REMARKS Additions 6-March-1992 Bill Weis
+REMARKS New atom types CCA, CCE,  OA for the C1 & O1 positions to account 
+REMARKS for different bond and angle values due to the anomeric effect.
+REMARKS More accurate equilibrium values for bond angle around this oxygen 
+REMARKS in glycosidic linkages.  CCE for equatorial O1, CCA for 
+REMAKRS axial O1.   For free sugar, keep OH1 as O1 atomtype; changed to OA
+REMARKS for linkages. 
+REMARKS References: G.A. Jeffrey (1990) Acta Cryst B46, 89-103; 
+REMARKS K. Hirotsu & A.Shimada, (1974) Bull. Chem. Soc. Japan, 47, 1872-1879.
+
+REMARKS  This set has been modified to be roughly consistent with
+REMARKS  the csd-derived protein parameters of Engh and Huber.
+REMARKS  New atom type CC6 for exocyclic 6 carbon
+REMARKS  Bill Weis 5/11/92
+
+set message ? end eval ($old_message=$result) set echo ? end eval ($old_echo=$result)
+set message=off echo=off end
+
+checkversion 1.3
+
+
+{bond force constants 6x previous.  
+  Some adjustments made to equilbrium values }
+bond CC   OE     1780.2    1.438 ! closer to crystal structures
+bond CCE  OE     1780.2    1.428 
+bond CCA  OE     1780.2    1.419 
+bond CC   CC     1284.0    1.526 ! adjusted to Jeffries
+bond CC   CC6    1284.0    1.516 
+bond CCE  CC     1284.0    1.526
+bond CCA  CC     1284.0    1.526
+bond CC   HA      337.3    1.099 
+bond CC6  HA      337.3    1.099 
+bond CCE  HA      337.3    1.099 
+bond CCA  HA      337.3    1.099 
+bond CC   OH1    2005.8    1.420 
+bond CC6  OH1    2005.8    1.420
+bond CCE  OH1    2005.8    1.385  !force constant as for other exocylic OH
+bond CCA  OH1    2005.8    1.398  !  "       "    "   "    "     "      "
+bond CCE  OA     2005.8    1.385  !  "       "    "   "    "     "      "
+bond CCA  OA     2005.8    1.398  !  "       "    "   "    "     "      "
+{ Note elongated non-anomeric C-O bond for bridges }
+bond CC   OA     2005.8    1.44   !force constant as for other exocylic OH
+bond CC6  OA     2005.8    1.44 
+bond CC   NH1    2631.111  1.45   !as extended atom carbon-N
+bond CCE  NH1    2631.111  1.45   !as extended atom carbon-N
+bond CCA  NH1    2631.111  1.45   !as extended atom carbon-N
+bond CC   C      1342.404  1.52   !"    "       "     "   -C
+bond CCE  C      1342.404  1.52
+bond CCA  C      1342.404  1.52
+
+{Angle force constants increased 10x, except angle around bridging 
+  link oxygen increased 5x }
+angle H    OH1  CC    53.62   109.35
+angle H    OH1  CC6   53.62   109.35 
+angle H    OH1  CCE   53.62   109.35
+angle H    OH1  CCA   53.62   109.35
+angle HA   CC   HA    33.58   107.85
+angle HA   CC6  HA    33.58   107.85
+angle HA   CC   CC    43.04   108.72
+angle HA   CC6  CC    43.04   108.72 
+angle HA   CC   CC6   43.04   108.72
+angle HA   CC   CCE   43.04   108.72
+angle HA   CC   CCA   43.04   108.72
+angle HA   CCE  CC    43.04   108.72
+angle HA   CCA  CC    43.04   108.72
+angle HA   CC   OH1   45.89   109.89
+angle HA   CC6  OH1   45.89   109.89 
+angle HA   CCE  OH1   45.89   109.89
+angle HA   CCA  OH1   45.89   109.89
+angle HA   CC   OA    45.89   109.89
+angle HA   CC6  OA    45.89   109.89 
+angle HA   CCE  OA    45.89   109.89
+angle HA   CCA  OA    45.89   109.89
+angle HA   CC   OE    45.16   107.24
+angle HA   CCE  OE    45.16   107.24
+angle HA   CCA  OE    45.16   107.24
+angle CC   CC   CC   380.3    110.40
+angle CC   CC   CC6  380.3    112.50
+angle CCE  CC   CC   380.3    110.40
+angle CCA  CC   CC   380.3    110.40
+angle CC   CC6  OH1  756.8    111.20 
+angle CC   CCE  OH1  756.8    109.70
+angle CC   CCA  OH1  756.8    109.70
+angle CCE  CC   OH1  756.8    109.70
+angle CCA  CC   OH1  756.8    109.70
+angle CC   CC   OH1  756.8    109.70
+angle CC   CC   OE   809.5    110.00
+angle CC6  CC   OE   809.5    107.20 
+angle CC   CCE  OE   809.5    110.00
+angle CC   CCA  OE   809.5    110.00
+angle CC   CC   OA   809.5    109.70
+angle CC   CC6  OA   809.5    109.70 !guess for 1-6 links 
+angle CC   CCE  OA   809.5    109.70
+angle CC   CCA  OA   809.5    109.70
+angle CCE  CC   OA   809.5    109.70
+angle CCA  CC   OA   809.5    109.70
+!angle OE   CC   OH1  925.6    111.55
+!angle OE   CC   OE   925.6    110.70
+{ C5 - O5 - C1 }
+angle CC   OE   CCE  906.9    112.0
+angle CC   OE   CCA  906.9    114.0
+{ O5 - C1 - O1 }
+angle OE   CCE  OH1  925.6    108.0
+angle OE   CCE  OA   925.6    108.0
+angle OE   CCA  OH1  925.6    112.1 
+angle OE   CCA  OA   925.6    112.1 
+{ bridge angle - note a fairly large spread in the literature, axial
+  generally smaller than equatorial.  Increased only 5x to reflect 
+  limited data}
+angle CCE  OA   CC   453.45    116.
+angle CCA  OA   CC   453.45    115.
+angle CCE  OA   CC6  453.45    116.
+!angle CCA  OA   CC6 453.45    115.
+angle CCA  OA   CC6  453.45    111.5  !alpha 1,6 link 
+angle O C CC   850.     120.       !Mo & Jensen, Acta B, 31, 2867 (1975), 8/30/93
+angle C CC HA   70.     109.5      !  8/30/93
+
+{ The following are guesses, generally by analogy to extended atom Carbons. }
+{ Note equilibrium values not based on crystal structures.                  }
+angle CC   CC   NH1  650.0     110.0
+angle CCE  CC   NH1  650.0     110.0
+angle CCA  CC   NH1  650.0     110.0
+angle CC   CCE  NH1  650.0     110.0
+angle CC   CCA  NH1  650.0     110.0
+angle HA   CC   NH1   45.0     109.5
+angle HA   CCE  NH1   45.0     109.5
+angle HA   CCA  NH1   45.0     109.5
+angle CC   NH1  H     35.0     120.0
+angle CCE  NH1  H     35.0     120.0
+angle CCA  NH1  H     35.0     120.0
+angle CC   NH1  C    775.0     120.0
+angle CCE  NH1  C    775.0     120.0
+angle CCA  NH1  C    775.0     120.0
+angle NH1  CC   OE   750.0    110.7 !A complete guess
+angle NH1  CCE  OE   750.0     110.7 !A complete guess
+angle NH1  CCA  OE   750.0     110.7 !A complete guess
+angle NH1  C    CC   200.0     117.5
+angle C    CCE  OH1  700.0     109.5 !A complete guess for SIA O2
+angle C    CCA  OH1  700.0     109.5 !A complete guess for SIA O2
+angle C    CCE  OA   700.0     109.5 !A complete guess for SIA O2
+angle C    CCA  OA   700.0     109.5 !A complete guess for SIA O2
+angle O    C    CCE  850.0     121.5
+angle O    C    CCA  850.0     121.5
+angle C    CCE  HA    70.0     109.5
+angle C    CCA  HA    70.0     109.5
+{ This is (360-the usual OC-C-OC angle of 122.5)/2 }
+angle CCE  C    OC   850.0     118.75
+angle CCA  C    OC   850.0     118.75
+{ Use the same angles to HA in the C1 position of NANA }
+angle C    CCE  OE   850.0     107.24
+angle C    CCA  OE   850.0     107.24
+angle C    CCE  CC   700.0     108.72
+angle C    CCA  CC   700.0     108.72
+
+dihedral  X    CC    CC    X      3.0630  3   0.0
+dihedral  X    CC    CC6   X      3.0630  3   0.0 
+dihedral  X    CCE   CC    X      3.0630  3   0.0
+dihedral  X    CCA   CC    X      3.0630  3   0.0
+dihedral  X    CC    OH1   X      1.3293  3   0.0
+dihedral  X    CC6   OH1   X      1.3293  3   0.0 
+dihedral  X    CCE   OH1   X      1.3293  3   0.0
+dihedral  X    CCA   OH1   X      1.3293  3   0.0
+dihedral  X    CC    OA    X      1.3293  3   0.0
+dihedral  X    CC6   OA    X      1.3293  3   0.0 
+dihedral  X    CCE   OA    X      1.3293  3   0.0
+dihedral  X    CCA   OA    X      1.3293  3   0.0
+dihedral  X    CC    OE    X      2.7834  3   0.0
+dihedral  X    CCE   OE    X      2.7834  3   0.0
+dihedral  X    CCA   OE    X      2.7834  3   0.0
+{ The following are guesses, generally by analogy to extended atom Carbons }
+dihedral  HA   CC    NH1   H      0.3     3  180.0 !for NAG and NANA
+dihedral  X    CC    NH1   X      0.9     3    0.0 !beta link to Asn Nd1
+dihedral  X    CCE   NH1   X      0.9     3    0.0 !beta link to Asn Nd1
+dihedral  X    CCA   NH1   X      0.9     3    0.0 !beta link to Asn Nd1
+dihedral  X    C     CCE   X      0.0     3    0.0
+dihedral  X    C     CCA   X      0.0     3    0.0
+dihedral  X    C     CC    X      0.0     3    0.0 ! N-acetyl in NAG, 8/30/93
+dihedral CC    NH1   C     CC     5.0     2    0.0 ! peptide plane in NAG
+                                                   !   guess - PDA 8/99
+
+
+{ These high force constants maintain chiral centers on the rings }
+improper  CC   X     X     CC   300.0    0  35.26439 
+improper  CCE  X     X     CC   300.0    0  35.26439 
+improper  CCA  X     X     CC   300.0    0  35.26439 
+improper  OH1  X     X     CC   300.0    0  35.26439 
+improper  OH1  X     X     CCE  300.0    0  35.26439 
+improper  OH1  X     X     CCA  300.0    0  35.26439 
+improper  OA   X     X     CC   300.0    0  35.26439 
+improper  OA   X     X     CCE  300.0    0  35.26439 
+improper  OA   X     X     CCA  300.0    0  35.26439 
+improper  CC   X     X     OE   300.0    0  35.26439 
+improper  CCE  X     X     OE   300.0    0  35.26439 
+improper  CCA  X     X     OE   300.0    0  35.26439 
+{ This is as other acids }
+improper  C    X     X     CCE  300.0    0   0.0 !NANA acid planarity
+improper  C    X     X     CCA  300.0    0   0.0 !NANA acid planarity
+
+!!for use with:
+!!NBXMOD=5  ATOM CDIEL SHIFT vswitch
+!!   CUTNB=8.0  CTOFNB=7.5  CTONNB=6.5  EPS=1.0  E14FAC=0.4  WMIN=1.5
+
+!NONBonded  HA      0.0045    2.6157   0.0045   2.6157
+NONBonded  CC      0.0903    3.2072   0.0903   3.2072
+NONBonded  CC6     0.0903    3.2072   0.0903   3.2072
+NONBonded  CCE     0.0903    3.2072   0.0903   3.2072
+NONBonded  CCA     0.0903    3.2072   0.0903   3.2072
+NONBonded  OE      0.1591    2.8509   0.1591   2.8509
+NONBonded  OA      0.1591    2.8509   0.1591   2.8509
+
+set message=$old_message echo=$old_echo end
+
+

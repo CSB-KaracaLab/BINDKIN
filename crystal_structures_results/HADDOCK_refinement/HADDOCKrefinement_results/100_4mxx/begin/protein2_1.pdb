@@ -1,0 +1,48 @@
+REMARK FILENAME="protein2_1.pdb"
+REMARK coordinates built for atom:      DB8  1    HAB
+REMARK coordinates built for atom:      DB8  1    HAA
+REMARK coordinates built for atom:      DB8  1    HAC
+REMARK coordinates built for atom:      DB8  1    HAD
+REMARK DATE:29-Dec-2019  00:48:44       created by user: enmr
+REMARK VERSION:1.3U
+ATOM      1  CAP DB8     1      17.394 -39.785  -1.339  1.00 15.00      B   
+ATOM      2  CAR DB8     1      18.370 -40.684  -0.554  1.00 15.00      B   
+ATOM      3  NBI DB8     1      19.675 -40.682  -1.171  1.00 15.00      B   
+ATOM      4  CAO DB8     1      20.746 -41.215  -0.337  1.00 15.00      B   
+ATOM      5  HAB DB8     1      19.901 -39.709  -1.205  0.00 15.00      B   
+ATOM      6  CAS DB8     1      19.624 -41.013  -2.570  1.00 15.00      B   
+ATOM      7  CAQ DB8     1      18.689 -40.103  -3.305  1.00 15.00      B   
+ATOM      8  NBH DB8     1      17.368 -40.245  -2.734  1.00 15.00      B   
+ATOM      9  HAA DB8     1      17.023 -39.298  -2.676  0.00 15.00      B   
+ATOM     10  CAC DB8     1      16.218 -39.999  -3.669  1.00 15.00      B   
+ATOM     11  CAM DB8     1      16.772 -39.436  -4.968  1.00 15.00      B   
+ATOM     12  CAN DB8     1      15.835 -38.352  -5.501  1.00 15.00      B   
+ATOM     13  OAW DB8     1      14.627 -38.938  -5.872  1.00 15.00      B   
+ATOM     14  CBD DB8     1      13.589 -38.146  -6.357  1.00 15.00      B   
+ATOM     15  CAK DB8     1      13.876 -36.784  -6.916  1.00 15.00      B   
+ATOM     16  CBC DB8     1      12.203 -38.679  -6.296  1.00 15.00      B   
+ATOM     17  OAV DB8     1      11.969 -39.929  -5.771  1.00 15.00      B   
+ATOM     18  CAA DB8     1      12.020 -40.081  -4.388  1.00 15.00      B   
+ATOM     19  CAL DB8     1      11.055 -37.868  -6.789  1.00 15.00      B   
+ATOM     20  CBG DB8     1      11.315 -36.500  -7.356  1.00 15.00      B   
+ATOM     21  CBF DB8     1      12.723 -35.936  -7.430  1.00 15.00      B   
+ATOM     22  NAT DB8     1      12.947 -34.617  -7.976  1.00 15.00      B   
+ATOM     23  HAC DB8     1      13.452 -34.076  -7.303  0.00 15.00      B   
+ATOM     24  CAH DB8     1      11.864 -33.807  -8.459  1.00 15.00      B   
+ATOM     25  CBA DB8     1      10.441 -34.289  -8.423  1.00 15.00      B   
+ATOM     26  CAG DB8     1       9.307 -33.442  -8.925  1.00 15.00      B   
+ATOM     27  NAD DB8     1       8.410 -32.839  -9.298  1.00 15.00      B   
+ATOM     28  CBE DB8     1      10.136 -35.665  -7.861  1.00 15.00      B   
+ATOM     29  NAU DB8     1       8.767 -36.202  -7.798  1.00 15.00      B   
+ATOM     30  HAD DB8     1       8.805 -37.199  -7.859  0.00 15.00      B   
+ATOM     31  CBB DB8     1       7.795 -35.721  -8.763  1.00 15.00      B   
+ATOM     32  CAJ DB8     1       8.181 -35.658 -10.222  1.00 15.00      B   
+ATOM     33  CAX DB8     1       7.189 -35.148 -11.221  1.00 15.00      B   
+ATOM     34  O02 DB8     1       7.525 -35.082 -12.560  1.00 15.00      B   
+ATOM     35  C01 DB8     1       8.832 -35.308 -12.982  1.00 15.00      B   
+ATOM     36  CAY DB8     1       5.825 -34.713 -10.755  1.00 15.00      B   
+ATOM     37  CL1 DB8     1       4.660 -34.127 -11.881  1.00 15.00      B   
+ATOM     38  CAI DB8     1       5.439 -34.773  -9.317  1.00 15.00      B   
+ATOM     39  CAZ DB8     1       6.425 -35.275  -8.318  1.00 15.00      B   
+ATOM     40  CL2 DB8     1       5.938 -35.343  -6.657  1.00 15.00      B   
+END

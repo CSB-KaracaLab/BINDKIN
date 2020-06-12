@@ -1,0 +1,63 @@
+HETATM    1  CAA IRE A   1     -51.880   1.501 -16.695  1.00102.70           C  
+HETATM    2  CAD IRE A   1     -52.366  -1.685 -27.098  1.00 98.17           C  
+HETATM    3  CAE IRE A   1     -52.270  -1.627 -25.705  1.00 98.98           C  
+HETATM    4  CAG IRE A   1     -52.170   0.790 -25.800  1.00 99.16           C  
+HETATM    5  CAH IRE A   1     -52.942   1.052 -19.210  1.00 99.93           C  
+HETATM    6  CAI IRE A   1     -51.372  -0.409 -20.968  1.00100.79           C  
+HETATM    7  CAJ IRE A   1     -48.605  -3.375 -18.872  1.00114.13           C  
+HETATM    8  CAK IRE A   1     -49.337  -2.173 -19.937  1.00110.18           C  
+HETATM    9  CAL IRE A   1     -43.827  -3.493 -16.996  1.00123.15           C  
+HETATM   10  CAM IRE A   1     -43.994  -3.906 -19.350  1.00123.20           C  
+HETATM   11  CAN IRE A   1     -47.407  -2.673 -18.034  1.00118.24           C  
+HETATM   12  CAO IRE A   1     -45.304  -2.997 -16.897  1.00122.19           C  
+HETATM   13  CAP IRE A   1     -45.496  -3.489 -19.358  1.00122.63           C  
+HETATM   14  CAW IRE A   1     -52.359  -0.499 -27.837  1.00 97.96           C  
+HETATM   15  CAX IRE A   1     -52.260   0.730 -27.191  1.00 98.92           C  
+HETATM   16  CAY IRE A   1     -52.184  -0.387 -25.047  1.00 99.25           C  
+HETATM   17  CAZ IRE A   1     -51.851   0.322 -18.738  1.00101.30           C  
+HETATM   18  NAS IRE A   1     -52.074  -0.355 -23.704  1.00 99.56           N  
+HETATM   19  OAT IRE A   1     -51.528   0.289 -17.416  1.00101.88           O  
+HETATM   20  OAU IRE A   1     -43.220  -3.247 -18.306  1.00123.32           O  
+HETATM   21  OAV IRE A   1     -50.011  -1.115 -19.052  1.00105.97           O  
+HETATM   22  CBA IRE A   1     -51.059  -0.411 -19.607  1.00102.31           C  
+HETATM   23  NBE IRE A   1     -46.161  -3.498 -18.011  1.00121.36           N  
+HETATM   24 CL   IRE A   1     -52.264   2.191 -28.123  1.00101.52          CL  
+HETATM   25  N1  IRE A   1     -53.869   1.082 -23.206  1.00 98.52           N  
+HETATM   26  C2  IRE A   1     -54.585   1.767 -22.319  1.00 98.52           C  
+HETATM   27  N3  IRE A   1     -54.287   1.766 -21.024  1.00 98.34           N  
+HETATM   28  C4  IRE A   1     -53.245   1.057 -20.563  1.00 99.11           C  
+HETATM   29  C5  IRE A   1     -52.464   0.324 -21.452  1.00 99.50           C  
+HETATM   30  C6  IRE A   1     -52.803   0.352 -22.818  1.00 99.29           C  
+HETATM   31  FAB IRE A   1     -52.448  -0.520 -29.177  1.00 95.82           F  
+CONECT    1   19
+CONECT    2    3   14
+CONECT    3    2   16
+CONECT    4   15   16
+CONECT    5   28   17
+CONECT    6   29   22
+CONECT    7    8   11
+CONECT    8    7   21
+CONECT    9   20   12
+CONECT   10   13   20
+CONECT   11    7   23
+CONECT   12    9   23
+CONECT   13   10   23
+CONECT   14    2   31   15
+CONECT   15    4   14   24
+CONECT   16    3    4   18
+CONECT   17    5   19   22
+CONECT   18   16   30
+CONECT   19   17    1
+CONECT   20    9   10
+CONECT   21    8   22
+CONECT   22   21    6   17
+CONECT   23   12   13   11
+CONECT   24   15
+CONECT   25   30   26
+CONECT   26   25   27
+CONECT   27   26   28
+CONECT   28    5   27   29
+CONECT   29    6   28   30
+CONECT   30   25   29   18
+CONECT   31   14
+END

@@ -1,0 +1,61 @@
+{
+  "chains": [
+    "A",
+    "B:PWU"
+  ],
+  "pdb_id": "",
+  "interactor1": "A",
+  "tag": "",
+  "email": "",
+  "notify": false,
+  "sample": false,
+  "interactor2": "B:PWU",
+  "electrostatics": null,
+  "predictions": {
+    "structures": [
+      "5ap2_w"
+    ],
+    "electrostatics": [
+      -26.0851
+    ],
+    "dg_score": [
+      107.5322941306
+    ],
+    "dg_elec": [
+      -8.66286070948
+    ],
+    "dg": [
+      -9.412101
+    ],
+    "CC": [
+      3000
+    ],
+    "NN": [
+      209
+    ],
+    "OO": [
+      83
+    ],
+    "XX": [
+      0
+    ],
+    "CN": [
+      1612
+    ],
+    "CO": [
+      1137
+    ],
+    "CX": [
+      59
+    ],
+    "NO": [
+      310
+    ],
+    "NX": [
+      15
+    ],
+    "OX": [
+      7
+    ]
+  }
+}

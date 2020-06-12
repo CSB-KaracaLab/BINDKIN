@@ -1,0 +1,77 @@
+! center.cns
+!    Move molecules to the center and apply random rotation
+!
+! ***********************************************************************
+! * Copyright 2003-2015 Alexandre Bonvin, Utrecht University.           *
+! * All rights reserved.                                                *
+! * This code is part of the HADDOCK software and governed by its       *
+! * license. Please see the LICENSE file that should have been included *
+! * as part of this package.                                            *
+! ***********************************************************************
+!
+! center molecules
+    evaluate ($ncount = 0)
+    while ($ncount < $data.ncomponents) loop nsloop2
+      evaluate ($ncount = $ncount +1)
+      show ave (x) (segid $Toppar.prot_segid_$ncount)
+      evaluate ($xdis=-$result)
+      show ave (y) (segid $Toppar.prot_segid_$ncount)
+      evaluate ($ydis=-$result)
+      show ave (z) (segid $Toppar.prot_segid_$ncount)
+      evaluate ($zdis=-$result)
+      coor trans sele=(segid $Toppar.prot_segid_$ncount) vector=($xdis,$ydis,$zdis) end
+    end loop nsloop2
+    coor orient sele=(segid $Toppar.prot_segid_1) end
+    do (xcomp = x) (segid $Toppar.prot_segid_1)
+    do (ycomp = y) (segid $Toppar.prot_segid_1)
+    do (zcomp = z) (segid $Toppar.prot_segid_1)
+    show max (x) (segid $Toppar.prot_segid_1)
+    eval ($xmax = $result)
+    show (resid) (attr x >= $xmax and segid $Toppar.prot_segid_1)
+    eval ($res1 = $result)
+    show (name) (attr x >= $xmax and segid $Toppar.prot_segid_1)
+    eval ($atm1 = $result)
+    show (x) (name $atm1 and resid $res1 and segid $Toppar.prot_segid_1)
+    eval ($xre = $result)
+    show (y) (name $atm1 and resid $res1 and segid $Toppar.prot_segid_1)
+    eval ($yre = $result)
+    show (z) (name $atm1 and resid $res1 and segid $Toppar.prot_segid_1)
+    eval ($zre = $result)
+    evaluate ($ncount = 1)
+    while ($ncount < $data.ncomponents) loop nloop1
+      evaluate ($ncount = $ncount +1)
+      coor orient sele=(segid $Toppar.prot_segid_$ncount) end
+      show (x) (name $atm1 and resid $res1 and segid $Toppar.prot_segid_$ncount)
+      eval ($xst = $result)
+      eval ($xxdiff = abs($xre - $xst))
+      do (xcomp = x) (segid $Toppar.prot_segid_$ncount)
+      do (ycomp = y) (segid $Toppar.prot_segid_$ncount)
+      do (zcomp = z) (segid $Toppar.prot_segid_$ncount)
+      if ($xxdiff > 5.0) then
+        do (xcomp = -x) (segid $Toppar.prot_segid_$ncount)
+        do (ycomp = -y)  (segid $Toppar.prot_segid_$ncount)
+        do (zcomp = z) (segid $Toppar.prot_segid_$ncount)
+      end if
+      do (x = xcomp) (not (resn DAN or resn ANI or resn XAN))
+      do (y = ycomp) (not (resn DAN or resn ANI or resn XAN))
+      do (z = zcomp) (not (resn DAN or resn ANI or resn XAN))
+      show (y) (name $atm1 and resid $res1 and segid $Toppar.prot_segid_$ncount)
+      eval ($yst = $result)
+      eval ($yydiff = abs($yre - $yst))
+      if ($yydiff > 5.0) then
+        do (xcomp = x)  (segid $Toppar.prot_segid_$ncount)
+        do (ycomp = -y) (segid $Toppar.prot_segid_$ncount)
+        do (zcomp = -z) (segid $Toppar.prot_segid_$ncount)
+      end if
+      do (x = xcomp) (not (resn DAN or resn ANI or resn XAN))
+      do (y = ycomp) (not (resn DAN or resn ANI or resn XAN))
+      do (z = zcomp) (not (resn DAN or resn ANI or resn XAN))
+    end loop nloop1
+
+    @RUN:protocols/get_random_rotation.cns(Rotation=$rand_rot;)
+    coor rotate
+      center=(0 0 0)
+      quaternion $rand_rot.q0 $rand_rot.q1 $rand_rot.q2 $rand_rot.q3
+      sele=(all) 
+    end
+

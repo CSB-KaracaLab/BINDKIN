@@ -1,0 +1,421 @@
+
+
+
+<!-- Setup -->
+
+
+
+<script src="static/js/jquery-3.2.1.min.js"></script>
+
+<!-- Login Dropdown --><!-- User Dropdown --><!DOCTYPE html>
+    <html>
+        <head>
+                <title>
+    PRODIGY-LIGAND - Run dHw_3BFaXSTO
+</title>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                <!-- Styles -->
+                
+    
+
+                    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+                    <link rel="stylesheet" href="static/css/CSB.css">
+                    <link rel="stylesheet" href="static/css/cookieconsent.min.css">
+                    <!--- Stylesheet for icons --->
+                    <link rel="stylesheet" href="static/css/material-icons.css">
+    <style>
+        .prodigy-table td, .prodigy-table th {
+            text-align: center;
+            padding-top: 0.3rem;
+            padding-right: 0.75rem;
+        }
+    </style>
+    
+
+
+
+        </head>
+
+        <body>
+        <div class="container px-0">
+                <!-- Banner -->
+                
+                    <div id="banner_top" class="rounded-top"></div>
+                    <div id="banner" class="jumbotron rounded-0 mb-0 py-3 local ">
+                        <div class="container">
+                            <h1 class="display-4 font-weight-bold">
+                                PRODIGY</h1>
+                            <h2>@Bonvinlab</h2>
+                        </div>
+                    </div>
+                
+
+                
+<!-- Navbar -->
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top rounded-bottom mb-2 py-1">
+    <button class="navbar-toggler collapsed mr-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+
+
+    <div class="navbar-collapse collapse" id="navbarSupportedContent">
+        <a class="navbar-brand pb-0" href="/">
+            <i class="material-icons d-none d-lg-inline">home</i><p class="d-inline d-lg-none">Home</p></a>
+        <div class="dropdown-divider"></div>
+        <ul class="navbar-nav order-lg-1 mr-auto">
+
+            
+                
+                <li class="nav-item d-none d-lg-block">
+                    <a class="nav-link active pr-0" href="/prodigy">PRODIGY</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="dropdown-toggle nav-link active pr-3"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="d-lg-none">PRODIGY</span><span class="caret"></span></a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/prodigy">PRODIGY</a>
+                        <div class="dropdown-divider"></div>
+                        
+                            
+                        
+                            
+                                
+                                    
+                                
+                                <a class="dropdown-item" href="https://milou.science.uu.nl/services/HADDOCK2.2">HADDOCK2.2</a>
+                            
+                        
+                            
+                                
+                                    
+                                
+                                <a class="dropdown-item" href="/haddock2.4">HADDOCK2.4</a>
+                            
+                        
+                            
+                                
+                                <a class="dropdown-item" href="/disvis">DISVIS</a>
+                            
+                        
+                            
+                                
+                                <a class="dropdown-item" href="http://milou.science.uu.nl/services/CPORT">CPORT</a>
+                            
+                        
+                            
+                                
+                                <a class="dropdown-item" href="http://milou.science.uu.nl/services/POWERFIT/">POWERFIT</a>
+                            
+                        
+                            
+                        
+                            
+                                
+                                <a class="dropdown-item" href="http://milou.science.uu.nl/services/SPOTON">SPOTON</a>
+                            
+                        
+                            
+                                
+                                <a class="dropdown-item" href="http://milou.science.uu.nl/services/3DDART">3D-DART</a>
+                            
+                        
+                            
+                                
+                                <a class="dropdown-item" href="/proabc2">PROABC2</a>
+                            
+                        
+                            
+                                
+                                <a class="dropdown-item" href="/whiscy">WHISCY</a>
+                            
+                        
+                    </div>
+                </li>
+                
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://bianca.science.uu.nl/prodigy/"> Home</a></li>
+                
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://bianca.science.uu.nl/prodigy/manual"> Manual</a></li>
+                
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://bianca.science.uu.nl/prodigy/method"> Method</a></li>
+                
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://bianca.science.uu.nl/prodigy/dataset"> Dataset</a></li>
+                
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://bianca.science.uu.nl/prodigy/example/"> Example</a></li>
+                
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://bianca.science.uu.nl/prodigy/reference"> Reference</a></li>
+                
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://bianca.science.uu.nl/prodigy/help"> Help</a></li>
+                
+            
+        </ul>
+
+
+    </div>
+</nav>
+
+
+                
+
+                <!-- Page Content -->
+                <div id="main-content" class="row mx-0 px-0 rounded clearfix">
+                    <div id="content-header" class= "subheader py-2 col-lg-8 order-lg-1">
+                        Welcome to the Utrecht Biomolecular Interaction Web Portal &gt;&gt;
+                    </div>
+                    <div id="content" class="p-3 order-lg-3 col-12">
+                        
+    
+    <div class="intro">
+        <p> <strong>Your PRODIGY-LIGAND prediction has finished successfully.</strong> </p>
+        <p>Please note that the results will be deleted after two weeks.</p>
+        
+
+<p class="mt-2"><b>To cite PRODIGY-LIGAND</b>, please refer to:</p>
+
+<ol class="publication">
+    <li class="mb-2">
+        Vangone A., Schaarschmidt J., Koukos P., Geng C., Citro N., Trellet M.E., Xue L., Bonvin A.M.J.J.
+        <b><a href="https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/bty816/5104338?redirectedFrom=fulltext">“Large-scale prediction of binding affinity in protein-small ligand complexes: the PRODIGY-LIG web server”</a></b>,
+        <i>Bioinformatics</i>, bty816, <a href="https://doi.org/10.1093/bioinformatics/bty816">https://doi.org/10.1093/bioinformatics/bty816</a>
+    </li>
+    <li>
+        Kurkcuoglu Z., Koukos P.I., Citro  N., Trellet M.E., Rodrigues J.P.G.L.M., Moreira I.S., Roel-Touris J.,
+        Melquiond A.S.J., Geng C., Schaarschmidt J., Xue L.C., Vangone  A. and Bonvin A.M.J.J.
+        <b><a href="http://dx.doi.org/10.1007/s10822-017-0049-y">"Performance of HADDOCK and a simple contact-based
+            protein-ligand binding affinity predictor in the D3R Grand Challenge 2"</a></b>.
+        <i>J. Comp. Aid. Mol. Des.</i><em>32</em>, 175-185 (2018).
+    </li>
+</ol>
+        <p>
+            For more information about the <b>predictive model</b> please check the
+            <a href="http://bianca.science.uu.nl/prodigy/method">PRODIGY-LIGAND prediction method page</a>.</p>
+        <p>
+            Further information can be found in the  <a href="http://bianca.science.uu.nl/prodigy/manual">PRODIGY-LIGAND Manual</a>
+            and an example of the PRODIGY-LIGAND output can be found <a href="http://bianca.science.uu.nl/prodigy/example/">here</a>.</p>
+
+        <p>Back to <a href="http://bianca.science.uu.nl/prodigy/lig">PRODIGY-LIGAND home page</a> </p>
+        
+    <style type='text/css'>
+        #rating1{
+            color: #BF1C1D;
+        }
+        #rating2{
+            color: #FC7700;
+        }
+        #rating3{
+            color: #EEC217;
+        }
+        #rating4{
+            color: #A0D112;
+        }
+        #rating5{
+            color: #55BF16;
+        }
+        .rating{
+            font-size: 24pt !important;
+            cursor: pointer;
+            vertical-align: bottom;
+        }
+        .rating:hover{
+            color: #888888 !important;
+        }
+    </style>
+
+    <div id="satisfaction_plugin" class="my-3">
+        <b class="pr-3" style="vertical-align: super">How would you rate your experience with our portal? </b>
+        
+            <i class="material-icons rating" id="rating1"> sentiment_very_dissatisfied</i>
+        
+            <i class="material-icons rating" id="rating2"> sentiment_dissatisfied</i>
+        
+            <i class="material-icons rating" id="rating3"> sentiment_neutral</i>
+        
+            <i class="material-icons rating" id="rating4"> sentiment_satisfied</i>
+        
+            <i class="material-icons rating" id="rating5"> sentiment_very_satisfied</i>
+        
+    </div>
+    <div id="rated" class="my-3" style="display: none"> Thank you! <i class="material-icons align-bottom"> done</i></div>
+
+    </div>
+    <h2>Binding affinity</h2>
+    <div class="table-responsive">
+        <table class="mt-1 mb-4 mx-3 prodigy-table">
+            <thead>
+            <tr> <th>Job name</th><th>&#916;G<sub>prediction</sub> <p>(Kcal/mol)</p></th><th>&#916;G<sub>score</sub></th> </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    
+                    <td>4eok_w</td>
+                    
+                    <td>-9.7</td>
+                    
+                    <td>72.3</td></tr>
+            
+            </tbody>
+        </table>
+    </div>
+    
+        <h2>Prediction details</h2>
+
+        <div><b> Number of Atomic Contacts per type:</b>
+            <table class="mt-1 mb-4 mx-3 prodigy-table">
+                
+                    <tr><td>Atomic contacts - CC:</td><td>2130</td>
+                    </tr>
+                
+                    <tr><td>Atomic contacts - CO:</td><td>969</td>
+                    </tr>
+                
+                    <tr><td>Atomic contacts - CN:</td><td>1346</td>
+                    </tr>
+                
+                    <tr><td>Atomic contacts - CX:</td><td>103</td>
+                    </tr>
+                
+                    <tr><td>Atomic contacts - OO:</td><td>92</td>
+                    </tr>
+                
+                    <tr><td>Atomic contacts - OX:</td><td>28</td>
+                    </tr>
+                
+                    <tr><td>Atomic contacts - NO:</td><td>305</td>
+                    </tr>
+                
+                    <tr><td>Atomic contacts - NN:</td><td>197</td>
+                    </tr>
+                
+                    <tr><td>Atomic contacts - NX:</td><td>22</td>
+                    </tr>
+                
+                    <tr><td>Atomic contacts - NN:</td><td>197</td>
+                    </tr>
+                
+                    <tr><td>Atomic contacts - XX:</td><td>1</td>
+                    </tr>
+                
+            </table>
+
+        </div>
+
+        <div><b> Table of the ICs at the interface:</b>
+            <table class="mt-1 mb-4 mx-3 prodigy-table">
+                <tr>
+                    <td><a href="http://bianca.science.uu.nl/prodigy/res/dHw_3BFaXSTO/4eok_w_IC_list.txt">
+                        List of residue-residue pairs at the interface (.txt)</a></td>
+                </tr>
+            </table>
+        </div>
+    
+    <dt>Download outputs</dt>
+    <div>
+        <table class="mt-1 mb-4 mx-3 prodigy-table">
+            <tr>
+                <td><a href="http://bianca.science.uu.nl/prodigy/res/dHw_3BFaXSTO/dHw_3BFaXSTO.tgz">
+                    Archive file of all the outputs (.tgz)</a></td>
+            </tr>
+        </table>
+    </div>
+
+
+                    </div>
+                    <div id="sidebar-header" class= "subheader py-2 col-lg-4 order-lg-2"> </div>
+
+                    <!-- Sidebar -->
+                    
+                </div>
+
+
+                <!-- Footer -->
+                
+                    <div id="footer" class="my-2 rounded">
+                        <div class="navbar-dark rounded-top">
+                        </div>
+                        <div class="p-3">
+                            <p> 2008-2020 &copy; Computational Structural Biology group. All rights reserved. </p>
+                            <p> Webdesign by Marc van Dijk, Mikael Trellet, J&ouml;rg Schaarschmidt & Brian Jim&eacute;nez-Garc&iacute;a </p>
+                            <p>
+                                <a href="http://bianca.science.uu.nl/conditions">Terms of use |</a>
+                                <a href="http://bianca.science.uu.nl/privacy"> Privacy</a><p>
+                            <p>
+                                <a href="http://www.uu.nl" title="Utrecht University" style="margin: 0 30px;">
+                                    <img src="https://www.uu.nl/sites/all/themes/uubasetheme/images/logo-nl.svg" alt="Utrecht University" height="30" /></a>
+                                <a href="http://ubc.uu.nl" title="Utrecht Bioinformatics Center" style="margin: 0 30px;">
+                                    <img src="http://bianca.science.uu.nl/Images/UBC_logo.png" alt="Utrecht Bioinformatics Center" height="30" /></a>
+                            </p>
+                        </div>
+                    </div>
+                
+            </div>
+
+
+            <!-- Scripts -->
+            
+    
+                <!-- Cookie Consent -->
+                <script src="static/js/cookieconsent.min.js"></script>
+                <script>
+                    window.addEventListener("load", function(){
+                        window.cookieconsent.initialise({
+                            "palette": {
+                                "popup": {
+                                    "background": "#050101"
+                                },
+                                "button": {
+                                    "background": "#337ab7"
+                                }
+                            },
+                            "theme": "classic",
+                            "position": "bottom"
+                        })
+                    });
+                </script>
+
+                <!-- Bootstrap -->
+                <script src="static/js/popper.min.js"></script>
+                <script src="static/js/bootstrap.min.js"></script>
+
+                <!-- Turn on tooltips in Bootstrap -->
+                <script>
+                    $(function () {
+                        $('[data-toggle="tooltip"]').tooltip()
+                    })
+                </script>
+
+                
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', "UA-11029847-10", "auto");
+  ga('send', 'pageview');
+</script>
+
+            
+    
+
+
+        </body>
+    </html>

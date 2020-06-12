@@ -1,0 +1,6 @@
+#!/bin/tcsh
+foreach i(100*)
+	cd $i/structures/it1/water/
+	rm valBSA pdblist bsa
+	cd ../../../../
+end

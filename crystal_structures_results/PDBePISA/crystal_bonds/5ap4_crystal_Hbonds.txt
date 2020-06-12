@@ -1,0 +1,483 @@
+  * Skip to main content <#content>
+  * Skip to local navigation <#local-nav>
+  * Skip to EBI global navigation menu <#global-nav>
+  * Skip to expanded EBI global navigation menu (includes all
+    sub-sections) <#global-nav-expanded>
+
+EMBL European Bioinformatics Institute <https://www.ebi.ac.uk/>
+
+  * Services <https://www.ebi.ac.uk/services>
+  * Research <https://www.ebi.ac.uk/research>
+  * Training <https://www.ebi.ac.uk/training>
+  * Industry <https://www.ebi.ac.uk/industry>
+  * About us <https://www.ebi.ac.uk/about>
+
+
+  Protein Data Bank in Europe <https://www.ebi.ac.uk/pdbe> Protein Data
+  Bank
+  in Europe
+
+
+  Bringing Structure to Biology
+
+
+  PDBePISA
+
+pdbe.org/pisa <http://pdbe.org/pisa>
+wwPDB <http://www.wwpdb.org/>
+EMDataBank <http://emdatabank.org/>
+
+  *
+    Feedback
+  *
+    Share
+    <http://www.addthis.com/bookmark.php?v=250&pubid=ra-5017dfbd59a8b9f0>
+
+PISA Interface.
+
+_
+Session Map ^help
+<javascript:openWindow('pi_session_map.html',500,500);>  (id=489-11-341)
+Start 	Interfaces 	Interface Search
+  	Monomers 	 
+  	Assemblies 	 
+
+_ 	
+*^  interface # 1 in 5ap4.pdb*
+
+------------------------------------------------------------------------
+*interface #1/2* ^help <javascript:openWindow('pi_ipage.html',700,550);>
+    XML << < > >>
+
+*Interface Summary*_      XML
+  	*Structure 1*
+<javascript:openWindow('pi_ipage_struct1.html',400,250);> 	*Structure 2*
+<javascript:openWindow('pi_ipage_struct2.html',400,250);>
+*Selection range*
+<javascript:openWindow('pi_ipage_ssu.html',400,250);> 	A 	[O38]A:1281
+ class 	Protein 	Ligand
+ symmetry operation 	x,y,z 	,,
+ symmetry ID 	1_555 	0_555
+*Number of atoms* <javascript:openWindow('pi_ipage_nat.html',400,250);>
+ interface 	52 	2.6% 	32 	100.0%
+ surface 	1082 	54.2% 	32 	100.0%
+ total 	1996 	100.0% 	32 	100.0%
+*Number of residues* <javascript:openWindow('pi_ipage_nres.html',400,250);>
+ interface 	21 	8.2% 	1 	100.0%
+ surface 	238 	92.6% 	1 	100.0%
+ total 	257 	100.0% 	1 	100.0%
+*Solvent-accessible area, Å*
+<javascript:openWindow('pi_ipage_surf.html',400,250);>
+ interface 	340.7 	2.7% 	556.2 	81.1%
+ total 	12417.3 	100.0% 	686.0 	100.0%
+*Solvation energy, kcal/mol*
+<javascript:openWindow('pi_ipage_se.html',400,250);>
+ isolated structure 	-226.0 	100.0% 	-5.0 	100.0%
+ gain on complex formation 	-3.4 	1.5% 	5.0 	-99.8%
+ average gain 	-2.6 	1.1% 	5.0 	-100.0%
+ P-value 	0.344 	  	0.498 	 
+
+	        	View
+
+Download 
+
+ 
+
+This interface scored_ 
+*0.000*_ 
+in Complex Formation Significance Score (CSS)._ 
+CSS ranges from 0 to 1 as interface relevance to complex formation
+increases.
+
+Achieved CSS implies that the interface does not play any role in
+complex formation and seems to be a result of crystal packing only
+
+ 
+*Hydrogen bonds*_      XML
+ ##  	^   *Structure 1* _ 
+<javascript:openWindow('pi_ipage_atom1.html',400,250);> 	 *Dist. [Å]* 
+<javascript:openWindow('pi_ipage_atmdist.html',400,250);> 	^ 
+ *Structure 2* _  <javascript:openWindow('pi_ipage_atom2.html',400,250);>
+| 1 | 	|| A:CYS  90[ O  ] || 	| 2.70 | 	|| A:O381281[ N2 ] ||
+
+	No disulfide bonds found
+No covalent bonds found
+No salt bridges found
+
+ ^ 
+*Interfacing residues* (not a contact table)_      XML  Display level:
+   	 Inaccessible residues 	     	HSDC 	 Residues making
+*H*ydrogen/*D*isulphide bond, *S*alt bridge or *C*ovalent link
+   	 Solvent-accessible residues 	     	   	 Interfacing residues
+*ASA*^  	 Accessible Surface Area, Å²^  	     	*BSA*^  	 Buried Surface
+Area, Å²^  	     	*Δ^i G*^  	 Solvation energy effect, kcal/mol^ 
+     	|||| ^  	 Buried area percentage, one bar per 10%^ 
+ 
+
+ ##  	 *Structure 1* 
+<javascript:openWindow('pi_ipage_res1.html',400,250);> 	* HSDC *
+<javascript:openWindow('pi_ipage_hs.html',400,250);> 	* ASA *
+<javascript:openWindow('pi_ipage_asa.html',400,250);> 	* BSA *
+<javascript:openWindow('pi_ipage_bsa.html',400,250);> 	* Δ^i G *
+<javascript:openWindow('pi_ipage_rdg.html',400,250);>
+| 1 | 	| A:PHE   1    | 	|    | 	| 125.83 | 	|       0.00|   	|  0.00 |
+| 2 | 	| A:GLN   2    | 	|    | 	| 141.21 | 	|       0.00|   	|  0.00 |
+| 3 | 	| A:SER   3    | 	|    | 	|  65.58 | 	|       0.00|   	|  0.00 |
+| 4 | 	| A:MET   4    | 	|    | 	|  26.44 | 	|       0.00|   	|  0.00 |
+| 5 | 	| A:SER   5    | 	|    | 	|  55.23 | 	|       0.00|   	|  0.00 |
+| 6 | 	| A:VAL   6    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 7 | 	| A:LYS   7    | 	|    | 	| 128.68 | 	|       0.00|   	|  0.00 |
+| 8 | 	| A:GLY   8    | 	|    | 	|  75.71 | 	|       0.00|   	|  0.00 |
+| 9 | 	| A:ARG   9    | 	|    | 	|  89.55 | 	|       0.00|   	|  0.00 |
+| 10 | 	| A:ILE  10    | 	|    | 	|  50.00 | 	|       0.00|   	|  0.00 |
+| 11 | 	| A:TYR  11    | 	|    | 	|  10.19 | 	|       0.00|   	|  0.00 |
+| 12 | 	| A:SER  12    | 	|    | 	|  47.82 | 	|       0.00|   	|  0.00 |
+| 13 | 	| A:ILE  13    | 	|    | 	|  27.05 | 	|       0.00|   	|  0.00 |
+| 14 | 	| A:LEU  14    | 	|    | 	|  87.27 | 	|       0.00|   	|  0.00 |
+| 15 | 	| A:LYS  15    | 	|    | 	|  53.11 | 	|       0.00|   	|  0.00 |
+| 16 | 	| A:GLN  16    | 	|    | 	|  77.09 | 	|       0.00|   	|  0.00 |
+| 17 | 	| A:ILE  17    | 	|    | 	|  81.40 | 	|     
+62.38|  ||||||||   	|  0.96 |
+| 18 | 	| A:GLY  18    | 	|    | 	|  3.35 | 	|       3.35|  ||||||||||
+|  0.05 |
+| 19 | 	| A:SER  19    | 	|    | 	|  34.75 | 	|       0.00|   	|  0.00 |
+| 20 | 	| A:GLY  20    | 	|    | 	|  19.39 | 	|       0.00|   	|  0.00 |
+| 21 | 	| A:GLY  21    | 	|    | 	|  74.93 | 	|       0.00|   	|  0.00 |
+| 22 | 	| A:SER  22    | 	|    | 	|  55.43 | 	|       0.00|   	|  0.00 |
+| 23 | 	| A:SER  23    | 	|    | 	|  16.15 | 	|       0.00|   	|  0.00 |
+| 24 | 	| A:LYS  24    | 	|    | 	|  30.21 | 	|       0.00|   	|  0.00 |
+| 25 | 	| A:VAL  25    | 	|    | 	|  18.24 | 	|     
+18.24|  ||||||||||| 	|  0.29 |
+| 26 | 	| A:PHE  26    | 	|    | 	|  31.59 | 	|       0.00|   	|  0.00 |
+| 27 | 	| A:GLN  27    | 	|    | 	|  48.52 | 	|     
+12.29|  |||        	|  -0.14 |
+| 28 | 	| A:VAL  28    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 29 | 	| A:LEU  29    | 	|    | 	|  38.56 | 	|       0.00|   	|  0.00 |
+| 30 | 	| A:ASN  30    | 	|    | 	|  21.91 | 	|       0.00|   	|  0.00 |
+| 31 | 	| A:GLU  31    | 	|    | 	| 106.12 | 	|       0.00|   	|  0.00 |
+| 32 | 	| A:LYS  32    | 	|    | 	|  75.63 | 	|       0.00|   	|  0.00 |
+| 33 | 	| A:LYS  33    | 	|    | 	| 111.50 | 	|       0.00|   	|  0.00 |
+| 34 | 	| A:GLN  34    | 	|    | 	|  95.51 | 	|       0.00|   	|  0.00 |
+| 35 | 	| A:ILE  35    | 	|    | 	|  87.14 | 	|       0.00|   	|  0.00 |
+| 36 | 	| A:TYR  36    | 	|    | 	|  31.48 | 	|       0.00|   	|  0.00 |
+| 37 | 	| A:ALA  37    | 	|    | 	|  4.86 | 	|       4.86|  ||||||||||
+|  0.08 |
+| 38 | 	| A:ILE  38    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 39 | 	| A:LYS  39    | 	|    | 	|  40.88 | 	|      
+6.00|  ||         	|  0.03 |
+| 40 | 	| A:TYR  40    | 	|    | 	|  57.60 | 	|       0.00|   	|  0.00 |
+| 41 | 	| A:VAL  41    | 	|    | 	|  9.04 | 	|       0.00|   	|  0.00 |
+| 42 | 	| A:ASN  42    | 	|    | 	|  49.99 | 	|       0.00|   	|  0.00 |
+| 43 | 	| A:LEU  43    | 	|    | 	|  6.98 | 	|       0.00|   	|  0.00 |
+| 44 | 	| A:GLU  44    | 	|    | 	| 141.02 | 	|       0.00|   	|  0.00 |
+| 45 | 	| A:GLU  45    | 	|    | 	| 109.96 | 	|       0.00|   	|  0.00 |
+| 46 | 	| A:ALA  46    | 	|    | 	|  26.70 | 	|       0.00|   	|  0.00 |
+| 47 | 	| A:ASP  47    | 	|    | 	|  83.43 | 	|       0.00|   	|  0.00 |
+| 48 | 	| A:ASN  48    | 	|    | 	|  79.66 | 	|       0.00|   	|  0.00 |
+| 49 | 	| A:GLN  49    | 	|    | 	|  76.91 | 	|       0.00|   	|  0.00 |
+| 50 | 	| A:THR  50    | 	|    | 	|  20.37 | 	|       0.00|   	|  0.00 |
+| 51 | 	| A:LEU  51    | 	|    | 	|  37.49 | 	|       0.00|   	|  0.00 |
+| 52 | 	| A:ASP  52    | 	|    | 	|  81.14 | 	|       0.00|   	|  0.00 |
+| 53 | 	| A:SER  53    | 	|    | 	|  18.85 | 	|       0.00|   	|  0.00 |
+| 54 | 	| A:TYR  54    | 	|    | 	|  26.28 | 	|       0.00|   	|  0.00 |
+| 55 | 	| A:ARG  55    | 	|    | 	| 115.72 | 	|       0.00|   	|  0.00 |
+| 56 | 	| A:ASN  56    | 	|    | 	|  64.46 | 	|       0.00|   	|  0.00 |
+| 57 | 	| A:GLU  57    | 	|    | 	|  20.20 | 	|       0.00|   	|  0.00 |
+| 58 | 	| A:ILE  58    | 	|    | 	|  9.63 | 	|       0.00|   	|  0.00 |
+| 59 | 	| A:ALA  59    | 	|    | 	|  56.40 | 	|       0.00|   	|  0.00 |
+| 60 | 	| A:TYR  60    | 	|    | 	|  67.02 | 	|       0.00|   	|  0.00 |
+| 61 | 	| A:LEU  61    | 	|    | 	|  9.15 | 	|       0.00|   	|  0.00 |
+| 62 | 	| A:ASN  62    | 	|    | 	|  69.12 | 	|       0.00|   	|  0.00 |
+| 63 | 	| A:LYS  63    | 	|    | 	| 103.02 | 	|       0.00|   	|  0.00 |
+| 64 | 	| A:LEU  64    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 65 | 	| A:GLN  65    | 	|    | 	|  22.53 | 	|       0.00|   	|  0.00 |
+| 66 | 	| A:GLN  66    | 	|    | 	| 148.31 | 	|       0.00|   	|  0.00 |
+| 67 | 	| A:HIS  67    | 	|    | 	|  98.13 | 	|       0.00|   	|  0.00 |
+| 68 | 	| A:SER  68    | 	|    | 	|  10.21 | 	|       0.00|   	|  0.00 |
+| 69 | 	| A:ASP  69    | 	|    | 	|  74.38 | 	|       0.00|   	|  0.00 |
+| 70 | 	| A:LYS  70    | 	|    | 	|  15.02 | 	|       0.00|   	|  0.00 |
+| 71 | 	| A:ILE  71    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 72 | 	| A:ILE  72    | 	|    | 	|  4.84 | 	|       4.84|  ||||||||||
+|  0.08 |
+| 73 | 	| A:ARG  73    | 	|    | 	|  57.48 | 	|       0.00|   	|  0.00 |
+| 74 | 	| A:LEU  74    | 	|    | 	|  21.12 | 	|       0.00|   	|  0.00 |
+| 75 | 	| A:TYR  75    | 	|    | 	| 116.16 | 	|       0.00|   	|  0.00 |
+| 76 | 	| A:ASP  76    | 	|    | 	|  35.32 | 	|       0.00|   	|  0.00 |
+| 77 | 	| A:TYR  77    | 	|    | 	|  61.14 | 	|       0.00|   	|  0.00 |
+| 78 | 	| A:GLU  78    | 	|    | 	|  36.55 | 	|       0.00|   	|  0.00 |
+| 79 | 	| A:ILE  79    | 	|    | 	|  80.14 | 	|       0.00|   	|  0.00 |
+| 80 | 	| A:THR  80    | 	|    | 	|  44.41 | 	|       0.00|   	|  0.00 |
+| 81 | 	| A:ASP  81    | 	|    | 	| 129.93 | 	|       0.00|   	|  0.00 |
+| 82 | 	| A:GLN  82    | 	|    | 	|  90.70 | 	|       0.00|   	|  0.00 |
+| 83 | 	| A:TYR  83    | 	|    | 	|  48.40 | 	|       0.00|   	|  0.00 |
+| 84 | 	| A:ILE  84    | 	|    | 	|  2.68 | 	|       0.00|   	|  0.00 |
+| 85 | 	| A:TYR  85    | 	|    | 	|  33.31 | 	|       0.00|   	|  0.00 |
+| 86 | 	| A:MET  86    | 	|    | 	|  13.02 | 	|       0.00|   	|  0.00 |
+| 87 | 	| A:VAL  87    | 	|    | 	|  0.68 | 	|       0.00|   	|  0.00 |
+| 88 | 	| A:MET  88    | 	|    | 	|  10.34 | 	|      
+7.69|  ||||||||   	|  0.18 |
+| 89 | 	| A:GLU  89    | 	|    | 	|  21.67 | 	|      
+0.24|  |          	|  -0.00 |
+| 90 | 	| A:CYS  90    | 	|H   | 	|  26.15 | 	|     
+15.20|  ||||||     	|  0.22 |
+| 91 | 	| A:GLY  91    | 	|    | 	|  23.70 | 	|      
+6.55|  |||        	|  -0.07 |
+| 92 | 	| A:ASN  92    | 	|    | 	| 100.47 | 	|     
+22.12|  |||        	|  -0.22 |
+| 93 | 	| A:ILE  93    | 	|    | 	|  63.43 | 	|     
+39.68|  |||||||    	|  0.63 |
+| 94 | 	| A:ASP  94    | 	|    | 	|  30.21 | 	|     
+29.29|  |||||||||| 	|  -0.05 |
+| 95 | 	| A:LEU  95    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 96 | 	| A:ASN  96    | 	|    | 	|  33.42 | 	|       0.00|   	|  0.00 |
+| 97 | 	| A:GLY  97    | 	|    | 	|  24.30 | 	|      
+2.51|  ||         	|  0.04 |
+| 98 | 	| A:TRP  98    | 	|    | 	|  80.90 | 	|       0.00|   	|  0.00 |
+| 99 | 	| A:LEU  99    | 	|    | 	|  17.38 | 	|       0.00|   	|  0.00 |
+| 100 | 	| A:LYS 100    | 	|    | 	|  78.33 | 	|       0.00|   	|  0.00 |
+| 101 | 	| A:LYS 101    | 	|    | 	|  77.44 | 	|       0.00|   	|  0.00 |
+| 102 | 	| A:LYS 102    | 	|    | 	|  58.25 | 	|       0.00|   	|  0.00 |
+| 103 | 	| A:LYS 103    | 	|    | 	| 116.52 | 	|       0.00|   	|  0.00 |
+| 104 | 	| A:SER 104    | 	|    | 	|  92.97 | 	|       0.00|   	|  0.00 |
+| 105 | 	| A:ILE 105    | 	|    | 	|  19.94 | 	|       0.00|   	|  0.00 |
+| 106 | 	| A:ASP 106    | 	|    | 	|  69.39 | 	|       0.00|   	|  0.00 |
+| 107 | 	| A:PRO 107    | 	|    | 	|  69.34 | 	|       0.00|   	|  0.00 |
+| 108 | 	| A:TRP 108    | 	|    | 	| 195.58 | 	|       0.00|   	|  0.00 |
+| 109 | 	| A:GLU 109    | 	|    | 	|  32.45 | 	|       0.00|   	|  0.00 |
+| 110 | 	| A:ARG 110    | 	|    | 	|  18.41 | 	|       0.00|   	|  0.00 |
+| 111 | 	| A:LYS 111    | 	|    | 	|  41.12 | 	|       0.00|   	|  0.00 |
+| 112 | 	| A:SER 112    | 	|    | 	|  34.75 | 	|       0.00|   	|  0.00 |
+| 113 | 	| A:TYR 113    | 	|    | 	|  10.54 | 	|       0.00|   	|  0.00 |
+| 114 | 	| A:TRP 114    | 	|    | 	|  0.58 | 	|       0.00|   	|  0.00 |
+| 115 | 	| A:LYS 115    | 	|    | 	|  87.67 | 	|       0.00|   	|  0.00 |
+| 116 | 	| A:ASN 116    | 	|    | 	|  15.83 | 	|       0.00|   	|  0.00 |
+| 117 | 	| A:MET 117    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 118 | 	| A:LEU 118    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 119 | 	| A:GLU 119    | 	|    | 	|  59.06 | 	|       0.00|   	|  0.00 |
+| 120 | 	| A:ALA 120    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 121 | 	| A:VAL 121    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 122 | 	| A:HIS 122    | 	|    | 	|  47.58 | 	|       0.00|   	|  0.00 |
+| 123 | 	| A:THR 123    | 	|    | 	|  7.80 | 	|       0.00|   	|  0.00 |
+| 124 | 	| A:ILE 124    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 125 | 	| A:HIS 125    | 	|    | 	|  30.04 | 	|       0.00|   	|  0.00 |
+| 126 | 	| A:GLN 126    | 	|    | 	| 122.54 | 	|       0.00|   	|  0.00 |
+| 127 | 	| A:HIS 127    | 	|    | 	|  49.15 | 	|       0.00|   	|  0.00 |
+| 128 | 	| A:GLY 128    | 	|    | 	|  69.36 | 	|       0.00|   	|  0.00 |
+| 129 | 	| A:ILE 129    | 	|    | 	|  11.88 | 	|       0.00|   	|  0.00 |
+| 130 | 	| A:VAL 130    | 	|    | 	|  36.70 | 	|       0.00|   	|  0.00 |
+| 131 | 	| A:HIS 131    | 	|    | 	|  2.74 | 	|       0.00|   	|  0.00 |
+| 132 | 	| A:SER 132    | 	|    | 	|  50.06 | 	|       0.00|   	|  0.00 |
+| 133 | 	| A:ASP 133    | 	|    | 	|  70.86 | 	|       0.00|   	|  0.00 |
+| 134 | 	| A:LEU 134    | 	|    | 	|  1.30 | 	|       0.00|   	|  0.00 |
+| 135 | 	| A:LYS 135    | 	|    | 	|  25.86 | 	|       0.00|   	|  0.00 |
+| 136 | 	| A:PRO 136    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 137 | 	| A:ALA 137    | 	|    | 	|  11.07 | 	|      
+8.65|  ||||||||   	|  -0.03 |
+| 138 | 	| A:ASN 138    | 	|    | 	|  9.22 | 	|       0.00|   	|  0.00 |
+| 139 | 	| A:PHE 139    | 	|    | 	|  0.16 | 	|       0.00|   	|  0.00 |
+| 140 | 	| A:LEU 140    | 	|    | 	|  15.07 | 	|     
+15.07|  ||||||||||| 	|  0.24 |
+| 141 | 	| A:ILE 141    | 	|    | 	|  8.53 | 	|       0.00|   	|  0.00 |
+| 142 | 	| A:VAL 142    | 	|    | 	|  17.49 | 	|       0.00|   	|  0.00 |
+| 143 | 	| A:ASP 143    | 	|    | 	| 117.56 | 	|       0.00|   	|  0.00 |
+| 144 | 	| A:GLY 144    | 	|    | 	|  48.42 | 	|       0.00|   	|  0.00 |
+| 145 | 	| A:MET 145    | 	|    | 	|  69.68 | 	|       0.00|   	|  0.00 |
+| 146 | 	| A:LEU 146    | 	|    | 	|  0.16 | 	|       0.00|   	|  0.00 |
+| 147 | 	| A:LYS 147    | 	|    | 	|  12.74 | 	|       0.00|   	|  0.00 |
+| 148 | 	| A:LEU 148    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 149 | 	| A:ILE 149    | 	|    | 	|  49.49 | 	|     
+35.65|  ||||||||   	|  0.57 |
+| 150 | 	| A:ASP 150    | 	|    | 	|  39.06 | 	|       0.00|   	|  0.00 |
+| 151 | 	| A:PHE 151    | 	|    | 	|  0.63 | 	|       0.00|   	|  0.00 |
+| 152 | 	| A:GLY 152    | 	|    | 	|  33.20 | 	|       0.00|   	|  0.00 |
+| 153 | 	| A:ILE 153    | 	|    | 	|  45.90 | 	|       0.00|   	|  0.00 |
+| 154 | 	| A:ALA 154    | 	|    | 	|  29.01 | 	|       0.00|   	|  0.00 |
+| 155 | 	| A:ASN 155    | 	|    | 	| 147.30 | 	|       0.00|   	|  0.00 |
+| 156 | 	| A:MET 157    | 	|    | 	|  96.75 | 	|     
+26.09|  |||        	|  0.21 |
+| 157 | 	| A:GLN 158    | 	|    | 	|  43.94 | 	|      
+0.62|  |          	|  0.01 |
+| 158 | 	| A:PRO 159    | 	|    | 	|  97.53 | 	|     
+19.39|  ||         	|  0.31 |
+| 159 | 	| A:ASP 160    | 	|    | 	|  78.87 | 	|       0.00|   	|  0.00 |
+| 160 | 	| A:GLN 169    | 	|    | 	|  64.72 | 	|       0.00|   	|  0.00 |
+| 161 | 	| A:VAL 170    | 	|    | 	| 102.26 | 	|       0.00|   	|  0.00 |
+| 162 | 	| A:GLY 171    | 	|    | 	|  98.78 | 	|       0.00|   	|  0.00 |
+| 163 | 	| A:VAL 173    | 	|    | 	|  52.53 | 	|       0.00|   	|  0.00 |
+| 164 | 	| A:ASN 174    | 	|    | 	|  37.40 | 	|       0.00|   	|  0.00 |
+| 165 | 	| A:TYR 175    | 	|    | 	|  21.45 | 	|       0.00|   	|  0.00 |
+| 166 | 	| A:MET 176    | 	|    | 	|  49.76 | 	|       0.00|   	|  0.00 |
+| 167 | 	| A:PRO 177    | 	|    | 	|  1.51 | 	|       0.00|   	|  0.00 |
+| 168 | 	| A:PRO 178    | 	|    | 	|  10.16 | 	|       0.00|   	|  0.00 |
+| 169 | 	| A:GLU 179    | 	|    | 	|  30.66 | 	|       0.00|   	|  0.00 |
+| 170 | 	| A:ALA 180    | 	|    | 	|  35.11 | 	|       0.00|   	|  0.00 |
+| 171 | 	| A:ILE 181    | 	|    | 	|  35.07 | 	|       0.00|   	|  0.00 |
+| 172 | 	| A:LYS 182    | 	|    | 	|  90.81 | 	|       0.00|   	|  0.00 |
+| 173 | 	| A:ASP 183    | 	|    | 	| 111.97 | 	|       0.00|   	|  0.00 |
+| 174 | 	| A:ILE 197    | 	|    | 	| 104.88 | 	|       0.00|   	|  0.00 |
+| 175 | 	| A:SER 198    | 	|    | 	|  41.03 | 	|       0.00|   	|  0.00 |
+| 176 | 	| A:PRO 199    | 	|    | 	|  69.94 | 	|       0.00|   	|  0.00 |
+| 177 | 	| A:LYS 200    | 	|    | 	|  49.48 | 	|       0.00|   	|  0.00 |
+| 178 | 	| A:SER 201    | 	|    | 	|  2.35 | 	|       0.00|   	|  0.00 |
+| 179 | 	| A:ASP 202    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 180 | 	| A:VAL 203    | 	|    | 	|  0.85 | 	|       0.00|   	|  0.00 |
+| 181 | 	| A:TRP 204    | 	|    | 	|  1.37 | 	|       0.00|   	|  0.00 |
+| 182 | 	| A:SER 205    | 	|    | 	|  0.37 | 	|       0.00|   	|  0.00 |
+| 183 | 	| A:LEU 206    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 184 | 	| A:GLY 207    | 	|    | 	|  0.17 | 	|       0.00|   	|  0.00 |
+| 185 | 	| A:CYS 208    | 	|    | 	|  0.17 | 	|       0.00|   	|  0.00 |
+| 186 | 	| A:ILE 209    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 187 | 	| A:LEU 210    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 188 | 	| A:TYR 211    | 	|    | 	|  4.80 | 	|       0.00|   	|  0.00 |
+| 189 | 	| A:TYR 212    | 	|    | 	|  43.63 | 	|       0.00|   	|  0.00 |
+| 190 | 	| A:MET 213    | 	|    | 	|  5.51 | 	|       0.00|   	|  0.00 |
+| 191 | 	| A:THR 214    | 	|    | 	|  27.72 | 	|       0.00|   	|  0.00 |
+| 192 | 	| A:TYR 215    | 	|    | 	|  52.39 | 	|       0.00|   	|  0.00 |
+| 193 | 	| A:GLY 216    | 	|    | 	|  51.57 | 	|       0.00|   	|  0.00 |
+| 194 | 	| A:LYS 217    | 	|    | 	|  61.89 | 	|       0.00|   	|  0.00 |
+| 195 | 	| A:THR 218    | 	|    | 	|  3.02 | 	|       0.00|   	|  0.00 |
+| 196 | 	| A:PRO 219    | 	|    | 	|  4.91 | 	|       0.00|   	|  0.00 |
+| 197 | 	| A:PHE 220    | 	|    | 	|  1.56 | 	|       0.00|   	|  0.00 |
+| 198 | 	| A:GLN 221    | 	|    | 	|  75.20 | 	|       0.00|   	|  0.00 |
+| 199 | 	| A:GLN 222    | 	|    | 	| 113.62 | 	|       0.00|   	|  0.00 |
+| 200 | 	| A:ILE 223    | 	|    | 	|  31.13 | 	|       0.00|   	|  0.00 |
+| 201 | 	| A:ILE 224    | 	|    | 	| 108.48 | 	|       0.00|   	|  0.00 |
+| 202 | 	| A:ASN 225    | 	|    | 	|  81.93 | 	|       0.00|   	|  0.00 |
+| 203 | 	| A:GLN 226    | 	|    | 	|  67.89 | 	|       0.00|   	|  0.00 |
+| 204 | 	| A:ILE 227    | 	|    | 	| 124.18 | 	|       0.00|   	|  0.00 |
+| 205 | 	| A:SER 228    | 	|    | 	|  57.06 | 	|       0.00|   	|  0.00 |
+| 206 | 	| A:LYS 229    | 	|    | 	|  18.73 | 	|       0.00|   	|  0.00 |
+| 207 | 	| A:LEU 230    | 	|    | 	|  60.73 | 	|       0.00|   	|  0.00 |
+| 208 | 	| A:HIS 231    | 	|    | 	| 119.20 | 	|       0.00|   	|  0.00 |
+| 209 | 	| A:ALA 232    | 	|    | 	|  7.58 | 	|       0.00|   	|  0.00 |
+| 210 | 	| A:ILE 233    | 	|    | 	|  1.67 | 	|       0.00|   	|  0.00 |
+| 211 | 	| A:ILE 234    | 	|    | 	|  69.98 | 	|       0.00|   	|  0.00 |
+| 212 | 	| A:ASP 235    | 	|    | 	|  59.65 | 	|       0.00|   	|  0.00 |
+| 213 | 	| A:PRO 236    | 	|    | 	|  96.03 | 	|       0.00|   	|  0.00 |
+| 214 | 	| A:ASN 237    | 	|    | 	| 140.65 | 	|       0.00|   	|  0.00 |
+| 215 | 	| A:HIS 238    | 	|    | 	|  65.19 | 	|       0.00|   	|  0.00 |
+| 216 | 	| A:GLU 239    | 	|    | 	|  87.97 | 	|       0.00|   	|  0.00 |
+| 217 | 	| A:ILE 240    | 	|    | 	|  25.10 | 	|       0.00|   	|  0.00 |
+| 218 | 	| A:GLU 241    | 	|    | 	| 132.55 | 	|       0.00|   	|  0.00 |
+| 219 | 	| A:PHE 242    | 	|    | 	|  51.42 | 	|       0.00|   	|  0.00 |
+| 220 | 	| A:PRO 243    | 	|    | 	|  65.11 | 	|       0.00|   	|  0.00 |
+| 221 | 	| A:ASP 244    | 	|    | 	| 106.30 | 	|       0.00|   	|  0.00 |
+| 222 | 	| A:ILE 245    | 	|    | 	|  28.50 | 	|       0.00|   	|  0.00 |
+| 223 | 	| A:PRO 246    | 	|    | 	| 137.29 | 	|       0.00|   	|  0.00 |
+| 224 | 	| A:GLU 247    | 	|    | 	|  41.77 | 	|       0.00|   	|  0.00 |
+| 225 | 	| A:LYS 248    | 	|    | 	| 116.75 | 	|       0.00|   	|  0.00 |
+| 226 | 	| A:ASP 249    | 	|    | 	|  54.45 | 	|       0.00|   	|  0.00 |
+| 227 | 	| A:LEU 250    | 	|    | 	|  1.50 | 	|       0.00|   	|  0.00 |
+| 228 | 	| A:GLN 251    | 	|    | 	|  57.77 | 	|       0.00|   	|  0.00 |
+| 229 | 	| A:ASP 252    | 	|    | 	|  70.72 | 	|       0.00|   	|  0.00 |
+| 230 | 	| A:VAL 253    | 	|    | 	|  0.34 | 	|       0.00|   	|  0.00 |
+| 231 | 	| A:LEU 254    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 232 | 	| A:LYS 255    | 	|    | 	|  46.20 | 	|       0.00|   	|  0.00 |
+| 233 | 	| A:CYS 256    | 	|    | 	|  39.02 | 	|       0.00|   	|  0.00 |
+| 234 | 	| A:CYS 257    | 	|    | 	|  0.00 | 	|       0.00|   	|  0.00 |
+| 235 | 	| A:LEU 258    | 	|    | 	|  8.94 | 	|       0.00|   	|  0.00 |
+| 236 | 	| A:LYS 259    | 	|    | 	|  42.84 | 	|       0.00|   	|  0.00 |
+| 237 | 	| A:ARG 260    | 	|    | 	|  50.97 | 	|       0.00|   	|  0.00 |
+| 238 | 	| A:ASP 261    | 	|    | 	|  79.68 | 	|       0.00|   	|  0.00 |
+| 239 | 	| A:PRO 262    | 	|    | 	|  38.11 | 	|       0.00|   	|  0.00 |
+| 240 | 	| A:LYS 263    | 	|    | 	|  89.21 | 	|       0.00|   	|  0.00 |
+| 241 | 	| A:GLN 264    | 	|    | 	|  66.39 | 	|       0.00|   	|  0.00 |
+| 242 | 	| A:ARG 265    | 	|    | 	|  5.01 | 	|       0.00|   	|  0.00 |
+| 243 | 	| A:ILE 266    | 	|    | 	|  26.84 | 	|       0.00|   	|  0.00 |
+| 244 | 	| A:SER 267    | 	|    | 	|  27.64 | 	|       0.00|   	|  0.00 |
+| 245 | 	| A:ILE 268    | 	|    | 	|  3.30 | 	|       0.00|   	|  0.00 |
+| 246 | 	| A:PRO 269    | 	|    | 	|  82.85 | 	|       0.00|   	|  0.00 |
+| 247 | 	| A:GLU 270    | 	|    | 	| 105.73 | 	|       0.00|   	|  0.00 |
+| 248 | 	| A:LEU 271    | 	|    | 	|  0.42 | 	|       0.00|   	|  0.00 |
+| 249 | 	| A:LEU 272    | 	|    | 	|  43.76 | 	|       0.00|   	|  0.00 |
+| 250 | 	| A:ALA 273    | 	|    | 	|  76.89 | 	|       0.00|   	|  0.00 |
+| 251 | 	| A:HIS 274    | 	|    | 	|  16.18 | 	|       0.00|   	|  0.00 |
+| 252 | 	| A:PRO 275    | 	|    | 	|  59.58 | 	|       0.00|   	|  0.00 |
+| 253 | 	| A:TYR 276    | 	|    | 	|  1.58 | 	|       0.00|   	|  0.00 |
+| 254 | 	| A:VAL 277    | 	|    | 	|  11.50 | 	|       0.00|   	|  0.00 |
+| 255 | 	| A:GLN 278    | 	|    | 	| 118.89 | 	|       0.00|   	|  0.00 |
+| 256 | 	| A:ILE 279    | 	|    | 	| 109.11 | 	|       0.00|   	|  0.00 |
+| 257 | 	| A:GLN 280    | 	|    | 	| 139.71 | 	|       0.00|   	|  0.00 |
+
+	         	
+ ##  	 *Structure 2* 
+<javascript:openWindow('pi_ipage_res2.html',400,250);> 	* HSDC *
+<javascript:openWindow('pi_ipage_hs.html',400,250);> 	* ASA *
+<javascript:openWindow('pi_ipage_asa.html',400,250);> 	* BSA *
+<javascript:openWindow('pi_ipage_bsa.html',400,250);> 	* Δ^i G *
+<javascript:openWindow('pi_ipage_rdg.html',400,250);>
+| 1 | 	| A:O381281    | 	|H   | 	| 685.98 | 	|    556.24|  ||||||||| 
+|  -5.02 |
+
+------------------------------------------------------------------------
+<< < > >>
+
+PDBe PISA v1.52 [20/10/2014]
+Protein Data Bank in Europe (PDBe)
+<https://pdbe.org/>
+is a member of
+wwPDB <http://www.wwpdb.org/>
+EMDataBank <http://emdatabank.org/>
+EMBL European Bioinformatics Institute <https://www.ebi.ac.uk/>
+
+  * News <https://www.ebi.ac.uk/about/news>
+  * Our impact <https://www.ebi.ac.uk/about/our-impact>
+  * Contact us <https://www.ebi.ac.uk/about/contact>
+  * Intranet <http://intranet.ebi.ac.uk/>
+
+
+      Services <https://www.ebi.ac.uk/services>
+
+  * By topic <https://www.ebi.ac.uk/services>
+  * By name (A-Z) <https://www.ebi.ac.uk/services/all>
+  * Help & Support <https://www.ebi.ac.uk/support>
+
+
+      Research <https://www.ebi.ac.uk/research>
+
+  * Overview <https://www.ebi.ac.uk/research>
+  * Publications <https://www.ebi.ac.uk/research/publications>
+  * Research groups <https://www.ebi.ac.uk/research/groups>
+  * Postdocs <https://www.ebi.ac.uk/research/postdocs> & PhDs
+    <https://www.ebi.ac.uk/research/eipp>
+
+
+      Training <https://www.ebi.ac.uk/training>
+
+  * Overview <https://www.ebi.ac.uk/training>
+  * Train at EBI <https://www.ebi.ac.uk/training/handson>
+  * Train outside EBI <https://www.ebi.ac.uk/training/roadshow>
+  * Train online <https://www.ebi.ac.uk/training/online>
+  * Contact organisers <https://www.ebi.ac.uk/training/contact-us>
+
+
+      Industry <https://www.ebi.ac.uk/industry>
+
+  * Overview <https://www.ebi.ac.uk/industry>
+  * Members Area <https://www.ebi.ac.uk/industry/private>
+  * Workshops <https://www.ebi.ac.uk/industry/workshops>
+  * SME Forum <https://www.ebi.ac.uk/industry/sme-forum>
+  * Contact Industry programme <https://www.ebi.ac.uk/industry/contact>
+
+
+      About us <https://www.ebi.ac.uk/about>
+
+  * Overview <https://www.ebi.ac.uk/about>
+  * Leadership <https://www.ebi.ac.uk/about/leadership>
+  * Funding <https://www.ebi.ac.uk/about/funding>
+  * Background <https://www.ebi.ac.uk/about/background>
+  * Collaboration <https://www.ebi.ac.uk/about/partnerships>
+  * Jobs <https://www.ebi.ac.uk/about/jobs>
+  * People & groups <https://www.ebi.ac.uk/about/people>
+  * News <https://www.ebi.ac.uk/about/news>
+  * Events <https://www.ebi.ac.uk/about/events>
+  * Visit us <https://www.ebi.ac.uk/about/travel>
+  * Contact us <https://www.ebi.ac.uk/about/contact>
+
+EMBL-EBI, Wellcome Genome Campus, Hinxton, Cambridgeshire, CB10 1SD, UK
+    +44 (0)1223 49 44 44
+
+Copyright © EMBL-EBI 2020 | EBI is an outstation of the European
+Molecular Biology Laboratory <http://www.embl.org/> | Terms of use
+<https://www.ebi.ac.uk/about/terms-of-use>
+

@@ -1,0 +1,61 @@
+{
+  "chains": [
+    "A",
+    "A:P3Y"
+  ],
+  "pdb_id": "",
+  "interactor1": "A",
+  "tag": "",
+  "email": "",
+  "notify": false,
+  "sample": false,
+  "interactor2": "A:P3Y",
+  "electrostatics": null,
+  "predictions": {
+    "structures": [
+      "2qoh"
+    ],
+    "electrostatics": [
+      null
+    ],
+    "dg_score": [
+      null
+    ],
+    "dg_elec": [
+      null
+    ],
+    "dg": [
+      -9.776781399999999
+    ],
+    "CC": [
+      2818
+    ],
+    "NN": [
+      121
+    ],
+    "OO": [
+      70
+    ],
+    "XX": [
+      0
+    ],
+    "CN": [
+      1230
+    ],
+    "CO": [
+      1049
+    ],
+    "CX": [
+      29
+    ],
+    "NO": [
+      205
+    ],
+    "NX": [
+      4
+    ],
+    "OX": [
+      3
+    ]
+  }
+}

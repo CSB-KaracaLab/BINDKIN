@@ -1,0 +1,10 @@
+Score for 4clj_w_Lig.pdb is -36.25
+Score for 4eok_w_Lig.pdb is -27.12
+Score for 4eor_w_Lig.pdb is -22.88
+Score for 4twp_w_Lig.pdb is -41
+Score for 4wa9_w_Lig.pdb is -38.86
+Score for 5cas_w_Lig.pdb is -40.34
+Score for 5cav_w_Lig.pdb is -51.95
+Score for 5em7_w_Lig.pdb is -32.01
+Score for 5em8_w_Lig.pdb is -31.37
+Score for 4cli_w_Lig.pdb is -46.14

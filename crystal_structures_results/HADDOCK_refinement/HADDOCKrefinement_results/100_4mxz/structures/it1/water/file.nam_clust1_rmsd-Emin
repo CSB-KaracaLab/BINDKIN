@@ -1,0 +1,21 @@
+#Structure rmsd_Emin
+ complex_5w.pdb    0.000 
+ complex_10w.pdb    0.350 
+ complex_14w.pdb    0.346 
+ complex_20w.pdb    0.347 
+ complex_11w.pdb    0.339 
+ complex_17w.pdb    0.358 
+ complex_8w.pdb    0.341 
+ complex_9w.pdb    0.376 
+ complex_12w.pdb    0.348 
+ complex_15w.pdb    0.362 
+ complex_13w.pdb    0.341 
+ complex_7w.pdb    0.376 
+ complex_1w.pdb    0.359 
+ complex_4w.pdb    0.339 
+ complex_6w.pdb    0.363 
+ complex_2w.pdb    0.367 
+ complex_19w.pdb    0.333 
+ complex_16w.pdb    0.415 
+ complex_3w.pdb    0.342 
+ complex_18w.pdb    0.363 

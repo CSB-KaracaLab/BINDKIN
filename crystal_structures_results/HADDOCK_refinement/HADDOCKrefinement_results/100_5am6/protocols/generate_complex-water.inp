@@ -1,0 +1,237 @@
+! generate_complex-water.inp
+!    Merge the coordinates and topologies of a complex for solvated docking
+!
+! ***********************************************************************
+! * Copyright 2003-2015 Alexandre Bonvin, Utrecht University.           *
+! * All rights reserved.                                                *
+! * This code is part of the HADDOCK software and governed by its       *
+! * license. Please see the LICENSE file that should have been included *
+! * as part of this package.                                            *
+! ***********************************************************************
+!
+
+! a maximum number of structures to be written to avoid
+! filling the disk space
+evalute ($maxstruc = 4000)
+
+@RUN:protocols/initialize.cns(iteration=$iteration;)
+
+@RUN:begin/iteration.cns(iteration=$iteration;)
+
+@RUN:run.cns(
+iteration =$iteration;
+filenames =$filenames;
+Data      =$Data;
+iterations=$iterations;
+saprotocol=$saprotocol;
+refine    =$refine;
+toppar    =$toppar;
+analysis  =$analysis;)
+
+eval($nchain1 = 0)
+while ($nchain1 < $data.ncomponents) loop cloop1
+  eval($nchain1 = $nchain1 + 1)
+  evaluate($coor_infile_$nchain1= "RUN:begin/" + $Toppar.prot_root_$nchain1 + ".pdb")
+  evaluate($psf_infile_$nchain1= "RUN:begin/" + $Toppar.prot_root_$nchain1 + ".psf")
+  structure
+    @@$psf_infile_$nchain1
+  end
+  eval ($watersegname_$nchain1="WAT"+encode($nchain1))
+end loop cloop1
+!for the water files
+evaluate($sol_topology_infile="RUN:/toppar/water-allhdg5-4.top")
+topology
+  @@$sol_topology_infile
+end
+
+evaluate ($nstruc = 1)
+for $fileA in ( @@RUN:begin/file_A.list ) loop Acoor
+  evaluate ($filename = $fileA)
+  coor @@$filename
+  dele sele=(segid $watersegname_1) end
+  evaluate ($waterfilename = $fileA - ".pdb" + "_water.pdbw")
+  segment
+   name=$watersegname_1
+   chain 
+    coor @@$waterfilename
+   end
+  end
+  coor @@$waterfilename
+
+ if ($data.ncomponents>1) then
+  for $fileB in ( @@RUN:begin/file_B.list ) loop Bcoor
+    evaluate ($filename = $fileB)
+    coor @@$filename
+    dele sele=(segid $watersegname_2) end
+    evaluate ($waterfilename = $fileB - ".pdb" + "_water.pdbw")
+    segment
+     name=$watersegname_2
+     chain 
+      coor @@$waterfilename
+     end
+    end
+    coor @@$waterfilename
+    if ($data.ncomponents>2) then
+      for $fileC in ( @@RUN:begin/file_C.list ) loop Ccoor
+        evaluate ($filename = $fileC)
+        coor @@$filename
+        dele sele=(segid $watersegname_3) end
+        evaluate ($waterfilename = $fileC - ".pdb" + "_water.pdbw")
+        segment
+         name=$watersegname_3
+         chain 
+          coor @@$waterfilename
+         end 
+        end
+        coor @@$waterfilename
+        if ($data.ncomponents>3) then
+          for $fileD in ( @@RUN:begin/file_D.list ) loop Dcoor
+            evaluate ($filename = $fileD)
+            coor @@$filename
+            dele sele=(segid $watersegname_4) end
+            evaluate ($waterfilename = $fileD - ".pdb" + "_water.pdbw")
+            segment
+             name=$watersegname_4
+             chain 
+              coor @@$waterfilename
+             end 
+            end
+            coor @@$waterfilename
+            if ($data.ncomponents>4) then
+              for $fileE in ( @@RUN:begin/file_E.list ) loop Ecoor
+                evaluate ($filename = $fileE)
+                coor @@$filename
+                dele sele=(segid $watersegname_5) end
+                evaluate ($waterfilename = $fileE - ".pdb" + "_water.pdbw")
+                segment
+                 name=$watersegname_5
+                 chain 
+                  coor @@$waterfilename
+                 end 
+                end
+                coor @@$waterfilename
+                if ($data.ncomponents>5) then
+                  for $fileF in ( @@RUN:begin/file_F.list ) loop Fcoor
+                    evaluate ($filename = $fileF)
+                    coor @@$filename
+                    dele sele=(segid $watersegname_6) end
+                    evaluate ($waterfilename = $fileF - ".pdb" + "_water.pdbw")
+                    segment
+                     name=$watersegname_6
+                     chain 
+                      coor @@$waterfilename
+                     end 
+                    end
+                    coor @@$waterfilename
+                    if ($saprotocol.randorien eq true) then
+                      @RUN:protocols/separate.cns(Data=$Data; Toppar=$Toppar)
+                    end if
+                    evaluate ($coorfile_$nstruc = "RUN:begin/" + $Filenames.fileroot + "_" + encode($nstruc) + ".pdb")
+                    write coor sele= (not (resn WAT or resn HOH )) output=$coorfile_$nstruc end
+                    evaluate ($watercoorfile_$nstruc = "RUN:begin/" + $Filenames.fileroot + "_" + encode($nstruc) + "_water.pdbw")
+                    write coor sele= ((resn WAT or resn HOH )) output=$watercoorfile_$nstruc end
+                    evaluate ($nstruc = $nstruc + 1)
+                    if ($nstruc > 4000) then
+                      display WARNING: THE NUMBER OF INITIAL STRUCTURES FOR DOCKING IS SET TO $maxstruc
+                      display          TO AVOID FILLING UP TOO MUCH DISK SPACE
+                      display          TO INCREASE IT EDIT THE generate_complex.inp SCRIPT
+                      display          NOW STOPPING
+                      stop
+                    end if
+                  end loop Fcoor
+		else
+                  if ($saprotocol.randorien eq true) then
+                    @RUN:protocols/separate.cns(Data=$Data; Toppar=$Toppar)
+                  end if
+                  evaluate ($coorfile_$nstruc = "RUN:begin/" + $Filenames.fileroot + "_" + encode($nstruc) + ".pdb")
+                  write coor sele= (not (resn WAT or resn HOH )) output=$coorfile_$nstruc end
+                  evaluate ($watercoorfile_$nstruc = "RUN:begin/" + $Filenames.fileroot + "_" + encode($nstruc) + "_water.pdbw")
+                  write coor sele= ((resn WAT or resn HOH )) output=$watercoorfile_$nstruc end
+                  evaluate ($nstruc = $nstruc + 1)
+                  if ($nstruc > 4000) then
+                    display WARNING: THE NUMBER OF INITIAL STRUCTURES FOR DOCKING IS SET TO $maxstruc
+                    display          TO AVOID FILLING UP TOO MUCH DISK SPACE
+                    display          TO INCREASE IT EDIT THE generate_complex.inp SCRIPT
+                    display          NOW STOPPING
+                    stop
+                  end if
+                end if
+              end loop Ecoor
+	    else
+              if ($saprotocol.randorien eq true) then
+                @RUN:protocols/separate.cns(Data=$Data; Toppar=$Toppar)
+              end if
+              evaluate ($coorfile_$nstruc = "RUN:begin/" + $Filenames.fileroot + "_" + encode($nstruc) + ".pdb")
+              write coor sele= (not (resn WAT or resn HOH )) output=$coorfile_$nstruc end
+              evaluate ($watercoorfile_$nstruc = "RUN:begin/" + $Filenames.fileroot + "_" + encode($nstruc) + "_water.pdbw")
+              write coor sele= ((resn WAT or resn HOH )) output=$watercoorfile_$nstruc end
+              evaluate ($nstruc = $nstruc + 1)
+                if ($nstruc > 4000) then
+                display WARNING: THE NUMBER OF INITIAL STRUCTURES FOR DOCKING IS SET TO $maxstruc
+                display          TO AVOID FILLING UP TOO MUCH DISK SPACE
+                display          TO INCREASE IT EDIT THE generate_complex.inp SCRIPT
+                display          NOW STOPPING
+                stop
+              end if
+            end if
+          end loop Dcoor
+	else
+          if ($saprotocol.randorien eq true) then
+            @RUN:protocols/separate.cns(Data=$Data; Toppar=$Toppar)
+          end if
+          evaluate ($coorfile_$nstruc = "RUN:begin/" + $Filenames.fileroot + "_" + encode($nstruc) + ".pdb")
+          write coor sele= (not (resn WAT or resn HOH )) output=$coorfile_$nstruc end
+          evaluate ($watercoorfile_$nstruc = "RUN:begin/" + $Filenames.fileroot + "_" + encode($nstruc) + "_water.pdbw")
+          write coor sele= ((resn WAT or resn HOH )) output=$watercoorfile_$nstruc end
+          evaluate ($nstruc = $nstruc + 1)
+          if ($nstruc > 4000) then
+            display WARNING: THE NUMBER OF INITIAL STRUCTURES FOR DOCKING IS SET TO $maxstruc
+            display          TO AVOID FILLING UP TOO MUCH DISK SPACE
+            display          TO INCREASE IT EDIT THE generate_complex.inp SCRIPT
+            display          NOW STOPPING
+            stop
+          end if
+        end if
+      end loop Ccoor
+    else
+      if ($saprotocol.randorien eq true) then
+        @RUN:protocols/separate.cns(Data=$Data; Toppar=$Toppar)
+      end if
+      evaluate ($coorfile_$nstruc = "RUN:begin/" + $Filenames.fileroot + "_" + encode($nstruc) + ".pdb")
+      write coor sele= (not (resn WAT or resn HOH )) output=$coorfile_$nstruc end
+      evaluate ($watercoorfile_$nstruc = "RUN:begin/" + $Filenames.fileroot + "_" + encode($nstruc) + "_water.pdbw")
+      write coor sele= ((resn WAT or resn HOH )) output=$watercoorfile_$nstruc end
+      evaluate ($nstruc = $nstruc + 1)
+      if ($nstruc > 4000) then
+        display WARNING: THE NUMBER OF INITIAL STRUCTURES FOR DOCKING IS SET TO $maxstruc
+        display          TO AVOID FILLING UP TOO MUCH DISK SPACE
+        display          TO INCREASE IT EDIT THE generate_complex.inp SCRIPT
+        display          NOW STOPPING
+        stop
+      end if
+    end if
+  end loop Bcoor
+ else
+  if ($saprotocol.randorien eq true) then
+    @RUN:protocols/separate.cns(Data=$Data; Toppar=$Toppar)
+  end if
+  evaluate ($coorfile_$nstruc = "RUN:begin/" + $Filenames.fileroot + "_" + encode($nstruc) + ".pdb")
+  do (q=1) (all)
+  do (b=10) (all)
+  write coor output=$coorfile_$nstruc end
+  evaluate ($nstruc = $nstruc + 1)
+  if ($nstruc > 4000) then
+    display WARNING: THE NUMBER OF INITIAL STRUCTURES FOR DOCKING IS SET TO $maxstruc
+    display          TO AVOID FILLING UP TOO MUCH DISK SPACE
+    display          TO INCREASE IT EDIT THE generate_complex.inp SCRIPT
+    display          NOW STOPPING
+    stop
+  end if
+ end if
+end loop Acoor
+
+evaluate ($structurefile = "RUN:begin/" + $Filenames.fileroot + ".psf")
+dele sele=((resn WAT or resn HOH )) end
+write structure output=$structurefile end     
+
+stop

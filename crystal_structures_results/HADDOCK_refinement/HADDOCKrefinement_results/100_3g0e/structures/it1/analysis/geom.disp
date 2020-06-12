@@ -1,0 +1,29 @@
+# geometry analysis
+# filename	rms_bond	rms_angle	rms_impr rmsd_dihe
+# PREVIT:complex_1.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_2.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_15.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_16.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_13.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_14.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_5.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_6.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_9.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_10.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_17.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_18.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_3.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_4.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_11.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_12.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_19.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_20.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_7.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# PREVIT:complex_8.pdb	7.128048E-03	0.860533	12.6916 23.3033
+# mean values all
+# bond 7.128048E-03 (+/- 0 )
+# angle 0.860533 (+/- $stdev_rms_angle )
+# impr 12.6916 (+/- $stdev_rms_impr )
+# dihe 23.3033 (+/- $stdev_rms_dihe )
+mean_rms_bond	stdev_rms_bond	mean_rms_angle	stdev_rms_angle	mean_rms_impr	stdev_rms_impr
+7.128048E-03	0	0.860533	$stdev_rms_angle	12.6916	$stdev_rms_impr	23.3033 $stdev_rms_dihe

@@ -1,0 +1,39 @@
+REMARK FILENAME="protein2.pdb"
+REMARK coordinates built for atom:      IRE  1    HAA
+REMARK coordinates built for atom:      IRE  1    HAB
+REMARK DATE:28-Dec-2019  20:11:03       created by user: enmr
+REMARK VERSION:1.3U
+ATOM      1  CAO IRE     1     -45.304  -2.997 -16.897  1.00 15.00      B   
+ATOM      2  CAL IRE     1     -43.827  -3.493 -16.996  1.00 15.00      B   
+ATOM      3  OAU IRE     1     -43.220  -3.247 -18.306  1.00 15.00      B   
+ATOM      4  CAM IRE     1     -43.994  -3.906 -19.350  1.00 15.00      B   
+ATOM      5  CAP IRE     1     -45.496  -3.489 -19.358  1.00 15.00      B   
+ATOM      6  NBE IRE     1     -46.161  -3.498 -18.011  1.00 15.00      B   
+ATOM      7  HAA IRE     1     -46.004  -2.491 -17.996  0.00 15.00      B   
+ATOM      8  CAN IRE     1     -47.407  -2.673 -18.034  1.00 15.00      B   
+ATOM      9  CAJ IRE     1     -48.605  -3.375 -18.872  1.00 15.00      B   
+ATOM     10  CAK IRE     1     -49.337  -2.173 -19.937  1.00 15.00      B   
+ATOM     11  OAV IRE     1     -50.011  -1.115 -19.052  1.00 15.00      B   
+ATOM     12  CBA IRE     1     -51.059  -0.411 -19.607  1.00 15.00      B   
+ATOM     13  CAZ IRE     1     -51.851   0.322 -18.738  1.00 15.00      B   
+ATOM     14  CAH IRE     1     -52.942   1.052 -19.210  1.00 15.00      B   
+ATOM     15  OAT IRE     1     -51.528   0.289 -17.416  1.00 15.00      B   
+ATOM     16  CAA IRE     1     -51.880   1.501 -16.695  1.00 15.00      B   
+ATOM     17  CAI IRE     1     -51.372  -0.409 -20.968  1.00 15.00      B   
+ATOM     18  C5  IRE     1     -52.464   0.324 -21.452  1.00 15.00      B   
+ATOM     19  C4  IRE     1     -53.245   1.057 -20.563  1.00 15.00      B   
+ATOM     20  N3  IRE     1     -54.287   1.766 -21.024  1.00 15.00      B   
+ATOM     21  C2  IRE     1     -54.585   1.767 -22.319  1.00 15.00      B   
+ATOM     22  N1  IRE     1     -53.869   1.082 -23.206  1.00 15.00      B   
+ATOM     23  C6  IRE     1     -52.803   0.352 -22.818  1.00 15.00      B   
+ATOM     24  NAS IRE     1     -52.074  -0.355 -23.704  1.00 15.00      B   
+ATOM     25  HAB IRE     1     -51.357  -0.932 -23.313  0.00 15.00      B   
+ATOM     26  CAY IRE     1     -52.184  -0.387 -25.047  1.00 15.00      B   
+ATOM     27  CAG IRE     1     -52.170   0.790 -25.800  1.00 15.00      B   
+ATOM     28  CAX IRE     1     -52.260   0.730 -27.191  1.00 15.00      B   
+ATOM     29  CL  IRE     1     -52.264   2.191 -28.123  1.00 15.00      B   
+ATOM     30  CAW IRE     1     -52.359  -0.499 -27.837  1.00 15.00      B   
+ATOM     31  FAB IRE     1     -52.448  -0.520 -29.177  1.00 15.00      B   
+ATOM     32  CAD IRE     1     -52.366  -1.685 -27.098  1.00 15.00      B   
+ATOM     33  CAE IRE     1     -52.270  -1.627 -25.705  1.00 15.00      B   
+END

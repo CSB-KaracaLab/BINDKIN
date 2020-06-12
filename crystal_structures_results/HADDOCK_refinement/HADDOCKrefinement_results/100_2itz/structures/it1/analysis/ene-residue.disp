@@ -1,0 +1,690 @@
+#
+#
+#Residue LEU 22 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_2.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_3.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_4.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_19.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_20.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_5.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_6.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_7.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_8.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_17.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_18.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_9.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_10.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_11.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_12.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_13.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_14.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_15.pdb -5.8854 -2.18895 -3.69644
+# PREVIT:complex_16.pdb -5.8854 -2.18895 -3.69644
+# mean values for interaction with residue LEU 22 A
+# LEU 22 A : Etot   -5.8854 (+/- 0 ) [kcal/Mol]
+# LEU 22 A : Evdw   -2.18895 (+/- 0 ) [kcal/Mol]
+# LEU 22 A : Eelec  -3.69644 (+/- 0 ) [kcal/Mol]
+# LEU 22 A : Edesol -0.377336 (+/- 34.222 ) [kcal/Mol]
+# LEU 22 A : HADDOCKscore -6.26273 (+/- $stdev_haddockscore ) [a.u.]
+#
+#
+#Residue GLY 23 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_2.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_3.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_4.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_19.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_20.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_5.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_6.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_7.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_8.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_17.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_18.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_9.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_10.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_11.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_12.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_13.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_14.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_15.pdb 1.42327 -0.393177 1.81644
+# PREVIT:complex_16.pdb 1.42327 -0.393177 1.81644
+# mean values for interaction with residue GLY 23 A
+# GLY 23 A : Etot   1.42327 (+/- 0 ) [kcal/Mol]
+# GLY 23 A : Evdw   -0.393177 (+/- 0 ) [kcal/Mol]
+# GLY 23 A : Eelec  1.81644 (+/- 2.665601E-08 ) [kcal/Mol]
+# GLY 23 A : Edesol -0.250519 (+/- 4.60568 ) [kcal/Mol]
+# GLY 23 A : HADDOCKscore 1.17275 (+/- 0 ) [a.u.]
+#
+#
+#Residue VAL 30 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_2.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_3.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_4.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_19.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_20.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_5.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_6.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_7.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_8.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_17.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_18.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_9.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_10.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_11.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_12.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_13.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_14.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_15.pdb -1.07616 -2.38018 1.30401
+# PREVIT:complex_16.pdb -1.07616 -2.38018 1.30401
+# mean values for interaction with residue VAL 30 A
+# VAL 30 A : Etot   -1.07616 (+/- 0 ) [kcal/Mol]
+# VAL 30 A : Evdw   -2.38018 (+/- 0 ) [kcal/Mol]
+# VAL 30 A : Eelec  1.30401 (+/- 0 ) [kcal/Mol]
+# VAL 30 A : Edesol -0.56314 (+/- 8.19149 ) [kcal/Mol]
+# VAL 30 A : HADDOCKscore -1.6393 (+/- 6.251388E-08 ) [a.u.]
+#
+#
+#Residue ALA 47 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_2.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_3.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_4.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_19.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_20.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_5.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_6.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_7.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_8.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_17.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_18.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_9.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_10.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_11.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_12.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_13.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_14.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_15.pdb -0.351203 0.195729 -0.546932
+# PREVIT:complex_16.pdb -0.351203 0.195729 -0.546932
+# mean values for interaction with residue ALA 47 A
+# ALA 47 A : Etot   -0.351203 (+/- 8.161702E-09 ) [kcal/Mol]
+# ALA 47 A : Evdw   0.195729 (+/- 5.268356E-09 ) [kcal/Mol]
+# ALA 47 A : Eelec  -0.546932 (+/- 1.490116E-08 ) [kcal/Mol]
+# ALA 47 A : Edesol -0.183512 (+/- 0.694438 ) [kcal/Mol]
+# ALA 47 A : HADDOCKscore -0.534715 (+/- 6.251388E-08 ) [a.u.]
+#
+#
+#Residue LYS 49 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_2.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_3.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_4.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_19.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_20.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_5.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_6.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_7.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_8.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_17.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_18.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_9.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_10.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_11.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_12.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_13.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_14.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_15.pdb -11.4243 -2.21709 -9.2072
+# PREVIT:complex_16.pdb -11.4243 -2.21709 -9.2072
+# mean values for interaction with residue LYS 49 A
+# LYS 49 A : Etot   -11.4243 (+/- 0 ) [kcal/Mol]
+# LYS 49 A : Evdw   -2.21709 (+/- 6.529362E-08 ) [kcal/Mol]
+# LYS 49 A : Eelec  -9.2072 (+/- 2.132481E-07 ) [kcal/Mol]
+# LYS 49 A : Edesol 0.180495 (+/- 46.5736 ) [kcal/Mol]
+# LYS 49 A : HADDOCKscore -11.2438 (+/- 3.371748E-07 ) [a.u.]
+#
+#
+#Residue GLU 66 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_2.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_3.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_4.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_19.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_20.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_5.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_6.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_7.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_8.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_17.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_18.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_9.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_10.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_11.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_12.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_13.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_14.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_15.pdb 12.6919 -0.486029 13.178
+# PREVIT:complex_16.pdb 12.6919 -0.486029 13.178
+# mean values for interaction with residue GLU 66 A
+# GLU 66 A : Etot   12.6919 (+/- 3.015783E-07 ) [kcal/Mol]
+# GLU 66 A : Evdw   -0.486029 (+/- 0 ) [kcal/Mol]
+# GLU 66 A : Eelec  13.178 (+/- 0 ) [kcal/Mol]
+# GLU 66 A : Edesol 0.177839 (+/- 4.46696 ) [kcal/Mol]
+# GLU 66 A : HADDOCKscore 12.8698 (+/- 2.132481E-07 ) [a.u.]
+#
+#
+#Residue MET 70 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_2.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_3.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_4.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_19.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_20.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_5.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_6.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_7.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_8.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_17.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_18.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_9.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_10.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_11.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_12.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_13.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_14.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_15.pdb 2.56509 -9.704772E-02 2.66214
+# PREVIT:complex_16.pdb 2.56509 -9.704772E-02 2.66214
+# mean values for interaction with residue MET 70 A
+# MET 70 A : Etot   2.56509 (+/- 0 ) [kcal/Mol]
+# MET 70 A : Evdw   -9.704772E-02 (+/- 0 ) [kcal/Mol]
+# MET 70 A : Eelec  2.66214 (+/- 3.769729E-08 ) [kcal/Mol]
+# MET 70 A : Edesol -7.308316E-02 (+/- 6.729074E-02 ) [kcal/Mol]
+# MET 70 A : HADDOCKscore 2.492 (+/- 2.665601E-08 ) [a.u.]
+#
+#
+#Residue LEU 81 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_2.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_3.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_4.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_19.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_20.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_5.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_6.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_7.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_8.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_17.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_18.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_9.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_10.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_11.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_12.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_13.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_14.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_15.pdb -0.25625 -0.212511 -4.373891E-02
+# PREVIT:complex_16.pdb -0.25625 -0.212511 -4.373891E-02
+# mean values for interaction with residue LEU 81 A
+# LEU 81 A : Etot   -0.25625 (+/- 4.712161E-09 ) [kcal/Mol]
+# LEU 81 A : Evdw   -0.212511 (+/- 0 ) [kcal/Mol]
+# LEU 81 A : Eelec  -4.373891E-02 (+/- 1.17804E-09 ) [kcal/Mol]
+# LEU 81 A : Edesol 0 (+/- 2.31594 ) [kcal/Mol]
+# LEU 81 A : HADDOCKscore -0.25625 (+/- 4.712161E-09 ) [a.u.]
+#
+#
+#Residue LEU 92 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_2.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_3.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_4.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_19.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_20.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_5.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_6.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_7.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_8.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_17.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_18.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_9.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_10.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_11.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_12.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_13.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_14.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_15.pdb -1.06751 -1.07806 1.055124E-02
+# PREVIT:complex_16.pdb -1.06751 -1.07806 1.055124E-02
+# mean values for interaction with residue LEU 92 A
+# LEU 92 A : Etot   -1.06751 (+/- 0 ) [kcal/Mol]
+# LEU 92 A : Evdw   -1.07806 (+/- 0 ) [kcal/Mol]
+# LEU 92 A : Eelec  1.055124E-02 (+/- 0 ) [kcal/Mol]
+# LEU 92 A : Edesol -6.151509E-02 (+/- 8.028123E-02 ) [kcal/Mol]
+# LEU 92 A : HADDOCKscore -1.12902 (+/- 4.712161E-09 ) [a.u.]
+#
+#
+#Residue ILE 93 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_2.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_3.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_4.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_19.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_20.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_5.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_6.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_7.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_8.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_17.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_18.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_9.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_10.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_11.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_12.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_13.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_14.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_15.pdb -0.971786 -0.332524 -0.639262
+# PREVIT:complex_16.pdb -0.971786 -0.332524 -0.639262
+# mean values for interaction with residue ILE 93 A
+# ILE 93 A : Etot   -0.971786 (+/- 0 ) [kcal/Mol]
+# ILE 93 A : Evdw   -0.332524 (+/- 0 ) [kcal/Mol]
+# ILE 93 A : Eelec  -0.639262 (+/- 1.63234E-08 ) [kcal/Mol]
+# ILE 93 A : Edesol 0 (+/- 0 ) [kcal/Mol]
+# ILE 93 A : HADDOCKscore -0.971786 (+/- 4.712161E-09 ) [a.u.]
+#
+#
+#Residue THR 94 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_2.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_3.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_4.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_19.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_20.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_5.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_6.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_7.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_8.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_17.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_18.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_9.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_10.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_11.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_12.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_13.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_14.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_15.pdb 4.37956 5.61159 -1.23203
+# PREVIT:complex_16.pdb 4.37956 5.61159 -1.23203
+# mean values for interaction with residue THR 94 A
+# THR 94 A : Etot   4.37956 (+/- 7.539457E-08 ) [kcal/Mol]
+# THR 94 A : Evdw   5.61159 (+/- 0 ) [kcal/Mol]
+# THR 94 A : Eelec  -1.23203 (+/- 1.884864E-08 ) [kcal/Mol]
+# THR 94 A : Edesol -0.304979 (+/- 1.66945 ) [kcal/Mol]
+# THR 94 A : HADDOCKscore 4.07458 (+/- 4.712161E-09 ) [a.u.]
+#
+#
+#Residue GLN 95 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_2.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_3.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_4.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_19.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_20.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_5.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_6.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_7.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_8.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_17.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_18.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_9.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_10.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_11.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_12.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_13.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_14.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_15.pdb 7.08016 -0.739704 7.81986
+# PREVIT:complex_16.pdb 7.08016 -0.739704 7.81986
+# mean values for interaction with residue GLN 95 A
+# GLN 95 A : Etot   7.08016 (+/- 0 ) [kcal/Mol]
+# GLN 95 A : Evdw   -0.739704 (+/- 1.3328E-08 ) [kcal/Mol]
+# GLN 95 A : Eelec  7.81986 (+/- 0 ) [kcal/Mol]
+# GLN 95 A : Edesol 0 (+/- 0.149081 ) [kcal/Mol]
+# GLN 95 A : HADDOCKscore 7.08016 (+/- 4.712161E-09 ) [a.u.]
+#
+#
+#Residue LEU 96 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_2.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_3.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_4.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_19.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_20.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_5.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_6.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_7.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_8.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_17.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_18.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_9.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_10.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_11.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_12.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_13.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_14.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_15.pdb -8.0432 -2.40927 -5.63393
+# PREVIT:complex_16.pdb -8.0432 -2.40927 -5.63393
+# mean values for interaction with residue LEU 96 A
+# LEU 96 A : Etot   -8.0432 (+/- 0 ) [kcal/Mol]
+# LEU 96 A : Evdw   -2.40927 (+/- 0 ) [kcal/Mol]
+# LEU 96 A : Eelec  -5.63393 (+/- 0 ) [kcal/Mol]
+# LEU 96 A : Edesol -8.109515E-02 (+/- 2.58099 ) [kcal/Mol]
+# LEU 96 A : HADDOCKscore -8.12429 (+/- 0 ) [a.u.]
+#
+#
+#Residue MET 97 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_2.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_3.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_4.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_19.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_20.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_5.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_6.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_7.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_8.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_17.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_18.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_9.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_10.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_11.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_12.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_13.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_14.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_15.pdb -13.132 -3.33472 -9.79733
+# PREVIT:complex_16.pdb -13.132 -3.33472 -9.79733
+# mean values for interaction with residue MET 97 A
+# MET 97 A : Etot   -13.132 (+/- 4.523674E-07 ) [kcal/Mol]
+# MET 97 A : Evdw   -3.33472 (+/- 0 ) [kcal/Mol]
+# MET 97 A : Eelec  -9.79733 (+/- 3.015783E-07 ) [kcal/Mol]
+# MET 97 A : Edesol 0.151635 (+/- 0.788023 ) [kcal/Mol]
+# MET 97 A : HADDOCKscore -12.9804 (+/- 4.768372E-07 ) [a.u.]
+#
+#
+#Residue PRO 98 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_2.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_3.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_4.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_19.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_20.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_5.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_6.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_7.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_8.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_17.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_18.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_9.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_10.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_11.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_12.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_13.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_14.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_15.pdb 1.12046 -0.778171 1.89863
+# PREVIT:complex_16.pdb 1.12046 -0.778171 1.89863
+# mean values for interaction with residue PRO 98 A
+# PRO 98 A : Etot   1.12046 (+/- 2.665601E-08 ) [kcal/Mol]
+# PRO 98 A : Evdw   -0.778171 (+/- 0 ) [kcal/Mol]
+# PRO 98 A : Eelec  1.89863 (+/- 0 ) [kcal/Mol]
+# PRO 98 A : Edesol 0.209996 (+/- 35.4564 ) [kcal/Mol]
+# PRO 98 A : HADDOCKscore 1.33046 (+/- 2.665601E-08 ) [a.u.]
+#
+#
+#Residue PHE 99 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_2.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_3.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_4.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_19.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_20.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_5.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_6.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_7.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_8.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_17.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_18.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_9.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_10.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_11.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_12.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_13.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_14.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_15.pdb -0.290609 -0.296334 5.724736E-03
+# PREVIT:complex_16.pdb -0.290609 -0.296334 5.724736E-03
+# mean values for interaction with residue PHE 99 A
+# PHE 99 A : Etot   -0.290609 (+/- 0 ) [kcal/Mol]
+# PHE 99 A : Evdw   -0.296334 (+/- 0 ) [kcal/Mol]
+# PHE 99 A : Eelec  5.724736E-03 (+/- 0 ) [kcal/Mol]
+# PHE 99 A : Edesol 0 (+/- 327.34 ) [kcal/Mol]
+# PHE 99 A : HADDOCKscore -0.290609 (+/- 2.665601E-08 ) [a.u.]
+#
+#
+#Residue GLY 100 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_2.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_3.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_4.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_19.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_20.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_5.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_6.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_7.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_8.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_17.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_18.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_9.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_10.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_11.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_12.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_13.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_14.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_15.pdb 3.68516 -1.5915 5.27666
+# PREVIT:complex_16.pdb 3.68516 -1.5915 5.27666
+# mean values for interaction with residue GLY 100 A
+# GLY 100 A : Etot   3.68516 (+/- 0 ) [kcal/Mol]
+# GLY 100 A : Evdw   -1.5915 (+/- 0 ) [kcal/Mol]
+# GLY 100 A : Eelec  5.27666 (+/- 0 ) [kcal/Mol]
+# GLY 100 A : Edesol -0.336003 (+/- 5.02216 ) [kcal/Mol]
+# GLY 100 A : HADDOCKscore 3.34916 (+/- 2.665601E-08 ) [a.u.]
+#
+#
+#Residue CYS 101 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_2.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_3.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_4.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_19.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_20.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_5.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_6.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_7.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_8.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_17.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_18.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_9.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_10.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_11.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_12.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_13.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_14.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_15.pdb 6.029 -1.19686 7.22586
+# PREVIT:complex_16.pdb 6.029 -1.19686 7.22586
+# mean values for interaction with residue CYS 101 A
+# CYS 101 A : Etot   6.029 (+/- 1.305872E-07 ) [kcal/Mol]
+# CYS 101 A : Evdw   -1.19686 (+/- 0 ) [kcal/Mol]
+# CYS 101 A : Eelec  7.22586 (+/- 0 ) [kcal/Mol]
+# CYS 101 A : Edesol -0.192079 (+/- 1.92596 ) [kcal/Mol]
+# CYS 101 A : HADDOCKscore 5.83692 (+/- 1.507891E-07 ) [a.u.]
+#
+#
+#Residue ASP 104 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_2.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_3.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_4.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_19.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_20.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_5.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_6.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_7.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_8.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_17.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_18.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_9.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_10.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_11.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_12.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_13.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_14.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_15.pdb -71.7358 -1.10567 -70.6302
+# PREVIT:complex_16.pdb -71.7358 -1.10567 -70.6302
+# mean values for interaction with residue ASP 104 A
+# ASP 104 A : Etot   -71.7358 (+/- 0 ) [kcal/Mol]
+# ASP 104 A : Evdw   -1.10567 (+/- 1.884864E-08 ) [kcal/Mol]
+# ASP 104 A : Eelec  -70.6302 (+/- 0 ) [kcal/Mol]
+# ASP 104 A : Edesol 2.41067 (+/- 131.796 ) [kcal/Mol]
+# ASP 104 A : HADDOCKscore -69.3252 (+/- 1.507891E-07 ) [a.u.]
+#
+#
+#Residue LEU 148 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_2.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_3.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_4.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_19.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_20.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_5.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_6.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_7.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_8.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_17.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_18.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_9.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_10.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_11.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_12.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_13.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_14.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_15.pdb -3.33276 -2.90056 -0.432195
+# PREVIT:complex_16.pdb -3.33276 -2.90056 -0.432195
+# mean values for interaction with residue LEU 148 A
+# LEU 148 A : Etot   -3.33276 (+/- 1.130919E-07 ) [kcal/Mol]
+# LEU 148 A : Evdw   -2.90056 (+/- 3.769729E-08 ) [kcal/Mol]
+# LEU 148 A : Eelec  -0.432195 (+/- 0 ) [kcal/Mol]
+# LEU 148 A : Edesol -0.573808 (+/- 4.20527 ) [kcal/Mol]
+# LEU 148 A : HADDOCKscore -3.90656 (+/- 1.507891E-07 ) [a.u.]
+#
+#
+#Residue THR 158 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_2.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_3.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_4.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_19.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_20.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_5.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_6.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_7.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_8.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_17.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_18.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_9.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_10.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_11.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_12.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_13.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_14.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_15.pdb -0.773776 -1.29419 0.520418
+# PREVIT:complex_16.pdb -0.773776 -1.29419 0.520418
+# mean values for interaction with residue THR 158 A
+# THR 158 A : Etot   -0.773776 (+/- 9.424322E-09 ) [kcal/Mol]
+# THR 158 A : Evdw   -1.29419 (+/- 2.665601E-08 ) [kcal/Mol]
+# THR 158 A : Eelec  0.520418 (+/- 6.664002E-09 ) [kcal/Mol]
+# THR 158 A : Edesol 0.307235 (+/- 3.01995 ) [kcal/Mol]
+# THR 158 A : HADDOCKscore -0.466541 (+/- 1.154239E-08 ) [a.u.]
+#
+#
+#Residue ASP 159 A - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_2.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_3.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_4.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_19.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_20.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_5.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_6.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_7.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_8.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_17.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_18.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_9.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_10.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_11.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_12.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_13.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_14.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_15.pdb -2.88255 -1.20139 -1.68115
+# PREVIT:complex_16.pdb -2.88255 -1.20139 -1.68115
+# mean values for interaction with residue ASP 159 A
+# ASP 159 A : Etot   -2.88255 (+/- 0 ) [kcal/Mol]
+# ASP 159 A : Evdw   -1.20139 (+/- 1.884864E-08 ) [kcal/Mol]
+# ASP 159 A : Eelec  -1.68115 (+/- 0 ) [kcal/Mol]
+# ASP 159 A : Edesol 0.652044 (+/- 80.4128 ) [kcal/Mol]
+# ASP 159 A : HADDOCKscore -2.2305 (+/- 4.616956E-08 ) [a.u.]
+#
+#
+#Residue IRE 1 B - intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_1.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_2.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_3.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_4.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_19.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_20.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_5.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_6.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_7.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_8.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_17.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_18.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_9.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_10.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_11.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_12.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_13.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_14.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_15.pdb -87.6727 -21.9588 -65.7139
+# PREVIT:complex_16.pdb -87.6727 -21.9588 -65.7139
+# mean values for interaction with residue IRE 1 B
+# IRE 1 B : Etot   -87.6727 (+/- 0 ) [kcal/Mol]
+# IRE 1 B : Evdw   -21.9588 (+/- 6.743496E-07 ) [kcal/Mol]
+# IRE 1 B : Eelec  -65.7139 (+/- 0 ) [kcal/Mol]
+# IRE 1 B : Edesol -6.50474 (+/- 159.958 ) [kcal/Mol]
+# IRE 1 B : HADDOCKscore -94.1774 (+/- 3.411969E-06 ) [a.u.]

@@ -1,0 +1,33 @@
+#HADDOCK average structure from fit on interface
+#  Average rms difference backbone interface all   3.149826E-05 +- 1.859189E-05
+#  Average rms difference backbone all             3.2509E-05 +- 1.872403E-05
+#  Average rms difference backbone interface A     3.168675E-05 +- 1.849761E-05
+#  Average rms difference backbone interface B     2.613677E-05 +- 2.038062E-05
+#  Average rms difference backbone interface C     0 +- 0
+#  Average rms difference backbone interface D     0 +- 0
+#  Average rms difference backbone interface E     0 +- 0
+#  Average rms difference backbone interface F     0 +- 0
+#
+#
+#RMSD from average structure
+#filename rms_back_inter rms_back_all rms_back_A rms_back_B rms_back_C rms_back_D rms_back_E rms_back_F
+NEWIT:analysis/complexfit_1.pdb 4.491128E-05 4.491128E-05 4.51973E-05 3.583185E-05 0 0 0 0
+NEWIT:analysis/complexfit_2.pdb 3.347841E-05 3.347841E-05 3.37425E-05 2.481631E-05 0 0 0 0
+NEWIT:analysis/complexfit_3.pdb 3.057227E-05 3.057227E-05 3.069789E-05 2.675313E-05 0 0 0 0
+NEWIT:analysis/complexfit_4.pdb 3.421577E-05 3.421577E-05 3.450598E-05 2.456505E-05 0 0 0 0
+NEWIT:analysis/complexfit_5.pdb 4.475166E-05 4.475166E-05 4.458295E-05 4.930939E-05 0 0 0 0
+NEWIT:analysis/complexfit_6.pdb 3.906488E-05 3.906488E-05 3.934835E-05 2.989659E-05 0 0 0 0
+NEWIT:analysis/complexfit_7.pdb 3.242127E-05 3.242127E-05 3.252737E-05 2.924254E-05 0 0 0 0
+NEWIT:analysis/complexfit_8.pdb 2.799028E-05 2.799028E-05 2.798189E-05 2.822798E-05 0 0 0 0
+NEWIT:analysis/complexfit_9.pdb 3.491285E-05 3.491285E-05 3.499107E-05 3.260938E-05 0 0 0 0
+NEWIT:analysis/complexfit_10.pdb 3.189803E-05 3.189803E-05 3.200788E-05 2.859712E-05 0 0 0 0
+NEWIT:analysis/complexfit_11.pdb 2.961123E-05 2.961123E-05 2.98127E-05 2.315774E-05 0 0 0 0
+NEWIT:analysis/complexfit_12.pdb 3.217581E-05 3.217581E-05 3.199865E-05 3.686003E-05 0 0 0 0
+NEWIT:analysis/complexfit_13.pdb 5.529135E-05 5.529135E-05 5.531158E-05 5.471277E-05 0 0 0 0
+NEWIT:analysis/complexfit_14.pdb 3.726054E-05 3.726054E-05 3.754721E-05 2.789893E-05 0 0 0 0
+NEWIT:analysis/complexfit_15.pdb 2.618503E-05 2.618503E-05 2.626478E-05 2.380469E-05 0 0 0 0
+NEWIT:analysis/complexfit_16.pdb 3.247972E-05 3.247972E-05 3.2709E-05 2.509534E-05 0 0 0 0
+NEWIT:analysis/complexfit_17.pdb 3.693275E-05 3.693275E-05 3.690139E-05 3.781399E-05 0 0 0 0
+NEWIT:analysis/complexfit_18.pdb 4.758442E-05 4.758442E-05 4.789262E-05 3.77794E-05 0 0 0 0
+NEWIT:analysis/complexfit_19.pdb 3.537044E-05 3.537044E-05 3.522595E-05 3.925818E-05 0 0 0 0
+NEWIT:analysis/complexfit_20.pdb 3.058505E-05 3.058505E-05 3.075949E-05 2.512103E-05 0 0 0 0

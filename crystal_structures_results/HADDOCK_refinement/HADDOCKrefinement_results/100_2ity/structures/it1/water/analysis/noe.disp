@@ -1,0 +1,204 @@
+#all distance restraints
+#structure rms-noe #viol>0.5A #viol>0.3A #viol>0.1A #Enoe
+"=======> " PREVIT:complex_20w.pdb
+"=======> " PREVIT:complex_20w.pdb
+"=======> " PREVIT:complex_20w.pdb
+PREVIT:complex_20w.pdb 3.026928E-02 0 0 0 5.497375E-03
+"=======> " PREVIT:complex_13w.pdb
+"=======> " PREVIT:complex_13w.pdb
+"=======> " PREVIT:complex_13w.pdb
+PREVIT:complex_13w.pdb 5.999799E-02 0 0 0 2.159856E-02
+"=======> " PREVIT:complex_15w.pdb
+"=======> " PREVIT:complex_15w.pdb
+"=======> " PREVIT:complex_15w.pdb
+PREVIT:complex_15w.pdb 3.909614E-02 0 0 0 9.171048E-03
+"=======> " PREVIT:complex_9w.pdb
+"=======> " PREVIT:complex_9w.pdb
+"=======> " PREVIT:complex_9w.pdb
+PREVIT:complex_9w.pdb 3.325935E-02 0 0 0 6.637106E-03
+"=======> " PREVIT:complex_16w.pdb
+"=======> " PREVIT:complex_16w.pdb
+"=======> " PREVIT:complex_16w.pdb
+PREVIT:complex_16w.pdb 5.458283E-02 0 0 1 1.787571E-02
+"=======> " PREVIT:complex_11w.pdb
+"=======> " PREVIT:complex_11w.pdb
+"=======> " PREVIT:complex_11w.pdb
+PREVIT:complex_11w.pdb 8.159203E-02 0 0 2 3.994355E-02
+"=======> " PREVIT:complex_2w.pdb
+"=======> " PREVIT:complex_2w.pdb
+"=======> " PREVIT:complex_2w.pdb
+PREVIT:complex_2w.pdb 5.422965E-02 0 0 0 1.764513E-02
+"=======> " PREVIT:complex_14w.pdb
+"=======> " PREVIT:complex_14w.pdb
+"=======> " PREVIT:complex_14w.pdb
+PREVIT:complex_14w.pdb 5.989774E-02 0 0 0 2.152643E-02
+"=======> " PREVIT:complex_1w.pdb
+"=======> " PREVIT:complex_1w.pdb
+"=======> " PREVIT:complex_1w.pdb
+PREVIT:complex_1w.pdb 6.376141E-02 0 0 0 2.439311E-02
+"=======> " PREVIT:complex_3w.pdb
+"=======> " PREVIT:complex_3w.pdb
+"=======> " PREVIT:complex_3w.pdb
+PREVIT:complex_3w.pdb 5.241319E-02 0 0 0 1.648286E-02
+"=======> " PREVIT:complex_7w.pdb
+"=======> " PREVIT:complex_7w.pdb
+"=======> " PREVIT:complex_7w.pdb
+PREVIT:complex_7w.pdb 7.448825E-02 0 0 1 3.3291E-02
+"=======> " PREVIT:complex_12w.pdb
+"=======> " PREVIT:complex_12w.pdb
+"=======> " PREVIT:complex_12w.pdb
+PREVIT:complex_12w.pdb 6.137052E-02 0 0 1 2.259804E-02
+"=======> " PREVIT:complex_4w.pdb
+"=======> " PREVIT:complex_4w.pdb
+"=======> " PREVIT:complex_4w.pdb
+PREVIT:complex_4w.pdb 5.703766E-02 0 0 1 1.951977E-02
+"=======> " PREVIT:complex_8w.pdb
+"=======> " PREVIT:complex_8w.pdb
+"=======> " PREVIT:complex_8w.pdb
+PREVIT:complex_8w.pdb 4.334501E-02 0 0 0 1.127274E-02
+"=======> " PREVIT:complex_19w.pdb
+"=======> " PREVIT:complex_19w.pdb
+"=======> " PREVIT:complex_19w.pdb
+PREVIT:complex_19w.pdb 5.054236E-02 0 0 0 1.532718E-02
+"=======> " PREVIT:complex_6w.pdb
+"=======> " PREVIT:complex_6w.pdb
+"=======> " PREVIT:complex_6w.pdb
+PREVIT:complex_6w.pdb 6.330816E-02 0 0 1 2.404754E-02
+"=======> " PREVIT:complex_18w.pdb
+"=======> " PREVIT:complex_18w.pdb
+"=======> " PREVIT:complex_18w.pdb
+PREVIT:complex_18w.pdb 3.50914E-02 0 0 0 7.38844E-03
+"=======> " PREVIT:complex_5w.pdb
+"=======> " PREVIT:complex_5w.pdb
+"=======> " PREVIT:complex_5w.pdb
+PREVIT:complex_5w.pdb 4.697371E-02 0 0 0 1.323918E-02
+"=======> " PREVIT:complex_17w.pdb
+"=======> " PREVIT:complex_17w.pdb
+"=======> " PREVIT:complex_17w.pdb
+PREVIT:complex_17w.pdb 3.35095E-02 0 0 0 6.737321E-03
+"=======> " PREVIT:complex_10w.pdb
+"=======> " PREVIT:complex_10w.pdb
+"=======> " PREVIT:complex_10w.pdb
+PREVIT:complex_10w.pdb 7.503838E-02 0 0 2 3.378455E-02
+mean values
+Enoe 1.839883E-02 (+/- 9.40194E-03 )
+noe rms 5.349023E-02 (+/- 1.432716E-02 )
+violations > 0.5A 0 (+/- 0 )
+violations > 0.3A 0 (+/- 0 )
+violations > 0.1A 0.45 (+/- 0.668954 )
+
+#only unambiguous
+#structure rms-noe #viol>0.5A #viol>0.3A #viol>0.1A #Enoe
+PREVIT:complex_20w.pdb 3.026928E-02 0 0 0 5.497375E-03
+PREVIT:complex_13w.pdb 5.999799E-02 0 0 0 2.159856E-02
+PREVIT:complex_15w.pdb 3.909614E-02 0 0 0 9.171048E-03
+PREVIT:complex_9w.pdb 3.325935E-02 0 0 0 6.637106E-03
+PREVIT:complex_16w.pdb 5.458283E-02 0 0 1 1.787571E-02
+PREVIT:complex_11w.pdb 8.159203E-02 0 0 2 3.994355E-02
+PREVIT:complex_2w.pdb 5.422965E-02 0 0 0 1.764513E-02
+PREVIT:complex_14w.pdb 5.989774E-02 0 0 0 2.152643E-02
+PREVIT:complex_1w.pdb 6.376141E-02 0 0 0 2.439311E-02
+PREVIT:complex_3w.pdb 5.241319E-02 0 0 0 1.648286E-02
+PREVIT:complex_7w.pdb 7.448825E-02 0 0 1 3.3291E-02
+PREVIT:complex_12w.pdb 6.137052E-02 0 0 1 2.259804E-02
+PREVIT:complex_4w.pdb 5.703766E-02 0 0 1 1.951977E-02
+PREVIT:complex_8w.pdb 4.334501E-02 0 0 0 1.127274E-02
+PREVIT:complex_19w.pdb 5.054236E-02 0 0 0 1.532718E-02
+PREVIT:complex_6w.pdb 6.330816E-02 0 0 1 2.404754E-02
+PREVIT:complex_18w.pdb 3.50914E-02 0 0 0 7.38844E-03
+PREVIT:complex_5w.pdb 4.697371E-02 0 0 0 1.323918E-02
+PREVIT:complex_17w.pdb 3.35095E-02 0 0 0 6.737321E-03
+PREVIT:complex_10w.pdb 7.503838E-02 0 0 2 3.378455E-02
+mean values
+Enoe 1.839883E-02 (+/- 9.40194E-03 )
+noe rms 5.349023E-02 (+/- 1.432716E-02 )
+violations > 0.5A 0 (+/- 0 )
+violations > 0.3A 0 (+/- 0 )
+violations > 0.1A 0.45 (+/- 0.668954 )
+
+#only ambiguous
+#structure rms-noe #viol>0.5A #viol>0.3A #viol>0.1A #Enoe
+PREVIT:complex_20w.pdb 0 0 0 0 0
+PREVIT:complex_13w.pdb 0 0 0 0 0
+PREVIT:complex_15w.pdb 0 0 0 0 0
+PREVIT:complex_9w.pdb 0 0 0 0 0
+PREVIT:complex_16w.pdb 0 0 0 0 0
+PREVIT:complex_11w.pdb 0 0 0 0 0
+PREVIT:complex_2w.pdb 0 0 0 0 0
+PREVIT:complex_14w.pdb 0 0 0 0 0
+PREVIT:complex_1w.pdb 0 0 0 0 0
+PREVIT:complex_3w.pdb 0 0 0 0 0
+PREVIT:complex_7w.pdb 0 0 0 0 0
+PREVIT:complex_12w.pdb 0 0 0 0 0
+PREVIT:complex_4w.pdb 0 0 0 0 0
+PREVIT:complex_8w.pdb 0 0 0 0 0
+PREVIT:complex_19w.pdb 0 0 0 0 0
+PREVIT:complex_6w.pdb 0 0 0 0 0
+PREVIT:complex_18w.pdb 0 0 0 0 0
+PREVIT:complex_5w.pdb 0 0 0 0 0
+PREVIT:complex_17w.pdb 0 0 0 0 0
+PREVIT:complex_10w.pdb 0 0 0 0 0
+mean values
+Enoe 0 (+/- 0 )
+noe rms 0 (+/- 0 )
+violations > 0.5A 0 (+/- 0 )
+violations > 0.3A 0 (+/- 0 )
+violations > 0.1A 0 (+/- 0 )
+
+#all noe distance restraints
+#structure rms-noe #viol>0.5A #viol>0.3A #viol>0.1A #Enoe
+PREVIT:complex_20w.pdb 3.026928E-02 0 0 0 5.497375E-03
+PREVIT:complex_13w.pdb 5.999799E-02 0 0 0 2.159856E-02
+PREVIT:complex_15w.pdb 3.909614E-02 0 0 0 9.171048E-03
+PREVIT:complex_9w.pdb 3.325935E-02 0 0 0 6.637106E-03
+PREVIT:complex_16w.pdb 5.458283E-02 0 0 1 1.787571E-02
+PREVIT:complex_11w.pdb 8.159203E-02 0 0 2 3.994355E-02
+PREVIT:complex_2w.pdb 5.422965E-02 0 0 0 1.764513E-02
+PREVIT:complex_14w.pdb 5.989774E-02 0 0 0 2.152643E-02
+PREVIT:complex_1w.pdb 6.376141E-02 0 0 0 2.439311E-02
+PREVIT:complex_3w.pdb 5.241319E-02 0 0 0 1.648286E-02
+PREVIT:complex_7w.pdb 7.448825E-02 0 0 1 3.3291E-02
+PREVIT:complex_12w.pdb 6.137052E-02 0 0 1 2.259804E-02
+PREVIT:complex_4w.pdb 5.703766E-02 0 0 1 1.951977E-02
+PREVIT:complex_8w.pdb 4.334501E-02 0 0 0 1.127274E-02
+PREVIT:complex_19w.pdb 5.054236E-02 0 0 0 1.532718E-02
+PREVIT:complex_6w.pdb 6.330816E-02 0 0 1 2.404754E-02
+PREVIT:complex_18w.pdb 3.50914E-02 0 0 0 7.38844E-03
+PREVIT:complex_5w.pdb 4.697371E-02 0 0 0 1.323918E-02
+PREVIT:complex_17w.pdb 3.35095E-02 0 0 0 6.737321E-03
+PREVIT:complex_10w.pdb 7.503838E-02 0 0 2 3.378455E-02
+mean values
+Enoe 1.839883E-02 (+/- 9.40194E-03 )
+noe rms 5.349023E-02 (+/- 1.432716E-02 )
+violations > 0.5A 0 (+/- 0 )
+violations > 0.3A 0 (+/- 0 )
+violations > 0.1A 0.45 (+/- 0.668954 )
+
+#only hydrogen bond
+#structure rms-noe #viol>0.5A #viol>0.3A #viol>0.1A #Enoe
+PREVIT:complex_20w.pdb 0 0 0 0 0
+PREVIT:complex_13w.pdb 0 0 0 0 0
+PREVIT:complex_15w.pdb 0 0 0 0 0
+PREVIT:complex_9w.pdb 0 0 0 0 0
+PREVIT:complex_16w.pdb 0 0 0 0 0
+PREVIT:complex_11w.pdb 0 0 0 0 0
+PREVIT:complex_2w.pdb 0 0 0 0 0
+PREVIT:complex_14w.pdb 0 0 0 0 0
+PREVIT:complex_1w.pdb 0 0 0 0 0
+PREVIT:complex_3w.pdb 0 0 0 0 0
+PREVIT:complex_7w.pdb 0 0 0 0 0
+PREVIT:complex_12w.pdb 0 0 0 0 0
+PREVIT:complex_4w.pdb 0 0 0 0 0
+PREVIT:complex_8w.pdb 0 0 0 0 0
+PREVIT:complex_19w.pdb 0 0 0 0 0
+PREVIT:complex_6w.pdb 0 0 0 0 0
+PREVIT:complex_18w.pdb 0 0 0 0 0
+PREVIT:complex_5w.pdb 0 0 0 0 0
+PREVIT:complex_17w.pdb 0 0 0 0 0
+PREVIT:complex_10w.pdb 0 0 0 0 0
+mean values
+Enoe 0 (+/- 0 )
+noe rms 0 (+/- 0 )
+violations > 0.5A 0 (+/- 0 )
+violations > 0.3A 0 (+/- 0 )
+violations > 0.1A 0 (+/- 0 )

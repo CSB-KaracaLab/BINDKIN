@@ -1,0 +1,2 @@
+Job name	DGprediction (Kcal/mol)	DGscore
+4eok_w	-8.55	106.24

@@ -1,0 +1,25 @@
+#Complex statistics
+#
+#Desolvation energy
+# PREVIT:complex_9w.pdb -8.47762
+# PREVIT:complex_15w.pdb -12.3032
+# PREVIT:complex_6w.pdb -10.7039
+# PREVIT:complex_2w.pdb -9.92898
+# PREVIT:complex_12w.pdb -11.8149
+# PREVIT:complex_10w.pdb -11.3914
+# PREVIT:complex_17w.pdb -10.9972
+# PREVIT:complex_19w.pdb -10.6202
+# PREVIT:complex_5w.pdb -12.4366
+# PREVIT:complex_7w.pdb -12.2288
+# PREVIT:complex_18w.pdb -12.3226
+# PREVIT:complex_11w.pdb -11.1547
+# PREVIT:complex_20w.pdb -11.9024
+# PREVIT:complex_4w.pdb -12.1913
+# PREVIT:complex_16w.pdb -11.3168
+# PREVIT:complex_13w.pdb -10.3356
+# PREVIT:complex_3w.pdb -12.8688
+# PREVIT:complex_8w.pdb -10.2429
+# PREVIT:complex_14w.pdb -9.84216
+# PREVIT:complex_1w.pdb -10.9724
+# mean values
+# desolv    -11.2026 (+/- 1.07157 ) [kcal/Mol]

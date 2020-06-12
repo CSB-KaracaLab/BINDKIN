@@ -1,0 +1,6 @@
+[!] Structure contains gaps:
+	A LYS233 < Fragment 0 > A LEU272
+	A GLU278 < Fragment 1 > A MET495
+
+trying to populate electrostatics from pdb file: None
+Running Prodigy for structure 3qrj

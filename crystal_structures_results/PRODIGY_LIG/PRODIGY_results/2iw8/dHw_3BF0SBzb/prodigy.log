@@ -1,0 +1,6 @@
+[!] Structure contains gaps:
+	A SER1 < Fragment 0 > A TYR160
+	A HIS162 < Fragment 1 > A ARG298
+
+trying to populate electrostatics from pdb file: None
+Running Prodigy for structure 2iw8

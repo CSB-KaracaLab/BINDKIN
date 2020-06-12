@@ -1,0 +1,2965 @@
+! run.cns
+!    The file containing all parameters for HADDOCK
+!
+! ***********************************************************************
+! * Copyright 2003-2015 Alexandre Bonvin, Utrecht University.           *
+! * Originally adapted from Aria 1.2 from Nilges and Linge, EMBL.       *
+! * All rights reserved.                                                *
+! * This code is part of the HADDOCK software and governed by its       *
+! * license. Please see the LICENSE file that should have been included *
+! * as part of this package.                                            *
+! ***********************************************************************
+!
+module(
+iteration;
+filenames;
+data;
+iterations;
+saprotocol;
+refine;
+toppar; 
+analysis;
+)
+
+{+ File: run.cns +}
+{+ Description: this file contains all necessary information to run HADDOCK. +}
+
+{+ Authors: Alexandre Bonvin +}
+{+ Version: 2.2, 2013 +}
+{+ Initially adapted from ARIA of Nilges and Linge +}
+
+{+ Please cite the following references when using this protocol: +}
+{+ reference: Cyril Dominguez, Rolf Boelens and Alexandre M.J.J. Bonvin (2003).  HADDOCK: a protein-protein docking approach 
+based on biochemical and/or biophysical information. <i>J. Am. Chem. Soc.</i> <b>125</b>, 1731-1737.
+<p>
+<b>When using <i>residual dipolar couplings</i> in HADDOCK cite in addition:</b><p>
+<LI>A.D.J. van Dijk, D. Fushman and A.M.J.J. Bonvin (2005). Various strategies of using residual dipolar 
+couplings in NMR-driven protein docking: Application to Lys48-linked di-ubiquitin and validation against 
+15N-relaxation data. <EM>Proteins: Struc. Funct. & Bioinformatics</EM>, <STRONG>60</STRONG>, 367-381.</li>
+<p>
+<b>When using <i>diffusion anisotropy data</i> in HADDOCK cite in addition:</b><p>
+<li>A.D.J. van Dijk, R. Kaptein, R. Boelens and A.M.J.J. Bonvin (2006). Combining NMR relaxation with 
+chemical shift perturbation data to drive protein-protein docking. <EM>J. Biomol. NMR</EM>, 
+<STRONG>34</STRONG>, 237-244.</li>
+<p>
+<b>When using <i>solvated docking</i> in HADDOCK cite in addition:</b><p>
+<li>A.D.J. van Dijk and A.M.J.J. Bonvin (2006). Solvated docking: introducing water into the modelling 
+of biomolecular complexes. <EM>Bioinformatics</EM>,  <STRONG>22</STRONG> 2340-2347.
+<p>
+<b>When performing <i>flexible protein-DNA docking</i> using HADDOCK cite in addition:</b><p>
+<li>M. van Dijk, A.D.J. van Dijk, V. Hsu, R. Boelens and  A.M.J.J. Bonvin (2006).
+Information-driven Protein-DNA Docking using HADDOCK: it is a matter of flexibility.
+<EM>Nucl. Acids Res.</EM>, <STRONG>34</STRONG> 3317-3325.</li>
++}
+
+{- Guidelines for using this file:
+   - all strings must be quoted by double-quotes
+   - logical variables (true/false) are not quoted
+   - do not remove any evaluate statements from the file
+   - pathnames should not exceed 80 characters -}
+{- begin block parameter definition -} define(
+
+
+{======== number of molecules for docking ==================}
+{* number of components *}
+{===>} ncomponents=2; 
+
+
+
+{======================= filenames =========================}
+{*  the name of your current project *}
+{*  this will be used as name for the generated structures *}
+{===>} fileroot="e2a-hpr"; 
+
+{* RUN directory *}
+{*  the absolute path of your current run, e.g. /home/haddock/run1*}
+{===>} run_dir="/home/abonvin/haddock_git/haddock2.2/examples/e2a-hpr/run1"; 
+{* PDB file of molecule (protein) A *}
+{===>} prot_coor_A="e2aP_1F3G.pdb"; 
+{* PSF file of molecule (protein) A *}
+{===>} prot_psf_A="e2aP_1F3G.psf"; 
+{* segid of molecule (protein) A *}
+{===>} prot_segid_A="A"; 
+{* fileroot of molecule (protein) A *}
+{===>} prot_root_A="e2aP_1F3G"; 
+{* Is molecule A DNA? *}
+{+ choice: true false +}
+{===>} dna_A=false;
+
+{* PDB file of molecule (protein) B *}
+{===>} prot_coor_B="hpr_1.pdb"; 
+{* PSF file of molecule (protein) B *}
+{===>} prot_psf_B="hpr_1.psf"; 
+{* segid file of molecule (protein) B *}
+{===>} prot_segid_B="B"; 
+{* fileroot of molecule (protein) B *}
+{===>} prot_root_B="hpr_1"; 
+{* Is molecule B DNA? *}
+{+ choice: true false +}
+{===>} dna_B=false;
+
+{* PDB file of molecule (protein) C *}
+{===>} prot_coor_C=""; 
+{* PSF file of molecule (protein) C *}
+{===>} prot_psf_C=""; 
+{* segid file of molecule (protein) C *}
+{===>} prot_segid_C="C"; 
+{* fileroot of molecule (protein) C *}
+{===>} prot_root_C=""; 
+{* Is molecule C DNA? *}
+{+ choice: true false +}
+{===>} dna_C=false;
+
+{* PDB file of molecule (protein) D *}
+{===>} prot_coor_D=""; 
+{* PSF file of molecule (protein) D *}
+{===>} prot_psf_D=""; 
+{* segid file of molecule (protein) D *}
+{===>} prot_segid_D="D"; 
+{* fileroot of molecule (protein) D *}
+{===>} prot_root_D=""; 
+{* Is molecule D DNA? *}
+{+ choice: true false +}
+{===>} dna_D=false;
+
+{* PDB file of molecule (protein) E *}
+{===>} prot_coor_E=""; 
+{* PSF file of molecule (protein) E *}
+{===>} prot_psf_E=""; 
+{* segid file of molecule (protein) E *}
+{===>} prot_segid_E="E"; 
+{* fileroot of molecule (protein) E *}
+{===>} prot_root_E=""; 
+{* Is molecule E DNA? *}
+{+ choice: true false +}
+{===>} dna_E=false;
+
+{* PDB file of molecule (protein) F *}
+{===>} prot_coor_F=""; 
+{* PSF file of molecule (protein) F *}
+{===>} prot_psf_F=""; 
+{* segid file of molecule (protein) F *}
+{===>} prot_segid_F="F"; 
+{* fileroot of molecule (protein) F *}
+{===>} prot_root_F=""; 
+{* Is molecule F DNA? *}
+{+ choice: true false +}
+{===>} dna_F=false;
+
+{* Remove non-polar hydrogens? *}
+{+ choice: true false +}
+{===>} delenph=true; 
+
+{* HADDOCK directory *}
+{*  the absolute path of the HADDOCK program files *}
+{===>} haddock_dir="/home/abonvin/haddock_git/haddock2.2"; 
+
+{* Logfile directory *}
+{* specify a directory for the large CNS log files *}
+{===>} temptrash_dir="/home/abonvin/haddock_git/haddock2.2/examples/e2a-hpr/run1"; 
+
+
+{==================== histidine patches =====================}
+{* Patch to change doubly protonated HIS to singly protonated histidine (HD1) *}
+{* just give the residue number of the histidines for the HISD patch, set them to zero if you don't want them *}
+
+numhisd=10;
+
+{+ table: rows=6 "molecule (Protein) A" "molecule (Protein) B"  "molecule (Protein) C"  "molecule (Protein) D"  "molecule (Protein) E"  "molecule (Protein) F" cols=10 "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" +}
+{===>} A_hisd_resid_1=0; 
+{===>} A_hisd_resid_2=0; 
+{===>} A_hisd_resid_3=0; 
+{===>} A_hisd_resid_4=0; 
+{===>} A_hisd_resid_5=0; 
+{===>} A_hisd_resid_6=0; 
+{===>} A_hisd_resid_7=0; 
+{===>} A_hisd_resid_8=0; 
+{===>} A_hisd_resid_9=0; 
+{===>} A_hisd_resid_10=0; 
+{===>} B_hisd_resid_1=0; 
+{===>} B_hisd_resid_2=0; 
+{===>} B_hisd_resid_3=0; 
+{===>} B_hisd_resid_4=0; 
+{===>} B_hisd_resid_5=0; 
+{===>} B_hisd_resid_6=0; 
+{===>} B_hisd_resid_7=0; 
+{===>} B_hisd_resid_8=0; 
+{===>} B_hisd_resid_9=0; 
+{===>} B_hisd_resid_10=0; 
+{===>} C_hisd_resid_1=0; 
+{===>} C_hisd_resid_2=0; 
+{===>} C_hisd_resid_3=0; 
+{===>} C_hisd_resid_4=0; 
+{===>} C_hisd_resid_5=0; 
+{===>} C_hisd_resid_6=0; 
+{===>} C_hisd_resid_7=0; 
+{===>} C_hisd_resid_8=0; 
+{===>} C_hisd_resid_9=0; 
+{===>} C_hisd_resid_10=0; 
+{===>} D_hisd_resid_1=0; 
+{===>} D_hisd_resid_2=0; 
+{===>} D_hisd_resid_3=0; 
+{===>} D_hisd_resid_4=0; 
+{===>} D_hisd_resid_5=0; 
+{===>} D_hisd_resid_6=0; 
+{===>} D_hisd_resid_7=0; 
+{===>} D_hisd_resid_8=0; 
+{===>} D_hisd_resid_9=0; 
+{===>} D_hisd_resid_10=0; 
+{===>} E_hisd_resid_1=0; 
+{===>} E_hisd_resid_2=0; 
+{===>} E_hisd_resid_3=0; 
+{===>} E_hisd_resid_4=0; 
+{===>} E_hisd_resid_5=0; 
+{===>} E_hisd_resid_6=0; 
+{===>} E_hisd_resid_7=0; 
+{===>} E_hisd_resid_8=0; 
+{===>} E_hisd_resid_9=0; 
+{===>} E_hisd_resid_10=0; 
+{===>} F_hisd_resid_1=0; 
+{===>} F_hisd_resid_2=0; 
+{===>} F_hisd_resid_3=0; 
+{===>} F_hisd_resid_4=0; 
+{===>} F_hisd_resid_5=0; 
+{===>} F_hisd_resid_6=0; 
+{===>} F_hisd_resid_7=0; 
+{===>} F_hisd_resid_8=0; 
+{===>} F_hisd_resid_9=0; 
+{===>} F_hisd_resid_10=0; 
+
+{* Patch to change doubly protonated HIS to singly protonated histidine (HE2) *}
+{* just give the residue number of the histidines for the HISE patch, set them to zero if you don't want them *}
+
+numhise=10;
+
+{+ table: rows=6 "molecule (Protein) A" "molecule (Protein) B"  "molecule (Protein) C"  "molecule (Protein) D"  "molecule (Protein) E"  "molecule (Protein) F" cols=10 "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" +}
+{===>} A_hise_resid_1=0; 
+{===>} A_hise_resid_2=0; 
+{===>} A_hise_resid_3=0; 
+{===>} A_hise_resid_4=0; 
+{===>} A_hise_resid_5=0; 
+{===>} A_hise_resid_6=0; 
+{===>} A_hise_resid_7=0; 
+{===>} A_hise_resid_8=0; 
+{===>} A_hise_resid_9=0; 
+{===>} A_hise_resid_10=0; 
+{===>} B_hise_resid_1=0; 
+{===>} B_hise_resid_2=0; 
+{===>} B_hise_resid_3=0; 
+{===>} B_hise_resid_4=0; 
+{===>} B_hise_resid_5=0; 
+{===>} B_hise_resid_6=0; 
+{===>} B_hise_resid_7=0; 
+{===>} B_hise_resid_8=0; 
+{===>} B_hise_resid_9=0; 
+{===>} B_hise_resid_10=0; 
+{===>} C_hise_resid_1=0; 
+{===>} C_hise_resid_2=0; 
+{===>} C_hise_resid_3=0; 
+{===>} C_hise_resid_4=0; 
+{===>} C_hise_resid_5=0; 
+{===>} C_hise_resid_6=0; 
+{===>} C_hise_resid_7=0; 
+{===>} C_hise_resid_8=0; 
+{===>} C_hise_resid_9=0; 
+{===>} C_hise_resid_10=0; 
+{===>} D_hise_resid_1=0; 
+{===>} D_hise_resid_2=0; 
+{===>} D_hise_resid_3=0; 
+{===>} D_hise_resid_4=0; 
+{===>} D_hise_resid_5=0; 
+{===>} D_hise_resid_6=0; 
+{===>} D_hise_resid_7=0; 
+{===>} D_hise_resid_8=0; 
+{===>} D_hise_resid_9=0; 
+{===>} D_hise_resid_10=0; 
+{===>} E_hise_resid_1=0; 
+{===>} E_hise_resid_2=0; 
+{===>} E_hise_resid_3=0; 
+{===>} E_hise_resid_4=0; 
+{===>} E_hise_resid_5=0; 
+{===>} E_hise_resid_6=0; 
+{===>} E_hise_resid_7=0; 
+{===>} E_hise_resid_8=0; 
+{===>} E_hise_resid_9=0; 
+{===>} E_hise_resid_10=0; 
+{===>} F_hise_resid_1=0; 
+{===>} F_hise_resid_2=0; 
+{===>} F_hise_resid_3=0; 
+{===>} F_hise_resid_4=0; 
+{===>} F_hise_resid_5=0; 
+{===>} F_hise_resid_6=0; 
+{===>} F_hise_resid_7=0; 
+{===>} F_hise_resid_8=0; 
+{===>} F_hise_resid_9=0; 
+{===>} F_hise_resid_10=0; 
+
+
+{========= Definition of semi-flexible interface ============}
+{* Define the interface of each molecule.*}
+{* Side-chains and backbone of these residues will be allowed to move during semi-flexible refinement*}
+
+{* number of semi-flexible segments for molecule (protein) A (-1 for automated mode) *}
+{* Note that current max is 10 (edit the run.cns to add more segments *}
+
+{===>} nseg_A=-1; 
+
+{* Residues of molecule (protein) A at interface *}
+{+ table: rows=10 "segment 1" "segment 2" "segment 3" "segment 4" "segment 5" "segment 6" "segment 7" "segment 8" "segment 9" "segment 10" cols=2 "Start residue" "End residue" +}
+
+{===>} A_start_seg_1=""; 
+{===>} A_end_seg_1=""; 
+{===>} A_start_seg_2=""; 
+{===>} A_end_seg_2=""; 
+{===>} A_start_seg_3=""; 
+{===>} A_end_seg_3=""; 
+{===>} A_start_seg_4=""; 
+{===>} A_end_seg_4=""; 
+{===>} A_start_seg_5=""; 
+{===>} A_end_seg_5=""; 
+{===>} A_start_seg_6=""; 
+{===>} A_end_seg_6=""; 
+{===>} A_start_seg_7=""; 
+{===>} A_end_seg_7=""; 
+{===>} A_start_seg_8=""; 
+{===>} A_end_seg_8=""; 
+{===>} A_start_seg_9=""; 
+{===>} A_end_seg_9=""; 
+{===>} A_start_seg_10=""; 
+{===>} A_end_seg_10=""; 
+
+{* number of semi-flexible segments for molecule (protein) B (-1 for automated mode) *}
+{* Note that current max is 10 (edit the run.cns to add more segments    *}
+
+{===>} nseg_B=-1; 
+
+{* Residues of molecule (protein) B at interface *}
+{+ table: rows=10 "segment 1" "segment 2" "segment 3" "segment 4" "segment 5" "segment 6" "segment 7" "segment 8" "segment 9" "segment 10" cols=2 "Start residue" "End residue" +}
+{===>} B_start_seg_1=""; 
+{===>} B_end_seg_1=""; 
+{===>} B_start_seg_2=""; 
+{===>} B_end_seg_2=""; 
+{===>} B_start_seg_3=""; 
+{===>} B_end_seg_3=""; 
+{===>} B_start_seg_4=""; 
+{===>} B_end_seg_4=""; 
+{===>} B_start_seg_5=""; 
+{===>} B_end_seg_5=""; 
+{===>} B_start_seg_6=""; 
+{===>} B_end_seg_6=""; 
+{===>} B_start_seg_7=""; 
+{===>} B_end_seg_7=""; 
+{===>} B_start_seg_8=""; 
+{===>} B_end_seg_8=""; 
+{===>} B_start_seg_9=""; 
+{===>} B_end_seg_9=""; 
+{===>} B_start_seg_10=""; 
+{===>} B_end_seg_10=""; 
+
+{* number of semi-flexible segments for molecule (protein) C (-1 for automated mode) *}
+{* Note that current max is 10 (edit the run.cns to add more segments    *}
+
+{===>} nseg_C=-1; 
+
+{* Residues of molecule (protein) C at interface *}
+{+ table: rows=10 "segment 1" "segment 2" "segment 3" "segment 4" "segment 5" "segment 6" "segment 7" "segment 8" "segment 9" "segment 10" cols=2 "Start residue" "End residue" +}
+{===>} C_start_seg_1=""; 
+{===>} C_end_seg_1=""; 
+{===>} C_start_seg_2=""; 
+{===>} C_end_seg_2=""; 
+{===>} C_start_seg_3=""; 
+{===>} C_end_seg_3=""; 
+{===>} C_start_seg_4=""; 
+{===>} C_end_seg_4=""; 
+{===>} C_start_seg_5=""; 
+{===>} C_end_seg_5=""; 
+{===>} C_start_seg_6=""; 
+{===>} C_end_seg_6=""; 
+{===>} C_start_seg_7=""; 
+{===>} C_end_seg_7=""; 
+{===>} C_start_seg_8=""; 
+{===>} C_end_seg_8=""; 
+{===>} C_start_seg_9=""; 
+{===>} C_end_seg_9=""; 
+{===>} C_start_seg_10=""; 
+{===>} C_end_seg_10=""; 
+
+{* number of semi-flexible segments for molecule (protein) D (-1 for automated mode) *}
+{* Note that current max is 10 (edit the run.cns to add more segments    *}
+
+{===>} nseg_D=-1; 
+
+{* Residues of molecule (protein) D at interface *}
+{+ table: rows=10 "segment 1" "segment 2" "segment 3" "segment 4" "segment 5" "segment 6" "segment 7" "segment 8" "segment 9" "segment 10" cols=2 "Start residue" "End residue" +}
+{===>} D_start_seg_1=""; 
+{===>} D_end_seg_1=""; 
+{===>} D_start_seg_2=""; 
+{===>} D_end_seg_2=""; 
+{===>} D_start_seg_3=""; 
+{===>} D_end_seg_3=""; 
+{===>} D_start_seg_4=""; 
+{===>} D_end_seg_4=""; 
+{===>} D_start_seg_5=""; 
+{===>} D_end_seg_5=""; 
+{===>} D_start_seg_6=""; 
+{===>} D_end_seg_6=""; 
+{===>} D_start_seg_7=""; 
+{===>} D_end_seg_7=""; 
+{===>} D_start_seg_8=""; 
+{===>} D_end_seg_8=""; 
+{===>} D_start_seg_9=""; 
+{===>} D_end_seg_9=""; 
+{===>} D_start_seg_10=""; 
+{===>} D_end_seg_10=""; 
+
+{* number of semi-flexible segments for molecule (protein) E (-1 for automated mode) *}
+{* Note that current max is 10 (edit the run.cns to add more segments    *}
+
+{===>} nseg_E=-1; 
+
+{* Residues of molecule (protein) E at interface *}
+{+ table: rows=10 "segment 1" "segment 2" "segment 3" "segment 4" "segment 5" "segment 6" "segment 7" "segment 8" "segment 9" "segment 10" cols=2 "Start residue" "End residue" +}
+{===>} E_start_seg_1=""; 
+{===>} E_end_seg_1=""; 
+{===>} E_start_seg_2=""; 
+{===>} E_end_seg_2=""; 
+{===>} E_start_seg_3=""; 
+{===>} E_end_seg_3=""; 
+{===>} E_start_seg_4=""; 
+{===>} E_end_seg_4=""; 
+{===>} E_start_seg_5=""; 
+{===>} E_end_seg_5=""; 
+{===>} E_start_seg_6=""; 
+{===>} E_end_seg_6=""; 
+{===>} E_start_seg_7=""; 
+{===>} E_end_seg_7=""; 
+{===>} E_start_seg_8=""; 
+{===>} E_end_seg_8=""; 
+{===>} E_start_seg_9=""; 
+{===>} E_end_seg_9=""; 
+{===>} E_start_seg_10=""; 
+{===>} E_end_seg_10=""; 
+
+{* number of semi-flexible segments for molecule (protein) F (-1 for automated mode) *}
+{* Note that current max is 10 (edit the run.cns to add more segments    *}
+
+{===>} nseg_F=-1; 
+
+{* Residues of molecule (protein) F at interface *}
+{+ table: rows=10 "segment 1" "segment 2" "segment 3" "segment 4" "segment 5" "segment 6" "segment 7" "segment 8" "segment 9" "segment 10" cols=2 "Start residue" "End residue" +}
+{===>} F_start_seg_1=""; 
+{===>} F_end_seg_1=""; 
+{===>} F_start_seg_2=""; 
+{===>} F_end_seg_2=""; 
+{===>} F_start_seg_3=""; 
+{===>} F_end_seg_3=""; 
+{===>} F_start_seg_4=""; 
+{===>} F_end_seg_4=""; 
+{===>} F_start_seg_5=""; 
+{===>} F_end_seg_5=""; 
+{===>} F_start_seg_6=""; 
+{===>} F_end_seg_6=""; 
+{===>} F_start_seg_7=""; 
+{===>} F_end_seg_7=""; 
+{===>} F_start_seg_8=""; 
+{===>} F_end_seg_8=""; 
+{===>} F_start_seg_9=""; 
+{===>} F_end_seg_9=""; 
+{===>} F_start_seg_10=""; 
+{===>} F_end_seg_10=""; 
+
+{=========== Definition of fully flexible segments ==========}
+{* Define the fully flexible segment of each molecule.*}
+{* These segments will be allowed to move at all stages of it1 *}
+
+{* Number of fully flexible segments for molecule (protein) A            *}
+{* Note that current max is 5 (edit the run.cns to add more segments     *}
+
+{===>} nfle_A=0; 
+
+{* Fully flexible segments of molecule (protein) A *}
+{+ table: rows=5 "segment 1" "segment 2" "segment 3" "segment 4" "segment 5" cols=2 "Start residue" "End residue" +}
+
+{===>} A_start_fle_1=""; 
+{===>} A_end_fle_1=""; 
+{===>} A_start_fle_2=""; 
+{===>} A_end_fle_2=""; 
+{===>} A_start_fle_3=""; 
+{===>} A_end_fle_3=""; 
+{===>} A_start_fle_4=""; 
+{===>} A_end_fle_4=""; 
+{===>} A_start_fle_5=""; 
+{===>} A_end_fle_5=""; 
+
+{* Fully flexible segments for molecule (protein) B           *}
+{* Note that current max is 5 (edit the run.cns to add more segments    *}
+
+{===>} nfle_B=0; 
+
+{* Residues of molecule (protein) B at interface *}
+{+ table: rows=5 "segment 1" "segment 2" "segment 3" "segment 4" "segment 5" cols=2 "Start residue" "End residue" +}
+{===>} B_start_fle_1=""; 
+{===>} B_end_fle_1=""; 
+{===>} B_start_fle_2=""; 
+{===>} B_end_fle_2=""; 
+{===>} B_start_fle_3=""; 
+{===>} B_end_fle_3=""; 
+{===>} B_start_fle_4=""; 
+{===>} B_end_fle_4=""; 
+{===>} B_start_fle_5=""; 
+{===>} B_end_fle_5=""; 
+
+{* Fully flexible segments for molecule (protein) C           *}
+{* Note that current max is 5 (edit the run.cns to add more segments    *}
+
+{===>} nfle_C=0; 
+
+{* Residues of molecule (protein) C at interface *}
+{+ table: rows=5 "segment 1" "segment 2" "segment 3" "segment 4" "segment 5" cols=2 "Start residue" "End residue" +}
+{===>} C_start_fle_1=""; 
+{===>} C_end_fle_1=""; 
+{===>} C_start_fle_2=""; 
+{===>} C_end_fle_2=""; 
+{===>} C_start_fle_3=""; 
+{===>} C_end_fle_3=""; 
+{===>} C_start_fle_4=""; 
+{===>} C_end_fle_4=""; 
+{===>} C_start_fle_5=""; 
+{===>} C_end_fle_5=""; 
+
+{* Fully flexible segments for molecule (protein) D           *}
+{* Note that current max is 5 (edit the run.cns to add more segments    *}
+
+{===>} nfle_D=0; 
+
+{* Residues of molecule (protein) D at interface *}
+{+ table: rows=5 "segment 1" "segment 2" "segment 3" "segment 4" "segment 5" cols=2 "Start residue" "End residue" +}
+{===>} D_start_fle_1=""; 
+{===>} D_end_fle_1=""; 
+{===>} D_start_fle_2=""; 
+{===>} D_end_fle_2=""; 
+{===>} D_start_fle_3=""; 
+{===>} D_end_fle_3=""; 
+{===>} D_start_fle_4=""; 
+{===>} D_end_fle_4=""; 
+{===>} D_start_fle_5=""; 
+{===>} D_end_fle_5=""; 
+
+
+{* Fully flexible segments for molecule (protein) E           *}
+{* Note that current max is 5 (edit the run.cns to add more segments    *}
+
+{===>} nfle_E=0; 
+
+{* Residues of molecule (protein) E at interface *}
+{+ table: rows=5 "segment 1" "segment 2" "segment 3" "segment 4" "segment 5" cols=2 "Start residue" "End residue" +}
+{===>} E_start_fle_1=""; 
+{===>} E_end_fle_1=""; 
+{===>} E_start_fle_2=""; 
+{===>} E_end_fle_2=""; 
+{===>} E_start_fle_3=""; 
+{===>} E_end_fle_3=""; 
+{===>} E_start_fle_4=""; 
+{===>} E_end_fle_4=""; 
+{===>} E_start_fle_5=""; 
+{===>} E_end_fle_5=""; 
+
+
+{* Fully flexible segments for molecule (protein) F           *}
+{* Note that current max is 5 (edit the run.cns to add more segments    *}
+
+{===>} nfle_F=0; 
+
+{* Residues of molecule (protein) F at interface *}
+{+ table: rows=5 "segment 1" "segment 2" "segment 3" "segment 4" "segment 5" cols=2 "Start residue" "End residue" +}
+{===>} F_start_fle_1=""; 
+{===>} F_end_fle_1=""; 
+{===>} F_start_fle_2=""; 
+{===>} F_end_fle_2=""; 
+{===>} F_start_fle_3=""; 
+{===>} F_end_fle_3=""; 
+{===>} F_start_fle_4=""; 
+{===>} F_end_fle_4=""; 
+{===>} F_start_fle_5=""; 
+{===>} F_end_fle_5=""; 
+
+
+{====================== NCS restraints  =====================}
+{* Do you want to use NCS restraints? *}
+{+ choice: true false +}
+{===>} ncs_on=false; 
+
+{* Force constant for NCS restraints *}
+{===>} kncs=1.0;
+
+{* Number of NCS pairs *}
+{===>} numncs=0;
+
+{* Define the segments pairs for NCS restraints *}
+{+ table: rows=5 "pair 1" "pair 2" "pair 3" "pair 4" "pair 5" cols=6 "Start res seg1" "End res seg1" "Segid seg1" "Start res seg2" "End res seg2" "Segid seg2" +}
+{===>} ncs_sta1_1="";
+{===>} ncs_end1_1="";
+{===>} ncs_seg1_1="";
+{===>} ncs_sta2_1="";
+{===>} ncs_end2_1="";
+{===>} ncs_seg2_1="";
+{===>} ncs_sta1_2="";
+{===>} ncs_end1_2="";
+{===>} ncs_seg1_2="";
+{===>} ncs_sta2_2="";
+{===>} ncs_end2_2="";
+{===>} ncs_seg2_2="";
+{===>} ncs_sta1_3="";
+{===>} ncs_end1_3="";
+{===>} ncs_seg1_3="";
+{===>} ncs_sta2_3="";
+{===>} ncs_end2_3="";
+{===>} ncs_seg2_3="";
+{===>} ncs_sta1_4="";
+{===>} ncs_end1_4="";
+{===>} ncs_seg1_4="";
+{===>} ncs_sta2_4="";
+{===>} ncs_end2_4="";
+{===>} ncs_seg2_4="";
+{===>} ncs_sta1_5="";
+{===>} ncs_end1_5="";
+{===>} ncs_seg1_5="";
+{===>} ncs_sta2_5="";
+{===>} ncs_end2_5="";
+{===>} ncs_seg2_5="";
+
+{==================== Symmetry restraints  ==================}
+{* Do you want to use symmetry restraints ? *}
+{+ choice: true false +}
+{===>} sym_on=false; 
+
+{* Force constant for symmetry restraints ? *}
+{===>} ksym=10.0;
+
+{* Number of C2 symmetry pairs *}
+{===>} numc2sym=0;
+
+{* Define the segment pairs C2 symmetry restraints *}
+{+ table: rows=10 "pair 1" "pair 2" "pair 3" "pair 4" "pair 5" "pair 6" "pair 7" "pair 8" "pair 9" "pair 10" cols=6 "Start res seg1" "End res seg1" "Segid seg1" "Start res seg2" "End res seg2" "Segid seg2" +}
+{===>} c2sym_sta1_1="";
+{===>} c2sym_end1_1="";
+{===>} c2sym_seg1_1="";
+{===>} c2sym_sta2_1="";
+{===>} c2sym_end2_1="";
+{===>} c2sym_seg2_1="";
+{===>} c2sym_sta1_2="";
+{===>} c2sym_end1_2="";
+{===>} c2sym_seg1_2="";
+{===>} c2sym_sta2_2="";
+{===>} c2sym_end2_2="";
+{===>} c2sym_seg2_2="";
+{===>} c2sym_sta1_3="";
+{===>} c2sym_end1_3="";
+{===>} c2sym_seg1_3="";
+{===>} c2sym_sta2_3="";
+{===>} c2sym_end2_3="";
+{===>} c2sym_seg2_3="";
+{===>} c2sym_sta1_4="";
+{===>} c2sym_end1_4="";
+{===>} c2sym_seg1_4="";
+{===>} c2sym_sta2_4="";
+{===>} c2sym_end2_4="";
+{===>} c2sym_seg2_4="";
+{===>} c2sym_sta1_5="";
+{===>} c2sym_end1_5="";
+{===>} c2sym_seg1_5="";
+{===>} c2sym_sta2_5="";
+{===>} c2sym_end2_5="";
+{===>} c2sym_seg2_5="";
+{===>} c2sym_sta1_6="";
+{===>} c2sym_end1_6="";
+{===>} c2sym_seg1_6="";
+{===>} c2sym_sta2_6="";
+{===>} c2sym_end2_6="";
+{===>} c2sym_seg2_6="";
+{===>} c2sym_sta1_7="";
+{===>} c2sym_end1_7="";
+{===>} c2sym_seg1_7="";
+{===>} c2sym_sta2_7="";
+{===>} c2sym_end2_7="";
+{===>} c2sym_seg2_7="";
+{===>} c2sym_sta1_8="";
+{===>} c2sym_end1_8="";
+{===>} c2sym_seg1_8="";
+{===>} c2sym_sta2_8="";
+{===>} c2sym_end2_8="";
+{===>} c2sym_seg2_8="";
+{===>} c2sym_sta1_9="";
+{===>} c2sym_end1_9="";
+{===>} c2sym_seg1_9="";
+{===>} c2sym_sta2_9="";
+{===>} c2sym_end2_9="";
+{===>} c2sym_seg2_9="";
+{===>} c2sym_sta1_10="";
+{===>} c2sym_end1_10="";
+{===>} c2sym_seg1_10="";
+{===>} c2sym_sta2_10="";
+{===>} c2sym_end2_10="";
+{===>} c2sym_seg2_10="";
+
+
+{* Number of C3 symmetry triples*}
+{===>} numc3sym=0;
+
+{* Define the segment triples for C3 symmetry restraints *}
+{+ table: rows=2 "triple 1" "triple 2" cols=9 "Start res seg1" "End res seg1" "Segid seg1" "Start res seg2" "End res seg2" "Segid seg2" "Start res seg3" "End res seg3" "Segid seg3" +}
+{===>} c3sym_sta1_1="";
+{===>} c3sym_end1_1="";
+{===>} c3sym_seg1_1="";
+{===>} c3sym_sta2_1="";
+{===>} c3sym_end2_1="";
+{===>} c3sym_seg2_1="";
+{===>} c3sym_sta3_1="";
+{===>} c3sym_end3_1="";
+{===>} c3sym_seg3_1="";
+{===>} c3sym_sta1_2="";
+{===>} c3sym_end1_2="";
+{===>} c3sym_seg1_2="";
+{===>} c3sym_sta2_2="";
+{===>} c3sym_end2_2="";
+{===>} c3sym_seg2_2="";
+{===>} c3sym_sta3_2="";
+{===>} c3sym_end3_2="";
+{===>} c3sym_seg3_2="";
+
+
+{* Number of S3 symmetry triples*}
+{===>} nums3sym=0;
+
+{* Define the segment triples for S3 symmetry restraints *}
+{+ table: rows=4 "triple 1" "triple 2" "triple 3" "triple 4" cols=9 "Start res seg1" "End res seg1" "Segid seg1" "Start res seg2" "End res seg2" "Segid seg2" "Start res seg3" "End res seg3" "Segid seg3" +}
+{===>} s3sym_sta1_1="";
+{===>} s3sym_end1_1="";
+{===>} s3sym_seg1_1="";
+{===>} s3sym_sta2_1="";
+{===>} s3sym_end2_1="";
+{===>} s3sym_seg2_1="";
+{===>} s3sym_sta3_1="";
+{===>} s3sym_end3_1="";
+{===>} s3sym_seg3_1="";
+{===>} s3sym_sta1_2="";
+{===>} s3sym_end1_2="";
+{===>} s3sym_seg1_2="";
+{===>} s3sym_sta2_2="";
+{===>} s3sym_end2_2="";
+{===>} s3sym_seg2_2="";
+{===>} s3sym_sta3_2="";
+{===>} s3sym_end3_2="";
+{===>} s3sym_seg3_2="";
+{===>} s3sym_sta1_3="";
+{===>} s3sym_end1_3="";
+{===>} s3sym_seg1_3="";
+{===>} s3sym_sta2_3="";
+{===>} s3sym_end2_3="";
+{===>} s3sym_seg2_3="";
+{===>} s3sym_sta3_3="";
+{===>} s3sym_end3_3="";
+{===>} s3sym_seg3_3="";
+{===>} s3sym_sta1_4="";
+{===>} s3sym_end1_4="";
+{===>} s3sym_seg1_4="";
+{===>} s3sym_sta2_4="";
+{===>} s3sym_end2_4="";
+{===>} s3sym_seg2_4="";
+{===>} s3sym_sta3_4="";
+{===>} s3sym_end3_4="";
+{===>} s3sym_seg3_4="";
+
+
+{* Number of C4 symmetry quadruples *}
+{===>} numc4sym=0;
+
+{* Define the segment quadruples for C4 symmetry restraints *}
+{+ table: rows=2 "quadruples 1" "quadruples 2" cols=12 "Start res seg1" "End res seg1" "Segid seg1" "Start res seg2" "End res seg2" "Segid seg2" "Start res seg3" "End res seg3" "Segid seg3" "Start res seg4" "End res seg4" "Segid seg4" +}
+{===>} c4sym_sta1_1="";
+{===>} c4sym_end1_1="";
+{===>} c4sym_seg1_1="";
+{===>} c4sym_sta2_1="";
+{===>} c4sym_end2_1="";
+{===>} c4sym_seg2_1="";
+{===>} c4sym_sta3_1="";
+{===>} c4sym_end3_1="";
+{===>} c4sym_seg3_1="";
+{===>} c4sym_sta4_1="";
+{===>} c4sym_end4_1="";
+{===>} c4sym_seg4_1="";
+{===>} c4sym_sta1_2="";
+{===>} c4sym_end1_2="";
+{===>} c4sym_seg1_2="";
+{===>} c4sym_sta2_2="";
+{===>} c4sym_end2_2="";
+{===>} c4sym_seg2_2="";
+{===>} c4sym_sta3_2="";
+{===>} c4sym_end3_2="";
+{===>} c4sym_seg3_2="";
+{===>} c4sym_sta4_2="";
+{===>} c4sym_end4_2="";
+{===>} c4sym_seg4_2="";
+
+
+{* Number of C5 symmetry *}
+{===>} numc5sym=0;
+
+{* Define the segments for C5 symmetry restraints *}
+{+ table: rows=5 "Segment1" "Segment2" "Segment3" "Segment4" "Segment5" cols=3 "Start residue" "End residue" "Segid" +}
+{===>} c5sym_sta1_1="";
+{===>} c5sym_end1_1="";
+{===>} c5sym_seg1_1="";
+{===>} c5sym_sta2_1="";
+{===>} c5sym_end2_1="";
+{===>} c5sym_seg2_1="";
+{===>} c5sym_sta3_1="";
+{===>} c5sym_end3_1="";
+{===>} c5sym_seg3_1="";
+{===>} c5sym_sta4_1="";
+{===>} c5sym_end4_1="";
+{===>} c5sym_seg4_1="";
+{===>} c5sym_sta5_1="";
+{===>} c5sym_end5_1="";
+{===>} c5sym_seg5_1="";
+
+
+
+{=========================== Distance restraints  ========================}
+{* Turn on/off and energy constants for distance restraints *}
+{+ table: rows=3 "distances" "AIR (ambig)" "hbonds" cols=6 "firstIteration" "lastIteration" "hot" "cool1" "cool2" "cool3"+}
+
+{===>} unamb_firstit=0; 
+{===>} unamb_lastit=2; 
+{===>} unamb_hot=10; 
+{===>} unamb_cool1=10; 
+{===>} unamb_cool2=50; 
+{===>} unamb_cool3=50; 
+{===>} amb_firstit=0; 
+{===>} amb_lastit=2; 
+{===>} amb_hot=10; 
+{===>} amb_cool1=10; 
+{===>} amb_cool2=50; 
+{===>} amb_cool3=50; 
+{===>} hbond_firstit=1; 
+{===>} hbond_lastit=2; 
+{===>} hbond_hot=10; 
+{===>} hbond_cool1=10; 
+{===>} hbond_cool2=50; 
+{===>} hbond_cool3=50; 
+
+{* Do you want to randomly exclude a fraction of the ambiguous restraints (AIRs)? *}
+{+ choice: true false +}
+{===>} noecv=true;
+
+{* Number of partitions for random exclusion (%excluded=100/number of partitions)? *}
+{===>} ncvpart=2;
+
+{* Do you want to use hydrogen bond restraints? *}
+{+ choice: true false +}
+{===>} hbonds_on=false; 
+
+{* Do you want to define randomly ambiguous interaction restraints from accessible residues? *}
+{* Only residues in the defined flexible segments will be considered *}
+{* Note that this option is exclusive with any other distance restraints and only for it0    *}
+{+ choice: true false +}
+{===>} ranair=false;
+
+{* Do you want to define center of mass restraints to enforce contact between the molecules? *}
+{* Note that these are only active during it0 and it1 *}
+{+ choice: true false +}
+{===>} cmrest=false;
+
+{* Force constant for center of mass restraints *}
+{===>} kcont=1.0;
+
+{* Do you want to define surface contact restraints to enforce contact between the molecules? *}
+{* Note that these are only active during it0 and it1 *}
+{+ choice: true false +}
+{===>} surfrest=false;
+
+{* Force constant for surface contact restraints *}
+{===>} ksurf=1.0;
+
+{ Use automated distance restraints weighting }
+{ choice: true false }
+air_scaling=false; 
+
+{ Define the number of distance restraints for automated weighting }
+tot_unamb=25; 
+{ Define the number of AIR restraints for automated weighting }
+tot_amb=0; 
+
+{ potential shape }
+mrswi_hot=0.5; 
+mrswi_cool1=0.5; 
+mrswi_cool2=0.5; 
+mrswi_cool3=0.5; 
+rswi_hot=0.5; 
+rswi_cool1=0.5; 
+rswi_cool2=0.5; 
+rswi_cool3=0.5; 
+masy_hot=-1.0; 
+masy_cool1=-1.0; 
+masy_cool2=-0.1; 
+masy_cool3=-0.1; 
+asy_hot=1.0; 
+asy_cool1=1.0; 
+asy_cool2=0.1; 
+asy_cool3=0.1; 
+
+{=========================== radius of gyration restraint  ============}
+{* Turn on/off and energy constants for Rg restraints *}
+{* Do you want to define a radius of gyration restraint (e.g. from SAXS)? *}
+{+ choice: true false +}
+{===>} rgrest=false;
+
+{* Radius of gyration *}
+{===>} rgtarg=17.78;
+
+{* Force constant for radius of gyration restraint *}
+{===>} krg_hot=100.0;
+{===>} krg_cool1=100.0;
+{===>} krg_cool2=100.0;
+{===>} krg_cool3=100.0;
+
+{* Atom selections for the radius of gyration restraint *}
+{===>} rgsele="all";
+
+
+
+{======================DNA-RNA restraints ============================}
+{* Use DNA/RNA restraints (dna-rna_restraints.def in data/sequence)? *}
+{+ choice: true false +}
+{===>} dnarest_on=false; 
+
+
+
+{=========================== dihedrals restraints ====================}
+{* energy constants *}
+{+ table: rows=1 "dihedrals" cols=5 "use?" "hot" "cool1" "cool2" "cool3" +}
+
+{+ choice: true false +}
+{===>} dihedrals_on=false; 
+{===>} dihedrals_hot=5; 
+{===>} dihedrals_cool1=5; 
+{===>} dihedrals_cool2=50; 
+{===>} dihedrals_cool3=200; 
+
+{* Automatically define backbone dihedral angle restraints from structure? *}
+{+ choice: none all alpha alphabeta +}
+{===>} ssdihed=none;
+
+{=========================== Karplus coupling restraints ====================}
+
+{* Karplus coefficients: edit manually the run.cns file to specify them if needed   *}
+{* The jcoupling restraint files should be present in the data/jcouplings directory *}
+{* and named c1.tbl, c2.tbl, ... *}
+
+ c1_on=false; 
+ c1_karplusa=6.98; 
+ c1_karplusb=-1.38; 
+ c1_karplusc=1.72; 
+ c1_karplusd=-60.0; 
+ c1_hot=0.0; 
+ c1_cool1=0.2; 
+ c1_cool2=1.0; 
+ c1_cool3=1.0; 
+
+ c2_on=false; 
+ c2_karplusa=6.98; 
+ c2_karplusb=-1.38; 
+ c2_karplusc=1.72; 
+ c2_karplusd=-120.0; 
+ c2_hot=0.0; 
+ c2_cool1=0.2; 
+ c2_cool2=1.0; 
+ c2_cool3=1.0; 
+
+ c3_on=false; 
+ c3_karplusa=6.98; 
+ c3_karplusb=-1.38; 
+ c3_karplusc=1.72; 
+ c3_karplusd=-120.0; 
+ c3_hot=0.0; 
+ c3_cool1=0.2; 
+ c3_cool2=1.0; 
+ c3_cool3=1.0; 
+
+ c4_on=false; 
+ c4_karplusa=6.98; 
+ c4_karplusb=-1.38; 
+ c4_karplusc=1.72; 
+ c4_karplusd=-120.0; 
+ c4_hot=0.0; 
+ c4_cool1=0.2; 
+ c4_cool2=1.0; 
+ c4_cool3=1.0; 
+
+ c5_on=false; 
+ c5_karplusa=6.98; 
+ c5_karplusb=-1.38; 
+ c5_karplusc=1.72; 
+ c5_karplusd=-120.0; 
+ c5_hot=0.0; 
+ c5_cool1=0.2; 
+ c5_cool2=1.0; 
+ c5_cool3=1.0; 
+ 
+{=========================== residual dipolar couplings ======================}
+
+{* Parameters *}
+{+ table: rows=5 "class1" "class2" "class3" "class4" "class5"
+          cols=25 "type" "firstIt" "lastIt" "Ksani<br>(hot)" "Ksani<br>(cool1)" "Ksani<br>(cool2)" "Ksani<br>(cool3)" "R" "D" 
+ "Kvean<br>(ini_bor_hot)" "Kvean<br>(fin_bor_hot)"
+ "Kvean<br>(ini_bor_cool1)" "Kvean<br>(fin_bor_cool1)" 
+ "Kvean<br>(ini_bor_cool2)" "Kvean<br>(fin_bor_cool2)" 
+ "Kvean<br>(ini_bor_cool3)" "Kvean<br>(fin_bor_cool3)" 
+ "Kvean<br>(ini_cen_hot)" "Kvean<br>(fin_cen_hot)" 
+ "Kvean<br>(ini_cen_cool1)" "Kvean<br>(fin_cen_cool1)" 
+ "Kvean<br>(ini_cen_cool2)" "Kvean<br>(fin_cen_cool2)" 
+ "Kvean<br>(ini_cen_cool3)" "Kvean<br>(fin_cen_cool3)"+}
+{+ choice: "NO" "SANI" "VANGLE" +}
+{===>} rdc1_choice="NO"; 
+{===>} rdc1_firstIt=2; 
+{===>} rdc1_lastIt=2; 
+{===>} rdc1_hot=0.001; 
+{===>} rdc1_cool1=0.02;
+{===>} rdc1_cool2=0.2; 
+{===>} rdc1_cool3=0.2; 
+{===>} rdc1_r=0.057; 
+{===>} rdc1_d=-11.49; 
+{===>} ini_bor_hot_1=1.0; 
+{===>} fin_bor_hot_1=10.0; 
+{===>} ini_bor_cool1_1=10.0; 
+{===>} fin_bor_cool1_1=40.0; 
+{===>} ini_bor_cool2_1=40.0; 
+{===>} fin_bor_cool2_1=40.0; 
+{===>} ini_bor_cool3_1=40.0; 
+{===>} fin_bor_cool3_1=40.0; 
+{===>} ini_cen_hot_1=0.25; 
+{===>} fin_cen_hot_1=2.5; 
+{===>} ini_cen_cool1_1=2.5; 
+{===>} fin_cen_cool1_1=10.0; 
+{===>} ini_cen_cool2_1=10.0; 
+{===>} fin_cen_cool2_1=10.0; 
+{===>} ini_cen_cool3_1=10.0; 
+{===>} fin_cen_cool3_1=10.0; 
+
+{+ choice: "NO" "SANI" "XRDC" "VANGLE" +}
+{===>} rdc2_choice="NO"; 
+{===>} rdc2_firstIt=0; 
+{===>} rdc2_lastIt=1; 
+{===>} rdc2_hot=0.01; 
+{===>} rdc2_cool1=0.2; 
+{===>} rdc2_cool2=1.0; 
+{===>} rdc2_cool3=1.0; 
+{===>} rdc2_r=0.4; 
+{===>} rdc2_d=8.0; 
+{===>} ini_bor_hot_2=1.0; 
+{===>} fin_bor_hot_2=10.0; 
+{===>} ini_bor_cool1_2=10.0; 
+{===>} fin_bor_cool1_2=40.0; 
+{===>} ini_bor_cool2_2=40.0; 
+{===>} fin_bor_cool2_2=40.0; 
+{===>} ini_bor_cool3_2=40.0; 
+{===>} fin_bor_cool3_2=40.0; 
+{===>} ini_cen_hot_2=0.25; 
+{===>} fin_cen_hot_2=2.5; 
+{===>} ini_cen_cool1_2=2.5; 
+{===>} fin_cen_cool1_2=10.0; 
+{===>} ini_cen_cool2_2=10.0; 
+{===>} fin_cen_cool2_2=10.0; 
+{===>} ini_cen_cool3_2=10.0; 
+{===>} fin_cen_cool3_2=10.0; 
+
+{+ choice: "NO" "SANI" "XRDC" "VANGLE" +}
+{===>} rdc3_choice="NO"; 
+{===>} rdc3_firstIt=1; 
+{===>} rdc3_lastIt=1; 
+{===>} rdc3_hot=0.01; 
+{===>} rdc3_cool1=0.2; 
+{===>} rdc3_cool2=1.0; 
+{===>} rdc3_cool3=1.0; 
+{===>} rdc3_r=0.4; 
+{===>} rdc3_d=8.0; 
+{===>} ini_bor_hot_3=1.0; 
+{===>} fin_bor_hot_3=10.0; 
+{===>} ini_bor_cool1_3=10.0; 
+{===>} fin_bor_cool1_3=40.0; 
+{===>} ini_bor_cool2_3=40.0; 
+{===>} fin_bor_cool2_3=40.0; 
+{===>} ini_bor_cool3_3=40.0; 
+{===>} fin_bor_cool3_3=40.0; 
+{===>} ini_cen_hot_3=0.25; 
+{===>} fin_cen_hot_3=2.5; 
+{===>} ini_cen_cool1_3=2.5; 
+{===>} fin_cen_cool1_3=10.0; 
+{===>} ini_cen_cool2_3=10.0; 
+{===>} fin_cen_cool2_3=10.0; 
+{===>} ini_cen_cool3_3=10.0; 
+{===>} fin_cen_cool3_3=10.0; 
+
+{+ choice: "NO" "SANI" "XRDC" "VANGLE" +}
+{===>} rdc4_choice="NO"; 
+{===>} rdc4_firstIt=0; 
+{===>} rdc4_lastIt=2; 
+{===>} rdc4_hot=0.1; 
+{===>} rdc4_cool1=1.0; 
+{===>} rdc4_cool2=1.0; 
+{===>} rdc4_cool3=1.0; 
+{===>} rdc4_r=0.4; 
+{===>} rdc4_d=8.0; 
+{===>} ini_bor_hot_4=1.0; 
+{===>} fin_bor_hot_4=10.0; 
+{===>} ini_bor_cool1_4=10.0; 
+{===>} fin_bor_cool1_4=40.0; 
+{===>} ini_bor_cool2_4=40.0; 
+{===>} fin_bor_cool2_4=40.0; 
+{===>} ini_bor_cool3_4=40.0; 
+{===>} fin_bor_cool3_4=40.0; 
+{===>} ini_cen_hot_4=0.25; 
+{===>} fin_cen_hot_4=2.5; 
+{===>} ini_cen_cool1_4=2.5; 
+{===>} fin_cen_cool1_4=10.0; 
+{===>} ini_cen_cool2_4=10.0; 
+{===>} fin_cen_cool2_4=10.0; 
+{===>} ini_cen_cool3_4=10.0; 
+{===>} fin_cen_cool3_4=10.0; 
+
+{+ choice: "NO" "SANI" "XRDC" "VANGLE" +}
+{===>} rdc5_choice="NO"; 
+{===>} rdc5_firstIt=0; 
+{===>} rdc5_lastIt=2; 
+{===>} rdc5_hot=0.1; 
+{===>} rdc5_cool1=1.0; 
+{===>} rdc5_cool2=1.0; 
+{===>} rdc5_cool3=1.0; 
+{===>} rdc5_r=0.4; 
+{===>} rdc5_d=8.0; 
+{===>} ini_bor_hot_5=1.0; 
+{===>} fin_bor_hot_5=10.0; 
+{===>} ini_bor_cool1_5=10.0; 
+{===>} fin_bor_cool1_5=40.0; 
+{===>} ini_bor_cool2_5=40.0; 
+{===>} fin_bor_cool2_5=40.0; 
+{===>} ini_bor_cool3_5=40.0; 
+{===>} fin_bor_cool3_5=40.0; 
+{===>} ini_cen_hot_5=0.25; 
+{===>} fin_cen_hot_5=2.5; 
+{===>} ini_cen_cool1_5=2.5; 
+{===>} fin_cen_cool1_5=10.0; 
+{===>} ini_cen_cool2_5=10.0; 
+{===>} fin_cen_cool2_5=10.0; 
+{===>} ini_cen_cool3_5=10.0; 
+{===>} fin_cen_cool3_5=10.0; 
+
+ 
+{=========================== pseudo contact shifts ===========================}
+
+{* Parameters *}
+{+ table: rows=10 "class1" "class2" "class3" "class4" "class5" "class6" "class7" "class8" "class9" "class10"
+          cols=9 "type" "firstIt" "lastIt" "Kpcs<br>(hot)" "Kpcs<br>(cool1)" "Kpcs<br>(cool2)" "Kpcs<br>(cool3)" "R" "D" +}
+{+ choice: "NO" "XPCS" +}
+{===>} pcs1_choice="NO";
+{===>} pcs1_firstIt=0;
+{===>} pcs1_lastIt=2;
+{===>} pcs1_hot=100.0;
+{===>} pcs1_cool1=100.0;
+{===>} pcs1_cool2=100.0;
+{===>} pcs1_cool3=100.0;
+{===>} pcs1_r=1000;
+{===>} pcs1_d=10000;
+
+{+ choice: "NO" "XPCS" +}
+{===>} pcs2_choice="NO"; 
+{===>} pcs2_firstIt=0; 
+{===>} pcs2_lastIt=2; 
+{===>} pcs2_hot=100.0; 
+{===>} pcs2_cool1=100.0; 
+{===>} pcs2_cool2=100.0; 
+{===>} pcs2_cool3=100.0; 
+{===>} pcs2_r=1000; 
+{===>} pcs2_d=10000; 
+
+{+ choice: "NO" "XPCS" +}
+{===>} pcs3_choice="NO"; 
+{===>} pcs3_firstIt=0; 
+{===>} pcs3_lastIt=2; 
+{===>} pcs3_hot=100.0; 
+{===>} pcs3_cool1=100.0;
+{===>} pcs3_cool2=100.0; 
+{===>} pcs3_cool3=100.0; 
+{===>} pcs3_r=1000;
+{===>} pcs3_d=10000;  
+
+{+ choice: "NO" "XPCS" +}
+{===>} pcs4_choice="NO"; 
+{===>} pcs4_firstIt=0; 
+{===>} pcs4_lastIt=2; 
+{===>} pcs4_hot=100.0; 
+{===>} pcs4_cool1=100.0; 
+{===>} pcs4_cool2=100.0; 
+{===>} pcs4_cool3=100.0; 
+{===>} pcs4_r=1000; 
+{===>} pcs4_d=10000; 
+
+{+ choice: "NO" "XPCS" +}
+{===>} pcs5_choice="NO"; 
+{===>} pcs5_firstIt=0; 
+{===>} pcs5_lastIt=2; 
+{===>} pcs5_hot=100.0; 
+{===>} pcs5_cool1=100.0; 
+{===>} pcs5_cool2=100.0; 
+{===>} pcs5_cool3=100.0; 
+{===>} pcs5_r=1000;
+{===>} pcs5_d=10000; 
+
+{+ choice: "NO" "XPCS" +}
+{===>} pcs6_choice="NO"; 
+{===>} pcs6_firstIt=0; 
+{===>} pcs6_lastIt=2; 
+{===>} pcs6_hot=100.0; 
+{===>} pcs6_cool1=100.0; 
+{===>} pcs6_cool2=100.0; 
+{===>} pcs6_cool3=100.0; 
+{===>} pcs6_r=1000; 
+{===>} pcs6_d=10000; 
+
+{+ choice: "NO" "XPCS" +}
+{===>} pcs7_choice="NO"; 
+{===>} pcs7_firstIt=0; 
+{===>} pcs7_lastIt=2; 
+{===>} pcs7_hot=100.0; 
+{===>} pcs7_cool1=100.0; 
+{===>} pcs7_cool2=100.0; 
+{===>} pcs7_cool3=100.0; 
+{===>} pcs7_r=1000; 
+{===>} pcs7_d=10000; 
+
+{+ choice: "NO" "XPCS" +}
+{===>} pcs8_choice="NO"; 
+{===>} pcs8_firstIt=0; 
+{===>} pcs8_lastIt=2; 
+{===>} pcs8_hot=100.0; 
+{===>} pcs8_cool1=100.0; 
+{===>} pcs8_cool2=100.0; 
+{===>} pcs8_cool3=100.0; 
+{===>} pcs8_r=1000; 
+{===>} pcs8_d=10000; 
+
+{+ choice: "NO" "XPCS" +}
+{===>} pcs9_choice="NO"; 
+{===>} pcs9_firstIt=0; 
+{===>} pcs9_lastIt=2; 
+{===>} pcs9_hot=100.0; 
+{===>} pcs9_cool1=100.0; 
+{===>} pcs9_cool2=100.0; 
+{===>} pcs9_cool3=100.0; 
+{===>} pcs9_r=1000; 
+{===>} pcs9_d=10000; 
+
+
+{+ choice: "NO" "XPCS" +}
+{===>} pcsA_choice="NO"; 
+{===>} pcsA_firstIt=0; 
+{===>} pcsA_lastIt=2; 
+{===>} pcsA_hot=100.0; 
+{===>} pcsA_cool1=100.0; 
+{===>} pcsA_cool2=100.0; 
+{===>} pcsA_cool3=100.0; 
+{===>} pcsA_r=1000; 
+{===>} pcsA_d=10000; 
+
+{=========================== relaxation data ======================}
+{* Parameters *}
+{+ table: rows=5 "class1" "class2" "class3" "class4" "class5"
+          cols=12 "type" "firstIt" "lastIt" "Kdani(hot)" "Kdani(cool1)" "Kdani(cool2)" "Kdani(cool3)" "Correlation time" "D" "R" "H frequency" "N frequency" +}
+{+ choice: "NO" "DANI" +}
+{===>} dan1_choice="NO"; 
+{===>} dan1_firstIt=0; 
+{===>} dan1_lastIt=2; 
+{===>} dan1_hot=1; 
+{===>} dan1_cool1=5;
+{===>} dan1_cool2=10;
+{===>} dan1_cool3=10; 
+{===>} dan1_tc=9.771;
+{===>} dan1_anis=1.557;
+{===>} dan1_r=0.455;
+{===>} dan1_wh=599.91; 
+{===>} dan1_wn=60.82; 
+
+{+ choice: "NO" "DANI" +}
+{===>} dan2_choice="NO"; 
+{===>} dan2_firstIt=0; 
+{===>} dan2_lastIt=1; 
+{===>} dan2_hot=1; 
+{===>} dan2_cool1=5; 
+{===>} dan2_cool2=10; 
+{===>} dan2_cool3=10; 
+{===>} dan2_tc=9.84; 
+{===>} dan2_anis=-1.35; 
+{===>} dan2_r=0.308; 
+{===>} dan2_wh=599.91; 
+{===>} dan2_wn=60.82; 
+
+{+ choice: "NO" "DANI" +}
+{===>} dan3_choice="NO"; 
+{===>} dan3_firstIt=1; 
+{===>} dan3_lastIt=1; 
+{===>} dan3_hot=1; 
+{===>} dan3_cool1=5; 
+{===>} dan3_cool2=10; 
+{===>} dan3_cool3=10; 
+{===>} dan3_tc=9.84; 
+{===>} dan3_anis=-1.35; 
+{===>} dan3_r=0.308; 
+{===>} dan3_wh=599.91; 
+{===>} dan3_wn=60.82; 
+
+{+ choice: "NO" "DANI" +}
+{===>} dan4_choice="NO"; 
+{===>} dan4_firstIt=0; 
+{===>} dan4_lastIt=2; 
+{===>} dan4_hot=1; 
+{===>} dan4_cool1=5; 
+{===>} dan4_cool2=10; 
+{===>} dan4_cool3=10; 
+{===>} dan4_tc=9.84; 
+{===>} dan4_anis=-1.35; 
+{===>} dan4_r=0.308; 
+{===>} dan4_wh=599.91; 
+{===>} dan4_wn=60.82; 
+
+{+ choice: "NO" "DANI" +}
+{===>} dan5_choice="NO"; 
+{===>} dan5_firstIt=0; 
+{===>} dan5_lastIt=2; 
+{===>} dan5_hot=1; 
+{===>} dan5_cool1=5; 
+{===>} dan5_cool2=10; 
+{===>} dan5_cool3=10; 
+{===>} dan5_tc=9.84; 
+{===>} dan5_anis=-1.35; 
+{===>} dan5_r=0.308; 
+{===>} dan5_wh=599.91; 
+{===>} dan5_wn=60.82; 
+
+{===================== topology and parameter files ======================}
+
+{* topology file for molecule (protein) A *}
+{===>} prot_top_A="protein-allhdg5-4.top"; 
+{* topology file for molecule (protein) B *}
+{===>} prot_top_B="protein-allhdg5-4.top"; 
+{* topology file for molecule (protein) C *}
+{===>} prot_top_C="protein-allhdg5-4.top"; 
+{* topology file for molecule (protein) D *}
+{===>} prot_top_D="protein-allhdg5-4.top"; 
+{* topology file for molecule (protein) E *}
+{===>} prot_top_E="protein-allhdg5-4.top"; 
+{* topology file for molecule (protein) F *}
+{===>} prot_top_F="protein-allhdg5-4.top"; 
+
+{* linkage file for molecule (protein) A *}
+{===>} prot_link_A="protein-allhdg5-4.link"; 
+{* linkage file for molecule (protein) B *}
+{===>} prot_link_B="protein-allhdg5-4.link"; 
+{* linkage file for molecule (protein) C *}
+{===>} prot_link_C="protein-allhdg5-4.link"; 
+{* linkage file for molecule (protein) D *}
+{===>} prot_link_D="protein-allhdg5-4.link"; 
+{* linkage file for molecule (protein) E *}
+{===>} prot_link_E="protein-allhdg5-4.link"; 
+{* linkage file for molecule (protein) F *}
+{===>} prot_link_F="protein-allhdg5-4.link"; 
+
+{* energy parameter file for molecule (protein) A *}
+{===>} prot_par_A="protein-allhdg5-4.param"; 
+{* energy parameter file for molecule (protein) B *}
+{===>} prot_par_B="protein-allhdg5-4.param"; 
+{* energy parameter file for molecule (protein) C *}
+{===>} prot_par_C="protein-allhdg5-4.param"; 
+{* energy parameter file for molecule (protein) D *}
+{===>} prot_par_D="protein-allhdg5-4.param"; 
+{* energy parameter file for molecule (protein) E *}
+{===>} prot_par_E="protein-allhdg5-4.param"; 
+{* energy parameter file for molecule (protein) F *}
+{===>} prot_par_F="protein-allhdg5-4.param"; 
+
+{* type of non-bonded parameters *}
+{* specify the type of non-bonded interaction *}
+{+ choice: "PROLSQ" "PARMALLH6" "PARALLHDG" "OPLSX" +}
+{===>} par_nonbonded="OPLSX"; 
+
+
+{===================== energy and interaction parameters ==================}
+
+{ Do you want to include dihedral angle energy terms? }
+{ choice: true false }
+dihedflag=true; 
+
+{* Do you want to include the electrostatic energy term for docking? *}
+{* Note that it will be automatically included in the solvent refinement *}
+
+{* Include electrostatic during rigid body docking (it0)? *}
+{+ choice: true false +}
+{===>} elecflag_0=true; 
+{* Include electrostatic during semi-flexible SA (it1)? *}
+{+ choice: true false +}
+{===>} elecflag_1=true; 
+
+{* Give the epsilon constant for the electrostatic energy term? *}
+{* Note that for explicit solvent refinement cdie with epsilon=1 is used *}
+{===>} epsilon=10.0; 
+
+{* Use constant (cdie) or distance-dependent (rdie) dielectric? *}
+{+ choice: cdie rdie +}
+{===>} dielec=cdie;
+
+{* - *}
+
+{* Scaling of intermolecular interactions for rigid body EM*}
+{===>} inter_rigid=1.0;
+
+{* Scaling of intermolecular interactions for semi-flexible SA*}
+{+ table: rows=3 "Rigid body dynamic " "SA with flexible side-chains (cool2)" "SA with flexible backbone and side-chains (cool3)" 
+          cols=2 "Init value" "Final value" +}
+{===>} init_rigid=0.001;
+{===>} fin_rigid=0.001;
+{===>} init_cool2=0.001;
+{===>} fin_cool2=1.0;
+{===>} init_cool3=0.05;
+{===>} fin_cool3=1.0;
+
+{* Interaction matrix for non-bonded interactions*}
+{+ table: rows=6 "Mol 1" "Mol 2" "Mol 3" "Mol 4" "Mol 5" "Mol 6" 
+          cols=6 "Mol 1" "Mol 2" "Mol 3" "Mol 4" "Mol 5" "Mol 6" +}
+{===>} int_1_1=1.0;
+{===>} int_1_2=1.0;
+{===>} int_1_3=1.0;
+{===>} int_1_4=1.0;
+{===>} int_1_5=1.0;
+{===>} int_1_6=1.0;
+{+ choice: "N.A." +}
+{===>} int_2_1="N.A.";
+{===>} int_2_2=1.0;
+{===>} int_2_3=1.0;
+{===>} int_2_4=1.0;
+{===>} int_2_5=1.0;
+{===>} int_2_6=1.0;
+{+ choice: "N.A." +}
+{===>} int_3_1="N.A.";
+{+ choice: "N.A." +}
+{===>} int_3_2="N.A.";
+{===>} int_3_3=1.0;
+{===>} int_3_4=1.0;
+{===>} int_3_5=1.0;
+{===>} int_3_6=1.0;
+{+ choice: "N.A." +}
+{===>} int_4_1="N.A.";
+{+ choice: "N.A." +}
+{===>} int_4_2="N.A.";
+{+ choice: "N.A." +}
+{===>} int_4_3="N.A.";
+{===>} int_4_4=1.0;
+{===>} int_4_5=1.0;
+{===>} int_4_6=1.0;
+{+ choice: "N.A." +}
+{===>} int_5_1="N.A.";
+{+ choice: "N.A." +}
+{===>} int_5_2="N.A.";
+{+ choice: "N.A." +}
+{===>} int_5_3="N.A.";
+{+ choice: "N.A." +}
+{===>} int_5_4="N.A.";
+{===>} int_5_5=1.0;
+{===>} int_5_6=1.0;
+{+ choice: "N.A." +}
+{===>} int_6_1="N.A.";
+{+ choice: "N.A." +}
+{===>} int_6_2="N.A.";
+{+ choice: "N.A." +}
+{===>} int_6_3="N.A.";
+{+ choice: "N.A." +}
+{===>} int_6_4="N.A.";
+{+ choice: "N.A." +}
+{===>} int_6_5="N.A.";
+{===>} int_6_6=1.0;
+
+{===================== Number of structures to dock =======================}
+{* Setting for the rigid-body (it0) and semi-flexible refiment (it1) *}
+
+{* number of structures for rigid body docking *}
+{===>} structures_0=1000; 
+       keepstruct_0=&structures_0;
+{* number of structures for refinement *}
+{===>} structures_1=200; 
+       keepstruct_1=&structures_1;
+       keepstruct_2=&structures_1;
+{* number of structures to be analysed*}
+{===>} anastruc_1=200; 
+       anastruc_0=&anastruc_1;
+       anastruc_2=&anastruc_1;
+
+{* - *}
+
+{* Sampling of symmetry related solutions                       *}
+
+{* Sample 180 degrees rotated solutions during rigid body EM?   *}
+{+ choice: true false +}
+{===>} rotate180_0=true;
+
+{* Sample 180 degrees rotated solutions during semi-flexible SA?*}
+{+ choice: true false +}
+{===>} rotate180_1=false;
+
+
+{=========================== DOCKING protocol =============================}
+{* Cross-dock all combinations in the ensembles of starting structures? *}
+{* Turn off this option if you only want to dock structure 1 of ensemble A *}
+{*   to structure 1 of ensemble B, structure 2 to structure 2, etc. *}
+{+ choice: true false +}
+{===>} crossdock=true;
+
+{* Randomize starting orientations? *}
+{+ choice: true false +}
+{===>} randorien=true;
+
+{* Perform initial rigid body minimisation? *}
+{+ choice: true false +}
+{===>} rigidmini=true;
+
+{* Allow translation in rigid body minimisation? *}
+{+ choice: true false +}
+{===>} rigidtrans=true;
+
+{* Number of trials for rigid body minimisation? *}
+{===>} ntrials=5;
+
+{* initial seed for random number generator *}
+{* change to get different initial velocities *}
+{===>} iniseed=917; 
+
+{* temperature for rigid body high temperature TAD *}
+{===>} tadhigh_t=2000; 
+
+{* initial temperature for rigid body first TAD cooling step *}
+{===>} tadinit1_t=2000; 
+
+{* final temperature after first cooling step *}
+{===>} tadfinal1_t=500; 
+
+{* initial temperature for second TAD cooling step with flexible side-chain at the inferface *}
+{===>} tadinit2_t=1000; 
+
+{* finale temperature after second cooling step *}
+{===>} tadfinal2_t=50; 
+
+{* initial temperature for third TAD cooling step with fully flexible interface *}
+{===>} tadinit3_t=1000; 
+
+{* finale temperature after third cooling step *}
+{===>} tadfinal3_t=50; 
+
+{* time step *}
+{===>} timestep=0.002; 
+{* factor for timestep in TAD *}
+{===>} tadfactor=8; 
+
+{* number of MD steps for rigid body high temperature TAD *}
+{===>} initiosteps=500; 
+
+{* number of MD steps during first rigid body cooling stage *}
+{===>} cool1_steps=500; 
+
+{* number of MD steps during second cooling stage with flexible side-chains at interface *}
+{===>} cool2_steps=1000; 
+
+{* number of MD steps during third cooling stage with fully flexible interface *}
+{===>} cool3_steps=1000; 
+
+
+{======================= Solvated rigid body docking=======================}
+{* perform solvated docking ? *}
+{+ choice: true false +}
+{===>} waterdock=false;
+
+{* which method to use for solvating? *}
+{* db: database-based (recommended), restraints: for restrained solvating to amino-acid most often forming
+water mediated contacts and blank (""): for uniform waterlayer *}
+{+ choice: "db" "restraints" "" +}
+{===>} solvate_method="db";
+
+{* which propensity database to use? *}
+{* statistical: based on an analysis of water-mediated contacts in the PDB, kyte-doolittle: based on the Kyte-Doolittle hydrophobicity scalte *}
+{+ choice: "statistical" "kytedoolittle" +}
+{===>} db_method="kytedoolittle";
+
+{* initial cutoff for restraints solvating method *}
+{* all waters further away from a highly occuring water solvated residue will be removed in the generation 
+of the initial solvation shell *}
+{===>} water_restraint_initial=5.0;
+
+{* cutoff for restraints solvating method *}
+{* upper distance limit for defining distance restraints between water and amino-acids often found to be 
+involved in water-mediated contacts *}
+{===>} water_restraint_cutoff=5.0;
+
+{* force constant for restrainted solvating method *}
+{===>} water_restraint_scale=25.0;
+
+{* fraction of water to keep *}
+{* this is the fraction of all interface water after the initial rigid body docking that will be kept 
+(note that more waters might be removed if the interaction energy is unfavorable  *}
+{===>} water_tokeep=0.50;
+
+{* fraction of water around DNA to keep *}
+{* this is the fraction of interface water involving DNA phoshpates after the initial rigid body docking that will be kept 
+(note that more waters might be removed if the interaction energy is unfavorable  *}
+{===>} dnap_water_tokeep=0.75;
+
+{* random fraction to be added to the fraction of water to keep *}
+{===>} water_randfrac=0.0;
+
+{* water-protein surface-cutoff *}
+{* waters further away than this cutoff distance from any component of the complex will be removed *}
+{===>} water_surfcutoff=8.0;
+
+{* do some water analysis *}
+{+ choice: true false +}
+{===>} water_analysis=false;
+
+{* allows translation of water molecules during rigid-body docking, true or false: *}
+{+ choice: true false +}
+{===>} transwater=true;
+
+{* number of different initial solvation shells to generate *}
+{===>} waterensemble=1;
+
+
+{==================== final explicit solvent refinement  ==================}
+{* Do you want to refine your docking models in explicit solvent? *}
+{+ choice: "yes" "no" +}
+{===>} firstwater="yes"; 
+
+{* Which solvent do you want to use? *}
+{+ choice: "water" "dmso" +}
+{===>} solvent="water"; 
+
+{* number of structures for the explicit solvent refinement *}
+{* the n best structures will be refined                    *}
+{===>} waterrefine=200; 
+       structures_2=&waterrefine;
+
+{* number of steps for heating phase (100, 200, 300K)?      *}
+{===>} waterheatsteps=100;
+
+{* number of steps for 300K sampling phase?                 *}
+{===>} watersteps=1250;
+
+{* number of steps for cooling phase (300, 200, 100K)?      *}
+{===>} watercoolsteps=500;
+
+{* write additional PDB files including solvent ?           *}
+{+ choice: true false +}
+{===>} keepwater=false; 
+
+{ calculate explicit desolvation energy (note this will double the cpu requirements) }
+{ choice: true false }
+calcdesolv=false;
+
+
+{================================ Scoring =================================}
+{* Settings for the scoring of the docking solutions *}
+
+{* Define the weights for the various terms for the sorting of structures (scoring) *}
+{+ table: rows=14 "Evdw" "Eelec" "Eair" "Erg" "Esani" "Exrdc" "Expcs" "Edani" "Evean" "Ecdih" "Esym" "BSA" "dEint" "Edesolv"
+          cols=3 "Rigid body EM" "semi-flexible SA" "Water refinement" +}
+{===>} w_vdw_0=0.01;
+{===>} w_vdw_1=1.0;
+{===>} w_vdw_2=1.0;
+
+{===>} w_elec_0=1.0;
+{===>} w_elec_1=1.0;
+{===>} w_elec_2=0.2;
+
+{===>} w_dist_0=0.01;
+{===>} w_dist_1=0.1;
+{===>} w_dist_2=0.1;
+
+{===>} w_rg_0=0.1;
+{===>} w_rg_1=1.0;
+{===>} w_rg_2=1.0;
+
+{===>} w_sani_0=0.1;
+{===>} w_sani_1=0.1;
+{===>} w_sani_2=0.1;
+
+{===>} w_xrdc_0=0.1;
+{===>} w_xrdc_1=0.1;
+{===>} w_xrdc_2=0.1;
+
+{===>} w_xpcs_0=0.1;
+{===>} w_xpcs_1=0.1;
+{===>} w_xpcs_2=0.1;
+
+{===>} w_dani_0=0.01;
+{===>} w_dani_1=0.1;
+{===>} w_dani_2=0.1;
+
+{===>} w_vean_0=0.1;
+{===>} w_vean_1=0.1;
+{===>} w_vean_2=0.1;
+
+{===>} w_cdih_0=0.0;
+{===>} w_cdih_1=0.0;
+{===>} w_cdih_2=0.0;
+
+{===>} w_sym_0=0.1;
+{===>} w_sym_1=0.1;
+{===>} w_sym_2=0.1;
+
+{===>} w_bsa_0=-0.01;
+{===>} w_bsa_1=-0.01;
+{===>} w_bsa_2=0.0;
+
+{===>} w_deint_0=0.0;
+{===>} w_deint_1=0.0;
+{===>} w_deint_2=0.0;
+
+{===>} w_desolv_0=1.0;
+{===>} w_desolv_1=1.0;
+{===>} w_desolv_2=1.0;
+
+{* It is possible to skip structures in the selection of structure in it0 *}
+{* Give for this the number of structures to skip: *}
+{===>} skip_struc=0;
+
+
+{======================= analysis and clustering ==========================}
+{* Cutoff distance (proton-acceptor) to define an hydrogen bond? *}
+{===>} dist_hb=2.5;
+
+{* Cutoff distance (carbon-carbon) to define an hydrophobic contact? *}
+{===>} dist_nb=3.9;
+
+{* Clustering method (RMSD or Fraction of Common Contacts (FCC)) *}
+{+ choice: "RMSD" "FCC" +}
+{===>} clust_meth="FCC";
+
+{* RMSD cutoff for clustering? (Recommended values: RMSD 7.5, FCC 0.60) *}
+{===>} clust_cutoff=0.60;
+
+{* Minimum cluster size? *}
+{===>} clust_size=4;
+
+{* Chain-Agnostic Algorithm (used for FCC clustering in symmetrical complexes) *}
+{+ choice: "true" "false" +}
+{===>} fcc_ignc=false;
+
+{======================= final clean-up ===================================}
+{* Clean up the run directory after completion (only files for struct #1 are kept) ? *}
+{+ choice: true false +}
+{===>} cleanup=true;
+
+
+{============================ parallel jobs ===============================}
+{* How many nodes do you want to use in parallel? *}
+{* leave unused fields blank, make sure that the queues are actually running *}
+{+ table: rows=10 "1" "2" "3" "4" "5" "6" "7" "8" "9" "10"
+ cols=3 "queue command" "cns executable" "number of jobs" +}
+
+{===>} queue_1="ssub short";
+{===>} cns_exe_1="/home/software/science/cns/cns_solve_1.31-UU/intel-x86_64bit-linux/bin/cns";
+{===>} cpunumber_1=200;
+
+{===>} queue_2=""; 
+{===>} cns_exe_2=""; 
+{===>} cpunumber_2=0; 
+
+{===>} queue_3=""; 
+{===>} cns_exe_3=""; 
+{===>} cpunumber_3=0; 
+
+{===>} queue_4=""; 
+{===>} cns_exe_4=""; 
+{===>} cpunumber_4=0; 
+
+{===>} queue_5=""; 
+{===>} cns_exe_5=""; 
+{===>} cpunumber_5=0; 
+
+{===>} queue_6=""; 
+{===>} cns_exe_6=""; 
+{===>} cpunumber_6=0; 
+
+{===>} queue_7=""; 
+{===>} cns_exe_7=""; 
+{===>} cpunumber_7=0; 
+
+{===>} queue_8=""; 
+{===>} cns_exe_8=""; 
+{===>} cpunumber_8=0; 
+
+{===>} queue_9=""; 
+{===>} cns_exe_9=""; 
+{===>} cpunumber_9=0; 
+
+{===>} queue_10=""; 
+{===>} cns_exe_10=""; 
+{===>} cpunumber_10=0; 
+
+{===========================================================================}
+{        things below this line do not normally need to be changed          }
+{===========================================================================}
+
+) {- end block parameter definition -}
+
+!for global parameters (local variables (suffix ) => global variables):
+evaluate (&saprotocol.crossdock=&crossdock)
+evaluate (&saprotocol.randorien=&randorien)
+evaluate (&saprotocol.rigidmini=&rigidmini)
+evaluate (&saprotocol.rigidtrans=&rigidtrans)
+evaluate (&saprotocol.ntrials=&ntrials)
+evaluate (&saprotocol.iniseed=&iniseed)
+evaluate (&saprotocol.tadhigh_t=&tadhigh_t)
+evaluate (&saprotocol.t1_init=&tadinit1_t)
+evaluate (&saprotocol.t2_init=&tadinit2_t)
+evaluate (&saprotocol.t3_init=&tadinit3_t)
+evaluate (&saprotocol.t1_final=&tadfinal1_t)
+evaluate (&saprotocol.t2_final=&tadfinal2_t)
+evaluate (&saprotocol.t3_final=&tadfinal3_t)
+evaluate (&saprotocol.inter_rigid=&inter_rigid)
+evaluate (&saprotocol.inter_init_rigid=&init_rigid)
+evaluate (&saprotocol.inter_fin_rigid=&fin_rigid)
+evaluate (&saprotocol.inter_init_cool2=&init_cool2)
+evaluate (&saprotocol.inter_fin_cool2=&fin_cool2)
+evaluate (&saprotocol.inter_init_cool3=&init_cool3)
+evaluate (&saprotocol.inter_fin_cool3=&fin_cool3)
+evaluate (&saprotocol.tempstep=50)
+evaluate (&saprotocol.timestep=&timestep)
+evaluate (&saprotocol.tadfactor=&tadfactor)
+evaluate (&saprotocol.initiosteps=&initiosteps)
+evaluate (&saprotocol.cool1_steps=&cool1_steps)
+evaluate (&saprotocol.cool2_steps=&cool2_steps)
+evaluate (&saprotocol.cool3_steps=&cool3_steps)
+evaluate (&saprotocol.fbeta=100)
+evaluate (&saprotocol.mass=100)
+
+evaluate (&filenames.fileroot=&fileroot)
+evaluate (&filenames.template=&fileroot + "_1.pdb")
+
+evaluate (&iterations.ini_count    =1) 
+evaluate (&iterations.structures   =&structures_$iteration)
+evaluate (&iterations.keepstruct   =&keepstruct_$iteration)
+evaluate (&iterations.filesort     =&filesort_$iteration)
+evaluate (&iterations.w_vdw        =&w_vdw_$iteration)
+evaluate (&iterations.w_elec       =&w_elec_$iteration)
+evaluate (&iterations.w_dist       =&w_dist_$iteration)
+evaluate (&iterations.w_rg         =&w_rg_$iteration)
+evaluate (&iterations.w_sani       =&w_sani_$iteration)
+evaluate (&iterations.w_xrdc       =&w_xrdc_$iteration)
+evaluate (&iterations.w_xpcs       =&w_xpcs_$iteration)
+evaluate (&iterations.w_dani       =&w_dani_$iteration)
+evaluate (&iterations.w_vean       =&w_vean_$iteration)
+evaluate (&iterations.w_cdih       =&w_cdih_$iteration)
+evaluate (&iterations.w_sym        =&w_sym_$iteration)
+evaluate (&iterations.w_bsa        =&w_bsa_$iteration)
+evaluate (&iterations.w_deint      =&w_deint_$iteration)
+evaluate (&iterations.w_desolv     =&w_desolv_$iteration)
+evaluate (&iterations.anastruc     =&anastruc_$iteration)
+evaluate (&iterations.rotate180    =&rotate180_$iteration)
+
+!topology and parameters, sequence file, template file, interface definition:
+evaluate (&toppar.prot_top_1=&prot_top_A )
+evaluate (&toppar.prot_top_2=&prot_top_B )
+evaluate (&toppar.prot_top_3=&prot_top_C )
+evaluate (&toppar.prot_top_4=&prot_top_D )
+evaluate (&toppar.prot_top_5=&prot_top_E )
+evaluate (&toppar.prot_top_6=&prot_top_F )
+
+evaluate (&toppar.prot_link_1=&prot_link_A )
+evaluate (&toppar.prot_link_2=&prot_link_B )
+evaluate (&toppar.prot_link_3=&prot_link_C )
+evaluate (&toppar.prot_link_4=&prot_link_D )
+evaluate (&toppar.prot_link_5=&prot_link_E )
+evaluate (&toppar.prot_link_6=&prot_link_F )
+
+evaluate (&toppar.prot_par_1=&prot_par_A )
+evaluate (&toppar.prot_par_2=&prot_par_B )
+evaluate (&toppar.prot_par_3=&prot_par_C )
+evaluate (&toppar.prot_par_4=&prot_par_D )
+evaluate (&toppar.prot_par_5=&prot_par_E )
+evaluate (&toppar.prot_par_6=&prot_par_F )
+
+evaluate (&toppar.par_nonbonded=&par_nonbonded)
+
+evaluate (&toppar.prot_coor_1=&prot_coor_A)
+evaluate (&toppar.prot_coor_2=&prot_coor_B)
+evaluate (&toppar.prot_coor_3=&prot_coor_C)
+evaluate (&toppar.prot_coor_4=&prot_coor_D)
+evaluate (&toppar.prot_coor_5=&prot_coor_E)
+evaluate (&toppar.prot_coor_6=&prot_coor_F)
+
+evaluate (&toppar.prot_root_1=&prot_root_A)
+evaluate (&toppar.prot_root_2=&prot_root_B)
+evaluate (&toppar.prot_root_3=&prot_root_C)
+evaluate (&toppar.prot_root_4=&prot_root_D)
+evaluate (&toppar.prot_root_5=&prot_root_E)
+evaluate (&toppar.prot_root_6=&prot_root_F)
+
+evaluate (&toppar.dna_1=&dna_A)
+evaluate (&toppar.dna_2=&dna_B)
+evaluate (&toppar.dna_3=&dna_C)
+evaluate (&toppar.dna_4=&dna_D)
+evaluate (&toppar.dna_5=&dna_E)
+evaluate (&toppar.dna_6=&dna_F)
+
+evaluate (&toppar.prot_segid_1=&prot_segid_A)
+evaluate (&toppar.prot_segid_2=&prot_segid_B)
+evaluate (&toppar.prot_segid_3=&prot_segid_C)
+evaluate (&toppar.prot_segid_4=&prot_segid_D)
+evaluate (&toppar.prot_segid_5=&prot_segid_E)
+evaluate (&toppar.prot_segid_6=&prot_segid_F)
+
+evaluate (&data.ncomponents=&ncomponents) 
+
+evaluate (&toppar.nseg_1=&nseg_A)
+evaluate (&toppar.nseg_2=&nseg_B)
+evaluate (&toppar.nseg_3=&nseg_C)
+evaluate (&toppar.nseg_4=&nseg_D)
+evaluate (&toppar.nseg_5=&nseg_E)
+evaluate (&toppar.nseg_6=&nseg_F)
+evaluate (&toppar.start_seg_1_1=&A_start_seg_1)
+evaluate (&toppar.start_seg_1_2=&A_start_seg_2)
+evaluate (&toppar.start_seg_1_3=&A_start_seg_3)
+evaluate (&toppar.start_seg_1_4=&A_start_seg_4)
+evaluate (&toppar.start_seg_1_5=&A_start_seg_5)
+evaluate (&toppar.start_seg_1_6=&A_start_seg_6)
+evaluate (&toppar.start_seg_1_7=&A_start_seg_7)
+evaluate (&toppar.start_seg_1_8=&A_start_seg_8)
+evaluate (&toppar.start_seg_1_9=&A_start_seg_9)
+evaluate (&toppar.start_seg_1_10=&A_start_seg_10)
+evaluate (&toppar.end_seg_1_1=&A_end_seg_1)
+evaluate (&toppar.end_seg_1_2=&A_end_seg_2)
+evaluate (&toppar.end_seg_1_3=&A_end_seg_3)
+evaluate (&toppar.end_seg_1_4=&A_end_seg_4)
+evaluate (&toppar.end_seg_1_5=&A_end_seg_5)
+evaluate (&toppar.end_seg_1_6=&A_end_seg_6)
+evaluate (&toppar.end_seg_1_7=&A_end_seg_7)
+evaluate (&toppar.end_seg_1_8=&A_end_seg_8)
+evaluate (&toppar.end_seg_1_9=&A_end_seg_9)
+evaluate (&toppar.end_seg_1_10=&A_end_seg_10)
+evaluate (&toppar.start_seg_2_1=&B_start_seg_1)
+evaluate (&toppar.start_seg_2_2=&B_start_seg_2)
+evaluate (&toppar.start_seg_2_3=&B_start_seg_3)
+evaluate (&toppar.start_seg_2_4=&B_start_seg_4)
+evaluate (&toppar.start_seg_2_5=&B_start_seg_5)
+evaluate (&toppar.start_seg_2_6=&B_start_seg_6)
+evaluate (&toppar.start_seg_2_7=&B_start_seg_7)
+evaluate (&toppar.start_seg_2_8=&B_start_seg_8)
+evaluate (&toppar.start_seg_2_9=&B_start_seg_9)
+evaluate (&toppar.start_seg_2_10=&B_start_seg_10)
+evaluate (&toppar.end_seg_2_1=&B_end_seg_1)
+evaluate (&toppar.end_seg_2_2=&B_end_seg_2)
+evaluate (&toppar.end_seg_2_3=&B_end_seg_3)
+evaluate (&toppar.end_seg_2_4=&B_end_seg_4)
+evaluate (&toppar.end_seg_2_5=&B_end_seg_5)
+evaluate (&toppar.end_seg_2_6=&B_end_seg_6)
+evaluate (&toppar.end_seg_2_7=&B_end_seg_7)
+evaluate (&toppar.end_seg_2_8=&B_end_seg_8)
+evaluate (&toppar.end_seg_2_9=&B_end_seg_9)
+evaluate (&toppar.end_seg_2_10=&B_end_seg_10)
+evaluate (&toppar.start_seg_3_1=&C_start_seg_1)
+evaluate (&toppar.start_seg_3_2=&C_start_seg_2)
+evaluate (&toppar.start_seg_3_3=&C_start_seg_3)
+evaluate (&toppar.start_seg_3_4=&C_start_seg_4)
+evaluate (&toppar.start_seg_3_5=&C_start_seg_5)
+evaluate (&toppar.start_seg_3_6=&C_start_seg_6)
+evaluate (&toppar.start_seg_3_7=&C_start_seg_7)
+evaluate (&toppar.start_seg_3_8=&C_start_seg_8)
+evaluate (&toppar.start_seg_3_9=&C_start_seg_9)
+evaluate (&toppar.start_seg_3_10=&C_start_seg_10)
+evaluate (&toppar.end_seg_3_1=&C_end_seg_1)
+evaluate (&toppar.end_seg_3_2=&C_end_seg_2)
+evaluate (&toppar.end_seg_3_3=&C_end_seg_3)
+evaluate (&toppar.end_seg_3_4=&C_end_seg_4)
+evaluate (&toppar.end_seg_3_5=&C_end_seg_5)
+evaluate (&toppar.end_seg_3_6=&C_end_seg_6)
+evaluate (&toppar.end_seg_3_7=&C_end_seg_7)
+evaluate (&toppar.end_seg_3_8=&C_end_seg_8)
+evaluate (&toppar.end_seg_3_9=&C_end_seg_9)
+evaluate (&toppar.end_seg_3_10=&C_end_seg_10)
+evaluate (&toppar.start_seg_4_1=&D_start_seg_1)
+evaluate (&toppar.start_seg_4_2=&D_start_seg_2)
+evaluate (&toppar.start_seg_4_3=&D_start_seg_3)
+evaluate (&toppar.start_seg_4_4=&D_start_seg_4)
+evaluate (&toppar.start_seg_4_5=&D_start_seg_5)
+evaluate (&toppar.start_seg_4_6=&D_start_seg_6)
+evaluate (&toppar.start_seg_4_7=&D_start_seg_7)
+evaluate (&toppar.start_seg_4_8=&D_start_seg_8)
+evaluate (&toppar.start_seg_4_9=&D_start_seg_9)
+evaluate (&toppar.start_seg_4_10=&D_start_seg_10)
+evaluate (&toppar.end_seg_4_1=&D_end_seg_1)
+evaluate (&toppar.end_seg_4_2=&D_end_seg_2)
+evaluate (&toppar.end_seg_4_3=&D_end_seg_3)
+evaluate (&toppar.end_seg_4_4=&D_end_seg_4)
+evaluate (&toppar.end_seg_4_5=&D_end_seg_5)
+evaluate (&toppar.end_seg_4_6=&D_end_seg_6)
+evaluate (&toppar.end_seg_4_7=&D_end_seg_7)
+evaluate (&toppar.end_seg_4_8=&D_end_seg_8)
+evaluate (&toppar.end_seg_4_9=&D_end_seg_9)
+evaluate (&toppar.end_seg_4_10=&D_end_seg_10)
+evaluate (&toppar.start_seg_5_1=&E_start_seg_1)
+evaluate (&toppar.start_seg_5_2=&E_start_seg_2)
+evaluate (&toppar.start_seg_5_3=&E_start_seg_3)
+evaluate (&toppar.start_seg_5_4=&E_start_seg_4)
+evaluate (&toppar.start_seg_5_5=&E_start_seg_5)
+evaluate (&toppar.start_seg_5_6=&E_start_seg_6)
+evaluate (&toppar.start_seg_5_7=&E_start_seg_7)
+evaluate (&toppar.start_seg_5_8=&E_start_seg_8)
+evaluate (&toppar.start_seg_5_9=&E_start_seg_9)
+evaluate (&toppar.start_seg_5_10=&E_start_seg_10)
+evaluate (&toppar.end_seg_5_1=&E_end_seg_1)
+evaluate (&toppar.end_seg_5_2=&E_end_seg_2)
+evaluate (&toppar.end_seg_5_3=&E_end_seg_3)
+evaluate (&toppar.end_seg_5_4=&E_end_seg_4)
+evaluate (&toppar.end_seg_5_5=&E_end_seg_5)
+evaluate (&toppar.end_seg_5_6=&E_end_seg_6)
+evaluate (&toppar.end_seg_5_7=&E_end_seg_7)
+evaluate (&toppar.end_seg_5_8=&E_end_seg_8)
+evaluate (&toppar.end_seg_5_9=&E_end_seg_9)
+evaluate (&toppar.end_seg_5_10=&E_end_seg_10)
+evaluate (&toppar.start_seg_6_1=&F_start_seg_1)
+evaluate (&toppar.start_seg_6_2=&F_start_seg_2)
+evaluate (&toppar.start_seg_6_3=&F_start_seg_3)
+evaluate (&toppar.start_seg_6_4=&F_start_seg_4)
+evaluate (&toppar.start_seg_6_5=&F_start_seg_5)
+evaluate (&toppar.start_seg_6_6=&F_start_seg_6)
+evaluate (&toppar.start_seg_6_7=&F_start_seg_7)
+evaluate (&toppar.start_seg_6_8=&F_start_seg_8)
+evaluate (&toppar.start_seg_6_9=&F_start_seg_9)
+evaluate (&toppar.start_seg_6_10=&F_start_seg_10)
+evaluate (&toppar.end_seg_6_1=&F_end_seg_1)
+evaluate (&toppar.end_seg_6_2=&F_end_seg_2)
+evaluate (&toppar.end_seg_6_3=&F_end_seg_3)
+evaluate (&toppar.end_seg_6_4=&F_end_seg_4)
+evaluate (&toppar.end_seg_6_5=&F_end_seg_5)
+evaluate (&toppar.end_seg_6_6=&F_end_seg_6)
+evaluate (&toppar.end_seg_6_7=&F_end_seg_7)
+evaluate (&toppar.end_seg_6_8=&F_end_seg_8)
+evaluate (&toppar.end_seg_6_9=&F_end_seg_9)
+evaluate (&toppar.end_seg_6_10=&F_end_seg_10)
+
+evaluate (&toppar.nfle_1=&nfle_A)
+evaluate (&toppar.start_fle_1_1=&A_start_fle_1)
+evaluate (&toppar.start_fle_1_2=&A_start_fle_2)
+evaluate (&toppar.start_fle_1_3=&A_start_fle_3)
+evaluate (&toppar.start_fle_1_4=&A_start_fle_4)
+evaluate (&toppar.start_fle_1_5=&A_start_fle_5)
+evaluate (&toppar.end_fle_1_1=&A_end_fle_1)
+evaluate (&toppar.end_fle_1_2=&A_end_fle_2)
+evaluate (&toppar.end_fle_1_3=&A_end_fle_3)
+evaluate (&toppar.end_fle_1_4=&A_end_fle_4)
+evaluate (&toppar.end_fle_1_5=&A_end_fle_5)
+evaluate (&toppar.nfle_2=&nfle_B)
+evaluate (&toppar.start_fle_2_1=&B_start_fle_1)
+evaluate (&toppar.start_fle_2_2=&B_start_fle_2)
+evaluate (&toppar.start_fle_2_3=&B_start_fle_3)
+evaluate (&toppar.start_fle_2_4=&B_start_fle_4)
+evaluate (&toppar.start_fle_2_5=&B_start_fle_5)
+evaluate (&toppar.end_fle_2_1=&B_end_fle_1)
+evaluate (&toppar.end_fle_2_2=&B_end_fle_2)
+evaluate (&toppar.end_fle_2_3=&B_end_fle_3)
+evaluate (&toppar.end_fle_2_4=&B_end_fle_4)
+evaluate (&toppar.end_fle_2_5=&B_end_fle_5)
+evaluate (&toppar.nfle_3=&nfle_C)
+evaluate (&toppar.start_fle_3_1=&C_start_fle_1)
+evaluate (&toppar.start_fle_3_2=&C_start_fle_2)
+evaluate (&toppar.start_fle_3_3=&C_start_fle_3)
+evaluate (&toppar.start_fle_3_4=&C_start_fle_4)
+evaluate (&toppar.start_fle_3_5=&C_start_fle_5)
+evaluate (&toppar.end_fle_3_1=&C_end_fle_1)
+evaluate (&toppar.end_fle_3_2=&C_end_fle_2)
+evaluate (&toppar.end_fle_3_3=&C_end_fle_3)
+evaluate (&toppar.end_fle_3_4=&C_end_fle_4)
+evaluate (&toppar.end_fle_3_5=&C_end_fle_5)
+evaluate (&toppar.nfle_4=&nfle_D)
+evaluate (&toppar.start_fle_4_1=&D_start_fle_1)
+evaluate (&toppar.start_fle_4_2=&D_start_fle_2)
+evaluate (&toppar.start_fle_4_3=&D_start_fle_3)
+evaluate (&toppar.start_fle_4_4=&D_start_fle_4)
+evaluate (&toppar.start_fle_4_5=&D_start_fle_5)
+evaluate (&toppar.end_fle_4_1=&D_end_fle_1)
+evaluate (&toppar.end_fle_4_2=&D_end_fle_2)
+evaluate (&toppar.end_fle_4_3=&D_end_fle_3)
+evaluate (&toppar.end_fle_4_4=&D_end_fle_4)
+evaluate (&toppar.end_fle_4_5=&D_end_fle_5)
+evaluate (&toppar.nfle_5=&nfle_E)
+evaluate (&toppar.start_fle_5_1=&E_start_fle_1)
+evaluate (&toppar.start_fle_5_2=&E_start_fle_2)
+evaluate (&toppar.start_fle_5_3=&E_start_fle_3)
+evaluate (&toppar.start_fle_5_4=&E_start_fle_4)
+evaluate (&toppar.start_fle_5_5=&E_start_fle_5)
+evaluate (&toppar.end_fle_5_1=&E_end_fle_1)
+evaluate (&toppar.end_fle_5_2=&E_end_fle_2)
+evaluate (&toppar.end_fle_5_3=&E_end_fle_3)
+evaluate (&toppar.end_fle_5_4=&E_end_fle_4)
+evaluate (&toppar.end_fle_5_5=&E_end_fle_5)
+evaluate (&toppar.nfle_6=&nfle_F)
+evaluate (&toppar.start_fle_6_1=&F_start_fle_1)
+evaluate (&toppar.start_fle_6_2=&F_start_fle_2)
+evaluate (&toppar.start_fle_6_3=&F_start_fle_3)
+evaluate (&toppar.start_fle_6_4=&F_start_fle_4)
+evaluate (&toppar.start_fle_6_5=&F_start_fle_5)
+evaluate (&toppar.end_fle_6_1=&F_end_fle_1)
+evaluate (&toppar.end_fle_6_2=&F_end_fle_2)
+evaluate (&toppar.end_fle_6_3=&F_end_fle_3)
+evaluate (&toppar.end_fle_6_4=&F_end_fle_4)
+evaluate (&toppar.end_fle_6_5=&F_end_fle_5)
+
+evaluate (&data.numncs=&numncs)
+evaluate (&toppar.ncs_sta1_1=&ncs_sta1_1)
+evaluate (&toppar.ncs_sta1_2=&ncs_sta1_2)
+evaluate (&toppar.ncs_sta1_3=&ncs_sta1_3)
+evaluate (&toppar.ncs_sta1_4=&ncs_sta1_4)
+evaluate (&toppar.ncs_sta1_5=&ncs_sta1_5)
+evaluate (&toppar.ncs_end1_1=&ncs_end1_1)
+evaluate (&toppar.ncs_end1_2=&ncs_end1_2)
+evaluate (&toppar.ncs_end1_3=&ncs_end1_3)
+evaluate (&toppar.ncs_end1_4=&ncs_end1_4)
+evaluate (&toppar.ncs_end1_5=&ncs_end1_5)
+evaluate (&toppar.ncs_seg1_1=&ncs_seg1_1)
+evaluate (&toppar.ncs_seg1_2=&ncs_seg1_2)
+evaluate (&toppar.ncs_seg1_3=&ncs_seg1_3)
+evaluate (&toppar.ncs_seg1_4=&ncs_seg1_4)
+evaluate (&toppar.ncs_seg1_5=&ncs_seg1_5)
+evaluate (&toppar.ncs_sta2_1=&ncs_sta2_1)
+evaluate (&toppar.ncs_sta2_2=&ncs_sta2_2)
+evaluate (&toppar.ncs_sta2_3=&ncs_sta2_3)
+evaluate (&toppar.ncs_sta2_4=&ncs_sta2_4)
+evaluate (&toppar.ncs_sta2_5=&ncs_sta2_5)
+evaluate (&toppar.ncs_end2_1=&ncs_end2_1)
+evaluate (&toppar.ncs_end2_2=&ncs_end2_2)
+evaluate (&toppar.ncs_end2_3=&ncs_end2_3)
+evaluate (&toppar.ncs_end2_4=&ncs_end2_4)
+evaluate (&toppar.ncs_end2_5=&ncs_end2_5)
+evaluate (&toppar.ncs_seg2_1=&ncs_seg2_1)
+evaluate (&toppar.ncs_seg2_2=&ncs_seg2_2)
+evaluate (&toppar.ncs_seg2_3=&ncs_seg2_3)
+evaluate (&toppar.ncs_seg2_4=&ncs_seg2_4)
+evaluate (&toppar.ncs_seg2_5=&ncs_seg2_5)
+
+evaluate (&data.numc2sym=&numc2sym)
+evaluate (&toppar.c2sym_sta1_1=&c2sym_sta1_1)
+evaluate (&toppar.c2sym_sta1_2=&c2sym_sta1_2)
+evaluate (&toppar.c2sym_sta1_3=&c2sym_sta1_3)
+evaluate (&toppar.c2sym_sta1_4=&c2sym_sta1_4)
+evaluate (&toppar.c2sym_sta1_5=&c2sym_sta1_5)
+evaluate (&toppar.c2sym_sta1_6=&c2sym_sta1_6)
+evaluate (&toppar.c2sym_sta1_7=&c2sym_sta1_7)
+evaluate (&toppar.c2sym_sta1_8=&c2sym_sta1_8)
+evaluate (&toppar.c2sym_sta1_9=&c2sym_sta1_8)
+evaluate (&toppar.c2sym_sta1_10=&c2sym_sta1_10)
+evaluate (&toppar.c2sym_end1_1=&c2sym_end1_1)
+evaluate (&toppar.c2sym_end1_2=&c2sym_end1_2)
+evaluate (&toppar.c2sym_end1_3=&c2sym_end1_3)
+evaluate (&toppar.c2sym_end1_4=&c2sym_end1_4)
+evaluate (&toppar.c2sym_end1_5=&c2sym_end1_5)
+evaluate (&toppar.c2sym_end1_6=&c2sym_end1_6)
+evaluate (&toppar.c2sym_end1_7=&c2sym_end1_7)
+evaluate (&toppar.c2sym_end1_8=&c2sym_end1_8)
+evaluate (&toppar.c2sym_end1_9=&c2sym_end1_9)
+evaluate (&toppar.c2sym_end1_10=&c2sym_end1_10)
+evaluate (&toppar.c2sym_seg1_1=&c2sym_seg1_1)
+evaluate (&toppar.c2sym_seg1_2=&c2sym_seg1_2)
+evaluate (&toppar.c2sym_seg1_3=&c2sym_seg1_3)
+evaluate (&toppar.c2sym_seg1_4=&c2sym_seg1_4)
+evaluate (&toppar.c2sym_seg1_5=&c2sym_seg1_5)
+evaluate (&toppar.c2sym_seg1_6=&c2sym_seg1_6)
+evaluate (&toppar.c2sym_seg1_7=&c2sym_seg1_7)
+evaluate (&toppar.c2sym_seg1_8=&c2sym_seg1_8)
+evaluate (&toppar.c2sym_seg1_9=&c2sym_seg1_9)
+evaluate (&toppar.c2sym_seg1_10=&c2sym_seg1_10)
+evaluate (&toppar.c2sym_sta2_1=&c2sym_sta2_1)
+evaluate (&toppar.c2sym_sta2_2=&c2sym_sta2_2)
+evaluate (&toppar.c2sym_sta2_3=&c2sym_sta2_3)
+evaluate (&toppar.c2sym_sta2_4=&c2sym_sta2_4)
+evaluate (&toppar.c2sym_sta2_5=&c2sym_sta2_5)
+evaluate (&toppar.c2sym_sta2_6=&c2sym_sta2_6)
+evaluate (&toppar.c2sym_sta2_7=&c2sym_sta2_7)
+evaluate (&toppar.c2sym_sta2_8=&c2sym_sta2_8)
+evaluate (&toppar.c2sym_sta2_9=&c2sym_sta2_9)
+evaluate (&toppar.c2sym_sta2_10=&c2sym_sta2_10)
+evaluate (&toppar.c2sym_end2_1=&c2sym_end2_1)
+evaluate (&toppar.c2sym_end2_2=&c2sym_end2_2)
+evaluate (&toppar.c2sym_end2_3=&c2sym_end2_3)
+evaluate (&toppar.c2sym_end2_4=&c2sym_end2_4)
+evaluate (&toppar.c2sym_end2_5=&c2sym_end2_5)
+evaluate (&toppar.c2sym_end2_6=&c2sym_end2_6)
+evaluate (&toppar.c2sym_end2_7=&c2sym_end2_7)
+evaluate (&toppar.c2sym_end2_8=&c2sym_end2_8)
+evaluate (&toppar.c2sym_end2_9=&c2sym_end2_9)
+evaluate (&toppar.c2sym_end2_10=&c2sym_end2_10)
+evaluate (&toppar.c2sym_seg2_1=&c2sym_seg2_1)
+evaluate (&toppar.c2sym_seg2_2=&c2sym_seg2_2)
+evaluate (&toppar.c2sym_seg2_3=&c2sym_seg2_3)
+evaluate (&toppar.c2sym_seg2_4=&c2sym_seg2_4)
+evaluate (&toppar.c2sym_seg2_5=&c2sym_seg2_5)
+evaluate (&toppar.c2sym_seg2_6=&c2sym_seg2_6)
+evaluate (&toppar.c2sym_seg2_7=&c2sym_seg2_7)
+evaluate (&toppar.c2sym_seg2_8=&c2sym_seg2_8)
+evaluate (&toppar.c2sym_seg2_9=&c2sym_seg2_9)
+evaluate (&toppar.c2sym_seg2_10=&c2sym_seg2_10)
+
+evaluate (&data.numc3sym=&numc3sym)
+evaluate (&toppar.c3sym_sta1_1=&c3sym_sta1_1)
+evaluate (&toppar.c3sym_sta1_2=&c3sym_sta1_2)
+evaluate (&toppar.c3sym_sta2_1=&c3sym_sta2_1)
+evaluate (&toppar.c3sym_sta2_2=&c3sym_sta2_2)
+evaluate (&toppar.c3sym_sta3_1=&c3sym_sta3_1)
+evaluate (&toppar.c3sym_sta3_2=&c3sym_sta3_2)
+evaluate (&toppar.c3sym_end1_1=&c3sym_end1_1)
+evaluate (&toppar.c3sym_end1_2=&c3sym_end1_2)
+evaluate (&toppar.c3sym_end2_1=&c3sym_end2_1)
+evaluate (&toppar.c3sym_end2_2=&c3sym_end2_2)
+evaluate (&toppar.c3sym_end3_1=&c3sym_end3_1)
+evaluate (&toppar.c3sym_end3_2=&c3sym_end3_2)
+evaluate (&toppar.c3sym_seg1_1=&c3sym_seg1_1)
+evaluate (&toppar.c3sym_seg1_2=&c3sym_seg1_2)
+evaluate (&toppar.c3sym_seg2_1=&c3sym_seg2_1)
+evaluate (&toppar.c3sym_seg2_2=&c3sym_seg2_2)
+evaluate (&toppar.c3sym_seg3_1=&c3sym_seg3_1)
+evaluate (&toppar.c3sym_seg3_2=&c3sym_seg3_2)
+
+evaluate (&data.nums3sym=&nums3sym)
+evaluate (&toppar.s3sym_sta1_1=&s3sym_sta1_1)
+evaluate (&toppar.s3sym_sta1_2=&s3sym_sta1_2)
+evaluate (&toppar.s3sym_sta1_3=&s3sym_sta1_3)
+evaluate (&toppar.s3sym_sta1_4=&s3sym_sta1_4)
+evaluate (&toppar.s3sym_sta2_1=&s3sym_sta2_1)
+evaluate (&toppar.s3sym_sta2_2=&s3sym_sta2_2)
+evaluate (&toppar.s3sym_sta2_3=&s3sym_sta2_3)
+evaluate (&toppar.s3sym_sta2_4=&s3sym_sta2_4)
+evaluate (&toppar.s3sym_sta3_1=&s3sym_sta3_1)
+evaluate (&toppar.s3sym_sta3_2=&s3sym_sta3_2)
+evaluate (&toppar.s3sym_sta3_3=&s3sym_sta3_3)
+evaluate (&toppar.s3sym_sta3_4=&s3sym_sta3_4)
+evaluate (&toppar.s3sym_end1_1=&s3sym_end1_1)
+evaluate (&toppar.s3sym_end1_2=&s3sym_end1_2)
+evaluate (&toppar.s3sym_end1_3=&s3sym_end1_3)
+evaluate (&toppar.s3sym_end1_4=&s3sym_end1_4)
+evaluate (&toppar.s3sym_end2_1=&s3sym_end2_1)
+evaluate (&toppar.s3sym_end2_2=&s3sym_end2_2)
+evaluate (&toppar.s3sym_end2_3=&s3sym_end2_3)
+evaluate (&toppar.s3sym_end2_4=&s3sym_end2_4)
+evaluate (&toppar.s3sym_end3_1=&s3sym_end3_1)
+evaluate (&toppar.s3sym_end3_2=&s3sym_end3_2)
+evaluate (&toppar.s3sym_end3_3=&s3sym_end3_3)
+evaluate (&toppar.s3sym_end3_4=&s3sym_end3_4)
+evaluate (&toppar.s3sym_seg1_1=&s3sym_seg1_1)
+evaluate (&toppar.s3sym_seg1_2=&s3sym_seg1_2)
+evaluate (&toppar.s3sym_seg1_3=&s3sym_seg1_3)
+evaluate (&toppar.s3sym_seg1_4=&s3sym_seg1_4)
+evaluate (&toppar.s3sym_seg2_1=&s3sym_seg2_1)
+evaluate (&toppar.s3sym_seg2_2=&s3sym_seg2_2)
+evaluate (&toppar.s3sym_seg2_3=&s3sym_seg2_3)
+evaluate (&toppar.s3sym_seg2_4=&s3sym_seg2_4)
+evaluate (&toppar.s3sym_seg3_1=&s3sym_seg3_1)
+evaluate (&toppar.s3sym_seg3_2=&s3sym_seg3_2)
+evaluate (&toppar.s3sym_seg3_3=&s3sym_seg3_3)
+evaluate (&toppar.s3sym_seg3_4=&s3sym_seg3_4)
+
+evaluate (&data.numc4sym=&numc4sym)
+evaluate (&toppar.c4sym_sta1_1=&c4sym_sta1_1)
+evaluate (&toppar.c4sym_sta1_2=&c4sym_sta1_2)
+evaluate (&toppar.c4sym_sta2_1=&c4sym_sta2_1)
+evaluate (&toppar.c4sym_sta2_2=&c4sym_sta2_2)
+evaluate (&toppar.c4sym_sta3_1=&c4sym_sta3_1)
+evaluate (&toppar.c4sym_sta3_2=&c4sym_sta3_2)
+evaluate (&toppar.c4sym_sta4_1=&c4sym_sta4_1)
+evaluate (&toppar.c4sym_sta4_2=&c4sym_sta4_2)
+evaluate (&toppar.c4sym_end1_1=&c4sym_end1_1)
+evaluate (&toppar.c4sym_end1_2=&c4sym_end1_2)
+evaluate (&toppar.c4sym_end2_1=&c4sym_end2_1)
+evaluate (&toppar.c4sym_end2_2=&c4sym_end2_2)
+evaluate (&toppar.c4sym_end3_1=&c4sym_end3_1)
+evaluate (&toppar.c4sym_end3_2=&c4sym_end3_2)
+evaluate (&toppar.c4sym_end4_1=&c4sym_end4_1)
+evaluate (&toppar.c4sym_end4_2=&c4sym_end4_2)
+evaluate (&toppar.c4sym_seg1_1=&c4sym_seg1_1)
+evaluate (&toppar.c4sym_seg1_2=&c4sym_seg1_2)
+evaluate (&toppar.c4sym_seg2_1=&c4sym_seg2_1)
+evaluate (&toppar.c4sym_seg2_2=&c4sym_seg2_2)
+evaluate (&toppar.c4sym_seg3_1=&c4sym_seg3_1)
+evaluate (&toppar.c4sym_seg3_2=&c4sym_seg3_2)
+evaluate (&toppar.c4sym_seg4_1=&c4sym_seg4_1)
+evaluate (&toppar.c4sym_seg3_2=&c4sym_seg4_2)
+
+evaluate (&data.numc5sym=&numc5sym)
+evaluate (&toppar.c5sym_sta1_1=&c5sym_sta1_1)
+evaluate (&toppar.c5sym_sta2_1=&c5sym_sta2_1)
+evaluate (&toppar.c5sym_sta3_1=&c5sym_sta3_1)
+evaluate (&toppar.c5sym_sta4_1=&c5sym_sta4_1)
+evaluate (&toppar.c5sym_sta5_1=&c5sym_sta5_1)
+evaluate (&toppar.c5sym_end1_1=&c5sym_end1_1)
+evaluate (&toppar.c5sym_end2_1=&c5sym_end2_1)
+evaluate (&toppar.c5sym_end3_1=&c5sym_end3_1)
+evaluate (&toppar.c5sym_end4_1=&c5sym_end4_1)
+evaluate (&toppar.c5sym_end5_1=&c5sym_end5_1)
+evaluate (&toppar.c5sym_seg1_1=&c5sym_seg1_1)
+evaluate (&toppar.c5sym_seg2_1=&c5sym_seg2_1)
+evaluate (&toppar.c5sym_seg3_1=&c5sym_seg3_1)
+evaluate (&toppar.c5sym_seg4_1=&c5sym_seg4_1)
+evaluate (&toppar.c5sym_seg5_1=&c5sym_seg5_1)
+
+if ( &data.numc2sym eq 6) then
+  evaluate (&iterations.rotate180 = false)
+end if
+if ( &data.numc3sym ne 0) then
+  evaluate (&iterations.rotate180 = false)
+end if
+if ( &data.numc4sym ne 0) then
+  evaluate (&iterations.rotate180 = false)
+end if
+if ( &data.numc5sym ne 0) then
+  evaluate (&iterations.rotate180 = false)
+end if
+
+evaluate (&toppar.delenph=&delenph)
+
+evaluate (&toppar.nhisd=&numhisd)
+evaluate (&toppar.nhise=&numhise)
+evaluate ($ncc=1)
+while ($ncc <= &numhisd) loop hisd
+  evaluate (&toppar.hisd_resid_1_$ncc=&A_hisd_resid_$ncc)
+  evaluate (&toppar.hisd_resid_2_$ncc=&B_hisd_resid_$ncc)
+  evaluate (&toppar.hisd_resid_3_$ncc=&C_hisd_resid_$ncc)
+  evaluate (&toppar.hisd_resid_4_$ncc=&D_hisd_resid_$ncc)
+  evaluate (&toppar.hisd_resid_5_$ncc=&E_hisd_resid_$ncc)
+  evaluate (&toppar.hisd_resid_6_$ncc=&F_hisd_resid_$ncc)
+  evaluate ($ncc = $ncc + 1)
+end loop hisd
+
+evaluate ($ncc=1)
+while ($ncc <= &numhise) loop hise
+  evaluate (&toppar.hise_resid_1_$ncc=&A_hise_resid_$ncc)
+  evaluate (&toppar.hise_resid_2_$ncc=&B_hise_resid_$ncc)
+  evaluate (&toppar.hise_resid_3_$ncc=&C_hise_resid_$ncc)
+  evaluate (&toppar.hise_resid_4_$ncc=&D_hise_resid_$ncc)
+  evaluate (&toppar.hise_resid_5_$ncc=&E_hise_resid_$ncc)
+  evaluate (&toppar.hise_resid_6_$ncc=&F_hise_resid_$ncc)
+  evaluate ($ncc = $ncc + 1)
+end loop hise
+
+!Electrostatics:
+evaluate (&Data.flags.dihed = &dihedflag)
+evaluate (&Data.flags.elec0 = &elecflag_0)
+evaluate (&Data.flags.elec1 = &elecflag_1)
+evaluate (&Data.epsilon = &epsilon)
+evaluate (&Data.dielec  = &dielec)
+
+!Interaction matrix:
+evaluate ($nmol1=1)
+while ($nmol1 <= 6) loop mol1
+  evaluate ($nmol2=$nmol1 + 1)
+  evaluate (&toppar.int_$nmol1_$nmol1 = &int_$nmol1_$nmol1)
+  while ($nmol2 <= 6) loop mol2
+    evaluate (&toppar.int_$nmol1_$nmol2 = &int_$nmol1_$nmol2)
+    evaluate (&toppar.int_$nmol2_$nmol1 = &int_$nmol1_$nmol2)
+    evaluate ($nmol2=$nmol2 + 1)
+  end loop mol2
+  evaluate ($nmol1 = $nmol1 + 1)
+end loop mol1
+
+!Dihedrals, Jcouplings, Residual dipolar couplints, Hbonds, Analysis:
+
+evaluate (&Data.dnarest = &dnarest_on)
+
+evaluate (&Data.flags.noe  =  true)
+evaluate (&Data.flags.cdih =  &dihedrals_on)
+evaluate (&Data.cdih.on = &dihedrals_on)
+evaluate (&Data.ssdihed = &ssdihed)
+
+evaluate (&Data.flags.coup =  false)
+evaluate (&Data.flags.vean =  false)
+if (&rdc1_choice = "VANGLE") then
+  evaluate (&Data.flags.vean =  true)
+end if
+if (&rdc2_choice = "VANGLE") then
+  evaluate (&Data.flags.vean =  true)
+end if
+if (&rdc3_choice = "VANGLE") then
+  evaluate (&Data.flags.vean =  true)
+end if
+if (&rdc4_choice = "VANGLE") then
+  evaluate (&Data.flags.vean =  true)
+end if
+if (&rdc5_choice = "VANGLE") then
+  evaluate (&Data.flags.vean =  true)
+end if
+evaluate (&Data.flags.sani =  false)
+if (&rdc1_choice = "SANI") then
+  evaluate (&Data.flags.sani =  true)
+end if
+if (&rdc2_choice = "SANI") then
+  evaluate (&Data.flags.sani =  true)
+end if
+if (&rdc3_choice = "SANI") then
+  evaluate (&Data.flags.sani =  true)
+end if
+if (&rdc4_choice = "SANI") then
+  evaluate (&Data.flags.sani =  true)
+end if
+if (&rdc5_choice = "SANI") then
+  evaluate (&Data.flags.sani =  true)
+end if
+evaluate (&Data.flags.xrdc =  false)
+if (&rdc1_choice = "XRDC") then
+  evaluate (&Data.flags.xrdc =  true)
+end if
+if (&rdc2_choice = "XRDC") then
+  evaluate (&Data.flags.xrdc =  true)
+end if
+if (&rdc3_choice = "XRDC") then
+  evaluate (&Data.flags.xrdc =  true)
+end if
+if (&rdc4_choice = "XRDC") then
+  evaluate (&Data.flags.xrdc =  true)
+end if
+if (&rdc5_choice = "XRDC") then
+  evaluate (&Data.flags.xrdc =  true)
+end if
+evaluate (&Data.flags.xpcs =  false)
+if (&pcs1_choice = "XPCS") then
+  evaluate (&Data.flags.xpcs =  true)
+end if
+if (&pcs2_choice = "XPCS") then
+  evaluate (&Data.flags.xpcs =  true)
+end if
+if (&pcs3_choice = "XPCS") then
+  evaluate (&Data.flags.xpcs =  true)
+end if
+if (&pcs4_choice = "XPCS") then
+  evaluate (&Data.flags.xpcs =  true)
+end if
+if (&pcs5_choice = "XPCS") then
+  evaluate (&Data.flags.xpcs =  true)
+end if
+if (&pcs6_choice = "XPCS") then
+  evaluate (&Data.flags.xpcs =  true)
+end if
+if (&pcs7_choice = "XPCS") then
+  evaluate (&Data.flags.xpcs =  true)
+end if
+if (&pcs8_choice = "XPCS") then
+  evaluate (&Data.flags.xpcs =  true)
+end if
+if (&pcs9_choice = "XPCS") then
+  evaluate (&Data.flags.xpcs =  true)
+end if
+if (&pcsA_choice = "XPCS") then
+  evaluate (&Data.flags.xpcs =  true)
+end if
+evaluate (&Data.flags.dani =  false)
+if (&dan1_choice = "DANI") then
+  evaluate (&Data.flags.dani =  true)
+end if
+if (&dan2_choice = "DANI") then
+  evaluate (&Data.flags.dani =  true)
+end if
+if (&dan3_choice = "DANI") then
+  evaluate (&Data.flags.dani =  true)
+end if
+if (&dan4_choice = "DANI") then
+  evaluate (&Data.flags.dani =  true)
+end if
+if (&dan5_choice = "DANI") then
+  evaluate (&Data.flags.dani =  true)
+end if
+
+
+evaluate (&Data.flags.plan =  false)
+evaluate (&Data.flags.ncs  =  &ncs_on)
+evaluate (&Data.flags.sym  =  &sym_on)
+
+evaluate (&data.scaling=&air_scaling)
+evaluate (&data.totnoe_unamb=&tot_unamb)
+evaluate (&data.unamb_firstit=&unamb_firstit)
+evaluate (&data.unamb_lastit=&unamb_lastit)
+evaluate (&data.unamb_hot=&unamb_hot)
+evaluate (&data.unamb_cool1=&unamb_cool1)
+evaluate (&data.unamb_cool2=&unamb_cool2)
+evaluate (&data.unamb_cool3=&unamb_cool3)
+evaluate (&data.noecv=&noecv)
+evaluate (&data.ncvpart=&ncvpart)
+evaluate (&data.ranair=&ranair)
+if (&data.ranair eq true) then
+  evaluate (&data.noecv = false)
+end if
+evaluate (&data.cmrest=&cmrest)
+evaluate (&data.kcont=&kcont)
+evaluate (&data.surfrest=&surfrest)
+evaluate (&data.ksurf=&ksurf)
+
+evaluate (&data.flags.rg=&rgrest)
+evaluate (&data.rgtarg=&rgtarg)
+evaluate (&data.krg_hot=&krg_hot)
+evaluate (&data.krg_cool1=&krg_cool1)
+evaluate (&data.krg_cool2=&krg_cool2)
+evaluate (&data.krg_cool3=&krg_cool3)
+evaluate (&data.rgsele=&rgsele)
+
+evaluate (&data.totnoe_amb=&tot_amb)
+evaluate (&data.amb_firstit=&amb_firstit)
+evaluate (&data.amb_lastit=&amb_lastit)
+evaluate (&data.amb_hot=&amb_hot)
+evaluate (&data.amb_cool1=&amb_cool1)
+evaluate (&data.amb_cool2=&amb_cool2)
+evaluate (&data.amb_cool3=&amb_cool3)
+
+evaluate (&data.kncs=&kncs)
+evaluate (&data.ksym=&ksym)
+
+evaluate (&data.hbond_firstit=&hbond_firstit)
+evaluate (&data.hbond_lastit=&hbond_lastit)
+evaluate (&data.hbond_hot=&hbond_hot)
+evaluate (&data.hbond_cool1=&hbond_cool1)
+evaluate (&data.hbond_cool2=&hbond_cool2)
+evaluate (&data.hbond_cool3=&hbond_cool3)
+
+evaluate (&data.mrswi_hot=&mrswi_hot)
+evaluate (&data.mrswi_cool1=&mrswi_cool1)
+evaluate (&data.mrswi_cool2=&mrswi_cool2)
+evaluate (&data.mrswi_cool3=&mrswi_cool3)
+
+evaluate (&data.rswi_hot=&rswi_hot)
+evaluate (&data.rswi_cool1=&rswi_cool1)
+evaluate (&data.rswi_cool2=&rswi_cool2)
+evaluate (&data.rswi_cool3=&rswi_cool3)
+
+evaluate (&data.masy_hot=&masy_hot)
+evaluate (&data.masy_cool1=&masy_cool1)
+evaluate (&data.masy_cool2=&masy_cool2)
+evaluate (&data.masy_cool3=&masy_cool3)
+
+evaluate (&data.asy_hot=&asy_hot)
+evaluate (&data.asy_cool1=&asy_cool1)
+evaluate (&data.asy_cool2=&asy_cool2)
+evaluate (&data.asy_cool3=&asy_cool3)
+
+evaluate (&data.dihedrals.on=&dihedrals_on)
+evaluate (&data.dihedrals_hot=&dihedrals_hot)
+evaluate (&data.dihedrals_cool1=&dihedrals_cool1)
+evaluate (&data.dihedrals_cool2=&dihedrals_cool2)
+evaluate (&data.dihedrals_cool3=&dihedrals_cool3)
+evaluate (&data.hbonds_on=&hbonds_on)
+
+evaluate (&data.c1_on=&c1_on)
+evaluate (&data.c1_karplusa=&c1_karplusa)
+evaluate (&data.c1_karplusb=&c1_karplusb)
+evaluate (&data.c1_karplusc=&c1_karplusc)
+evaluate (&data.c1_karplusd=&c1_karplusd)
+evaluate (&data.c1_hot=&c1_hot)
+evaluate (&data.c1_cool1=&c1_cool1)
+evaluate (&data.c1_cool2=&c1_cool2)
+evaluate (&data.c1_cool3=&c1_cool3)
+evaluate (&data.c2_on=&c2_on)
+evaluate (&data.c2_karplusa=&c2_karplusa)
+evaluate (&data.c2_karplusb=&c2_karplusb)
+evaluate (&data.c2_karplusc=&c2_karplusc)
+evaluate (&data.c2_karplusd=&c2_karplusd)
+evaluate (&data.c2_hot=&c2_hot)
+evaluate (&data.c2_cool1=&c2_cool1)
+evaluate (&data.c2_cool2=&c2_cool2)
+evaluate (&data.c2_cool3=&c2_cool3)
+evaluate (&data.c3_on=&c3_on)
+evaluate (&data.c3_karplusa=&c3_karplusa)
+evaluate (&data.c3_karplusb=&c3_karplusb)
+evaluate (&data.c3_karplusc=&c3_karplusc)
+evaluate (&data.c3_karplusd=&c3_karplusd)
+evaluate (&data.c3_hot=&c3_hot)
+evaluate (&data.c3_cool1=&c3_cool1)
+evaluate (&data.c3_cool2=&c3_cool2)
+evaluate (&data.c3_cool3=&c3_cool3)
+evaluate (&data.c4_on=&c4_on)
+evaluate (&data.c4_karplusa=&c4_karplusa)
+evaluate (&data.c4_karplusb=&c4_karplusb)
+evaluate (&data.c4_karplusc=&c4_karplusc)
+evaluate (&data.c4_karplusd=&c4_karplusd)
+evaluate (&data.c4_hot=&c4_hot)
+evaluate (&data.c4_cool1=&c4_cool1)
+evaluate (&data.c4_cool2=&c4_cool2)
+evaluate (&data.c4_cool3=&c4_cool3)
+evaluate (&data.c5_on=&c5_on)
+evaluate (&data.c5_karplusa=&c5_karplusa)
+evaluate (&data.c5_karplusb=&c5_karplusb)
+evaluate (&data.c5_karplusc=&c5_karplusc)
+evaluate (&data.c5_karplusd=&c5_karplusd)
+evaluate (&data.c5_hot=&c5_hot)
+evaluate (&data.c5_cool1=&c5_cool1)
+evaluate (&data.c5_cool2=&c5_cool2)
+evaluate (&data.c5_cool3=&c5_cool3)
+
+evaluate (&data.rdc1_choice=&rdc1_choice)
+evaluate (&data.rdc1_firstIt=&rdc1_firstIt)
+evaluate (&data.rdc1_lastIt=&rdc1_lastIt)
+evaluate (&data.rdc1_hot=&rdc1_hot)
+evaluate (&data.rdc1_cool1=&rdc1_cool1)
+evaluate (&data.rdc1_cool2=&rdc1_cool2)
+evaluate (&data.rdc1_cool3=&rdc1_cool3)
+evaluate (&data.rdc1_r=&rdc1_r)
+evaluate (&data.rdc1_d=&rdc1_d)
+
+evaluate (&data.rdc2_choice=&rdc2_choice)
+evaluate (&data.rdc2_firstIt=&rdc2_firstIt)
+evaluate (&data.rdc2_lastIt=&rdc2_lastIt)
+evaluate (&data.rdc2_hot=&rdc2_hot)
+evaluate (&data.rdc2_cool1=&rdc2_cool1)
+evaluate (&data.rdc2_cool2=&rdc2_cool2)
+evaluate (&data.rdc2_cool3=&rdc2_cool3)
+evaluate (&data.rdc2_r=&rdc2_r)
+evaluate (&data.rdc2_d=&rdc2_d)
+
+evaluate (&data.rdc3_choice=&rdc3_choice)
+evaluate (&data.rdc3_firstIt=&rdc3_firstIt)
+evaluate (&data.rdc3_lastIt=&rdc3_lastIt)
+evaluate (&data.rdc3_hot=&rdc3_hot)
+evaluate (&data.rdc3_cool1=&rdc3_cool1)
+evaluate (&data.rdc3_cool2=&rdc3_cool2)
+evaluate (&data.rdc3_cool3=&rdc3_cool3)
+evaluate (&data.rdc3_r=&rdc3_r)
+evaluate (&data.rdc3_d=&rdc3_d)
+
+evaluate (&data.rdc4_choice=&rdc4_choice)
+evaluate (&data.rdc4_firstIt=&rdc4_firstIt)
+evaluate (&data.rdc4_lastIt=&rdc4_lastIt)
+evaluate (&data.rdc4_hot=&rdc4_hot)
+evaluate (&data.rdc4_cool1=&rdc4_cool1)
+evaluate (&data.rdc4_cool2=&rdc4_cool2)
+evaluate (&data.rdc4_cool3=&rdc4_cool3)
+evaluate (&data.rdc4_r=&rdc4_r)
+evaluate (&data.rdc4_d=&rdc4_d)
+
+evaluate (&data.rdc5_choice=&rdc5_choice)
+evaluate (&data.rdc5_firstIt=&rdc5_firstIt)
+evaluate (&data.rdc5_lastIt=&rdc5_lastIt)
+evaluate (&data.rdc5_hot=&rdc5_hot)
+evaluate (&data.rdc5_cool1=&rdc5_cool1)
+evaluate (&data.rdc5_cool2=&rdc5_cool2)
+evaluate (&data.rdc5_cool3=&rdc5_cool3)
+evaluate (&data.rdc5_r=&rdc5_r)
+evaluate (&data.rdc5_d=&rdc5_d)
+
+evaluate (&data.pcs1_choice=&pcs1_choice)
+evaluate (&data.pcs1_firstIt=&pcs1_firstIt)
+evaluate (&data.pcs1_lastIt=&pcs1_lastIt)
+evaluate (&data.pcs1_hot=&pcs1_hot)
+evaluate (&data.pcs1_cool1=&pcs1_cool1)
+evaluate (&data.pcs1_cool2=&pcs1_cool2)
+evaluate (&data.pcs1_cool3=&pcs1_cool3)
+evaluate (&data.pcs1_r=&pcs1_r)
+evaluate (&data.pcs1_d=&pcs1_d)
+
+evaluate (&data.pcs2_choice=&pcs2_choice)
+evaluate (&data.pcs2_firstIt=&pcs2_firstIt)
+evaluate (&data.pcs2_lastIt=&pcs2_lastIt)
+evaluate (&data.pcs2_hot=&pcs2_hot)
+evaluate (&data.pcs2_cool1=&pcs2_cool1)
+evaluate (&data.pcs2_cool2=&pcs2_cool2)
+evaluate (&data.pcs2_cool3=&pcs2_cool3)
+evaluate (&data.pcs2_r=&pcs2_r)
+evaluate (&data.pcs2_d=&pcs2_d)
+
+evaluate (&data.pcs3_choice=&pcs3_choice)
+evaluate (&data.pcs3_firstIt=&pcs3_firstIt)
+evaluate (&data.pcs3_lastIt=&pcs3_lastIt)
+evaluate (&data.pcs3_hot=&pcs3_hot)
+evaluate (&data.pcs3_cool1=&pcs3_cool1)
+evaluate (&data.pcs3_cool2=&pcs3_cool2)
+evaluate (&data.pcs3_cool3=&pcs3_cool3)
+evaluate (&data.pcs3_r=&pcs3_r)
+evaluate (&data.pcs3_d=&pcs3_d)
+
+evaluate (&data.pcs4_choice=&pcs4_choice)
+evaluate (&data.pcs4_firstIt=&pcs4_firstIt)
+evaluate (&data.pcs4_lastIt=&pcs4_lastIt)
+evaluate (&data.pcs4_hot=&pcs4_hot)
+evaluate (&data.pcs4_cool1=&pcs4_cool1)
+evaluate (&data.pcs4_cool2=&pcs4_cool2)
+evaluate (&data.pcs4_cool3=&pcs4_cool3)
+evaluate (&data.pcs4_r=&pcs4_r)
+evaluate (&data.pcs4_d=&pcs4_d)
+
+evaluate (&data.pcs5_choice=&pcs5_choice)
+evaluate (&data.pcs5_firstIt=&pcs5_firstIt)
+evaluate (&data.pcs5_lastIt=&pcs5_lastIt)
+evaluate (&data.pcs5_hot=&pcs5_hot)
+evaluate (&data.pcs5_cool1=&pcs5_cool1)
+evaluate (&data.pcs5_cool2=&pcs5_cool2)
+evaluate (&data.pcs5_cool3=&pcs5_cool3)
+evaluate (&data.pcs5_r=&pcs5_r)
+evaluate (&data.pcs5_d=&pcs5_d)
+
+evaluate (&data.pcs6_choice=&pcs6_choice)
+evaluate (&data.pcs6_firstIt=&pcs6_firstIt)
+evaluate (&data.pcs6_lastIt=&pcs6_lastIt)
+evaluate (&data.pcs6_hot=&pcs6_hot)
+evaluate (&data.pcs6_cool1=&pcs6_cool1)
+evaluate (&data.pcs6_cool2=&pcs6_cool2)
+evaluate (&data.pcs6_cool3=&pcs6_cool3)
+evaluate (&data.pcs6_r=&pcs6_r)
+evaluate (&data.pcs6_d=&pcs6_d)
+
+evaluate (&data.pcs7_choice=&pcs7_choice)
+evaluate (&data.pcs7_firstIt=&pcs7_firstIt)
+evaluate (&data.pcs7_lastIt=&pcs7_lastIt)
+evaluate (&data.pcs7_hot=&pcs7_hot)
+evaluate (&data.pcs7_cool1=&pcs7_cool1)
+evaluate (&data.pcs7_cool2=&pcs7_cool2)
+evaluate (&data.pcs7_cool3=&pcs7_cool3)
+evaluate (&data.pcs7_r=&pcs7_r)
+evaluate (&data.pcs7_d=&pcs7_d)
+
+evaluate (&data.pcs8_choice=&pcs8_choice)
+evaluate (&data.pcs8_firstIt=&pcs8_firstIt)
+evaluate (&data.pcs8_lastIt=&pcs8_lastIt)
+evaluate (&data.pcs8_hot=&pcs8_hot)
+evaluate (&data.pcs8_cool1=&pcs8_cool1)
+evaluate (&data.pcs8_cool2=&pcs8_cool2)
+evaluate (&data.pcs8_cool3=&pcs8_cool3)
+evaluate (&data.pcs8_r=&pcs8_r)
+evaluate (&data.pcs8_d=&pcs8_d)
+
+evaluate (&data.pcs9_choice=&pcs9_choice)
+evaluate (&data.pcs9_firstIt=&pcs9_firstIt)
+evaluate (&data.pcs9_lastIt=&pcs9_lastIt)
+evaluate (&data.pcs9_hot=&pcs9_hot)
+evaluate (&data.pcs9_cool1=&pcs9_cool1)
+evaluate (&data.pcs9_cool2=&pcs9_cool2)
+evaluate (&data.pcs9_cool3=&pcs9_cool3)
+evaluate (&data.pcs9_r=&pcs9_r)
+evaluate (&data.pcs9_d=&pcs9_d)
+
+evaluate (&data.pcsA_choice=&pcsA_choice)
+evaluate (&data.pcsA_firstIt=&pcsA_firstIt)
+evaluate (&data.pcsA_lastIt=&pcsA_lastIt)
+evaluate (&data.pcsA_hot=&pcsA_hot)
+evaluate (&data.pcsA_cool1=&pcsA_cool1)
+evaluate (&data.pcsA_cool2=&pcsA_cool2)
+evaluate (&data.pcsA_cool3=&pcsA_cool3)
+evaluate (&data.pcsA_r=&pcsA_r)
+evaluate (&data.pcsA_d=&pcsA_d)
+
+evaluate (&data.dan1_choice=&dan1_choice)
+evaluate (&data.dan1_firstIt=&dan1_firstIt)
+evaluate (&data.dan1_lastIt=&dan1_lastIt)
+evaluate (&data.dan1_hot=&dan1_hot)
+evaluate (&data.dan1_cool1=&dan1_cool1)
+evaluate (&data.dan1_cool2=&dan1_cool2)
+evaluate (&data.dan1_cool3=&dan1_cool3)
+evaluate (&data.dan1_tc=&dan1_tc)
+evaluate (&data.dan1_anis=&dan1_anis)
+evaluate (&data.dan1_r=&dan1_r)
+evaluate (&data.dan1_wh=&dan1_wh)
+evaluate (&data.dan1_wn=&dan1_wn)
+
+evaluate (&data.dan2_choice=&dan2_choice)
+evaluate (&data.dan2_firstIt=&dan2_firstIt)
+evaluate (&data.dan2_lastIt=&dan2_lastIt)
+evaluate (&data.dan2_hot=&dan2_hot)
+evaluate (&data.dan2_cool1=&dan2_cool1)
+evaluate (&data.dan2_cool2=&dan2_cool2)
+evaluate (&data.dan2_cool3=&dan2_cool3)
+evaluate (&data.dan2_tc=&dan2_tc)
+evaluate (&data.dan2_anis=&dan2_anis)
+evaluate (&data.dan2_r=&dan2_r)
+evaluate (&data.dan2_wh=&dan2_wh)
+evaluate (&data.dan2_wn=&dan2_wn)
+
+evaluate (&data.dan3_choice=&dan3_choice)
+evaluate (&data.dan3_firstIt=&dan3_firstIt)
+evaluate (&data.dan3_lastIt=&dan3_lastIt)
+evaluate (&data.dan3_hot=&dan3_hot)
+evaluate (&data.dan3_cool1=&dan3_cool1)
+evaluate (&data.dan3_cool2=&dan3_cool2)
+evaluate (&data.dan3_cool3=&dan3_cool3)
+evaluate (&data.dan3_tc=&dan3_tc)
+evaluate (&data.dan3_anis=&dan3_anis)
+evaluate (&data.dan3_r=&dan3_r)
+evaluate (&data.dan3_wh=&dan3_wh)
+evaluate (&data.dan3_wn=&dan3_wn)
+
+evaluate (&data.dan4_choice=&dan4_choice)
+evaluate (&data.dan4_firstIt=&dan4_firstIt)
+evaluate (&data.dan4_lastIt=&dan4_lastIt)
+evaluate (&data.dan4_hot=&dan4_hot)
+evaluate (&data.dan4_cool1=&dan4_cool1)
+evaluate (&data.dan4_cool2=&dan4_cool2)
+evaluate (&data.dan4_cool3=&dan4_cool3)
+evaluate (&data.dan4_tc=&dan4_tc)
+evaluate (&data.dan4_anis=&dan4_anis)
+evaluate (&data.dan4_r=&dan4_r)
+evaluate (&data.dan4_wh=&dan4_wh)
+evaluate (&data.dan4_wn=&dan4_wn)
+
+evaluate (&data.dan5_choice=&dan5_choice)
+evaluate (&data.dan5_firstIt=&dan5_firstIt)
+evaluate (&data.dan5_lastIt=&dan5_lastIt)
+evaluate (&data.dan5_hot=&dan5_hot)
+evaluate (&data.dan5_cool1=&dan5_cool1)
+evaluate (&data.dan5_cool2=&dan5_cool2)
+evaluate (&data.dan5_cool3=&dan5_cool3)
+evaluate (&data.dan5_tc=&dan5_tc)
+evaluate (&data.dan5_anis=&dan5_anis)
+evaluate (&data.dan5_r=&dan5_r)
+evaluate (&data.dan5_wh=&dan5_wh)
+evaluate (&data.dan5_wn=&dan5_wn)
+
+
+!VEAN statement:
+evaluate (&data.ini_bor_hot_1=&ini_bor_hot_1)
+evaluate (&data.ini_bor_cool1_1=&ini_bor_cool1_1)
+evaluate (&data.ini_bor_cool2_1=&ini_bor_cool2_1)
+evaluate (&data.ini_bor_cool3_1=&ini_bor_cool3_1)
+evaluate (&data.ini_cen_hot_1=&ini_cen_hot_1)
+evaluate (&data.ini_cen_cool1_1=&ini_cen_cool1_1)
+evaluate (&data.ini_cen_cool2_1=&ini_cen_cool2_1)
+evaluate (&data.ini_cen_cool3_1=&ini_cen_cool3_1)
+evaluate (&data.fin_bor_hot_1=&fin_bor_hot_1)
+evaluate (&data.fin_bor_cool1_1=&fin_bor_cool1_1)
+evaluate (&data.fin_bor_cool2_1=&fin_bor_cool2_1)
+evaluate (&data.fin_bor_cool3_1=&fin_bor_cool3_1)
+evaluate (&data.fin_cen_hot_1=&fin_cen_hot_1)
+evaluate (&data.fin_cen_cool1_1=&fin_cen_cool1_1)
+evaluate (&data.fin_cen_cool2_1=&fin_cen_cool2_1)
+evaluate (&data.fin_cen_cool3_1=&fin_cen_cool3_1)
+
+evaluate (&data.ini_bor_hot_2=&ini_bor_hot_2)
+evaluate (&data.ini_bor_cool1_2=&ini_bor_cool1_2)
+evaluate (&data.ini_bor_cool2_2=&ini_bor_cool2_2)
+evaluate (&data.ini_bor_cool3_2=&ini_bor_cool3_2)
+evaluate (&data.ini_cen_hot_2=&ini_cen_hot_2)
+evaluate (&data.ini_cen_cool1_2=&ini_cen_cool1_2)
+evaluate (&data.ini_cen_cool2_2=&ini_cen_cool2_2)
+evaluate (&data.ini_cen_cool3_2=&ini_cen_cool3_2)
+evaluate (&data.fin_bor_hot_2=&fin_bor_hot_2)
+evaluate (&data.fin_bor_cool1_2=&fin_bor_cool1_2)
+evaluate (&data.fin_bor_cool2_2=&fin_bor_cool2_2)
+evaluate (&data.fin_bor_cool3_2=&fin_bor_cool3_2)
+evaluate (&data.fin_cen_hot_2=&fin_cen_hot_2)
+evaluate (&data.fin_cen_cool1_2=&fin_cen_cool1_2)
+evaluate (&data.fin_cen_cool2_2=&fin_cen_cool2_2)
+evaluate (&data.fin_cen_cool3_2=&fin_cen_cool3_2)
+
+
+evaluate (&data.ini_bor_hot_3=&ini_bor_hot_3)
+evaluate (&data.ini_bor_cool1_3=&ini_bor_cool1_3)
+evaluate (&data.ini_bor_cool2_3=&ini_bor_cool2_3)
+evaluate (&data.ini_bor_cool3_3=&ini_bor_cool3_3)
+evaluate (&data.ini_cen_hot_3=&ini_cen_hot_3)
+evaluate (&data.ini_cen_cool1_3=&ini_cen_cool1_3)
+evaluate (&data.ini_cen_cool2_3=&ini_cen_cool2_3)
+evaluate (&data.ini_cen_cool3_3=&ini_cen_cool3_3)
+evaluate (&data.fin_bor_hot_3=&fin_bor_hot_3)
+evaluate (&data.fin_bor_cool1_3=&fin_bor_cool1_3)
+evaluate (&data.fin_bor_cool2_3=&fin_bor_cool2_3)
+evaluate (&data.fin_bor_cool3_3=&fin_bor_cool3_3)
+evaluate (&data.fin_cen_hot_3=&fin_cen_hot_3)
+evaluate (&data.fin_cen_cool1_3=&fin_cen_cool1_3)
+evaluate (&data.fin_cen_cool2_3=&fin_cen_cool2_3)
+evaluate (&data.fin_cen_cool3_3=&fin_cen_cool3_3)
+
+evaluate (&data.ini_bor_hot_4=&ini_bor_hot_4)
+evaluate (&data.ini_bor_cool1_4=&ini_bor_cool1_4)
+evaluate (&data.ini_bor_cool2_4=&ini_bor_cool2_4)
+evaluate (&data.ini_bor_cool3_4=&ini_bor_cool3_4)
+evaluate (&data.ini_cen_hot_4=&ini_cen_hot_4)
+evaluate (&data.ini_cen_cool1_4=&ini_cen_cool1_4)
+evaluate (&data.ini_cen_cool2_4=&ini_cen_cool2_4)
+evaluate (&data.ini_cen_cool3_4=&ini_cen_cool3_4)
+evaluate (&data.fin_bor_hot_4=&fin_bor_hot_4)
+evaluate (&data.fin_bor_cool1_4=&fin_bor_cool1_4)
+evaluate (&data.fin_bor_cool2_4=&fin_bor_cool2_4)
+evaluate (&data.fin_bor_cool3_4=&fin_bor_cool3_4)
+evaluate (&data.fin_cen_hot_4=&fin_cen_hot_4)
+evaluate (&data.fin_cen_cool1_4=&fin_cen_cool1_4)
+evaluate (&data.fin_cen_cool2_4=&fin_cen_cool2_4)
+evaluate (&data.fin_cen_cool3_4=&fin_cen_cool3_4)
+
+evaluate (&data.ini_bor_hot_5=&ini_bor_hot_5)
+evaluate (&data.ini_bor_cool1_5=&ini_bor_cool1_5)
+evaluate (&data.ini_bor_cool2_5=&ini_bor_cool2_5)
+evaluate (&data.ini_bor_cool3_5=&ini_bor_cool3_5)
+evaluate (&data.ini_cen_hot_5=&ini_cen_hot_5)
+evaluate (&data.ini_cen_cool1_5=&ini_cen_cool1_5)
+evaluate (&data.ini_cen_cool2_5=&ini_cen_cool2_5)
+evaluate (&data.ini_cen_cool3_5=&ini_cen_cool3_5)
+evaluate (&data.fin_bor_hot_5=&fin_bor_hot_5)
+evaluate (&data.fin_bor_cool1_5=&fin_bor_cool1_5)
+evaluate (&data.fin_bor_cool2_5=&fin_bor_cool2_5)
+evaluate (&data.fin_bor_cool3_5=&fin_bor_cool3_5)
+evaluate (&data.fin_cen_hot_5=&fin_cen_hot_5)
+evaluate (&data.fin_cen_cool1_5=&fin_cen_cool1_5)
+evaluate (&data.fin_cen_cool2_5=&fin_cen_cool2_5)
+evaluate (&data.fin_cen_cool3_5=&fin_cen_cool3_5)
+
+!intermolecular contacts analysis
+evaluate (&data.hb_dist=&dist_hb)
+evaluate (&data.nb_dist=&dist_nb)
+
+!water refinement
+evaluate (&refine.firstwater=&firstwater)
+evaluate (&refine.keepwater=&keepwater)
+evaluate (&refine.waterrefine=min(&structures_1,&waterrefine))
+evaluate (&refine.solvent=&solvent)
+evaluate (&refine.pmrefine_on=&pmrefine_on)
+evaluate (&refine.calcdesolv=&calcdesolv)
+evaluate (&refine.heatsteps=&waterheatsteps)
+evaluate (&refine.steps=&watersteps)
+evaluate (&refine.coolsteps=&watercoolsteps)
+
+
+!for the non-bonded parameters (the section was taken out of 
+!parallhdg5.0.pro and parallhdg5.1.pro, so be careful!):
+if (&toppar.par_nonbonded eq "PROLSQ") then
+    evaluate (&toppar.repel_radius = 1.0)
+    evaluate (&toppar.repel_rcons = 20)
+    evaluate (&toppar.repel_rexpo  = 4)
+    evaluate (&toppar.repel_irexp  = 1)
+elseif (&toppar.par_nonbonded eq "PARMALLH6") then
+    evaluate (&toppar.repel_radius = 0.8)
+    evaluate (&toppar.repel_rcons = 5.0)
+    evaluate (&toppar.repel_rexpo  = 2)
+    evaluate (&toppar.repel_irexp  = 2)
+elseif (&toppar.par_nonbonded eq "OPLSX") then
+    evaluate (&toppar.repel_radius = 0.0)
+else        {...now the standard PARALLHDG parameters}
+    evaluate (&toppar.repel_radius = 0.78)
+    evaluate (&toppar.repel_rcons = 5.0)
+    evaluate (&toppar.repel_rexpo  = 2)
+    evaluate (&toppar.repel_irexp  = 2)
+end if
+
+! Water in rigid body docking
+evaluate (&data.waterdock=&waterdock)
+evaluate (&data.db_method=&db_method)
+evaluate (&data.water_tokeep=&water_tokeep)
+evaluate (&data.dnap_water_tokeep=&dnap_water_tokeep)
+evaluate (&data.water_randfrac=&water_randfrac)
+evaluate (&data.solvate_method=&solvate_method)
+evaluate (&data.water_surfcutoff=&water_surfcutoff)
+evaluate (&data.water_analysis=&water_analysis)
+evaluate (&data.transwater=&transwater)
+evaluate (&data.water_restraint_initial=&water_restraint_initial)
+evaluate (&data.water_restraint_cutoff=&water_restraint_cutoff)
+evaluate (&data.water_restraint_scale=&water_restraint_scale)
+evaluate (&data.waterensemble=&waterensemble)
+
+if (&data.waterdock eq true) then
+  evaluate (&iterations.rotate180   = false)
+  evaluate (&SaProtocol.initiosteps = 0)
+  evaluate (&SaProtocol.cool1_steps = 0)
+  evaluate (&refine.keepwater = true)
+  display SOLVATED DOCKING TURNED ON: initiosteps and cool1_steps set to 0, rotate180 set to false
+end if

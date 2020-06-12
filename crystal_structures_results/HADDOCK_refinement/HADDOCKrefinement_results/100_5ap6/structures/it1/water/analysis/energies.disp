@@ -1,0 +1,111 @@
+#Complex statistics
+#file Etot Ebond Eangle Eimpr Edihed Evdw Eelec
+# PREVIT:complex_10w.pdb -11046.6 33.8215 227.177 40.3697 1358.4 -1326.37 -11380
+# PREVIT:complex_8w.pdb -11004.2 36.0631 234.07 39.5953 1352.87 -1320.34 -11346.5
+# PREVIT:complex_12w.pdb -11091.1 37.1844 222.122 41.7998 1380.9 -1331.06 -11442
+# PREVIT:complex_3w.pdb -10994.7 35.0647 226.234 39.9519 1367.67 -1318.29 -11345.3
+# PREVIT:complex_17w.pdb -10900.5 33.9059 224.853 38.9625 1361.61 -1311.24 -11248.5
+# PREVIT:complex_6w.pdb -11035.4 34.5471 222.03 37.5489 1367.62 -1327.36 -11369.8
+# PREVIT:complex_13w.pdb -11032.8 34.4813 219.331 38.4817 1363.62 -1333.42 -11355.3
+# PREVIT:complex_9w.pdb -11024.9 35.1586 231.134 38.8064 1365.54 -1325.34 -11370.2
+# PREVIT:complex_7w.pdb -11025.1 36.9254 234.909 42.8397 1382.73 -1304.44 -11418.1
+# PREVIT:complex_14w.pdb -11043.4 35.7513 223.818 38.759 1376.39 -1302.39 -11415.7
+# PREVIT:complex_11w.pdb -11092.7 36.3054 233.119 42.5637 1365.11 -1342 -11427.8
+# PREVIT:complex_16w.pdb -11086 35.2087 229.994 37.4946 1355.92 -1308.21 -11436.4
+# PREVIT:complex_19w.pdb -10977.1 36.944 223.486 39.39 1390.88 -1303.41 -11364.4
+# PREVIT:complex_18w.pdb -10971.1 37.5146 225.355 40.3151 1383.62 -1309.74 -11348.2
+# PREVIT:complex_15w.pdb -11073.8 36.3565 234.233 41.2615 1375.16 -1321.46 -11439.3
+# PREVIT:complex_4w.pdb -11022.1 35.1533 225.727 41.6899 1380.41 -1297.65 -11407.4
+# PREVIT:complex_20w.pdb -11092.3 35.5483 219.926 38.4774 1372.22 -1356.17 -11402.3
+# PREVIT:complex_1w.pdb -11050.3 36.2281 229.764 39.759 1370 -1329.61 -11396.4
+# PREVIT:complex_2w.pdb -11103.7 35.6066 229.023 40.5714 1384.84 -1305.01 -11488.8
+# PREVIT:complex_5w.pdb -11107.6 35.3153 230.654 43.2271 1377.85 -1315.56 -11479.1
+# mean values protein
+# Etot   -11038.8 (+/- 51.2286 ) [kcal/Mol]
+# Ebond  35.6542 (+/- 1.01718 ) [kcal/Mol]
+# Eangle 227.348 (+/- 4.69247 ) [kcal/Mol]
+# Eimpr  40.0932 (+/- 1.65335 ) [kcal/Mol]
+# Edihed 1371.67 (+/- 10.2513 ) [kcal/Mol]
+# Evdw   -1319.45 (+/- 14.4949 ) [kcal/Mol]
+# Eelec  -11394.1 (+/- 53.1177 ) [kcal/Mol]
+#
+#
+#Proteins flexible interface energies
+#file Etot Evdw Eelec
+# PREVIT:complex_10w.pdb	0	0	0
+# PREVIT:complex_8w.pdb	0	0	0
+# PREVIT:complex_12w.pdb	0	0	0
+# PREVIT:complex_3w.pdb	0	0	0
+# PREVIT:complex_17w.pdb	0	0	0
+# PREVIT:complex_6w.pdb	0	0	0
+# PREVIT:complex_13w.pdb	0	0	0
+# PREVIT:complex_9w.pdb	0	0	0
+# PREVIT:complex_7w.pdb	0	0	0
+# PREVIT:complex_14w.pdb	0	0	0
+# PREVIT:complex_11w.pdb	0	0	0
+# PREVIT:complex_16w.pdb	0	0	0
+# PREVIT:complex_19w.pdb	0	0	0
+# PREVIT:complex_18w.pdb	0	0	0
+# PREVIT:complex_15w.pdb	0	0	0
+# PREVIT:complex_4w.pdb	0	0	0
+# PREVIT:complex_20w.pdb	0	0	0
+# PREVIT:complex_1w.pdb	0	0	0
+# PREVIT:complex_2w.pdb	0	0	0
+# PREVIT:complex_5w.pdb	0	0	0
+# mean values
+# Etot   0 (+/- 0 ) [kcal/Mol]
+# Evdw   0 (+/- 0 ) [kcal/Mol]
+# Eelec  0 (+/- 0 ) [kcal/Mol]
+#
+#
+#Protein-Protein intermolecular energies
+#file Etot Evdw Eelec
+# PREVIT:complex_10w.pdb -81.5381 -45.4202 -36.1179
+# PREVIT:complex_8w.pdb -73.9986 -43.1019 -30.8966
+# PREVIT:complex_12w.pdb -77.7897 -45.309 -32.4807
+# PREVIT:complex_3w.pdb -79.2641 -44.8272 -34.4369
+# PREVIT:complex_17w.pdb -75.5468 -40.7931 -34.7537
+# PREVIT:complex_6w.pdb -69.822 -42.2157 -27.6063
+# PREVIT:complex_13w.pdb -82.3758 -41.4029 -40.9728
+# PREVIT:complex_9w.pdb -70.1264 -43.0884 -27.038
+# PREVIT:complex_7w.pdb -69.5996 -43.296 -26.3036
+# PREVIT:complex_14w.pdb -79.7056 -41.7383 -37.9673
+# PREVIT:complex_11w.pdb -78.4152 -44.4114 -34.0038
+# PREVIT:complex_16w.pdb -73.7492 -41.9793 -31.7699
+# PREVIT:complex_19w.pdb -77.1472 -46.0525 -31.0947
+# PREVIT:complex_18w.pdb -60.6731 -42.8352 -17.8379
+# PREVIT:complex_15w.pdb -76.0218 -44.0184 -32.0034
+# PREVIT:complex_4w.pdb -58.37 -43.4992 -14.8709
+# PREVIT:complex_20w.pdb -71.2658 -42.8714 -28.3944
+# PREVIT:complex_1w.pdb -67.5888 -42.161 -25.4278
+# PREVIT:complex_2w.pdb -79.68 -41.5135 -38.1665
+# PREVIT:complex_5w.pdb -78.4475 -41.8177 -36.6298
+# mean values
+# Etot   -74.0563 (+/- 6.37115 ) [kcal/Mol]
+# Evdw   -43.1176 (+/- 1.44875 ) [kcal/Mol]
+# Eelec  -30.9386 (+/- 6.38909 ) [kcal/Mol]
+#
+#
+#Protein-Protein Buried_surface_area
+# PREVIT:complex_10w.pdb 874.009
+# PREVIT:complex_8w.pdb 892.016
+# PREVIT:complex_12w.pdb 878.456
+# PREVIT:complex_3w.pdb 870.92
+# PREVIT:complex_17w.pdb 883.929
+# PREVIT:complex_6w.pdb 898.695
+# PREVIT:complex_13w.pdb 868.002
+# PREVIT:complex_9w.pdb 898.681
+# PREVIT:complex_7w.pdb 894.882
+# PREVIT:complex_14w.pdb 890.412
+# PREVIT:complex_11w.pdb 868.911
+# PREVIT:complex_16w.pdb 894.745
+# PREVIT:complex_19w.pdb 887.998
+# PREVIT:complex_18w.pdb 886.49
+# PREVIT:complex_15w.pdb 898.469
+# PREVIT:complex_4w.pdb 872.945
+# PREVIT:complex_20w.pdb 880.003
+# PREVIT:complex_1w.pdb 879.367
+# PREVIT:complex_2w.pdb 897.91
+# PREVIT:complex_5w.pdb 880.573
+# mean values
+# BSA    884.871 (+/- 10.3375 ) [A^2]
