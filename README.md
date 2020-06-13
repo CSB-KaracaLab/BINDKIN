@@ -16,14 +16,14 @@ Most of the mutation positions are within or in the vicinity of the ATP binding 
 
 The directory organization description of the repository:
 
-Organization of the input structure files:
+# Organization of the input coordinate files:
 Each folder that ends with the string "_structures" contains the 
 subdirectories in which the input coordinate files are present.
 	> "crystal_structures":The coordinates files obtained from the PDB are present here.
 	> "homology_model_structures":The coordinate files of the model structures are present here.
 	
 In both of these folders, the default state of the structures, and the 
-HADDOCK refined versons of them were given in separate directories as shown below:
+HADDOCK refined versions of them were given in separate directories as shown below:
 	> "crystal_structures":
 		> "crystal_structures"
 		> "HADDOCK_refined_crystal_structures"
@@ -48,7 +48,7 @@ The subdirectories that contain the input coordinate files are as listed below:
 			> "proteins_pdb":
 				Protein coordinate files in ".pdb" format.
 
-Organization of the web server outputs:
+# Organization of the web server outputs:
 Each folder that ends with the string "_results" contains the subdirectories in 
 which the binding affinity prediction results were given for the web servers.
 	> "crystal_structures_results":
@@ -76,11 +76,8 @@ The subdirectories that contain the web server output files or folders are as li
 
 The directory "homology_modeling" contains the input and output files or folders that are related to homology modeling.
 
-The BINDKIN.csv file contains the results obtained from the web servers 
-and other information regarding the proteins, ligands, and their complexes.
-
-Therecorded and analyzed results are given in the "BINDKIN_results" folder.
-The the summraized result files and their respective contents are listed below:
+# The the summraized result files and their respective contents are listed below:
+The recorded and analyzed results are given in the "BINDKIN_results" folder.
 	> "BINDKIN_crystal_structure_direct_results.csv":
 		The raw records of the web server score outputs, obtained by the 
 		submission of the crystal structures or their refined versions.
