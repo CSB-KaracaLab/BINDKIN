@@ -1,8 +1,0 @@
-#!/bin/csh
-setenv CURRIT 0
-setenv NEWIT 
-setenv PREVIT
-setenv RUN ./
-setenv TEMPTRASH $RUN
-protocols/cns1 < /home/enmr/services-enmr/HADDOCK2.2/server/run/userrun000135/run1/protocols/generate_B.inp >! /home/enmr/services-enmr/HADDOCK2.2/server/run/userrun000135/run1/begin/generate_B.out
-            

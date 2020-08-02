@@ -1,2 +1,0 @@
-#Cluster BSA sd
-file.nam_clust1  822.860   16.038 

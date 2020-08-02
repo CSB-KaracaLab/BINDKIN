@@ -1,2 +1,0 @@
-Job name	DGprediction (low refinement) (Kcal/mol)
-2ito	-9.12

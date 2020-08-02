@@ -1,2 +1,0 @@
-Job name	DGprediction (Kcal/mol)	DGscore
-3f3w_w	-9.23	84.00

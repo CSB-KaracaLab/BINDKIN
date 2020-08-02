@@ -1,7 +1,0 @@
-[!] Structure contains gaps:
-	A ASN1 < Fragment 0 > A VAL43
-	A PRO52 < Fragment 1 > A ARG187
-	A GLY194 < Fragment 2 > A TYR309
-
-trying to populate electrostatics from pdb file: None
-Running Prodigy for structure 4cli

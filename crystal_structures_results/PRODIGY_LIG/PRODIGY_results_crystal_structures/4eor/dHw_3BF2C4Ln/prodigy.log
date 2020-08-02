@@ -1,7 +1,0 @@
-[!] Structure contains gaps:
-	A SER1 < Fragment 0 > A LEU38
-	A GLU43 < Fragment 1 > A TYR160
-	A HIS162 < Fragment 2 > A ARG298
-
-trying to populate electrostatics from pdb file: None
-Running Prodigy for structure 4eor

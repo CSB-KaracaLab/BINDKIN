@@ -1,6 +1,0 @@
-#!/bin/tcsh
-foreach i(100*)
-	cd $i/structures/it1/water/
-	rm valELEC pdblist elec
-	cd ../../../../
-end
