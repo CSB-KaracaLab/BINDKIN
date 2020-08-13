@@ -1,0 +1,74 @@
+<html>
+<head>
+  <title>I-TASSER results</title>
+</head>
+
+<script type="text/javascript" src="../../bin/jmol/JSmol.min.js"></script>
+<script type="text/javascript" src="../../bin/jmol/Jmol2.js"></script>
+<body bgcolor="#FFFFFF">
+<font face="Times New Roman">
+[<a href="./">Back to the Results Page</a>]
+<br/>
+<br/>
+ <h1 align="center">Top five models with local structure error profiles</h1>
+The local accuracy is defined as the distance deviation (in Angstrom) between residue positions
+in the model and the native structure. 
+Since the native structure is unknown, the distance errors in the following plots 
+are estimated by 
+<a href=http://zhanglab.ccmb.med.umich.edu/ResQ/>ResQ</a>
+using support vector regression that makes 
+use of the coverage of threading alignment, divergence of I-TASSER simulation decoys, and 
+sequence-based secondary structure and solvent accessibility predictions. 
+The numerical data of the ResQ prediction are listed in this file: <a href=lscore.txt>lscore.txt</a>.<p>
+
+More details of ResQ and the local structure error prediction can be found at <br>
+J Yang, Y Wang, Y Zhang. ResQ: An approach to unified estimation of B-factor and residue-specific error in protein structure prediction, Journal of Molecular Biology, 428: 693-701 (2016).
+
+<br/>
+<br/>
+   <div style="position:relative;left:30px;">
+       <table  style="table-layout:fixed;width:1200px;background:#F2F2F2;" border="0" cellspacing="5" cellpadding="0" align="left">
+  <tr> <td align=center><b>Generated 3D models</b></td> <td colspan=3 align=center> <a href=lscore.txt target="_blank"> Download the estimated local accuracy of models</a> </td></tr>
+       <tr>       <td align ="left"><script type="text/javascript">jmolInitialize("../../bin/jmol/");jmolSetAppletColor("#000000");jmolApplet(300, "load model1.pdb; calculate structure rama; set frank off; select all; color group; spacefill off; wireframe off; cartoons;set ambient 40;set spin x 10; set spin y 10; spin on;");</script></td>
+<td  colspan=3 align=center >  <img src=RSQ_1.png>  </td>   </tr>
+ <tr> <td  align =left>
+<li><a href="model1.pdb" download>Download Model 1</a>
+
+<li>C-score=0.72 (<a href="cscore.txt" target="_blank" >Read more about C-score</a>) 
+
+<li>Estimated TM-score = 0.81&plusmn;0.09
+
+<li>Estimated RMSD = 4.3&plusmn;2.9&Aring;
+
+<br><br>
+
+</td>
+
+
+</tr>
+       <tr>       <td align ="left"><script type="text/javascript">jmolInitialize("../../bin/jmol/");jmolSetAppletColor("#000000");jmolApplet(300, "load model2.pdb; calculate structure rama; set frank off; select all; color group; spacefill off; wireframe off; cartoons;set ambient 40;set spin x 10; set spin y 10; spin on;");</script></td>
+<td  colspan=3 align=center >  <img src=RSQ_2.png>  </td>   </tr>
+ <tr> <td  align =left>
+<li><a href="model2.pdb" download>Download Model 2</a>
+
+<li>C-score = -5 <br><br>
+
+</td> </tr>
+       <tr>       <td align ="left"><script type="text/javascript">jmolInitialize("../../bin/jmol/");jmolSetAppletColor("#000000");jmolApplet(300, "load model3.pdb; calculate structure rama; set frank off; select all; color group; spacefill off; wireframe off; cartoons;set ambient 40;set spin x 10; set spin y 10; spin on;");</script></td>
+<td  colspan=3 align=center >  <img src=RSQ_3.png>  </td>   </tr>
+ <tr> <td  align =left>
+<li><a href="model3.pdb" download>Download Model 3</a>
+
+<li>C-score = 0.44 <br><br>
+
+</td> </tr>
+       <tr>       <td align ="left"><script type="text/javascript">jmolInitialize("../../bin/jmol/");jmolSetAppletColor("#000000");jmolApplet(300, "load model4.pdb; calculate structure rama; set frank off; select all; color group; spacefill off; wireframe off; cartoons;set ambient 40;set spin x 10; set spin y 10; spin on;");</script></td>
+<td  colspan=3 align=center >  <img src=RSQ_4.png>  </td>   </tr>
+ <tr> <td  align =left>
+<li><a href="model4.pdb" download>Download Model 4</a>
+
+<li>C-score = -5 <br><br>
+
+</td> </tr>
+       </table>
+</html>

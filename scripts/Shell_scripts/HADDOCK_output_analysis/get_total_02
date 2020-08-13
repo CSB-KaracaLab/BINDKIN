@@ -1,0 +1,17 @@
+#!/bin/tcsh
+#29/11/18 - tk
+
+foreach i(BINDKIN*)
+	cd $i/structures/it1/water
+	foreach j(*.pdb)
+		grep energies $j | awk '{print $8,$9,$10}' | sed 's/,//g' >> eff
+		grep esolv $j | awk '{print $4}' >> desolv
+		grep uried $j | awk '{print $5}' >> bsa
+		echo $j >> pdblist
+		paste pdblist eff desolv bsa | awk '{print $1,$2,$3,$4,$5,$6}' > all_ene
+		awk '{print $2+0.2*$3+0.1*$4+$5}' all_ene >> all_ene_1vdw_02elec
+		paste pdblist all_ene_1vdw_02elec >> alldata_1vdw_02elec
+		rm desolv bsa pdblist all_ene* eff
+	end
+	cd ../../../../
+end

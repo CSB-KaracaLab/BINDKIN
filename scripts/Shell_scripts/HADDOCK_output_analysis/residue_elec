@@ -1,0 +1,16 @@
+#!/bin/tcsh
+# 14/03/2018
+
+foreach i (BINDKIN*)
+	echo $i >> dockingruns
+	mv dockingruns $i/structures/it1/water/
+	cd $i/structures/it1/water/
+	cat valELEC | sed 's/\./,/g' | sort -nk2 | head -1 > max_$i
+	paste dockingruns max_$i >> maxenergies_$i
+	mv maxenergies_$i ../../../../
+	rm dockingruns max_$i
+	cd ../../../../
+end
+cat maxenergies* >> maximum
+cat maximum | awk '{print $1,$3}' | sed 's/100_//g' >> maximumvalHOH_ELEC
+rm maxenergies* maximum

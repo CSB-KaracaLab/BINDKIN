@@ -1,0 +1,12 @@
+#!/bin/tcsh
+#29/11/18 - tk
+
+foreach i(BINDKIN*)
+	cd $i/structures/it1/water
+	foreach j(*.pdb)
+		grep uried $j | awk '{print $5}' >> bsa
+		echo $j >> pdblist
+		paste pdblist bsa | awk '{print $1,$2}' > valBSA
+	end
+	cd ../../../../
+end

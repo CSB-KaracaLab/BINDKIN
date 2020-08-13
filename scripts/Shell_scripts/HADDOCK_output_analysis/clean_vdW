@@ -1,0 +1,6 @@
+#!/bin/tcsh
+foreach i(BINDKIN*)
+	cd $i/structures/it1/water/
+	rm valVDW pdblist vdw
+	cd ../../../../
+end
