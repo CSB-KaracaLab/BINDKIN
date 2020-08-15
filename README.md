@@ -42,5 +42,5 @@ Each folder that ends with the string "structures" contains the subdirectories i
 - ***"BINDKIN_crystal_structures_delta_assessment.csv":*** The normalized experimental and predicted binding affinity data for the crystal structures. The data was obtained by subtraction of the experimental and predicted values of the wild-type cases from those of their mutant partners.
 - ***"BINDKIN_model_structures_direct_assessment.csv":*** The raw records of the experimental and predicted binding affinity data. The data was obtained by submission of the water-refined homology model structures to the web servers.
 - ***"BINDKIN_model_structures_delta_assessment.csv":*** The normalized experimental and predicted binding affinity data for the water-refined homology model structures. The data was obtained by subtraction of the experimental and predicted values of wild-type cases from those of their mutant partners.
-- ***"BINDKIN_pharmacophore.csv":*** The record of the pharmacophoric features of the ligands that are present in BINDKIN.
+- ***"BINDKIN_pharmacophore.csv":*** The record of the pharmacophoric features of the ligands in BINDKIN.
 
