@@ -1,0 +1,12 @@
+nM	kinetics	genotype	PDB	label_ID	pair_ID	DSXcsd.ScoreWithoutSAS
+0.07	Ki	wild type	4cli	wt_2	pair_1	-110.714
+0.70	Ki	mutant	4clj	mut_2	pair_1	-110.271
+67.00	Ki	wild type	4eor	wt_3	pair_2	-125.18
+650.00	Ki	mutant	4eok	mut_3	pair_2	-121.601
+3.80	Ki	wild type	4wa9	wt_1	pair_3	-125.749
+0.10	Ki	mutant	4twp	mut_1	pair_3	-128.507
+216.00	Ki	wild type	5cav	wt_4	pair_4	-125.518
+1.40	Ki	mutant	5cas	mut_4	pair_4	-132.397
+1090	Ki	wild type	5em8	wt_5	pair_5	-107.726
+19	Ki	mutant	5em7_A	mut_5A	pair_5	-123.657
+19	Ki	mutant	5em7_B	mut_5B	pair_5	-120.862

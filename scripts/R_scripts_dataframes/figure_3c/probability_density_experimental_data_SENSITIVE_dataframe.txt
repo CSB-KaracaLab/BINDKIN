@@ -1,0 +1,10 @@
+nM	kinetics	Ligand	PDB_WT	PDB_MUT
+0.01	Ki	4ZQ	5cav	5cas
+0.017431193	Ki	5Q4	5em8	5em7_A
+0.02	Ki	5Q4	5em8	5em7_B
+0.03	Ki	AXI	4wa9	4twp
+0.05	Kd	IRE	2ity	2itz
+0.16	Kd	AEE	2j6m	2itt
+0.35	Kd	38O	5am6	5am7
+0.45	IC50	P3Y	2qoh	2z60
+0.50	Kd	R69	1xh4	1xh9

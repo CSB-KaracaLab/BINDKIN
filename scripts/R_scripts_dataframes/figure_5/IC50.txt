@@ -1,0 +1,9 @@
+kinetics	sensitivity	PDB_WT	nM	DSXcsd.ScoreWithoutSAS	HADDOCKweb.TotalScoreElec02	KDEEP.protonated.pKd	KDEEP.protonated.DeltaG	PDBePISA.DeltaG	Pose	Rank	PRODIGY.DeltaG
+IC50	resistant	5ap0	87.50	8.97	-6.00	-0.38	0.52	0.20	5.52	2.30	0.13
+IC50	resistant	5ap1	339.20	-0.02	4.00	-0.22	0.30	-0.30	7.83	4.89	0.09
+IC50	neutral	5ap2	10.00	-5.89	-5.00	-0.01	0.01	0.40	-2.50	0.56	-0.42
+IC50	neutral	3f3v	13.00	-5.66	0.90	0.25	-0.34	0.60	-10.07	-8.28	0.01
+IC50	neutral	3qri	3.20	10.85	-3.90	0.00	0.00	0.90	-0.80	-5.26	-0.12
+IC50	resistant	2iw9	94.10	0.14	-7.80	0.00	0.00	-0.50	3.36	2.94	0.57
+IC50	neutral	3w2s	12.10	21.68	-2.30	-0.53	0.71	-0.10	21.14	13.85	-0.40
+IC50	neutral	2qoh	-11.00	-6.10	6.20	0.04	-0.05	-0.90	5.24	5.24	-0.07

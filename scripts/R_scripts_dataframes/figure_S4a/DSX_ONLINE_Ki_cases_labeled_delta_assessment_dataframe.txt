@@ -1,0 +1,7 @@
+nM	kinetics	sensitivity	PDB_WT	label_ID	pair_ID	DSXcsd.ScoreWithoutSAS
+0.63	Ki	neutral	4cli	pair_2	pair_1	0.44
+583.00	Ki	neutral	4eor	pair_3	pair_2	3.58
+-3.70	Ki	sensitive	4wa9	pair_1	pair_3	-2.76
+-214.60	Ki	sensitive	5cav	pair_4	pair_4	-6.88
+-1071.00	Ki	sensitive	5em8	pair_5A	pair_5	-15.93
+-1071.00	Ki	sensitive	5em8	pair_5B	pair_5	-13.14

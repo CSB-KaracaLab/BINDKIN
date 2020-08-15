@@ -1,0 +1,7 @@
+kinetics	sensitivity	PDB_WT	nM	DSXcsd.ScoreWithoutSAS	HADDOCKweb.TotalScoreElec02	KDEEP.protonated.pKd	KDEEP.protonated.DeltaG	PDBePISA.DeltaG	Pose	Rank	PRODIGY.DeltaG
+Ki	sensitive	4wa9	-3.70	-2.76	4.30	0.02	-0.02	1.60	3.72	1.31	-0.23
+Ki	neutral	4cli	0.63	0.44	14.50	0.31	-0.43	-0.20	1.28	-0.78	0.07
+Ki	neutral	4eor	583.00	3.58	-23.70	0.12	-0.16	-0.10	8.47	3.13	-0.18
+Ki	sensitive	5cav	-214.60	-6.88	2.90	0.19	-0.26	0.30	-9.39	-6.65	-0.63
+Ki	sensitive	5em8	-1071.00	-15.93	-0.10	0.38	-0.52	0.20	-3.25	0.40	-0.35
+Ki	sensitive	5em8	-1071.00	-13.14	0.50	0.37	-0.50	0.60	-0.72	0.70	-0.26

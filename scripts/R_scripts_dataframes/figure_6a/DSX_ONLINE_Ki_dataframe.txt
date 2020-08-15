@@ -1,0 +1,12 @@
+nM	kinetics	Ligand	PDB_WT	PDB_MUT	DSXcsd.ScoreWithoutSAS	structure	delta_resistance	delta_volume	delta_polarity
+-3.70	Ki	AXI	4wa9	4twp	-2.76	crystal	neutral	50.6	5.2
+0.63	Ki	5P8	4cli	4clj	0.44	crystal	neutral	-3.8	-1.9
+583.00	Ki	4SP	4eor	4eok	3.58	crystal	neutral	-102.6	8.2
+-214.60	Ki	4ZQ	5cav	5cas	-6.88	crystal	sensitive	53.5	-5.7
+-1071.00	Ki	5Q4	5em8	5em7_A	-15.93	crystal	sensitive	53.5	-5.7
+-1071.00	Ki	5Q4	5em8	5em7_B	-13.14	crystal	sensitive	53.5	-5.7
+-3.70	Ki	AXI	4wa9	4twp	13.99	model	neutral	50.6	5.2
+0.63	Ki	5P8	4cli	4clj	5.63	model	neutral	-3.8	-1.9
+583.00	Ki	4SP	4eor	4eok	-6.98	model	neutral	-102.6	8.2
+-214.60	Ki	4ZQ	5cav	5cas	12.52	model	sensitive	53.5	-5.7
+-1071.00	Ki	5Q4	5em8	5em7	-10.43	model	sensitive	53.5	-5.7

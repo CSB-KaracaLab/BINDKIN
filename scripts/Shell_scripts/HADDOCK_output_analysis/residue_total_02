@@ -1,5 +1,8 @@
 #!/bin/tcsh
-# 14/03/2018
+#14/03/2018 - TK
+#This script uses the total scores that are extracted by the script named "get_total_02".
+#The extracted total scores of a HADDOCK run are ranked and the lowest score is selected as the best score.
+#This process is iterated over each HADDOCK run output folder, collecting and listing the best scores of all of the HADDOCK runs in a given directory.
 
 foreach i (BINDKIN*)
 	echo $i >> dockingruns
