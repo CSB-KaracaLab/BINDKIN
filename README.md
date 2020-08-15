@@ -4,101 +4,43 @@ A structural benchmark to measure point mutations’ impact on kinase-ligand  in
 To construct the BINDKIN (effect of point mutations on the BINDing affinity of protein KINase:ligand complexes) benchmark, 
 we performed a thorough search in the Protein Data Bank (PDB) (Berman et al., 2000) (rcsb.org) and obtained the list of 
 available wild type and mutant kinase:ligand complexes. The resulting list was curated by the following criteria:
-	> For each mutant complex, there has to be a wild type complex, containing the same protein and the ligand.
-	> The wild type and mutant complexes should be determined in the same study (i.e. they should come from the same paper).
-	> For each complex, there has to be experimentally determined binding affinity available in the form of IC50, Kd, or Ki together with a related research paper.  The experimental binding kinetics data were acquired from PDBbind (Cheng et al., 2009; Wang et al., 2004, 2005) (pdbbind-cn.org/index.asp), Binding DB (Gilson et al., 2016) (bindingdb.org/bind/index.jsp), and Binding MOAD (Ahmed et al., 2015; Smith et al., 2019) (bindingmoad.org/Search/advancesearch) databases. 
-	> The ligand has to be a non-covalent ligand.
+- For each mutant complex, there has to be a wild type complex, containing the same protein and the ligand.
+- The wild type and mutant complexes should be determined in the same study (i.e. they should come from the same paper).
+- For each complex, there has to be experimentally determined binding affinity available in the form of IC50, Kd, or Ki together with a related research paper.
+- The ligand has to be a reversible (non-covalent) ligand.
+
+The experimental binding kinetics data were acquired from PDBbind (Cheng et al., 2009; Wang et al., 2004, 2005) (pdbbind-cn.org/index.asp), Binding DB (Gilson et al., 2016) (bindingdb.org/bind/index.jsp), and Binding MOAD (Ahmed et al., 2015; Smith et al., 2019) (bindingmoad.org/Search/advancesearch) databases.
 	
-This limitation left us with 23 wild type-mutant complex pairs, making up the BINDKIN benchmark. BINDKIN is constituted
-of seven EGFR, three Abl, three Mps1, three Src, two Cdk2, one ALK, one FGFR, one Kit, and one PKA kinases. 
-These complexes present 36 point mutations distributed across 15 positions. 
-Most of the mutation positions are within or in the vicinity of the ATP binding pocket.
+These criteria have left us with 23 wild type-mutant complex pairs, making up the BINDKIN benchmark. BINDKIN is constituted of eight EGFR, three Abl, three Mps1, three Src, two Cdk2, one ALK, one FGFR, one Kit, and one PKA kinase cases. The 23 mutant cases in the BINDKIN benchmark include 17 single, three double, two triple, and one quintuple point mutants. These complexes present a total of 34 point mutations, distributed across 15 unique positions within or in the vicinity of the ATP binding pocket.
 
-The directory organization description of the repository:
+## The directory organization of the repository:
 
-# Organization of the input coordinate files:
-Each folder that ends with the string "_structures" contains the 
-subdirectories in which the input coordinate files are present.
-	> "crystal_structures":The coordinates files obtained from the PDB are present here.
-	> "homology_model_structures":The coordinate files of the model structures are present here.
-	
-In both of these folders, the default state of the structures, and the 
-HADDOCK refined versions of them were given in separate directories as shown below:
-	> "crystal_structures":
-		> "crystal_structures"
-		> "HADDOCK_refined_crystal_structures"
-	
-	> "homology_model_structures":
-		> "model_structures"
-		> "HADOCK_refined_model_structures"
+### Organization of the input coordinate files:
+Each folder that ends with the string "structures" contains the subdirectories in which the input coordinate files are present.
+- ***"input_crystal_structures"*:** The coordinates files obtained from the PDB are located in here.
+  - *"complexes_cleaned_pdb_format"***:** Contains the preprocessed complex coordinate files (e.g.: the buffer aditives, ions, solvent etc. were removed).
+  - *"complexes_raw_pdb_format"***:** Contains the unedited complex coordinate files that are obtained from the PDB (e.g.: the buffer aditives, ions, solvent etc. were not removed).
+  - *"ligands_mol2_format"***:** Contains the ligand coordinate files in ".mol2" format.
+  - *"ligands_pdb_format"***:** Contains the ligand coordinate files in ".pdb" format.
+  - *"ligands_sdf_format"***:** Contains the ligand coordinate files in ".sdf" fomrat.
+  - *"proteins_pdb_format"***:** Contains the protein coordinate files in ".pdb" format.
+- ***"input_model_structures"*:** The coordinate files of the model structures are located in here.
+  - *"complexes_raw_pdb_format"***:** Contains the unedited complex coordinate files that are obtained from the PDB (e.g.: the buffer aditives, ions, solvent etc. were not removed).
+  - *"ligands_mol2_format"***:** Contains the ligand coordinate files in ".mol2" format.
+  - *"ligands_pdb_format"***:** Contains the ligand coordinate files in ".pdb" format.
+  - *"ligands_sdf_format"***:** Contains the ligand coordinate files in ".sdf" fomrat.
+  - *"proteins_pdb_format"***:** Contains the protein coordinate files in ".pdb" format.
+  - *"zz_homology_modeling"***:** Contains the subdirectories related to homology modeling.
+    - *"1_FASTA_full_length"***:** Contains the full-length sequences of the Ki-cases.
+    - *"2_FASTA_kinase_domains_fused"***:** Contains the truncated sequences of the Ki-cases that are constituted of the kinase domains.
+    - *"3_I_TASSER_outputs"***:** Contains the complete homology modeling result folders that were downloaded from the I-TASSER web server.
+    - *"4_I_TASSER_selected_models"***:** Contains the model structures with the highest C-scores. For each case, a single structure was selected.
+    - *"5_HADDOCK_water_refinement"***:** I-TASSER discards small molecules when generating the model structures. Consequently, we initially generated the crude model complexes. First, the model protein moieties were superposed to their respective co-crystal structures. Then, the crystal structure ligand coordinates were isolated together with the model structure protein coordinates. These crude complexes were subjected to water refinement by using the HADDOCK2.2 web server. The complete HADDOCK2.2 run results and the associated files are located in this directory.
 
-In each four of these subdirectories, the structure files were separated 
-into different subdirectories based on their file extensions or contents.
-The subdirectories that contain the input coordinate files are as listed below:
-			> "ligands_mol2":
-				Ligand coordinate files in ".mol2" format.
-			> "ligands_pdb":
-				Ligand coordinate files in ".pdb" format.
-			> "ligands_sdf":
-				Ligand coordinate files in ".sdf" fomrat.
-			> "PDB_files_edited":
-				Preprocessed complex coordinate files (e.g.: the buffer aditives, ions, solvent etc. were removed).
-			> "PDB_files_raw":
-				Unedited complex coordinate files (e.g.: the buffer aditives, ions, solvent etc. were not removed).
-			> "proteins_pdb":
-				Protein coordinate files in ".pdb" format.
-
-# Organization of the web server outputs:
-Each folder that ends with the string "_results" contains the subdirectories in 
-which the binding affinity prediction results were given for the web servers.
-	> "crystal_structures_results":
-		The result files obtained by running the crystal structures and their refined versions.
-	> "homology_model_structures_results":
-		The result files obtained by running the homology model structures and their refined versions.
-	
-In both of these folders, results obtained from different web servers were 
-separately given in the subdirectories, indicated by the respective folder names.
-The subdirectories that contain the web server output files or folders are as listed below:
-			> "DSX_ONLINE":
-				The results obtained from the "DSX-ONLINE" web server.
-			> "HADDOCK_refinement":
-				The results obtained from the refinement interface of the "HADDOCK2.2" web server. 
-				The complete HADDOCK run results downloaded and stored. For easy extraction of the 
-				results, a common string "BINDKIN_" was inserted at the beginning of each folder name.
-			> "KDEEP":
-				The results obtained from the "KDEEP" web server of the "PlayMolecule" platform.
-			> "PDBePISA":
-				The results obtained from the "PDBePISA" web server.
-			> "Pose_and_Rank":
-				The results obtained from the "Pose&Rank" web server.
-			> "PRODIGY_LIG":
-				The results obtained from the "PRODIGY-LIG" web server.
-
-The directory "homology_modeling" contains the input and output files or folders that are related to homology modeling.
-
-# The the summraized result files and their respective contents are listed below:
-The recorded and analyzed results are given in the "BINDKIN_results" folder.
-	> "BINDKIN_crystal_structure_direct_results.csv":
-		The raw records of the web server score outputs, obtained by the 
-		submission of the crystal structures or their refined versions.
-	> "BINDKIN_crystal_structure_ratio_results.csv":
-		The normalized scores of the crystal structures or their refined versions, obtained by 
-		divison of the experimental and predicted values of MUT cases to that of their WT partners.
-	> "BINDKIN_model_structure_direct_results.csv":
-		The raw records of the web server score outputs, obtained by the 
-		submission of the homology model structures or their refined versions.
-	> "BINDKIN_model_structure_ratio_results.csv":
-		The normalized scores of the homology model structures or their refined versions, obtained by 
-		divison of the experimental and predicted values of MUT cases to that of their WT partners.
-	> "BINDKIN_direct_assessment.csv":
-		The records of the Pearson's R correlation coefficients obtained by linear 
-		regression analysis of the "BINDKIN_crystal_structure_direct_results.csv" results.
-	> "BINDKIN_ratio_assessment.csv":
-		The records of the Pearson's R correlation coefficients obtained by linear 
-		regression analysis of the "BINDKIN_crystal_structure_ratio_results.csv" results.
-	> "BINDKIN_binary_assessment.csv":
-		The records of the accuracy percentages obtained by quantitative
-		analysis of the "BINDKIN_crystal_structure_ratio_results.csv" results.
-	> "BINDKIN_pharmacophore.csv":
-		The record of the pharmacophoric features of the ligands that are present in the BINDKIN benchmark set.
+## The the result files and their respective contents are listed below:
+- ***"BINDKIN_crystal_structures_direct_assessment.csv":*** The raw records of the experimental and predicted binding affinity data. The data was obtained by submission of the crystal structures to the web servers.
+- ***"BINDKIN_crystal_structures_delta_assessment.csv":*** The normalized experimental and predicted binding affinity data for the crystal structures. The data was obtained by subtraction of the experimental and predicted values of the wild-type cases from those of their mutant partners.
+- ***"BINDKIN_model_structures_direct_assessment.csv":*** The raw records of the experimental and predicted binding affinity data. The data was obtained by submission of the water-refined homology model structures to the web servers.
+- ***"BINDKIN_model_structures_delta_assessment.csv":*** The normalized experimental and predicted binding affinity data for the water-refined homology model structures. The data was obtained by subtraction of the experimental and predicted values of wild-type cases from those of their mutant partners.
+- ***"BINDKIN_pharmacophore.csv":*** The record of the pharmacophoric features of the ligands that are present in BINDKIN.
 
