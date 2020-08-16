@@ -23,7 +23,7 @@ These criteria have left us with 23 wild type-mutant complex pairs, making up th
 ```
 git clone https://github.com/CSB-KaracaLab/BINDKIN
 ```
-or, if you don't use git:
+or, if you do not use git:
 ```
 wget https://github.com/CSB-KaracaLab/BINDKIN/archive/master.zip
 ```
