@@ -34,6 +34,7 @@ Each folder that ends with the string "structures" contains the subdirectories i
   - *"ligands_sdf_format"***:** Contains the ligand coordinate files in ".sdf" fomrat.
   - *"proteins_pdb_format"***:** Contains the protein coordinate files in ".pdb" format.
   - *"zz_homology_modeling"***:** Contains the subdirectories related to homology modeling.
+  
     - *"1_FASTA_full_length"***:** Contains the full-length sequences of the Ki-cases.
     - *"2_FASTA_kinase_domains_fused"***:** Contains the truncated sequences of the Ki-cases that are constituted of the kinase domains.
     - *"3_I_TASSER_outputs"***:** Contains the complete homology modeling result folders that were downloaded from the I-TASSER web server.
