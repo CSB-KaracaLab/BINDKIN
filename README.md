@@ -21,10 +21,15 @@ Each folder that ends with the string "structures" contains the subdirectories i
 
 - ***"input_crystal_structures"*:** The coordinates files obtained from the PDB are located in here.
   - *"complexes_cleaned_pdb_format"***:** Contains the preprocessed complex coordinate files (e.g.: the buffer aditives, ions, solvent etc. were removed).
+  
   - *"complexes_raw_pdb_format"***:** Contains the unedited complex coordinate files that are obtained from the PDB (e.g.: the buffer aditives, ions, solvent etc. were not removed).
+  
   - *"ligands_mol2_format"***:** Contains the ligand coordinate files in ".mol2" format.
+  
   - *"ligands_pdb_format"***:** Contains the ligand coordinate files in ".pdb" format.
+  
   - *"ligands_sdf_format"***:** Contains the ligand coordinate files in ".sdf" fomrat.
+  
   - *"proteins_pdb_format"***:** Contains the protein coordinate files in ".pdb" format.
 
 - ***"input_model_structures"*:** The coordinate files of the model structures are located in here.
