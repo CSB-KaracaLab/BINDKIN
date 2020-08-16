@@ -7,9 +7,13 @@ A structural benchmark to measure point mutations’ impact on kinase-ligand  in
 To construct the BINDKIN (effect of point mutations on the BINDing affinity of protein KINase:ligand complexes) benchmark, 
 we performed a thorough search in the Protein Data Bank (PDB) (Berman et al., 2000) (rcsb.org) and obtained the list of 
 available wild type and mutant kinase:ligand complexes. The resulting list was curated by the following criteria:
+
 - For each mutant complex, there has to be a wild type complex, containing the same protein and the ligand.
+
 - The wild type and mutant complexes should be determined in the same study (i.e. they should come from the same paper).
+
 - For each complex, there has to be experimentally determined binding affinity available in the form of IC50, Kd, or Ki together with a related research paper.
+
 - The ligand has to be a reversible (non-covalent) ligand.
 
 The experimental binding kinetics data were acquired from PDBbind (Cheng et al., 2009; Wang et al., 2004, 2005) (pdbbind-cn.org/index.asp), Binding DB (Gilson et al., 2016) (bindingdb.org/bind/index.jsp), and Binding MOAD (Ahmed et al., 2015; Smith et al., 2019) (bindingmoad.org/Search/advancesearch) databases.
