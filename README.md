@@ -1,4 +1,4 @@
-<img src="logo.png" alt="logo" width="350" />
+
 
 
 A structural benchmark to measure point mutations’ impact on kinase-ligand  interactions.
