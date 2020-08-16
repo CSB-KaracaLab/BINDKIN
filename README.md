@@ -1,4 +1,6 @@
-# BINDKIN
+<img src="logo.png" alt="logo" width="350" />
+
+
 A structural benchmark to measure point mutations’ impact on kinase-ligand  interactions.
 
 To construct the BINDKIN (effect of point mutations on the BINDing affinity of protein KINase:ligand complexes) benchmark, 
