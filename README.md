@@ -73,17 +73,9 @@ Each folder that ends with the string "`_structures`" contains the subdirectorie
     
     - *"5_HADDOCK_water_refinement"***:** I-TASSER discards small molecules when generating the model structures. Consequently, we initially generated the crude model complexes. First, the model protein moieties were superposed to their respective co-crystal structures. Then, the crystal structure ligand coordinates were isolated together with the model structure protein coordinates. These crude complexes were subjected to water refinement by using the HADDOCK2.2 web server. The complete HADDOCK2.2 run results and the associated files are located in this directory.
     
-- ***"scripts"*:** The scripts that are used for result analyses and data visualization are located in the subdirectories under this directory.
+- ***"scripts_etc"*:** The scripts that are used for result analyses and data visualization are located in the subdirectories under this directory.
 
-  - *"R_scripts_dataframes_plots"***:* The R scripts and dataframes used in R and the resultant visual data (plots) are located in here. The folder names indicate that which figure of the manuscript or the supporting information the documents are associated with (e.g: the folder named "figure_5" contains the documents associated with the fifth figure in the manuscript).
-
-The subdirectories located in here are _figure_3b_, _figure_3c_, _figure_4_, _figure_5_, _figure_6a_, _figure_S2_, _figure_S3_, and _figure_S4a_.
-
-The file name of each R script ends with the string "`_script`".
-
-The file name of each dataframe ends with the string "`_dataframe`".
-
-The file name of each plot ends with the string "`_plot`".
+  - *"R_scripts_dataframes_plots"***:** The R scripts and dataframes used in R and the resultant visual data (plots) are located in here. The folder names indicate that which figure of the manuscript or the supporting information the documents are associated with (e.g: the folder named "figure_5" contains the documents associated with the fifth figure in the manuscript). The subdirectories located in here are _figure_3b_, _figure_3c_, _figure_4_, _figure_5_, _figure_6a_, _figure_S2_, _figure_S3_, and _figure_S4a_. The file name of each R script ends with the string "`_script`". The file name of each dataframe ends with the string "`_dataframe`". The file name of each plot ends with the string "`_plot`".
 
   - *"shell_scrpits"***:** The Unix shell scripts used for HADDOCK2.2 result analyses and input structure manipulation are located in the subdirectories under this directory.
   
