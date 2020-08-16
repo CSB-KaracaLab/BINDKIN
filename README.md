@@ -1,6 +1,8 @@
 <img src="logo.png" alt="logo" width="350" />
 
 
+## Features of the database
+
 A structural benchmark to measure point mutations’ impact on kinase-ligand  interactions.
 
 To construct the BINDKIN (effect of point mutations on the BINDing affinity of protein KINase:ligand complexes) benchmark, 
@@ -15,7 +17,21 @@ The experimental binding kinetics data were acquired from PDBbind (Cheng et al.,
 	
 These criteria have left us with 23 wild type-mutant complex pairs, making up the BINDKIN benchmark. BINDKIN is constituted of eight EGFR, three Abl, three Mps1, three Src, two Cdk2, one ALK, one FGFR, one Kit, and one PKA kinase cases. The 23 mutant cases in the BINDKIN benchmark include 17 single, three double, two triple, and one quintuple point mutants. These complexes present a total of 34 point mutations, distributed across 15 unique positions within or in the vicinity of the ATP binding pocket.
 
-## The directory structure of the repository:
+## Motivation
+
+
+
+## Clone the repository
+
+```
+git clone https://github.com/CSB-KaracaLab/BINDKIN
+```
+or, if you don't use git:
+```
+wget https://github.com/CSB-KaracaLab/BINDKIN/archive/master.zip
+```
+
+## The directory structure of the repository
 
 Each folder that ends with the string "structures" contains the subdirectories in which the input coordinate files are present.
 
@@ -57,7 +73,7 @@ Each folder that ends with the string "structures" contains the subdirectories i
     
     - *"5_HADDOCK_water_refinement"***:** I-TASSER discards small molecules when generating the model structures. Consequently, we initially generated the crude model complexes. First, the model protein moieties were superposed to their respective co-crystal structures. Then, the crystal structure ligand coordinates were isolated together with the model structure protein coordinates. These crude complexes were subjected to water refinement by using the HADDOCK2.2 web server. The complete HADDOCK2.2 run results and the associated files are located in this directory.
 
-## The result files and their respective contents:
+## The result files and their respective contents
 
 - ***"BINDKIN_crystal_structures_direct_assessment.csv":*** The raw records of the experimental and predicted binding affinity data. The data was obtained by submission of the crystal structures to the web servers.
 
