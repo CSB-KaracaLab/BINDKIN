@@ -2,15 +2,18 @@
 
 
 ## Features of the database
-
 A structural benchmark to measure point mutations’ impact on kinase-ligand  interactions.
 
 To construct the BINDKIN (effect of point mutations on the BINDing affinity of protein KINase:ligand complexes) benchmark, 
 we performed a thorough search in the Protein Data Bank (PDB) (Berman et al., 2000) (rcsb.org) and obtained the list of 
 available wild type and mutant kinase:ligand complexes. The resulting list was curated by the following criteria:
+
 - For each mutant complex, there has to be a wild type complex, containing the same protein and the ligand.
+
 - The wild type and mutant complexes should be determined in the same study (i.e. they should come from the same paper).
+
 - For each complex, there has to be experimentally determined binding affinity available in the form of IC50, Kd, or Ki together with a related research paper.
+
 - The ligand has to be a reversible (non-covalent) ligand.
 
 The experimental binding kinetics data were acquired from PDBbind (Cheng et al., 2009; Wang et al., 2004, 2005) (pdbbind-cn.org/index.asp), Binding DB (Gilson et al., 2016) (bindingdb.org/bind/index.jsp), and Binding MOAD (Ahmed et al., 2015; Smith et al., 2019) (bindingmoad.org/Search/advancesearch) databases.
@@ -20,19 +23,16 @@ These criteria have left us with 23 wild type-mutant complex pairs, making up th
 ## Motivation
 
 
-
 ## Clone the repository
-
 ```
 git clone https://github.com/CSB-KaracaLab/BINDKIN
 ```
-or, if you don't use git:
+or, if you do not use git:
 ```
 wget https://github.com/CSB-KaracaLab/BINDKIN/archive/master.zip
 ```
 
 ## The directory structure of the repository
-
 Each folder that ends with the string "structures" contains the subdirectories in which the input coordinate files are present.
 
 - ***"input_crystal_structures"*:** The coordinates files obtained from the PDB are located in here.
@@ -74,7 +74,6 @@ Each folder that ends with the string "structures" contains the subdirectories i
     - *"5_HADDOCK_water_refinement"***:** I-TASSER discards small molecules when generating the model structures. Consequently, we initially generated the crude model complexes. First, the model protein moieties were superposed to their respective co-crystal structures. Then, the crystal structure ligand coordinates were isolated together with the model structure protein coordinates. These crude complexes were subjected to water refinement by using the HADDOCK2.2 web server. The complete HADDOCK2.2 run results and the associated files are located in this directory.
 
 ## The result files and their respective contents
-
 - ***"BINDKIN_crystal_structures_direct_assessment.csv":*** The raw records of the experimental and predicted binding affinity data. The data was obtained by submission of the crystal structures to the web servers.
 
 - ***"BINDKIN_crystal_structures_delta_assessment.csv":*** The normalized experimental and predicted binding affinity data for the crystal structures. The data was obtained by subtraction of the experimental and predicted values of the wild-type cases from those of their mutant partners.
@@ -82,6 +81,7 @@ Each folder that ends with the string "structures" contains the subdirectories i
 - ***"BINDKIN_model_structures_direct_assessment.csv":*** The raw records of the experimental and predicted binding affinity data. The data was obtained by submission of the water-refined homology model structures to the web servers.
 
 - ***"BINDKIN_model_structures_delta_assessment.csv":*** The normalized experimental and predicted binding affinity data for the water-refined homology model structures. The data was obtained by subtraction of the experimental and predicted values of wild-type cases from those of their mutant partners.
+
 - ***"BINDKIN_pharmacophore.csv":*** The record of the pharmacophoric features of the ligands in BINDKIN.
 
 ## Acknowledgements
