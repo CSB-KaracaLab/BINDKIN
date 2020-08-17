@@ -85,16 +85,16 @@ Each folder that ends with the string "`_structures`" contains the subdirectorie
 
 ## Docking run analysis
 
-The scripts in the directory `BINDKIN\scripts_etc\C_shell_scripts_for_HADDOCK` and the commands given below works in Unix environment. For Windows, Unix terminal can be installed via Windows Store application. Despite there may be stability issues, Unix terminal in Windows also can be used for executing the shell scripts and the commands explained below.
+The scripts in the directory `BINDKIN\scripts_etc\C_shell_scripts_for_HADDOCK` and the commands given below works in Unix environment. For Windows, Unix terminal can be installed via Windows Store application. Despite there may be stability issues, Unix terminal in Windows also can be used.
 
 For the scripts to be able to analyze multiple HADDOCK runs, the downloaded directories should contain a common string in their names. The scripts were written in a way that they will accept the directory names that start only with the string "`BINDKIN_`".
 
-To edit the names of multiple directories, the command named "_rename_" can be used. Install "_rename_" by using the command given below:
+To edit the names of multiple directories, the command named "_rename_" can be used. Using the command given below, "_rename_" is installed via terminal:
 ```
 sudo apt install rename
 ```
 
-The scripts were written in C shell language. Consequently, they should be executed using C shell. Using the command given below, C shell can be installed in terminal:
+The scripts were written in C shell language. Consequently, they should be executed using C shell. Using the command given below, C shell is installed in terminal:
 ```
 sudo apt-get install csh
 ```
@@ -103,14 +103,14 @@ The step-by-step guideline for preparation and analysis are explained below:
 
 **1)** Extract the downloaded HADDOCK runs into an empty directory.
 
-**2)** In terminal, go to the main directory in which the HADDOCK run directories are located.
+**2)** In terminal, go to the main directory in which the HADDOCK run directories are located. In case of Windows, alternativley open the directory of interest using File Explorer. Then type `bash` in the directory path title bar in the File Explorer window.
 
 **3)** Use the command given below to insert the string "`BINDKIN_`" at the beginning of the each directory name:
 ```
 rename 's/^/BINDKIN_/' *
 ```
 
-**4)** Copy all of scripts located in the "_HADDOCK_output_analysis_" directory of the repository, to the local directory where all of the uncompressed and renamed HADDOCK runs are located.
+**4)** Copy all of scripts located in the "_HADDOCK_output_analysis_" directory of the repository, to your local directory where all of the uncompressed and renamed HADDOCK runs are located.
 
 **5)** Use the command given below to make the script files executable:
 ```
@@ -123,7 +123,7 @@ chmod +x script_*
 ./script_sort_BSA
 ./script_clean_BSA
 ```
-In this example, you will obtain the list of maximum buried surface area scores for each docking run. Also, the intermediate files generated in the docking run directories by the first script will be removed and at the end, the directories will be restored to their defaut state. Execute the complete set of the script trio ("_get_", "_sort_", and "_clean_") for one given score type, and only then proceed with executing another script trio associated with another score type. Avoid mixing the execution order of the scripts.
+In this example, you will obtain the list of maximum buried surface area scores for each docking run. Execute the complete set of the script trio ("_get_", "_sort_", and "_clean_") for one given score type, and only then proceed with executing another script trio associated with another score type. Avoid mixing the execution order of the scripts.
 
 ## The result files and their respective contents
 - ***"BINDKIN_crystal_structures_direct_assessment.csv":*** The raw records of the experimental and predicted binding affinity data. The data was obtained by submission of the crystal structures to the web servers.
