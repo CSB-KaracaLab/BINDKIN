@@ -1,4 +1,4 @@
-<img src="logo.png" alt="logo" width="350" />
+<img src="logo.png" alt="logo" width="250" />
 
 
 ## Features of the database
@@ -21,7 +21,11 @@ The experimental binding kinetics data were acquired from PDBbind (Cheng et al.,
 These criteria have left us with 23 wild type-mutant complex pairs, making up the BINDKIN benchmark. BINDKIN is constituted of eight EGFR, three Abl, three Mps1, three Src, two Cdk2, one ALK, one FGFR, one Kit, and one PKA kinase cases. The 23 mutant cases in the BINDKIN benchmark include 17 single, three double, two triple, and one quintuple point mutants. These complexes present a total of 34 point mutations, distributed across 15 unique positions within or in the vicinity of the ATP binding pocket.
 
 ## Motivation
+Protein kinase point mutations are of great clinical and scientific importance. Mutations occurring within the active site of protein kinases have been subjects of drug discovery and protein engineering studies. Due to technical and economical limitations, rapid experimental exploration of the impact of such mutations remains to be a challenge. This underscores the importance of kinase-ligand binding affinity prediction tools that are poised to measure the efficacy of inhibitors in the presence of kinase mutations.
 
+To this end, here, we compare the performances of six web-based scoring tools (DSX-ONLINE, KDEEP, HADDOCK2.2, PDBePISA, Pose&Rank, and PRODIGY-LIG) in assessing the impact of point mutations on protein kinase-ligand interactions. This assessment is carried out on a new structure-based benchmark we compiled, named BNIDKIN.
+
+We aim to aid experimentalists by highlighting accurate binding affinity prediction options. On the other hand, BINDKIN will serve the community as a means to improve the protein-ligand binding affinity prediction tools.
 
 ## Clone the repository
 ```
