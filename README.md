@@ -123,7 +123,7 @@ chmod +x script_*
 ./script_sort_BSA
 ./script_clean_BSA
 ```
-In this example, you will obtain the list of maximum buried surface area scores for each docking run. Execute the complete set of the script trio ("_get_", "_sort_", and "_clean_") for one given score type, and only then proceed with executing another script trio associated with another score type. Avoid mixing the execution order of the scripts.
+In this example, you will obtain the list of maximum buried surface area (`_BSA`) scores for each docking run. Execute the complete set of the script trio ("_get_", "_sort_", and "_clean_") for one given score type, and only then proceed with executing another script trio associated with another score type. In the script file names `_vdW` stands for van der Waals, `_elec` stands for electrostatics, `total_01` and `total_02` stand for total score.
 
 ## The result files and their respective contents
 - ***"BINDKIN_crystal_structures_direct_assessment.csv":*** The raw records of the experimental and predicted binding affinity data. The data was obtained by submission of the crystal structures to the web servers.
