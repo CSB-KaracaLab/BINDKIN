@@ -83,7 +83,7 @@ Each folder that ends with the string "`_structures`" contains the subdirectorie
 
   - *"R_scripts_dataframes_plots"***:** The R scripts and dataframes used in R and the resultant visual data (plots) are located in here. The folder names indicate that which figure of the manuscript or the supporting information the documents are associated with (e.g: the folder named "figure_5" contains the documents associated with the fifth figure in the manuscript). The subdirectories located in here are _figure_3b_, _figure_3c_, _figure_4_, _figure_5_, _figure_6a_, _figure_S2_, _figure_S3_, and _figure_S4a_. The file name of each R script ends with the string "`_script`". The file name of each dataframe ends with the string "`_dataframe`". The file name of each plot ends with the string "`_plot`".
 
-## Docking run analysis
+## HADDOCK result analysis
 
 The scripts in the directory `BINDKIN\scripts_etc\C_shell_scripts_for_HADDOCK` and the commands given below works in Unix environment. For Windows, Unix terminal can be installed via Windows Store application. Despite there may be stability issues, Unix terminal in Windows also can be used.
 
