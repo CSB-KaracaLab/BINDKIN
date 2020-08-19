@@ -126,13 +126,13 @@ chmod +x script_*
 In this example, you will obtain the list of maximum buried surface area (`_BSA`) scores for each docking run. Execute the complete set of the script trio ("_get_", "_sort_", and "_clean_") for one given score type, and only then proceed with executing another script trio associated with another score type. In the script file names `_vdW` stands for van der Waals, `_elec` stands for electrostatics, `total_01` and `total_02` stand for total score.
 
 ## The result files and their respective contents
-- ***"BINDKIN_crystal_structures_direct_assessment.csv":*** The raw records of the experimental and predicted binding affinity data. The data was obtained by submission of the crystal structures to the web servers.
+- ***"BINDKIN_direct_assessment_crystal_structures.csv":*** The raw records of the experimental and predicted binding affinity data. The data was obtained by submission of the crystal structures to the web servers.
 
-- ***"BINDKIN_crystal_structures_delta_assessment.csv":*** The normalized experimental and predicted binding affinity data for the crystal structures. The data was obtained by subtraction of the experimental and predicted values of the wild-type cases from those of their mutant partners.
+- ***"BINDKIN_delta_assessment_crystal_structures.csv":*** The normalized experimental and predicted binding affinity data for the crystal structures. The data was obtained by subtraction of the experimental and predicted values of the wild-type cases from those of their mutant partners.
 
-- ***"BINDKIN_model_structures_direct_assessment.csv":*** The raw records of the experimental and predicted binding affinity data. The data was obtained by submission of the water-refined homology model structures to the web servers.
+- ***"BINDKIN_direct_assessment_model_structures.csv":*** The raw records of the experimental and predicted binding affinity data. The data was obtained by submission of the water-refined homology model structures to the web servers.
 
-- ***"BINDKIN_model_structures_delta_assessment.csv":*** The normalized experimental and predicted binding affinity data for the water-refined homology model structures. The data was obtained by subtraction of the experimental and predicted values of wild-type cases from those of their mutant partners.
+- ***"BINDKIN_delta_assessment_model_structures.csv":*** The normalized experimental and predicted binding affinity data for the water-refined homology model structures. The data was obtained by subtraction of the experimental and predicted values of wild-type cases from those of their mutant partners.
 
 - ***"BINDKIN_pharmacophore.csv":*** The record of the pharmacophoric features of the ligands in BINDKIN.
 
