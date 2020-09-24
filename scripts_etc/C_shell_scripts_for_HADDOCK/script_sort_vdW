@@ -15,5 +15,5 @@ foreach i (BINDKIN*)
 	cd ../../../../
 end
 cat maxenergies* >> maximum
-cat maximum | awk '{print $1,$3}' | sed 's/100_//g' >> maximumvalHOH_VDW
+cat maximum | awk '{print $1,$3}' | sed 's/BINDKIN_//g' >> maximumvalHOH_VDW
 rm maxenergies* maximum
