@@ -10,9 +10,9 @@ available wild type and mutant kinase:ligand complexes. The resulting list was c
 
 - For each mutant complex, there has to be a wild type complex, containing the same protein and the ligand.
 
-- The wild type and mutant complexes should be determined in the same study (i.e. they should come from the same paper).
+- The wild type and mutant complexes should be determined in the same study (i.e. they should come from the same research paper).
 
-- For each complex, there has to be experimentally determined binding affinity available in the form of IC50, Kd, or Ki together with a related research paper.
+- For each complex, there has to be an experimentally determined binding affinity available in the form of IC50, Kd, or Ki.
 
 - The ligand has to be a reversible (non-covalent) ligand.
 
@@ -39,7 +39,7 @@ wget https://github.com/CSB-KaracaLab/BINDKIN/archive/master.zip
 ## The directory structure of the repository
 Each folder that ends with the string "`_structures`" contains the subdirectories in which the input coordinate files are located.
 
-- ***"input_crystal_structures"*:** The coordinates files obtained from the PDB are located in here.
+- ***"input_crystal_structures"*:** The coordinate files obtained from the PDB are located in here.
 
   - *"complexes_cleaned_pdb_format"***:** Contains the preprocessed complex coordinate files (e.g.: the buffer aditives, ions, solvent etc. were removed).
   
@@ -55,7 +55,7 @@ Each folder that ends with the string "`_structures`" contains the subdirectorie
 
 - ***"input_model_structures"*:** The coordinate files of the model structures are located in here.
 
-  - *"complexes_raw_pdb_format"***:** Contains the unedited complex coordinate files that are obtained from the PDB (e.g.: the buffer aditives, ions, solvent etc. were not removed).
+  - *"complexes_raw_pdb_format"***:** Contains the unedited complex coordinate files that are obtained from HADDOCK2.2 refinement interface.
   
   - *"ligands_mol2_format"***:** Contains the ligand coordinate files in ".mol2" format.
   
@@ -87,7 +87,7 @@ Each folder that ends with the string "`_structures`" contains the subdirectorie
 
 The scripts in the directory `BINDKIN\scripts_etc\C_shell_scripts_for_HADDOCK` and the commands given below works in Unix environment. For Windows, Unix terminal can be installed via Windows Store application. Despite there may be stability issues, Unix terminal in Windows also can be used.
 
-For the scripts to be able to analyze multiple HADDOCK runs, the downloaded directories should contain a common string in their names. The scripts were written in a way that they will accept the directory names that start only with the string "`BINDKIN_`".
+For the scripts to be able to analyze multiple HADDOCK runs, the downloaded HADDOCK result directories should contain a common string in their names. The scripts were written in a way that they will accept the directory names that start only with the string "`BINDKIN_`".
 
 To edit the names of multiple directories, the command named "_rename_" can be used. Using the command given below, "_rename_" is installed via terminal:
 ```
@@ -103,7 +103,7 @@ The step-by-step guideline for preparation and analysis are explained below:
 
 **1)** Extract the downloaded HADDOCK runs into an empty directory.
 
-**2)** In terminal, go to the main directory in which the HADDOCK run directories are located. In case of Windows, alternativley open the directory of interest using File Explorer. Then type `bash` in the directory path title bar in the File Explorer window.
+**2)** In terminal, go to the main directory in which the extracted HADDOCK run directories are located. In case of Windows, open the directory of interest using File Explorer. Then type `bash` in the directory path title bar in the File Explorer window.
 
 **3)** Use the command given below to insert the string "`BINDKIN_`" at the beginning of the each directory name:
 ```
