@@ -2,7 +2,7 @@
 
 
 ## Features of the database
-A structural benchmark to measure point mutations’ impact on kinase-ligand  interactions.
+A structural benchmark to measure the impact of point mutations on protein kinase-ligand  interactions.
 
 To construct the BINDKIN (effect of point mutations on the BINDing affinity of protein KINase:ligand complexes) benchmark, 
 we performed a thorough search in the Protein Data Bank (PDB) (Berman et al., 2000) (rcsb.org) and obtained the list of 
