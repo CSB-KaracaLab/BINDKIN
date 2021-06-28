@@ -146,7 +146,7 @@ In this example, you will obtain the list of maximum buried surface area (`_BSA`
 - ***"BINDKIN_information.csv":*** The records of other information about the pdb files, such as the mutation positions, multiple conformations, HETATM content etc.
 
 ## Acknowledgements
-We thank Dr. Gerard Martinez (Acellera Ltd., London, United Kingdom) for his help and guidance during benchmarking of the KDEEP web server. We thank Dr. Daniel Fisher (The Institute of Molecular Genetics of Montpellier (IGMM), Montpellier, France) for helping us clarifying the wrong binding kinetics data records found in the PDBbind database (for the PDB entries 4EOR and 4EOK). We thank Deniz Dogan and Dr. Alexandre M.J.J. Bonvin for their participation in the initial reviewing of the manuscript. We thank Mehdi Kosaca and Eda Samiloglu for their help in searching and annotating the experimental techniques used for determination of the kinetic parameters.
+We thank Dr. Gerard Martinez (Acellera Ltd., London, United Kingdom) for his help and guidance during benchmarking of the KDEEP web server. We thank Dr. Daniel Fisher (The Institute of Molecular Genetics of Montpellier (IGMM), Montpellier, France) for helping us clarifying the wrong binding kinetics data records found in the PDBbind database (for the PDB entries 4EOR and 4EOK). We thank Mehdi Kosaca and Eda Samiloglu for their help in searching and annotating the experimental techniques used for determination of the kinetic parameters.
 
 ## Contact
 ezgi.karaca@ibg.edu.tr
