@@ -22,7 +22,9 @@ These criteria have left us with 23 wild type-mutant complex pairs, making up th
 
 If you use (part of) this work, please cite:
 ```
-Mehmet Erguven, Tülay Karakulak, M. Kasim Diril, and Ezgi Karaca (2021) How Far Are We from the Rapid Prediction of Drug Resistance Arising Due to Kinase Mutations? ACS Omega, 6, 2, 1254–1265
+Mehmet Erguven, Tülay Karakulak, M. Kasim Diril, and Ezgi Karaca (2021)
+How Far Are We from the Rapid Prediction of Drug Resistance Arising Due to Kinase Mutations? 
+ACS Omega, 6, 2, 1254–1265
 https://doi.org/10.1021/acsomega.0c04672
 ```
 
