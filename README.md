@@ -20,6 +20,12 @@ The experimental binding kinetics data were acquired from PDBbind (Cheng et al.,
 	
 These criteria have left us with 23 wild type-mutant complex pairs, making up the BINDKIN benchmark. BINDKIN is constituted of eight EGFR, three Abl, three Mps1, three Src, two Cdk2, one ALK, one FGFR, one Kit, and one PKA kinase cases. The 23 mutant cases in the BINDKIN benchmark include 17 single, three double, two triple, and one quintuple point mutants. These complexes present a total of 34 point mutations, distributed across 15 unique positions within or in the vicinity of the ATP binding pocket.
 
+If you use (part of) this work, please cite:
+```
+Mehmet Erguven, Tülay Karakulak, M. Kasim Diril, and Ezgi Karaca (2021) How Far Are We from the Rapid Prediction of Drug Resistance Arising Due to Kinase Mutations? ACS Omega, 6, 2, 1254–1265
+https://doi.org/10.1021/acsomega.0c04672
+```
+
 ## Motivation
 Protein kinase point mutations are of great clinical and scientific importance. Mutations occurring within the active site of protein kinases have been subjects of drug discovery and protein engineering studies. Due to technical and economical limitations, rapid experimental exploration of the impact of such mutations remains to be a challenge. This underscores the importance of kinase-ligand binding affinity prediction tools that are poised to measure the efficacy of inhibitors in the presence of kinase mutations.
 
