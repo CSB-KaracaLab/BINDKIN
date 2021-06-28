@@ -1,5 +1,6 @@
 <img src="logo.png" alt="logo" width="250" />
 
+[![DOI:10.1021/acsomega.0c04672](http://img.shields.io/badge/DOI-10.1021/acsomega.0c04672-B31B1B.svg)](https://doi.org/10.1021/acsomega.0c04672)
 
 ## Features of the database
 A structural benchmark to measure the impact of point mutations on protein kinase-ligand  interactions.
